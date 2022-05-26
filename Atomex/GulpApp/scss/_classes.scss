@@ -1,0 +1,273 @@
+/*.....................................*/
+/* CLASSES */
+/* bootstrap */
+
+/* /bootstrap */
+/*.....................................*/
+// test
+.dcg-border {border: 1px solid red}
+.dcg-no-border {border: none}
+
+.dcg-bg-yellow { background: #EACA41; }
+.dcg-cl-yellow { color: #EACA41; }
+
+.dcg-bg-green { background: green; }
+.dcg-cl-green { color: green; }
+
+.dcg-bg-blue { background: blue; }
+.dcg-cl-blue { color: blue; }
+// /test
+/*.....................................*/
+html, body {}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+
+    @include media-breakpoint-down (sm) {
+    }
+}
+
+ul, li {}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    @include media-breakpoint-down (sm) {
+    }
+}
+/*.....................................*/
+/* Стили для всех заголовков */
+@include dc-titles {
+
+    @include media-breakpoint-down (sm) {
+
+    }
+}
+
+.dcg-h1 {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 44px;
+    color: #000;
+
+    @include media-breakpoint-down (xs) {
+        font-size: 28px;
+    }
+}
+
+.dcg-h2 {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 44px;
+    color: #000;
+
+    @include media-breakpoint-down (xs) {
+        font-size: 26px;
+    }
+}
+
+.dcg-h3 {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    color: #000;
+
+    @include media-breakpoint-down (xs) {
+        font-size: 18px;
+    }
+}
+
+.dcg-h4 {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22px;
+
+    @include media-breakpoint-down (sm) {
+    }
+}
+.dcg-h5 {
+    font-family: 'Nunito';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+
+    @include media-breakpoint-down (sm) {
+    }
+}
+/*.....................................*/
+/* button, [type="button"], [type="submit"], [type="reset"], .dcg-btn */
+@include dc-btns {
+    cursor: pointer;
+    color: #FFFFFF;
+    border-radius: 7px;
+
+    &:active {
+        outline: unset !important;
+    }
+
+    &:hover {
+    }
+
+    &.dcg-btn_light {
+
+        &:hover {
+        }
+    }
+
+    &.dcg-btn_dark {
+
+        &:hover {
+        }
+    }
+
+    &.dcg-btn_color {
+
+        &:hover {
+        }
+    }
+
+    &.dcg-btn_big {
+    }
+
+    &.dcg-btn_small {
+
+        svg {
+        }
+
+        &:hover {
+            
+        }
+    }
+
+    &.dcg-btn_pag {
+    }
+
+    &.dcg-btn_pag-active {
+    }
+
+    &.dcg-btn_pag-dotts {
+    }
+
+
+    @include media-breakpoint-down (xs) {
+        &.dcg-btn_big {
+        }
+    }
+}
+/* /button, [type="button"], [type="submit"], [type="reset"], .ssg-button */
+/*.....................................*/
+/* [type="text"], [type="email"], [type="password"], textarea, select */
+@include dc-inps {
+    border-radius: 7px;
+    background: #F0F0F0;
+    text-align: left;
+    padding: 11px 12px 10px 20px;
+    height: 40px;
+    border: 0;
+
+    &::-webkit-input-placeholder {
+    }
+
+    &::-moz-placeholder {
+    }
+
+    &:-moz-placeholder {
+    }
+
+    &:-ms-input-placeholder {
+    }
+
+    &:focus {
+    }
+
+    &.dcg-input_light {
+
+        &:focus {
+        }
+    }
+
+    &.dcg-input_dark {
+
+        &:focus {
+        }
+    }
+
+    &.dcg-input_color {
+
+        &:focus {
+        }
+    }
+
+    &.dcg-input_big {
+    }
+
+    &.dcg-input_middle {
+    }
+
+    &.dcg-input_small {
+    }
+
+    @include media-breakpoint-down (md) {
+        
+    }
+}
+
+textarea {}
+/* /[type="text"], [type="email"], [type="password"], textarea, select */
+/*.....................................*/
+/* section - блоки сайта */
+.dcg-section {
+    & + & {
+        margin-top: 40px;
+    }
+
+    &_dark {
+    }
+
+    &_gray {
+    }
+
+    &_light {
+    }
+
+    &_clr {
+    }
+
+    &_alert {
+    }
+
+    &_error {
+    }
+}
+/* /section */
+/*.....................................*/
+/* common */
+/*.....................................*/
+.dcg-active {
+    color: #0FD4E2;
+}
+/*.....................................*/
+/* /common */
+/* /CLASSES */
+/*------------------------------------------------------------*/
