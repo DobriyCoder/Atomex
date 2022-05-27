@@ -1,5 +1,25 @@
 ﻿@*@model I_footer *@
 
 <div class="dc-footer">
-    footer
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                @await Html.PartialAsync("_Logo")
+                @await Html.PartialAsync("_FooterDesc")
+                @await Html.PartialAsync("_SocBtns")
+                @await Html.PartialAsync("_Copyright")
+            </div>
+            <div class="col">
+                @await Html.PartialAsync("_FooterMenu")
+            </div>
+            <div class="col">
+                @await Html.PartialAsync("_FooterMenu")
+                @await Html.PartialAsync("_FooterMenuLink")
+            </div>
+            <div class="col">
+                @await Html.PartialAsync("_FooterMenu")
+                @await Html.PartialAsync("_FooterMenuLink")
+            </div>
+        </div>
+    </div>
 </div>

@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
 </head>
 <body class="@ViewData["PageClass"]">
+    @await Html.PartialAsync("_Header")
     @RenderBody()
+    @await Html.PartialAsync("_Footer")
     @*@RenderSection("PageHead")*@
 
     <script src="~/js/lib.min.js"></script>

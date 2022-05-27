@@ -4,5 +4,37 @@
 }
 
 <div class="dc-main-page-content">
-    @await Html.PartialAsync("_Header")
+    <div class="container">
+        <div class="dcg-section">
+            <div class="row">
+                <div class="col">
+                    @await Html.PartialAsync("_MainTitleInfo")
+                </div>
+                <div class="col">
+                    @await Html.PartialAsync("_ExchangeWidget")
+                </div>
+            </div>
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_CoinsLine")
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_Highlights")
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_Benefits")
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_PopularPairs")
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_DownloadWallet")
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_Reports")
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_Faq")
+        </div>
+    </div>
 </div>
