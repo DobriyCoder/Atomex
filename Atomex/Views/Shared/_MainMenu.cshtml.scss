@@ -2,6 +2,20 @@
 // /* TEMPLATE: main-menu */
 .dc-main-menu {
 
+    ul {
+
+    }
+
+    li {
+        
+    }
+
+    a {
+        &:hover, &.dcg-active {
+
+        }
+    }
+
     @include media-breakpoint-down (sm) {
 
     }

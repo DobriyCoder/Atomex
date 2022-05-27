@@ -164,6 +164,17 @@
 // /*.....................................*/
 
 // /*.....................................*/
+// /* TEMPLATE: footer-desc */
+.dc-footer-desc {
+
+    @include media-breakpoint-down (sm) {
+
+    }
+}
+// /* /TEMPLATE: footer-desc */
+// /*.....................................*/
+
+// /*.....................................*/
 // /* TEMPLATE: footer-menu */
 .dc-footer-menu {
 
@@ -172,6 +183,17 @@
     }
 }
 // /* /TEMPLATE: footer-menu */
+// /*.....................................*/
+
+// /*.....................................*/
+// /* TEMPLATE: footer-menu-link */
+.dc-footer-menu-link {
+
+    @include media-breakpoint-down (sm) {
+
+    }
+}
+// /* /TEMPLATE: footer-menu-link */
 // /*.....................................*/
 
 // /*.....................................*/
@@ -243,6 +265,10 @@
 // /*.....................................*/
 // /* TEMPLATE: main-btn-menu */
 .dc-main-btn-menu {
+    
+    .dcg-btn {
+
+    }
 
     @include media-breakpoint-down (sm) {
 
@@ -254,6 +280,20 @@
 // /*.....................................*/
 // /* TEMPLATE: main-menu */
 .dc-main-menu {
+
+    ul {
+
+    }
+
+    li {
+        
+    }
+
+    a {
+        &:hover, &.dcg-active {
+
+        }
+    }
 
     @include media-breakpoint-down (sm) {
 
@@ -271,6 +311,17 @@
     }
 }
 // /* /TEMPLATE: main-title */
+// /*.....................................*/
+
+// /*.....................................*/
+// /* TEMPLATE: main-title-info */
+.dc-main-title-info {
+
+    @include media-breakpoint-down (sm) {
+
+    }
+}
+// /* /TEMPLATE: main-title-info */
 // /*.....................................*/
 
 // /*.....................................*/
@@ -315,6 +366,17 @@
     }
 }
 // /* /TEMPLATE: pairs-table */
+// /*.....................................*/
+
+// /*.....................................*/
+// /* TEMPLATE: popular-pairs */
+.dc-popular-pairs {
+
+    @include media-breakpoint-down (sm) {
+
+    }
+}
+// /* /TEMPLATE: popular-pairs */
 // /*.....................................*/
 
 // /*.....................................*/

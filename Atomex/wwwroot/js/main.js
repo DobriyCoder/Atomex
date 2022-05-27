@@ -113,11 +113,25 @@ jQuery('.dc-footer').dcTpl(function ($, Export) {
 // /footer
 //--------------------------------------------
 
+// footer-desc
+jQuery('.dc-footer-desc').dcTpl(function ($, Export) {
+   var $self = $(this);
+});
+// /footer-desc
+//--------------------------------------------
+
 // footer-menu
 jQuery('.dc-footer-menu').dcTpl(function ($, Export) {
    var $self = $(this);
 });
 // /footer-menu
+//--------------------------------------------
+
+// footer-menu-link
+jQuery('.dc-footer-menu-link').dcTpl(function ($, Export) {
+   var $self = $(this);
+});
+// /footer-menu-link
 //--------------------------------------------
 
 // graph-widget
@@ -183,6 +197,13 @@ jQuery('.dc-main-title').dcTpl(function ($, Export) {
 // /main-title
 //--------------------------------------------
 
+// main-title-info
+jQuery('.dc-main-title-info').dcTpl(function ($, Export) {
+   var $self = $(this);
+});
+// /main-title-info
+//--------------------------------------------
+
 // mob-main-menu
 jQuery('.dc-mob-main-menu').dcTpl(function ($, Export) {
    var $self = $(this);
@@ -209,6 +230,13 @@ jQuery('.dc-pairs-table').dcTpl(function ($, Export) {
    var $self = $(this);
 });
 // /pairs-table
+//--------------------------------------------
+
+// popular-pairs
+jQuery('.dc-popular-pairs').dcTpl(function ($, Export) {
+   var $self = $(this);
+});
+// /popular-pairs
 //--------------------------------------------
 
 // report
