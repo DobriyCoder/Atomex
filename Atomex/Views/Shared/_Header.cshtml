@@ -1,5 +1,11 @@
 ﻿@*@model I_header *@
 
 <div class="dc-header">
-    header
+    <div class="container">
+        <div class="row">
+            <div class="col">@await Html.PartialAsync("_Logo")</div>
+            <div class="col">@await Html.PartialAsync("_MainMenu")</div>
+            <div class="col">@await Html.PartialAsync("_MainBtnMenu")</div>
+        </div>
+    </div>
 </div>

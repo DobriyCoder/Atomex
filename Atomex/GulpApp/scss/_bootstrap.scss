@@ -1,5 +1,5 @@
 $grid-columns:      12;
-$grid-gutter-width: 20px;
+$grid-gutter-width: 12px;
 
 $grid-breakpoints: (
   xs: 0,
@@ -14,11 +14,10 @@ $grid-breakpoints: (
 );
 
 $container-max-widths: (
-  xs: 97%,
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1140px // width + $grid-gutter-width * 2
+  xl: 1464px // width + $grid-gutter-width * 2
 );
 
-@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap/scss/bootstrap-grid";
