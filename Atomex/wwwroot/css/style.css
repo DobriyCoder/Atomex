@@ -10000,6 +10000,13 @@ h3 {
 /*------------------------------------------------------------*/
 /*------------------------------------------------------------*/
 /* TYPOGRAPHY */
+.dcg-tpg {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+}
 .dcg-tpg p + p {
   margin-bottom: 40px;
 }
@@ -10110,11 +10117,13 @@ h3 {
 }
 
 body {
-  font-family: "Nunito";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 17px;
+  line-height: 26px;
+  background: #090E15;
+  color: rgba(221, 234, 250, 0.92);
 }
 a {
   cursor: pointer;
@@ -10126,44 +10135,53 @@ a:hover {
 /*.....................................*/
 /* Стили для всех заголовков */
 .dcg-h1 {
-  font-family: "Nunito";
+  font-family: "Neue Montreal";
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
-  line-height: 44px;
-  color: #000;
+  font-size: 48px;
+  line-height: 58px;
+  color: rgba(221, 234, 250, 0.92);
+}
+@media (max-width: 991.98px) {
+  .dcg-h1 {
+    font-size: 42px;
+    line-height: 50px;
+  }
 }
 @media (max-width: 575.98px) {
   .dcg-h1 {
-    font-size: 28px;
+    font-size: 32px;
+    line-height: 38px;
   }
 }
 
 .dcg-h2 {
-  font-family: "Nunito";
+  font-family: "Neue Montreal";
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
-  line-height: 44px;
-  color: #000;
+  font-size: 38px;
+  line-height: 48px;
+  color: rgba(221, 234, 250, 0.92);
 }
 @media (max-width: 575.98px) {
   .dcg-h2 {
-    font-size: 26px;
+    font-size: 28px;
+    line-height: 34px;
   }
 }
 
 .dcg-h3 {
-  font-family: "Nunito";
+  font-family: "Neue Montreal";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 33px;
-  color: #000;
+  font-size: 26px;
+  line-height: 32px;
+  color: rgba(221, 234, 250, 0.92);
 }
 @media (max-width: 575.98px) {
   .dcg-h3 {
-    font-size: 18px;
+    font-size: 24px;
+    line-height: 30px;
   }
 }
 
@@ -10183,12 +10201,97 @@ a:hover {
 /*.....................................*/
 /* button, [type="button"], [type="submit"], [type="reset"], .dcg-btn */
 button, [type=button], [type=submit], [type=reset], .dcg-btn {
-  cursor: pointer;
-  color: #FFFFFF;
-  border-radius: 7px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  color: rgba(221, 234, 250, 0.92);
+  background: rgba(196, 222, 255, 0.16);
+  border-radius: 8px;
+  border-style: none;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 15px 20px 17px;
+}
+button.dcg-btn_icon-left::before, [type=button].dcg-btn_icon-left::before, [type=submit].dcg-btn_icon-left::before, [type=reset].dcg-btn_icon-left::before, .dcg-btn.dcg-btn_icon-left::before {
+  content: "";
+  background: url(../images/windows-brands.svg);
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-size: 100%;
+  vertical-align: middle;
+}
+button.dcg-btn_icon-right::after, [type=button].dcg-btn_icon-right::after, [type=submit].dcg-btn_icon-right::after, [type=reset].dcg-btn_icon-right::after, .dcg-btn.dcg-btn_icon-right::after {
+  content: "";
+  background: url(../images/window-open.svg);
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-size: 100%;
+  vertical-align: middle;
 }
 button:active, [type=button]:active, [type=submit]:active, [type=reset]:active, .dcg-btn:active {
-  outline: unset !important;
+  background: rgba(196, 222, 255, 0.16);
+}
+button:hover, [type=button]:hover, [type=submit]:hover, [type=reset]:hover, .dcg-btn:hover {
+  background: rgba(196, 222, 255, 0.32);
+}
+button[disabled], [type=button][disabled], [type=submit][disabled], [type=reset][disabled], .dcg-btn[disabled] {
+  background: rgba(196, 222, 255, 0.04);
+  color: rgba(196, 222, 255, 0.32);
+  cursor: auto;
+}
+button.dcg-btn_light, [type=button].dcg-btn_light, [type=submit].dcg-btn_light, [type=reset].dcg-btn_light, .dcg-btn.dcg-btn_light {
+  background: rgba(196, 222, 255, 0.24);
+  box-shadow: 8px 13px 20px rgba(15, 6, 41, 0.22), inset 0px -1px 2px rgba(135, 103, 226, 0.07);
+  border-radius: 12px;
+  padding: 16px 32px;
+}
+button.dcg-btn_light:active, [type=button].dcg-btn_light:active, [type=submit].dcg-btn_light:active, [type=reset].dcg-btn_light:active, .dcg-btn.dcg-btn_light:active {
+  background: rgba(196, 222, 255, 0.16);
+}
+button.dcg-btn_light:hover, [type=button].dcg-btn_light:hover, [type=submit].dcg-btn_light:hover, [type=reset].dcg-btn_light:hover, .dcg-btn.dcg-btn_light:hover {
+  background: rgba(196, 222, 255, 0.32);
+}
+button.dcg-btn_light[disabled], [type=button].dcg-btn_light[disabled], [type=submit].dcg-btn_light[disabled], [type=reset].dcg-btn_light[disabled], .dcg-btn.dcg-btn_light[disabled] {
+  background: rgba(196, 222, 255, 0.04);
+  color: rgba(196, 222, 255, 0.32);
+  cursor: auto;
+}
+button.dcg-btn_dark, [type=button].dcg-btn_dark, [type=submit].dcg-btn_dark, [type=reset].dcg-btn_dark, .dcg-btn.dcg-btn_dark {
+  background: rgba(196, 222, 255, 0.1);
+  line-height: 24px;
+  padding: 12px 46px 14px;
+}
+button.dcg-btn_dark:active, [type=button].dcg-btn_dark:active, [type=submit].dcg-btn_dark:active, [type=reset].dcg-btn_dark:active, .dcg-btn.dcg-btn_dark:active {
+  background: rgba(196, 222, 255, 0.1);
+}
+button.dcg-btn_dark:hover, [type=button].dcg-btn_dark:hover, [type=submit].dcg-btn_dark:hover, [type=reset].dcg-btn_dark:hover, .dcg-btn.dcg-btn_dark:hover {
+  background: rgba(196, 222, 255, 0.32);
+}
+button.dcg-btn_dark[disabled], [type=button].dcg-btn_dark[disabled], [type=submit].dcg-btn_dark[disabled], [type=reset].dcg-btn_dark[disabled], .dcg-btn.dcg-btn_dark[disabled] {
+  background: rgba(196, 222, 255, 0.04);
+  color: rgba(196, 222, 255, 0.32);
+  cursor: auto;
+}
+button.dcg-btn_color, [type=button].dcg-btn_color, [type=submit].dcg-btn_color, [type=reset].dcg-btn_color, .dcg-btn.dcg-btn_color {
+  background: #1E3E93;
+  line-height: 24px;
+  padding: 12px 46px 14px;
+}
+button.dcg-btn_color:active, [type=button].dcg-btn_color:active, [type=submit].dcg-btn_color:active, [type=reset].dcg-btn_color:active, .dcg-btn.dcg-btn_color:active {
+  background: #0F3088;
+}
+button.dcg-btn_color:hover, [type=button].dcg-btn_color:hover, [type=submit].dcg-btn_color:hover, [type=reset].dcg-btn_color:hover, .dcg-btn.dcg-btn_color:hover {
+  background: #2762BD;
+  color: rgba(221, 234, 250, 0.92);
+}
+button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=submit].dcg-btn_color[disabled], [type=reset].dcg-btn_color[disabled], .dcg-btn.dcg-btn_color[disabled] {
+  background: rgba(196, 222, 255, 0.04);
+  color: rgba(196, 222, 255, 0.32);
+  cursor: auto;
 }
 /* /button, [type="button"], [type="submit"], [type="reset"], .ssg-button */
 /*.....................................*/
@@ -10204,6 +10307,9 @@ button:active, [type=button]:active, [type=submit]:active, [type=reset]:active, 
 /* /[type="text"], [type="email"], [type="password"], textarea, select */
 /*.....................................*/
 /* section - блоки сайта */
+.dcg-section {
+  background: #051429;
+}
 .dcg-section + .dcg-section {
   margin-top: 40px;
 }
@@ -10216,6 +10322,20 @@ button:active, [type=button]:active, [type=submit]:active, [type=reset]:active, 
 }
 
 /*.....................................*/
+.dcg-caption {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  color: rgba(221, 234, 250, 0.92);
+}
+
+/*.....................................*/
+.dcg-secondary-clr {
+  color: #00D7CB;
+}
+
 /*.....................................*/
 /* /common */
 /* /CLASSES */
