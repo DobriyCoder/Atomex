@@ -25,11 +25,13 @@ html, body {}
 }
 
 body {
-    font-family: 'Nunito';
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 17px;
+    line-height: 26px;
+    background: #090E15;
+    color: rgba(221, 234, 250, 0.92);
 
     @include media-breakpoint-down (sm) {
     }
@@ -58,41 +60,49 @@ a {
 }
 
 .dcg-h1 {
-    font-family: 'Nunito';
+    font-family: 'Neue Montreal';
     font-style: normal;
     font-weight: 400;
-    font-size: 32px;
-    line-height: 44px;
-    color: #000;
+    font-size: 48px;
+    line-height: 58px;
+    color: rgba(221, 234, 250, 0.92);
+
+    @include media-breakpoint-down (md) {
+        font-size: 42px;
+        line-height: 50px;
+    }
 
     @include media-breakpoint-down (xs) {
-        font-size: 28px;
+        font-size: 32px;
+        line-height: 38px;
     }
 }
 
 .dcg-h2 {
-    font-family: 'Nunito';
+    font-family: 'Neue Montreal';
     font-style: normal;
     font-weight: 400;
-    font-size: 32px;
-    line-height: 44px;
-    color: #000;
+    font-size: 38px;
+    line-height: 48px;
+    color: rgba(221, 234, 250, 0.92);
 
     @include media-breakpoint-down (xs) {
-        font-size: 26px;
+        font-size: 28px;
+        line-height: 34px;
     }
 }
 
 .dcg-h3 {
-    font-family: 'Nunito';
+    font-family: 'Neue Montreal';
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 33px;
-    color: #000;
+    font-size: 26px;
+    line-height: 32px;
+    color: rgba(221, 234, 250, 0.92);
 
     @include media-breakpoint-down (xs) {
-        font-size: 18px;
+        font-size: 24px;
+        line-height: 30px;
     }
 }
 
@@ -118,32 +128,116 @@ a {
 /*.....................................*/
 /* button, [type="button"], [type="submit"], [type="reset"], .dcg-btn */
 @include dc-btns {
-    cursor: pointer;
-    color: #FFFFFF;
-    border-radius: 7px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 26px;
+    color: rgba(221, 234, 250, 0.92);
+    background: rgba(196, 222, 255, 0.16);
+    border-radius: 8px;
+    border-style: none;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 15px 20px 17px;
+
+    &.dcg-btn_icon-left {
+        &::before {
+            content: "";
+            background: url(../images/windows-brands.svg);
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            background-size: 100%;
+            vertical-align: middle;
+        }
+    }
+
+    &.dcg-btn_icon-right {
+        &::after {
+            content: "";
+            background: url(../images/window-open.svg);
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            background-size: 100%;
+            vertical-align: middle;
+        }
+    }
 
     &:active {
-        outline: unset !important;
+        background: rgba(196, 222, 255, 0.16);
     }
 
     &:hover {
+        background: rgba(196, 222, 255, 0.32);
+    }
+
+    &[disabled] {
+        background: rgba(196, 222, 255, 0.04);
+        color: rgba(196, 222, 255, 0.32);
+        cursor: auto;
     }
 
     &.dcg-btn_light {
+        background: rgba(196, 222, 255, 0.24);
+        box-shadow: 8px 13px 20px rgba(15, 6, 41, 0.22), inset 0px -1px 2px rgba(135, 103, 226, 0.07);
+        border-radius: 12px;
+        padding: 16px 32px;
+
+        &:active {
+            background: rgba(196, 222, 255, 0.16);
+        }
 
         &:hover {
+            background: rgba(196, 222, 255, 0.32);
+        }
+
+        &[disabled] {
+            background: rgba(196, 222, 255, 0.04);
+            color: rgba(196, 222, 255, 0.32);
+            cursor: auto;
         }
     }
 
     &.dcg-btn_dark {
+        background: rgba(196, 222, 255, 0.1);
+        line-height: 24px;
+        padding: 12px 46px 14px;
+
+        &:active {
+            background: rgba(196, 222, 255, 0.1);
+        }
 
         &:hover {
+            background: rgba(196, 222, 255, 0.32);
+        }
+
+        &[disabled] {
+            background: rgba(196, 222, 255, 0.04);
+            color: rgba(196, 222, 255, 0.32);
+            cursor: auto;
         }
     }
 
     &.dcg-btn_color {
+        background: #1E3E93;
+        line-height: 24px;
+        padding: 12px 46px 14px;
+
+        &:active {
+            background: #0F3088;
+        }
 
         &:hover {
+            background: #2762BD;
+            color: rgba(221, 234, 250, 0.92);
+        }
+
+        &[disabled] {
+            background: rgba(196, 222, 255, 0.04);
+            color: rgba(196, 222, 255, 0.32);
+            cursor: auto;
         }
     }
 
@@ -156,7 +250,6 @@ a {
         }
 
         &:hover {
-            
         }
     }
 
@@ -238,6 +331,8 @@ textarea {}
 /*.....................................*/
 /* section - блоки сайта */
 .dcg-section {
+    background: #051429;
+    
     & + & {
         margin-top: 40px;
     }
@@ -266,6 +361,19 @@ textarea {}
 /*.....................................*/
 .dcg-active {
     color: #0FD4E2;
+}
+/*.....................................*/
+.dcg-caption {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: rgba(221, 234, 250, 0.92);
+}
+/*.....................................*/
+.dcg-secondary-clr {
+    color: #00D7CB;
 }
 /*.....................................*/
 /* /common */

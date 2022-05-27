@@ -1,9 +1,14 @@
 /*------------------------------------------------------------*/
 /* TYPOGRAPHY */
 .dcg-tpg {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 26px;
     p {
-
     }
+
     p + p {
         margin-bottom: 40px;
     }
@@ -47,7 +52,6 @@
     }
 
     th {
-
     }
 
     td ~ td {
@@ -88,11 +92,9 @@
 
 
     @include media-breakpoint-down (sm) {
-        
     }
 
     @include media-breakpoint-down (xs) {
-        
     }
 }
 /* /TYPOGRAPHY */
