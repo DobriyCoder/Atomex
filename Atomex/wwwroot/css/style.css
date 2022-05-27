@@ -7,9 +7,6 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap);
 html {
   box-sizing: border-box;
   -ms-overflow-style: scrollbar;
@@ -4206,30 +4203,6 @@ html {
 /*============================================================*/
 /*------------------------------------------------------------*/
 /* FONTS */
-.dc-font-common {
-  font-family: open-sans;
-}
-
-.dc-font-main {
-  font-family: roboto;
-}
-
-.dc-font-use {
-  font-family: open-sans;
-}
-
-.dc-font-alert {
-  font-family: roboto;
-}
-
-.dc-font-error {
-  font-family: open-sans;
-}
-
-.dc-font-accent {
-  font-family: roboto;
-}
-
 /* FONTS */
 /*------------------------------------------------------------*/
 /*------------------------------------------------------------*/
