@@ -1,5 +1,10 @@
 ﻿@*@model I_highlights *@
 
 <div class="dc-highlights">
-    highlights
+    <div class="row">
+        <div class="col">@await Html.PartialAsync("_Highlight")</div>
+        <div class="col">@await Html.PartialAsync("_Highlight")</div>
+        <div class="col">@await Html.PartialAsync("_Highlight")</div>
+        <div class="col">@await Html.PartialAsync("_Highlight")</div>
+    </div>
 </div>
