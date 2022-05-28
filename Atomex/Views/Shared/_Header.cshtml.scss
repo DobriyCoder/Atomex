@@ -2,8 +2,21 @@
 // /* TEMPLATE: header */
 .dc-header {
 
-    @include media-breakpoint-down (sm) {
+    &__wrap {
+        padding: 15px 32px;
+        background-color: #051429;
+    }
+    /*&__logo {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }*/
 
+    .dc-logo {
+        margin: 10px 0 0 0;
+    }
+
+    @include media-breakpoint-down (sm) {
     }
 }
 // /* /TEMPLATE: header */

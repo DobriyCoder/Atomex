@@ -2,10 +2,16 @@
 
 <div class="dc-header">
     <div class="container">
-        <div class="row">
-            <div class="col-2">@await Html.PartialAsync("_Logo")</div>
-            <div class="col">@await Html.PartialAsync("_MainMenu")</div>
-            <div class="col-2">@await Html.PartialAsync("_MainBtnMenu")</div>
+        <div class="dc-header__wrap">
+            <div class="row">
+                <div class="col-2">
+                    <div class="dc-header__logo">@await Html.PartialAsync("_Logo")</div>
+                </div>
+                <div class="col">
+                    <div class="dc-header__menu">@await Html.PartialAsync("_MainMenu")</div>
+                </div>
+                <div class="col-4">@await Html.PartialAsync("_MainBtnMenu")</div>
+            </div>
         </div>
     </div>
 </div>

@@ -1,7 +1,11 @@
 // /*.....................................*/
 // /* TEMPLATE: logo */
 .dc-logo {
-
+    display: inline-block;
+    img{
+        height: 30px;
+        width: 148px;
+    }
     @include media-breakpoint-down (sm) {
 
     }

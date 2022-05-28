@@ -48,7 +48,7 @@ html {
 }
 @media (min-width: 1200px) {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1464px;
+    max-width: 1452px;
   }
 }
 .row {
@@ -4424,24 +4424,7 @@ button, [type=button], [type=submit], [type=reset], .dcg-btn {
   display: inline-block;
   vertical-align: middle;
   padding: 15px 20px 17px;
-}
-button.dcg-btn_icon-left::before, [type=button].dcg-btn_icon-left::before, [type=submit].dcg-btn_icon-left::before, [type=reset].dcg-btn_icon-left::before, .dcg-btn.dcg-btn_icon-left::before {
-  content: "";
-  background: url(../images/windows-brands.svg);
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  background-size: 100%;
-  vertical-align: middle;
-}
-button.dcg-btn_icon-right::after, [type=button].dcg-btn_icon-right::after, [type=submit].dcg-btn_icon-right::after, [type=reset].dcg-btn_icon-right::after, .dcg-btn.dcg-btn_icon-right::after {
-  content: "";
-  background: url(../images/window-open.svg);
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  background-size: 100%;
-  vertical-align: middle;
+  letter-spacing: 0.01em;
 }
 button:active, [type=button]:active, [type=submit]:active, [type=reset]:active, .dcg-btn:active {
   background: rgba(196, 222, 255, 0.16);
@@ -4474,7 +4457,7 @@ button.dcg-btn_light[disabled], [type=button].dcg-btn_light[disabled], [type=sub
 button.dcg-btn_dark, [type=button].dcg-btn_dark, [type=submit].dcg-btn_dark, [type=reset].dcg-btn_dark, .dcg-btn.dcg-btn_dark {
   background: rgba(196, 222, 255, 0.1);
   line-height: 24px;
-  padding: 12px 46px 14px;
+  padding: 12px 24px 14px;
 }
 button.dcg-btn_dark:active, [type=button].dcg-btn_dark:active, [type=submit].dcg-btn_dark:active, [type=reset].dcg-btn_dark:active, .dcg-btn.dcg-btn_dark:active {
   background: rgba(196, 222, 255, 0.1);
@@ -4490,7 +4473,7 @@ button.dcg-btn_dark[disabled], [type=button].dcg-btn_dark[disabled], [type=submi
 button.dcg-btn_color, [type=button].dcg-btn_color, [type=submit].dcg-btn_color, [type=reset].dcg-btn_color, .dcg-btn.dcg-btn_color {
   background: #1E3E93;
   line-height: 24px;
-  padding: 12px 46px 14px;
+  padding: 12px 24px 14px;
 }
 button.dcg-btn_color:active, [type=button].dcg-btn_color:active, [type=submit].dcg-btn_color:active, [type=reset].dcg-btn_color:active, .dcg-btn.dcg-btn_color:active {
   background: #0F3088;
@@ -4548,6 +4531,28 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 }
 
 /*.....................................*/
+.dcg-icon-left::before {
+  content: "";
+  background: url(../images/windows-brands.svg);
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-size: 100%;
+  vertical-align: middle;
+}
+
+.dcg-icon-right::after {
+  content: "";
+  background: url(../images/window-open.svg);
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  background-size: 100%;
+  vertical-align: middle;
+  margin-left: 11px;
+}
+
+/*.....................................*/
 /* /common */
 /* /CLASSES */
 /*------------------------------------------------------------*/
@@ -4598,6 +4603,44 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 /*------------------------------------------------------------*/
 /*------------------------------------------------------------*/
 /* TEMPLATES */
+.dc-header {
+  /*&__logo {
+      display: flex;
+      align-items: center;
+      height: 100%;
+  }*/
+}
+.dc-header__wrap {
+  padding: 15px 32px;
+  background-color: #051429;
+}
+.dc-header .dc-logo {
+  margin: 10px 0 0 0;
+}
+.dc-logo {
+  display: inline-block;
+}
+.dc-logo img {
+  height: 30px;
+  width: 148px;
+}
+.dc-main-btn-menu {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: end;
+}
+.dc-main-menu ul {
+  display: flex;
+  flex-direction: row;
+  letter-spacing: 0.01em;
+  gap: 32px;
+  justify-content: end;
+  padding: 14px 65px 0 0;
+}
+.dc-main-menu a.dcg-icon-right::after {
+  margin-left: 7px;
+}
 /*.....................................*/
 /* TEMPLATE: classes */
 .dc-classes {

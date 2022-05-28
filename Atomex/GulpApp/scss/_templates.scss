@@ -211,8 +211,21 @@
 // /* TEMPLATE: header */
 .dc-header {
 
-    @include media-breakpoint-down (sm) {
+    &__wrap {
+        padding: 15px 32px;
+        background-color: #051429;
+    }
+    /*&__logo {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }*/
 
+    .dc-logo {
+        margin: 10px 0 0 0;
+    }
+
+    @include media-breakpoint-down (sm) {
     }
 }
 // /* /TEMPLATE: header */
@@ -254,7 +267,11 @@
 // /*.....................................*/
 // /* TEMPLATE: logo */
 .dc-logo {
-
+    display: inline-block;
+    img{
+        height: 30px;
+        width: 148px;
+    }
     @include media-breakpoint-down (sm) {
 
     }
@@ -265,13 +282,15 @@
 // /*.....................................*/
 // /* TEMPLATE: main-btn-menu */
 .dc-main-btn-menu {
-    
-    .dcg-btn {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: end;
 
+    .dcg-btn {
     }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: main-btn-menu */
@@ -282,21 +301,28 @@
 .dc-main-menu {
 
     ul {
-
+        display: flex;
+        flex-direction: row;
+        letter-spacing: 0.01em;
+        gap: 32px;
+        justify-content: end;
+        padding: 14px 65px 0 0;
     }
 
     li {
-        
     }
 
     a {
         &:hover, &.dcg-active {
+        }
 
+        &.dcg-icon-right::after {
+            margin-left: 7px;
         }
     }
 
-    @include media-breakpoint-down (sm) {
 
+    @include media-breakpoint-down (sm) {
     }
 }
 // /* /TEMPLATE: main-menu */

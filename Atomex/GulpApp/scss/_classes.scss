@@ -140,30 +140,7 @@ a {
     display: inline-block;
     vertical-align: middle;
     padding: 15px 20px 17px;
-
-    &.dcg-btn_icon-left {
-        &::before {
-            content: "";
-            background: url(../images/windows-brands.svg);
-            width: 20px;
-            height: 20px;
-            display: inline-block;
-            background-size: 100%;
-            vertical-align: middle;
-        }
-    }
-
-    &.dcg-btn_icon-right {
-        &::after {
-            content: "";
-            background: url(../images/window-open.svg);
-            width: 20px;
-            height: 20px;
-            display: inline-block;
-            background-size: 100%;
-            vertical-align: middle;
-        }
-    }
+    letter-spacing: 0.01em;
 
     &:active {
         background: rgba(196, 222, 255, 0.16);
@@ -203,7 +180,7 @@ a {
     &.dcg-btn_dark {
         background: rgba(196, 222, 255, 0.1);
         line-height: 24px;
-        padding: 12px 46px 14px;
+        padding: 12px 24px 14px;
 
         &:active {
             background: rgba(196, 222, 255, 0.1);
@@ -223,7 +200,7 @@ a {
     &.dcg-btn_color {
         background: #1E3E93;
         line-height: 24px;
-        padding: 12px 46px 14px;
+        padding: 12px 24px 14px;
 
         &:active {
             background: #0F3088;
@@ -374,6 +351,31 @@ textarea {}
 /*.....................................*/
 .dcg-secondary-clr {
     color: #00D7CB;
+}
+/*.....................................*/
+.dcg-icon-left {
+    &::before {
+        content: "";
+        background: url(../images/windows-brands.svg);
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        background-size: 100%;
+        vertical-align: middle;
+    }
+}
+
+.dcg-icon-right {
+    &::after {
+        content: "";
+        background: url(../images/window-open.svg);
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        background-size: 100%;
+        vertical-align: middle;
+        margin-left: 11px;
+    }
 }
 /*.....................................*/
 /* /common */
