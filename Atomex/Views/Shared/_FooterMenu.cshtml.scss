@@ -1,9 +1,23 @@
 // /*.....................................*/
 // /* TEMPLATE: footer-menu */
 .dc-footer-menu {
+    width: 126px;
+
+    li {
+        line-height: 30px;
+    }
+
+    li:first-child {
+        margin-top: 10px;
+    }
+
+    a {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: footer-menu */

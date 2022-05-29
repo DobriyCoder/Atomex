@@ -1,10 +1,14 @@
 // /*.....................................*/
 // /* TEMPLATE: highlights */
 .dc-highlights {
+    margin: 60px 80px 80px 80px;
 
-    @include media-breakpoint-down (sm) {
-
+    .dcg-caption {
+        margin-top: 16px;
     }
-}
+    
+    @include media-breakpoint-down (sm) {
+    }
+} 
 // /* /TEMPLATE: highlights */
 // /*.....................................*/

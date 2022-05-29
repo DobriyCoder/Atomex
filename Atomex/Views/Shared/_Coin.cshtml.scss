@@ -1,9 +1,14 @@
 // /*.....................................*/
 // /* TEMPLATE: coin */
 .dc-coin {
+    display: flex;
+    padding: 10px 0px;
+
+    &__title {
+        margin: 3px 0px 0px 7px;
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: coin */

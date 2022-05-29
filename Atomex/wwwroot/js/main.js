@@ -127,13 +127,6 @@ jQuery('.dc-footer-menu').dcTpl(function ($, Export) {
 // /footer-menu
 //--------------------------------------------
 
-// footer-menu-link
-jQuery('.dc-footer-menu-link').dcTpl(function ($, Export) {
-   var $self = $(this);
-});
-// /footer-menu-link
-//--------------------------------------------
-
 // graph-widget
 jQuery('.dc-graph-widget').dcTpl(function ($, Export) {
    var $self = $(this);

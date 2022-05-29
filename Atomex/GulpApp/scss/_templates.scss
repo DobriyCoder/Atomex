@@ -34,9 +34,14 @@
 // /*.....................................*/
 // /* TEMPLATE: coin */
 .dc-coin {
+    display: flex;
+    padding: 10px 0px;
+
+    &__title {
+        margin: 3px 0px 0px 7px;
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: coin */
@@ -67,9 +72,28 @@
 // /*.....................................*/
 // /* TEMPLATE: coins-line */
 .dc-coins-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__list {
+        display: inline-block;
+    }
+
+    &__item {
+        display: inline-block;
+        margin: 22px 38px 22px 0px;
+    }
+
+    &__more {
+        color: #00D7CB;
+    }
+
+    &__arrow {
+        margin-left: 8px;
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: coins-line */
@@ -89,9 +113,20 @@
 // /*.....................................*/
 // /* TEMPLATE: copyright */
 .dc-copyright {
+    line-height: 20px;
+
+    &__text {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+    }
+
+    &__text:first-child {
+        margin-right: 12px;
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: copyright */
@@ -155,9 +190,31 @@
 // /*.....................................*/
 // /* TEMPLATE: footer */
 .dc-footer {
+    * {
+        color: rgba(196, 222, 255, 0.72);
+    }
+
+    &__wrap {
+        padding: 64px 128px 64px 80px;
+        background-color: #051429;
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: end;
+        gap: 99px;
+    }
+
+    .dc-logo {
+        line-height: 12px;
+        margin-bottom: 24px;
+    }
+
+    .dc-soc-btns {
+        margin: 16px 0px 16px 0px;
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: footer */
@@ -166,9 +223,13 @@
 // /*.....................................*/
 // /* TEMPLATE: footer-desc */
 .dc-footer-desc {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: footer-desc */
@@ -177,23 +238,26 @@
 // /*.....................................*/
 // /* TEMPLATE: footer-menu */
 .dc-footer-menu {
+    width: 126px;
+
+    li {
+        line-height: 30px;
+    }
+
+    li:first-child {
+        margin-top: 10px;
+    }
+
+    a {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: footer-menu */
-// /*.....................................*/
-
-// /*.....................................*/
-// /* TEMPLATE: footer-menu-link */
-.dc-footer-menu-link {
-
-    @include media-breakpoint-down (sm) {
-
-    }
-}
-// /* /TEMPLATE: footer-menu-link */
 // /*.....................................*/
 
 // /*.....................................*/
@@ -220,7 +284,6 @@
         align-items: center;
         height: 100%;
     }*/
-
     .dc-logo {
         margin: 10px 0 0 0;
     }
@@ -234,7 +297,7 @@
 // /*.....................................*/
 // /* TEMPLATE: highlight */
 .dc-highlight {
-
+    padding-right: 20px;
     @include media-breakpoint-down (sm) {
 
     }
@@ -245,11 +308,15 @@
 // /*.....................................*/
 // /* TEMPLATE: highlights */
 .dc-highlights {
+    margin: 60px 80px 80px 80px;
 
-    @include media-breakpoint-down (sm) {
-
+    .dcg-caption {
+        margin-top: 16px;
     }
-}
+    
+    @include media-breakpoint-down (sm) {
+    }
+} 
 // /* /TEMPLATE: highlights */
 // /*.....................................*/
 
@@ -268,6 +335,7 @@
 // /* TEMPLATE: logo */
 .dc-logo {
     display: inline-block;
+
     img{
         height: 30px;
         width: 148px;
@@ -408,9 +476,30 @@
 // /*.....................................*/
 // /* TEMPLATE: report */
 .dc-report {
+    padding: 0px 6px;
+
+    &__block {
+        background: rgba(196, 222, 255, 0.1);
+        border-radius: 12px;
+        padding: 28px 0px 32px 32px;
+    }
+
+    &__img-wrapper {
+        display: inline-block;
+        margin-right: 13px;
+    }
+
+    &__content {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    &__more {
+        color: #00D7CB;
+        margin-right: 8px;
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: report */
@@ -419,6 +508,17 @@
 // /*.....................................*/
 // /* TEMPLATE: reports */
 .dc-reports {
+    
+    padding-top: 120px;
+
+    &__blocks{
+        padding: 0px 171px;
+    }
+    
+    &__title{
+        text-align: center;
+        margin-bottom: 40px;
+    }
 
     @include media-breakpoint-down (sm) {
 
@@ -431,8 +531,30 @@
 // /* TEMPLATE: soc-btns */
 .dc-soc-btns {
 
-    @include media-breakpoint-down (sm) {
+    li {
+        display: inline-block;
+        line-height: 12px;
+        padding: 10px;
+    }
 
+    li + li {
+        margin-left: 12px;
+    }
+
+    a {
+        display: inline-block;
+        padding: 0px;
+        line-height: 12px;
+    }
+
+    img {
+        height: 24px;
+        width: 24px;
+    }
+
+
+
+    @include media-breakpoint-down (sm) {
     }
 }
 // /* /TEMPLATE: soc-btns */

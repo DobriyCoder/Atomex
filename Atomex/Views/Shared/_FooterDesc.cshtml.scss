@@ -1,9 +1,13 @@
 // /*.....................................*/
 // /* TEMPLATE: footer-desc */
 .dc-footer-desc {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: footer-desc */

@@ -2,8 +2,30 @@
 // /* TEMPLATE: soc-btns */
 .dc-soc-btns {
 
-    @include media-breakpoint-down (sm) {
+    li {
+        display: inline-block;
+        line-height: 12px;
+        padding: 10px;
+    }
 
+    li + li {
+        margin-left: 12px;
+    }
+
+    a {
+        display: inline-block;
+        padding: 0px;
+        line-height: 12px;
+    }
+
+    img {
+        height: 24px;
+        width: 24px;
+    }
+
+
+
+    @include media-breakpoint-down (sm) {
     }
 }
 // /* /TEMPLATE: soc-btns */

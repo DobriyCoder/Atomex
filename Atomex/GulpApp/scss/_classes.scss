@@ -37,7 +37,9 @@ body {
     }
 }
 
-ul, li {}
+ul, li {
+
+}
 
 a {
     cursor: pointer;
@@ -99,6 +101,7 @@ a {
     font-size: 26px;
     line-height: 32px;
     color: rgba(221, 234, 250, 0.92);
+    letter-spacing: 0.02em;
 
     @include media-breakpoint-down (xs) {
         font-size: 24px;

@@ -1,9 +1,28 @@
 // /*.....................................*/
 // /* TEMPLATE: coins-line */
 .dc-coins-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__list {
+        display: inline-block;
+    }
+
+    &__item {
+        display: inline-block;
+        margin: 22px 38px 22px 0px;
+    }
+
+    &__more {
+        color: #00D7CB;
+    }
+
+    &__arrow {
+        margin-left: 8px;
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: coins-line */

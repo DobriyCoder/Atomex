@@ -1,9 +1,30 @@
 // /*.....................................*/
 // /* TEMPLATE: report */
 .dc-report {
+    padding: 0px 6px;
+
+    &__block {
+        background: rgba(196, 222, 255, 0.1);
+        border-radius: 12px;
+        padding: 28px 0px 32px 32px;
+    }
+
+    &__img-wrapper {
+        display: inline-block;
+        margin-right: 13px;
+    }
+
+    &__content {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    &__more {
+        color: #00D7CB;
+        margin-right: 8px;
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: report */

@@ -1,6 +1,17 @@
 // /*.....................................*/
 // /* TEMPLATE: reports */
 .dc-reports {
+    
+    padding-top: 120px;
+
+    &__blocks{
+        padding: 0px 171px;
+    }
+    
+    &__title{
+        text-align: center;
+        margin-bottom: 40px;
+    }
 
     @include media-breakpoint-down (sm) {
 

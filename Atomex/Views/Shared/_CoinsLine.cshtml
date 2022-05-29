@@ -1,17 +1,20 @@
 ﻿@*@model I_coins-line *@
 
 <div class="dc-coins-line">
-    <ul>
-        <li>@await Html.PartialAsync("_Coin")</li>
-        <li>@await Html.PartialAsync("_Coin")</li>
-        <li>@await Html.PartialAsync("_Coin")</li>
-        <li>@await Html.PartialAsync("_Coin")</li>
-        <li>@await Html.PartialAsync("_Coin")</li>
-        <li>@await Html.PartialAsync("_Coin")</li>
-        <li>@await Html.PartialAsync("_Coin")</li>
-        <li>@await Html.PartialAsync("_Coin")</li>
-        <li>@await Html.PartialAsync("_Coin")</li>
+    <ul class="dc-coins-line__list">
+        <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin")</li>
+        <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin")</li>
+        <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin")</li>
+        <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin")</li>
+        <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin")</li>
+        <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin")</li>
+        <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin")</li>
+        <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin")</li>
+        <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin")</li> 
     </ul>
 
-    <a href="#" class="dc-coins-line__more">+9 more</a>
+    <a href="#" class="dc-coins-line__more dcg-caption">
+        +9 more
+        <img class="dc-coins-line__arrow" src="/images/arrow-right.svg"/>
+    </a>
 </div>
