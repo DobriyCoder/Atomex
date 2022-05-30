@@ -260,6 +260,13 @@ jQuery('.dc-sort').dcTpl(function ($, Export) {
 // /sort
 //--------------------------------------------
 
+// table-order-icons
+jQuery('.dc-table-order-icons').dcTpl(function ($, Export) {
+   var $self = $(this);
+});
+// /table-order-icons
+//--------------------------------------------
+
 // test
 jQuery('.dc-test').dcTpl(function ($, Export) {
    var $self = $(this);
