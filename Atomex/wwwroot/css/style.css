@@ -4322,6 +4322,30 @@ html {
   color: blue;
 }
 
+.dcg-bg-basic {
+  background: #051429;
+}
+
+.dcg-cl-basic {
+  color: #051429;
+}
+
+.dcg-bg-btn {
+  background: #1E3E93;
+}
+
+.dcg-cl-btn {
+  color: #1E3E93;
+}
+
+.dcg-bg-selection {
+  background: #3293F1;
+}
+
+.dcg-cl-selection {
+  color: #3293F1;
+}
+
 /*.....................................*/
 * {
   box-sizing: border-box;
@@ -4640,6 +4664,42 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 }
 .dc-copyright__text:first-child {
   margin-right: 12px;
+}
+.dc-exchange-widget__block {
+  background-color: #0D274D;
+  border-radius: 20px;
+  padding: 51px 58px 40px 54px;
+}
+.dc-exchange-widget__coin {
+  border: 1px solid rgba(196, 222, 255, 0.16);
+  border-radius: 16px;
+  padding: 28px 24px 18px 20px;
+  margin-bottom: 12px;
+}
+.dc-exchange-widget__logo {
+  display: inline-block;
+  background: rgba(196, 222, 255, 0.16);
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin: 4px 0px 14px 0px;
+}
+.dc-exchange-widget__numbers {
+  display: inline-block;
+  float: right;
+}
+.dc-exchange-widget__amount {
+  line-height: 32px;
+  text-align: end;
+}
+.dc-exchange-widget__button {
+  margin-top: 16px;
+  padding: 12px 183px 16px 183px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(196, 222, 255, 0.97);
 }
 .dc-footer * {
   color: rgba(196, 222, 255, 0.72);

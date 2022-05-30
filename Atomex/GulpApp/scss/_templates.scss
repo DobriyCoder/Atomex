@@ -157,9 +157,58 @@
 // /*.....................................*/
 // /* TEMPLATE: exchange-widget */
 .dc-exchange-widget {
+    &__block {
+        background-color: #0D274D;
+        border-radius: 20px;
+        padding: 51px 58px 40px 54px;
+    }
+
+    &__coin {
+        border: 1px solid rgba(196, 222, 255, 0.16);
+        border-radius: 16px;
+        padding: 28px 24px 18px 20px;
+        margin-bottom: 12px;
+        position: relative;
+    }
+
+    &__coin:after {
+        content: "Новьё!"; /* Добавляемый текст */
+        color: #333; /* Цвет текста */
+        background-color: #fc0; /* Цвет фона */
+        font-size: 90%; /* Размер шрифта */
+        padding: 2px; /* Поля вокруг текста */
+    }
+
+    &__logo {
+        display: inline-block;
+        background: rgba(196, 222, 255, 0.16);
+        border-radius: 10px;
+        padding: 10px 16px;
+        margin: 4px 0px 14px 0px;
+    }
+
+    &__numbers {
+        display: inline-block;
+        float: right;
+    }
+
+    &__amount {
+        line-height: 32px;
+        text-align: end;
+    }
+
+    &__button {
+        margin-top: 16px;
+        padding: 12px 183px 16px 183px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        color: rgba(196, 222, 255, 0.97);
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: exchange-widget */
