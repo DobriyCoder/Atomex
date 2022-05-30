@@ -1,5 +1,7 @@
 ﻿@*@model I_popular-pairs *@
 
 <div class="dc-popular-pairs">
-    popular-pairs
+    <h2 class="dcg-h2">Popular exchange pairs</h2>
+    @await Html.PartialAsync("_PairsTable")
+    <a href="#" class="dcg-btn">View all crypto pairs</a>
 </div>
