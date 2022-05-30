@@ -154,6 +154,7 @@ a {
     vertical-align: middle;
     padding: 15px 20px 17px;
     letter-spacing: 0.01em;
+    transition: all 200ms;
 
     &:active {
         background: rgba(196, 222, 255, 0.16);

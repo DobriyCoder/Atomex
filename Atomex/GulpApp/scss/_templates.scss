@@ -1,9 +1,16 @@
 // /*.....................................*/
 // /* TEMPLATE: benefit */
 .dc-benefit {
+    padding: 128px 168px 0px 124px;
+    display: flex;
+    flex-direction: row;
+
+    &__img {
+        background: rgba(30, 62, 147, 0.08);
+        border-radius: 12px;
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: benefit */
@@ -12,9 +19,9 @@
 // /*.....................................*/
 // /* TEMPLATE: benefits */
 .dc-benefits {
+    
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: benefits */

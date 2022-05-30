@@ -4450,6 +4450,7 @@ button, [type=button], [type=submit], [type=reset], .dcg-btn {
   vertical-align: middle;
   padding: 15px 20px 17px;
   letter-spacing: 0.01em;
+  transition: all 200ms;
 }
 button:active, [type=button]:active, [type=submit]:active, [type=reset]:active, .dcg-btn:active {
   background: rgba(196, 222, 255, 0.16);
@@ -4628,6 +4629,15 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 /*------------------------------------------------------------*/
 /*------------------------------------------------------------*/
 /* TEMPLATES */
+.dc-benefit {
+  padding: 128px 168px 0px 124px;
+  display: flex;
+  flex-direction: row;
+}
+.dc-benefit__img {
+  background: rgba(30, 62, 147, 0.08);
+  border-radius: 12px;
+}
 .dc-coin {
   display: flex;
   padding: 10px 0px;
