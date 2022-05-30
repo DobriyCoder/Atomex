@@ -1,5 +1,18 @@
 ﻿@*@model I_download-wallet *@
 
 <div class="dc-download-wallet">
-    download-wallet
+    <div class="row">
+        <div class="col">
+            <h2 class="dcg-h2">Download Atomex Wallet</h2>
+            <p>
+                Atomex is a non-custodial multicurrency HD wallet. Audited
+                and available on multiple platforms. 
+            </p>
+
+            @await Html.PartialAsync("_DownloadBtn")
+        </div>
+        <div class="col">
+            <img class="dc-download-wallet__img" src="#" alt="" />
+        </div>
+    </div>
 </div>

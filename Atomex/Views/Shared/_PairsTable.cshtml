@@ -1,5 +1,28 @@
 ﻿@*@model I_pairs-table *@
 
-<div class="dc-pairs-table">
-    pairs-table
-</div>
+<table class="dc-pairs-table">
+    <tr>
+        <th>From - To</th>
+        <th>Price</th>
+        <th>Network Fee</th>
+        <th>Instant volume</th>
+        <th>Traded  volume @await Html.PartialAsync("_TableOrderIcons")</th>
+        <th>Availability</th>
+    </tr>
+
+    @for (int i = 0; i < 6; i++)
+    {
+        <tr>
+            <td>
+                @await Html.PartialAsync("_Coin")
+                @await Html.PartialAsync("_Coin")
+            </td>
+
+            <td><span>≈ $13.10580488</span></td>
+            <td><span>$0.00968022</span></td>
+            <td><span>83,862.9812 ETH</span></td>
+            <td><span>$83,862.9812</span></td>
+            <td><span>apps</span></td>
+        </tr>
+    }
+</table>
