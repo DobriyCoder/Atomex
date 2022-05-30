@@ -4322,6 +4322,30 @@ html {
   color: blue;
 }
 
+.dcg-bg-basic {
+  background: #051429;
+}
+
+.dcg-cl-basic {
+  color: #051429;
+}
+
+.dcg-bg-btn {
+  background: #1E3E93;
+}
+
+.dcg-cl-btn {
+  color: #1E3E93;
+}
+
+.dcg-bg-selection {
+  background: #3293F1;
+}
+
+.dcg-cl-selection {
+  color: #3293F1;
+}
+
 /*.....................................*/
 * {
   box-sizing: border-box;
@@ -4640,6 +4664,100 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 }
 .dc-copyright__text:first-child {
   margin-right: 12px;
+}
+.dc-exchange-widget {
+  padding-right: 94px;
+  float: right;
+}
+.dc-exchange-widget__block {
+  background-color: #0D274D;
+  border-radius: 20px;
+  padding: 51px 58px 40px 54px;
+  display: inline-block;
+}
+.dc-exchange-widget__coin {
+  border: 1px solid rgba(196, 222, 255, 0.16);
+  border-radius: 16px;
+  padding: 28px 24px 18px 20px;
+  margin-bottom: 12px;
+}
+.dc-exchange-widget__logo {
+  display: inline-flex;
+  background: rgba(196, 222, 255, 0.16);
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin: 3px 0px 13px 0px;
+  line-height: 20px;
+}
+.dc-exchange-widget__img {
+  height: 20px;
+  width: 20px;
+  margin-right: 8px;
+}
+.dc-exchange-widget__numbers {
+  display: inline-block;
+  float: right;
+}
+.dc-exchange-widget__amount {
+  line-height: 32px;
+  text-align: end;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  color: rgba(196, 222, 255, 0.97);
+  margin-bottom: 4px;
+}
+.dc-exchange-widget__price {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(196, 222, 255, 0.5);
+  letter-spacing: 0.2px;
+}
+.dc-exchange-widget__button {
+  margin-top: 16px;
+  padding: 12px 183px 16px 183px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(196, 222, 255, 0.97);
+}
+.dc-exchange-widget__coins {
+  position: relative;
+}
+.dc-exchange-widget__arrows {
+  position: absolute;
+  right: -32px;
+  top: 0px;
+  bottom: 0px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.dc-exchange-widget__text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(196, 222, 255, 0.5);
+  letter-spacing: 0.2px;
+}
+.dc-exchange-widget__text span {
+  margin-right: 3px;
+}
+.dc-exchange-widget__info img {
+  margin-left: 3px;
+}
+.dc-exchange-widget__slash {
+  color: rgba(196, 222, 255, 0.06);
+}
+.dc-exchange-widget__button {
+  border-radius: 12px;
 }
 .dc-footer * {
   color: rgba(196, 222, 255, 0.72);
