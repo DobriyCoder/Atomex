@@ -1,10 +1,14 @@
 // /*.....................................*/
 // /* TEMPLATE: exchange-widget */
 .dc-exchange-widget {
+    padding-right: 94px;
+    float: right;
+
     &__block {
         background-color: #0D274D;
         border-radius: 20px;
         padding: 51px 58px 40px 54px;
+        display: inline-block;
     }
 
     &__coin {
@@ -12,23 +16,21 @@
         border-radius: 16px;
         padding: 28px 24px 18px 20px;
         margin-bottom: 12px;
-        position: relative;
-    }
-
-    &__coin:after {
-        content: "Новьё!"; /* Добавляемый текст */
-        color: #333; /* Цвет текста */
-        background-color: #fc0; /* Цвет фона */
-        font-size: 90%; /* Размер шрифта */
-        padding: 2px; /* Поля вокруг текста */
     }
 
     &__logo {
-        display: inline-block;
+        display: inline-flex;
         background: rgba(196, 222, 255, 0.16);
         border-radius: 10px;
         padding: 10px 16px;
-        margin: 4px 0px 14px 0px;
+        margin: 3px 0px 13px 0px;
+        line-height: 20px;
+    }
+
+    &__img {
+        height: 20px;
+        width: 20px;
+        margin-right: 8px;
     }
 
     &__numbers {
@@ -39,6 +41,22 @@
     &__amount {
         line-height: 32px;
         text-align: end;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        color: rgba(196, 222, 255, 0.97);
+        margin-bottom: 4px;
+    }
+
+    &__price {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: rgba(196, 222, 255, 0.5);
+        letter-spacing: 0.2px;
     }
 
     &__button {
@@ -50,6 +68,47 @@
         font-size: 18px;
         line-height: 24px;
         color: rgba(196, 222, 255, 0.97);
+    }
+
+    &__coins {
+        position: relative;
+    }
+
+    &__arrows {
+        position: absolute;
+        right: -32px;
+        top: 0px;
+        bottom: 0px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    &__text {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: rgba(196, 222, 255, 0.5);
+        letter-spacing: 0.2px;
+
+        span {
+            margin-right: 3px;
+        }
+    }
+
+    &__info {
+        img {
+            margin-left: 3px;
+        }
+    }
+
+    &__slash {
+        color: rgba(196, 222, 255, 0.06);
+    }
+
+    &__button {
+        border-radius: 12px;
     }
 
     @include media-breakpoint-down (sm) {
