@@ -1,4 +1,4 @@
-namespace Atomex.Models
+namespace CryptoApi.Models
 {
     public class ErrorViewModel
     {

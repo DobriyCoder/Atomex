@@ -1,5 +1,26 @@
 ﻿@*@model I_coin-info *@
 
 <div class="dc-coin-info">
-    coin-info
+    <h2 class="dcg-h2">Ethereum to USD price chart</h2>
+    <div class="row">
+        <div class="col">
+            <div class="dc-coin-info__item">
+                <div class="dc-coin-info__caption">Price</div>
+                <div class="dc-coin-info__value">$13.10580488</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="dc-coin-info__item">
+                <div class="dc-coin-info__caption">Market cap</div>
+                <div class="dc-coin-info__value">$360.9812B</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="dc-coin-info__item">
+                <div class="dc-coin-info__caption">24h change</div>
+                <div class="dc-coin-info__value">+4.13%</div>
+            </div>
+        </div>
+    </div>
+    @await Html.PartialAsync("_GraphWidget")
 </div>

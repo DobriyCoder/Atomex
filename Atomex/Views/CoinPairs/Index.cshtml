@@ -1,0 +1,28 @@
+﻿@inject CBlocksHelperVM BlocksHelper
+
+@model CCoinPairsVM
+@{
+    ViewData["Title"] = Model.SeoInfo.title == "" ? "CoinPairs Page" : Model.SeoInfo.title;
+    ViewData["Description"] = Model.SeoInfo.text == "" ? "" : Model.SeoInfo.text;
+    ViewData["PageClass"] = "dc-pairs-page";
+}
+
+<div class="dc-pairs-page-content">
+    <div class="container">
+        <div class="dcg-section">
+            @await Html.PartialAsync("_Breadcrumbs")
+            @await Html.PartialAsync("_MainTitle")
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_FilterForm")
+            @await Html.PartialAsync("_PairsTable")
+            <div class="row">
+                @*<div class="col">@await Html.PartialAsync("_ItemsCountMenu")</div>*@
+                <div class="col">@await Html.PartialAsync("_Pagination", BlocksHelper.GetPagination(Model.maxPage, Model.page))</div>
+            </div>
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_DownloadWallet")
+        </div>
+    </div>        
+</div

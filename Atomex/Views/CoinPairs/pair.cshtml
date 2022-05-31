@@ -1,0 +1,47 @@
+﻿@model CCoinPairVM
+@inject CBlocksHelperVM BlocksHelper
+
+@{
+    bool non_page = Model.pair.data.coin1_id >= Model.pair.data.coin2_id;
+    
+    ViewData["Title"] = Model.SeoInfo.title == "" ? "CoinPair Page" : Model.SeoInfo.title;
+    ViewData["Title"] = non_page ? "Page not found" : ViewData["Title"];
+    ViewData["Description"] = Model.SeoInfo.text == "" ? "" : Model.SeoInfo.text;
+    ViewData["PageClass"] = "dc-pair-page";
+}
+
+<div class="dc-pairs-page-content">
+    <div class="container">
+        <div class="dcg-section">
+            <div class="row">
+                <div class="col">
+                    @await Html.PartialAsync("_Breadcrumbs")
+                    @await Html.PartialAsync("_MainTitle")
+                    @await Html.PartialAsync("_DownloadBtn")
+                    <p>No registration or identity verification required.</p>
+                </div>
+                <div class="col">
+                    @await Html.PartialAsync("_ExchangeWidget")
+                </div>
+            </div>
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_PairInfo")
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_CoinDesc")
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_PopularPairs")
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_Faq")
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_DownloadWallet")
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_CoinsLine")
+        </div
+    </div>
+</div>

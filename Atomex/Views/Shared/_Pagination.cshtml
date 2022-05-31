@@ -1,5 +1,38 @@
-﻿@*@model I_pagination *@
+﻿@inject IConfiguration conf
+@model List<(string Url, string Title)>
+@{
+    string continuity = "";
 
-<div class="dc-pagination">
-    pagination
-</div>
+    foreach(var pair in Context.Request.Query)
+        if(pair.Key != "page")
+            continuity += (pair.Value == "" || pair.Value == "#") ? "" : $"&{pair.Key}={pair.Value}";
+
+    string current_page = Context.Request.Query.ContainsKey("page") ? Context.Request.Query["page"] : "1";
+}
+@if (Model.Count > 1)
+{
+    <div class="dc-pagination">
+        <ul class="dc-pagination__list">
+            @foreach ((string Url, string Title) item in Model)
+            {
+                if (item.Title == current_page)
+                {
+                    <li class="dc-pagination__list-item-wrapper">
+                        <span class="dc-pagination__item dc-pagination__item_active">
+                            @item.Title
+                        </span>
+                    </li>
+                }
+                else
+                {
+                    <li class="dc-pagination__list-item-wrapper">
+                        <a href="@(item.Url + continuity)" class="dc-pagination__item">
+                            @item.Title
+                        </a>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+}
+

@@ -1,0 +1,42 @@
+﻿@model CCoinVM
+@inject CBlocksHelperVM BlocksHelper
+@{
+    ViewData["Title"] = Model.SeoInfo.title == "" ? "Coin Page" : Model.SeoInfo.title;
+    ViewData["Description"] = Model.SeoInfo.text == "" ? "" : Model.SeoInfo.text;
+    ViewData["PageClass"] = "dc-coin-page";
+    Model.coin.data.name = Model.coin.data.name.ToUpper();
+}
+
+<div class="dc-pairs-page-content">
+    <div class="container">
+        <div class="dcg-section">
+            <div class="row">
+                <div class="col">
+                    @await Html.PartialAsync("_Breadcrumbs")
+                    @await Html.PartialAsync("_MainTitle")
+                </div>
+                <div class="col">
+                    @await Html.PartialAsync("_ExchangeWidget")
+                </div>
+            </div>
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_CoinInfo")
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_CoinDesc")
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_PopularPairs")
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_Faq")
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_DownloadWallet")
+        </div>
+        <div class="dcg-section">
+            @await Html.PartialAsync("_CoinsLine")
+        </div>
+    </div>
+</div>
