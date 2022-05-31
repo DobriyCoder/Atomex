@@ -97,6 +97,7 @@ a {
     font-size: 38px;
     line-height: 48px;
     color: rgba(221, 234, 250, 0.92);
+    letter-spacing: 0.02em;
 
     @include media-breakpoint-down (xs) {
         font-size: 28px;
@@ -325,7 +326,7 @@ textarea {}
     background: #051429;
     
     & + & {
-        margin-top: 40px;
+        
     }
 
     &_dark {

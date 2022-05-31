@@ -1,13 +1,51 @@
 // /*.....................................*/
 // /* TEMPLATE: benefit */
 .dc-benefit {
-    padding: 128px 168px 0px 124px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 96px;
+
+    &__text {
+        display: inline-block;
+        max-width: 600px;
+    }
+
+    &__title {
+        margin-bottom: 16px;
+        padding-right: 100px;
+    }
+
+    &__ad {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 26px;
+        letter-spacing: 0.01em;
+        color: rgba(196, 222, 255, 0.72);
+        margin-bottom: 16px;
+    }
+
+    &__link-arrow {
+        margin-left: 6px;
+    } 
+    
+    &__link-text {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 26px;
+        letter-spacing: 0.01em;
+        color: #00D7CB;
+    }
 
     &__img {
         background: rgba(30, 62, 147, 0.08);
         border-radius: 12px;
+        width: 423px;
+        height: 308px;
     }
 
     @include media-breakpoint-down (sm) {
