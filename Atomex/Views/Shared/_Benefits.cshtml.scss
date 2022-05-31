@@ -1,9 +1,32 @@
 // /*.....................................*/
 // /* TEMPLATE: benefits */
 .dc-benefits {
+    padding: 128px 168px 29px 124px;
+
+    .dc-benefit:nth-child(even) {
+
+        .dc-benefit__text {
+            order: 2;
+            padding: 29px 22px 0px 60px;
+        }
+
+        .dc-benefit__img {
+            order: 1;
+        }
+    }
+
+    .dc-benefit:nth-child(odd) {
+
+        .dc-benefit__text {
+            padding: 38px 40px 0px 44px;
+        }
+
+        .dc-benefit__img {
+
+        }
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: benefits */

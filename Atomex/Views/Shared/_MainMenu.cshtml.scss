@@ -11,11 +11,25 @@
         padding: 14px 65px 0 0;
     }
 
-    li {
+    li::after {
+        content: '';
+        width: 0%;
+        height: 3px;
+        background: #00D7CB;
+        border-radius: 2px;
+        display: block;
+        margin-top: 4px;
+    }
+
+    li:hover::after {
+        transition: all 250ms;
+        width: 100%;
     }
 
     a {
+
         &:hover, &.dcg-active {
+            
         }
 
         &.dcg-icon-right::after {

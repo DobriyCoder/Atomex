@@ -97,6 +97,7 @@ a {
     font-size: 38px;
     line-height: 48px;
     color: rgba(221, 234, 250, 0.92);
+    letter-spacing: 0.02em;
 
     @include media-breakpoint-down (xs) {
         font-size: 28px;
@@ -154,6 +155,7 @@ a {
     vertical-align: middle;
     padding: 15px 20px 17px;
     letter-spacing: 0.01em;
+    transition: all 200ms;
 
     &:active {
         background: rgba(196, 222, 255, 0.16);
@@ -324,7 +326,7 @@ textarea {}
     background: #051429;
     
     & + & {
-        margin-top: 40px;
+        
     }
 
     &_dark {

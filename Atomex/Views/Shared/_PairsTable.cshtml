@@ -1,7 +1,7 @@
 ﻿@*@model I_pairs-table *@
 
 <table class="dc-pairs-table">
-    <tr>
+    <tr class="dc-pairs-table__head">
         <th>From - To</th>
         <th>Price</th>
         <th>Network Fee</th>
@@ -12,8 +12,8 @@
 
     @for (int i = 0; i < 6; i++)
     {
-        <tr>
-            <td>
+        <tr class="dc-pairs-table__item">
+            <td> 
                 @await Html.PartialAsync("_Coin")
                 @await Html.PartialAsync("_Coin")
             </td>
@@ -22,7 +22,7 @@
             <td><span>$0.00968022</span></td>
             <td><span>83,862.9812 ETH</span></td>
             <td><span>$83,862.9812</span></td>
-            <td><span>apps</span></td>
+            <td><img src="/images/mobile.svg" alt="icon-mobile"/><span>apps</span></td> 
         </tr>
     }
 </table>

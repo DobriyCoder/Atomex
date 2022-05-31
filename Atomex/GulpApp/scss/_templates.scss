@@ -1,9 +1,54 @@
 // /*.....................................*/
 // /* TEMPLATE: benefit */
 .dc-benefit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 96px;
+
+    &__text {
+        display: inline-block;
+        max-width: 600px;
+    }
+
+    &__title {
+        margin-bottom: 16px;
+        padding-right: 100px;
+    }
+
+    &__ad {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 26px;
+        letter-spacing: 0.01em;
+        color: rgba(196, 222, 255, 0.72);
+        margin-bottom: 16px;
+    }
+
+    &__link-arrow {
+        margin-left: 6px;
+    } 
+    
+    &__link-text {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 26px;
+        letter-spacing: 0.01em;
+        color: #00D7CB;
+    }
+
+    &__img {
+        background: rgba(30, 62, 147, 0.08);
+        border-radius: 12px;
+        width: 423px;
+        height: 308px;
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: benefit */
@@ -12,9 +57,32 @@
 // /*.....................................*/
 // /* TEMPLATE: benefits */
 .dc-benefits {
+    padding: 128px 168px 29px 124px;
+
+    .dc-benefit:nth-child(even) {
+
+        .dc-benefit__text {
+            order: 2;
+            padding: 29px 22px 0px 60px;
+        }
+
+        .dc-benefit__img {
+            order: 1;
+        }
+    }
+
+    .dc-benefit:nth-child(odd) {
+
+        .dc-benefit__text {
+            padding: 38px 40px 0px 44px;
+        }
+
+        .dc-benefit__img {
+
+        }
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: benefits */
@@ -34,7 +102,7 @@
 // /*.....................................*/
 // /* TEMPLATE: coin */
 .dc-coin {
-    display: flex;
+    display: inline-flex;
     padding: 10px 0px;
 
     &__title {
@@ -148,7 +216,6 @@
 .dc-download-wallet {
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: download-wallet */
@@ -157,7 +224,7 @@
 // /*.....................................*/
 // /* TEMPLATE: exchange-widget */
 .dc-exchange-widget {
-    padding-right: 94px;
+    padding: 46px 94px 79px 0px;
     float: right;
 
     &__block {
@@ -420,7 +487,7 @@
 
     .dcg-caption {
         margin-top: 16px;
-    }
+    } 
     
     @include media-breakpoint-down (sm) {
     }
@@ -485,11 +552,25 @@
         padding: 14px 65px 0 0;
     }
 
-    li {
+    li::after {
+        content: '';
+        width: 0%;
+        height: 3px;
+        background: #00D7CB;
+        border-radius: 2px;
+        display: block;
+        margin-top: 4px;
+    }
+
+    li:hover::after {
+        transition: all 250ms;
+        width: 100%;
     }
 
     a {
+
         &:hover, &.dcg-active {
+            
         }
 
         &.dcg-icon-right::after {
@@ -518,9 +599,33 @@
 // /*.....................................*/
 // /* TEMPLATE: main-title-info */
 .dc-main-title-info {
+    padding: 100px 0px 0px 80px;
+
+    &__caption {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        color: #00D7CB;
+        margin-bottom: 16px;
+    }
+
+    &__download {
+        margin-top: 40px;
+    } 
+    
+    &__warning {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        color: rgba(196, 222, 255, 0.72);
+        margin-top: 16px;
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: main-title-info */
@@ -562,9 +667,29 @@
 // /*.....................................*/
 // /* TEMPLATE: pairs-table */
 .dc-pairs-table {
+    width: 100%;
+
+    &__head {
+        /*background: rgba(196, 222, 255, 0.1);
+        border-style: solid;
+        border-color: rgba(196, 222, 255, 0.1);
+        border-radius: 8px;
+        border-width: 13px 42px 13px 0px;*/
+        background: rgba(196, 222, 255, 0.1);
+
+        th {
+            padding: 10px;
+            border-radius: 12px;
+        }
+    }
+
+    &__item {
+    }
+
+    &__item:nth-child(2) {
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: pairs-table */
@@ -573,9 +698,14 @@
 // /*.....................................*/
 // /* TEMPLATE: popular-pairs */
 .dc-popular-pairs {
+    padding: 0px 64px 0px 64px;
 
+    &__title {
+        text-align: center;
+        margin-bottom: 40px;
+    } 
+    
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: popular-pairs */
@@ -677,6 +807,17 @@
     }
 }
 // /* /TEMPLATE: sort */
+// /*.....................................*/
+
+// /*.....................................*/
+// /* TEMPLATE: table-order-icons */
+.dc-table-order-icons {
+
+    @include media-breakpoint-down (sm) {
+
+    }
+}
+// /* /TEMPLATE: table-order-icons */
 // /*.....................................*/
 
 // /*.....................................*/

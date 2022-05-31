@@ -1,9 +1,33 @@
 // /*.....................................*/
 // /* TEMPLATE: main-title-info */
 .dc-main-title-info {
+    padding: 100px 0px 0px 80px;
+
+    &__caption {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        color: #00D7CB;
+        margin-bottom: 16px;
+    }
+
+    &__download {
+        margin-top: 40px;
+    } 
+    
+    &__warning {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        color: rgba(196, 222, 255, 0.72);
+        margin-top: 16px;
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: main-title-info */
