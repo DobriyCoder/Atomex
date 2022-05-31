@@ -1,9 +1,15 @@
 // /*.....................................*/
 // /* TEMPLATE: download-btn */
 .dc-download-btn {
+    &__select {
+        display: inline-block;
+    }
 
+    &__caption {
+        display: inline-block;
+    } 
+    
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: download-btn */

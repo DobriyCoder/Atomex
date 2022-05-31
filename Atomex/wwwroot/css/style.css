@@ -4370,7 +4370,7 @@ a:hover {
 /*.....................................*/
 /* Стили для всех заголовков */
 .dcg-h1 {
-  font-family: "Neue Montreal";
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 48px;
@@ -4391,7 +4391,7 @@ a:hover {
 }
 
 .dcg-h2 {
-  font-family: "Neue Montreal";
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -4407,7 +4407,7 @@ a:hover {
 }
 
 .dcg-h3 {
-  font-family: "Neue Montreal";
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
@@ -4530,6 +4530,9 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 /* section - блоки сайта */
 .dcg-section {
   background: #051429;
+}
+.dcg-section_padding {
+  padding: 46px 94px 79px 80px;
 }
 /* /section */
 /*.....................................*/
@@ -4719,8 +4722,13 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 .dc-copyright__text:first-child {
   margin-right: 12px;
 }
+.dc-download-btn__select {
+  display: inline-block;
+}
+.dc-download-btn__caption {
+  display: inline-block;
+}
 .dc-exchange-widget {
-  padding: 46px 94px 79px 0px;
   float: right;
 }
 .dc-exchange-widget__block {
@@ -4868,13 +4876,14 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
   margin: 10px 0 0 0;
 }
 .dc-highlight {
-  padding-right: 20px;
+  padding: 0px 16px 0px 16px;
 }
 .dc-highlights {
-  margin: 60px 80px 80px 80px;
+  padding: 60px 64px 80px 64px;
 }
 .dc-highlights .dcg-caption {
   margin-top: 16px;
+  color: rgba(196, 222, 255, 0.72);
 }
 .dc-logo {
   display: inline-block;
@@ -4913,9 +4922,6 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 .dc-main-menu a.dcg-icon-right::after {
   margin-left: 7px;
 }
-.dc-main-title-info {
-  padding: 100px 0px 0px 80px;
-}
 .dc-main-title-info__caption {
   font-family: "Inter";
   font-style: normal;
@@ -4941,16 +4947,25 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
   width: 100%;
 }
 .dc-pairs-table__head {
-  /*background: rgba(196, 222, 255, 0.1);
-  border-style: solid;
-  border-color: rgba(196, 222, 255, 0.1);
-  border-radius: 8px;
-  border-width: 13px 42px 13px 0px;*/
   background: rgba(196, 222, 255, 0.1);
 }
 .dc-pairs-table__head th {
-  padding: 10px;
-  border-radius: 12px;
+  padding: 13px 10px 13px 0px;
+  text-align: start;
+}
+.dc-pairs-table__head th:first-child {
+  border-radius: 12px 0px 0px 12px;
+  padding: 13px 10px 13px 10px;
+}
+.dc-pairs-table__head th:last-child {
+  border-radius: 0px 12px 12px 0px;
+}
+.dc-pairs-table__item td:first-child {
+  padding-left: 17px;
+  padding-top: 5px;
+}
+.dc-pairs-table__text-box {
+  line-height: 56px;
 }
 .dc-popular-pairs {
   padding: 0px 64px 0px 64px;
@@ -5005,6 +5020,13 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 .dc-soc-btns img {
   height: 24px;
   width: 24px;
+}
+.dc-table-order-icons {
+  margin-left: 8px;
+}
+.dc-table-order-icons__asc {
+  width: 9px;
+  height: 12px;
 }
 /*.....................................*/
 /* TEMPLATE: classes */
