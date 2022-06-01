@@ -53,7 +53,7 @@
 /*.....................................*/
 // меню выбора (select)
 .ui-selectmenu-button {
-
+    
     .ui-selectmenu-icon {
 
         &:before {}
@@ -70,14 +70,15 @@
 }
 
 .ui-selectmenu-menu {
-
+    background-color: red;
     ul {
 
         li {
 
             .ui-menu-item-wrapper {
 
-                &.ui-state-active, &:hover {}
+                &.ui-state-active, &:hover {
+                }
             }
         }
     }

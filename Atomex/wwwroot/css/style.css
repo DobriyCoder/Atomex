@@ -4346,6 +4346,10 @@ html {
   color: #3293F1;
 }
 
+.dcg-cl-secondary {
+  color: #00D7CB;
+}
+
 /*.....................................*/
 * {
   box-sizing: border-box;
@@ -4531,17 +4535,33 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 .dcg-section {
   background: #051429;
 }
-.dcg-section_padding {
+.dcg-section_main-part {
   padding: 46px 94px 79px 80px;
+}
+.dcg-section_highlights {
+  padding: 60px 64px 80px 64px;
+}
+.dcg-section_benefits {
+  padding: 128px 168px 29px 124px;
+}
+.dcg-section_popular-pairs {
+  padding: 100px 64px 50px 64px;
+}
+.dcg-section_download-wallet {
+  padding: 133px 63px 219px 80px;
+}
+.dcg-section_reports {
+  padding-top: 120px;
+}
+.dcg-section_faq {
+  padding: 120px 175px;
+}
+.dcg-section_border {
+  border-bottom: 1px solid #19263A;
 }
 /* /section */
 /*.....................................*/
 /* common */
-/*.....................................*/
-.dcg-active {
-  color: #0FD4E2;
-}
-
 /*.....................................*/
 .dcg-caption {
   font-family: "Inter";
@@ -4549,12 +4569,6 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
   font-weight: 400;
   font-size: 15px;
   line-height: 22px;
-  color: rgba(221, 234, 250, 0.92);
-}
-
-/*.....................................*/
-.dcg-secondary-clr {
-  color: #00D7CB;
 }
 
 /*.....................................*/
@@ -4568,6 +4582,7 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
   vertical-align: middle;
 }
 
+/*.....................................*/
 .dcg-icon-right::after {
   content: "";
   background: url(../images/window-open.svg);
@@ -4577,6 +4592,16 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
   background-size: 100%;
   vertical-align: middle;
   margin-left: 11px;
+}
+
+/*.....................................*/
+.dcg-link-text {
+  color: #00D7CB;
+  cursor: pointer;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
 /*.....................................*/
@@ -4600,6 +4625,9 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 /*.....................................*/
 /*.....................................*/
 /*.....................................*/
+.ui-selectmenu-menu {
+  background-color: red;
+}
 /*.....................................*/
 /*.....................................*/
 /*.....................................*/
@@ -4656,24 +4684,17 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 }
 .dc-benefit__link-arrow {
   margin-left: 6px;
+  cursor: pointer;
 }
 .dc-benefit__link-text {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
   font-size: 17px;
   line-height: 26px;
-  letter-spacing: 0.01em;
-  color: #00D7CB;
 }
 .dc-benefit__img {
   background: rgba(30, 62, 147, 0.08);
   border-radius: 12px;
   width: 423px;
   height: 308px;
-}
-.dc-benefits {
-  padding: 128px 168px 29px 124px;
 }
 .dc-benefits .dc-benefit:nth-child(even) .dc-benefit__text {
   order: 2;
@@ -4688,6 +4709,10 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 .dc-coin {
   display: inline-flex;
   padding: 10px 0px;
+}
+.dc-coin__img {
+  width: 25px;
+  height: 25px;
 }
 .dc-coin__title {
   margin: 3px 0px 0px 7px;
@@ -4795,9 +4820,6 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 .dc-download-btn .dc-download-btn__select:active .dc-download-btn__button {
   background-color: red;
 }
-.dc-download-wallet {
-  padding: 133px 63px 219px 80px;
-}
 .dc-download-wallet__text-small {
   font-family: "Inter";
   font-style: normal;
@@ -4900,9 +4922,6 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 }
 .dc-exchange-widget__button {
   border-radius: 12px;
-}
-.dc-faq {
-  padding: 120px 175px;
 }
 .dc-faq__title {
   text-align: center;
@@ -5012,9 +5031,6 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 .dc-highlight {
   padding: 0px 16px 0px 16px;
 }
-.dc-highlights {
-  padding: 60px 64px 80px 64px;
-}
 .dc-highlights .dcg-caption {
   margin-top: 16px;
   color: rgba(196, 222, 255, 0.72);
@@ -5060,12 +5076,8 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
   padding: 54px 0px 0px 0px;
 }
 .dc-main-title-info__caption {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
   font-size: 15px;
   line-height: 22px;
-  color: #00D7CB;
   margin-bottom: 16px;
 }
 .dc-main-title-info__download {
@@ -5141,7 +5153,6 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
   border-radius: 0px 8px 8px 0px;
 }
 .dc-popular-pairs {
-  padding: 100px 64px 50px 64px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -5171,11 +5182,7 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
   cursor: pointer;
 }
 .dc-report__more {
-  color: #00D7CB;
   margin-right: 8px;
-}
-.dc-reports {
-  padding-top: 120px;
 }
 .dc-reports__blocks {
   padding: 0px 171px;

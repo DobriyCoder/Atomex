@@ -29,16 +29,12 @@
 
     &__link-arrow {
         margin-left: 6px;
+        cursor: pointer;
     } 
     
     &__link-text {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
         font-size: 17px;
         line-height: 26px;
-        letter-spacing: 0.01em;
-        color: #00D7CB;
     }
 
     &__img {
@@ -57,7 +53,6 @@
 // /*.....................................*/
 // /* TEMPLATE: benefits */
 .dc-benefits {
-    padding: 128px 168px 29px 124px;
 
     .dc-benefit:nth-child(even) {
 
@@ -105,6 +100,11 @@
     display: inline-flex;
     padding: 10px 0px;
 
+    &__img {
+        width: 25px;
+        height: 25px;
+    } 
+    
     &__title {
         margin: 3px 0px 0px 7px;
     }
@@ -296,7 +296,6 @@
 // /*.....................................*/
 // /* TEMPLATE: download-wallet */
 .dc-download-wallet {
-    padding: 133px 63px 219px 80px;
 
     &__text-small {
         font-family: 'Inter';
@@ -436,7 +435,6 @@
 // /*.....................................*/
 // /* TEMPLATE: faq */
 .dc-faq {
-    padding: 120px 175px;
 
     &__title {
         text-align: center;
@@ -653,7 +651,6 @@
 // /*.....................................*/
 // /* TEMPLATE: highlights */
 .dc-highlights {
-    padding: 60px 64px 80px 64px;
 
     .dcg-caption {
         margin-top: 16px;
@@ -773,12 +770,8 @@
     padding: 54px 0px 0px 0px;
 
     &__caption {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
         font-size: 15px;
         line-height: 22px;
-        color: #00D7CB;
         margin-bottom: 16px;
     }
 
@@ -933,7 +926,6 @@
 // /*.....................................*/
 // /* TEMPLATE: popular-pairs */
 .dc-popular-pairs {
-    padding: 100px 64px 50px 64px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -976,7 +968,6 @@
     }
 
     &__more {
-        color: #00D7CB;
         margin-right: 8px;
     }
 
@@ -989,8 +980,6 @@
 // /*.....................................*/
 // /* TEMPLATE: reports */
 .dc-reports {
-    
-    padding-top: 120px;
 
     &__blocks{
         padding: 0px 171px;

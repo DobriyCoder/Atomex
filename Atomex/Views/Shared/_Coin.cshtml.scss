@@ -4,6 +4,11 @@
     display: inline-flex;
     padding: 10px 0px;
 
+    &__img {
+        width: 25px;
+        height: 25px;
+    } 
+    
     &__title {
         margin: 3px 0px 0px 7px;
     }
