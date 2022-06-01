@@ -1,9 +1,14 @@
 // /*.....................................*/
 // /* TEMPLATE: table-order-icons */
 .dc-table-order-icons {
+    margin-left: 8px;
+
+    &__asc {
+        width: 9px;
+        height: 12px;
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: table-order-icons */

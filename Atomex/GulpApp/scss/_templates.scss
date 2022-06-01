@@ -203,9 +203,91 @@
 // /*.....................................*/
 // /* TEMPLATE: download-btn */
 .dc-download-btn {
+    display: inline-flex;
+    flex-direction: column;
+
+    &__select {
+        width: 94px;
+        background-color: rgba(196, 222, 255, 0.16);
+        border-radius: 0px 0px 8px 8px;
+        text-align: center;
+        height: 0px;
+        transition: all 300ms;
+    }
+
+    &__logo:first-child {
+        margin: 15px 0px;
+        height: 0px;
+        transition: all 300ms;
+    }
+
+    &__logo:last-child {
+        margin-bottom: 15px;
+        height: 0px;
+        transition: all 300ms;
+    }
+
+    &__img {
+        height: 0px;
+        transition: all 300ms;
+    }
+
+    &__button {
+        display: inline-flex; // ===========
+        justify-content: center;
+        padding: 17px 33px 17px 25px;
+        position: relative;
+    }
+
+    &__value {
+        display: inline-block;
+        height: 24px; // ===========
+        margin-right: 45px;
+    }
+
+    &__value::after {
+        content: '';
+        height: 100%;
+        width: 1px;
+        background-color: rgba(196, 222, 255, 0.2);
+        display: inline-block;
+        position: absolute;
+        top: 0px;
+        left: 93px;
+    }
+
+    &__caption {
+        display: inline-block;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 26px;
+        letter-spacing: 0.01em;
+        color: rgba(221, 234, 250, 0.92);
+        height: 24px; // ===========
+    }
+
+    .dc-download-btn__select:active {
+        height: 100px;
+        transition: all 300ms;
+
+        .dc-download-btn__logo {
+            height: 24px;
+            transition: all 300ms;
+        }
+
+        .dc-download-btn__img {
+            height: 24px;
+            transition: all 300ms;
+        }
+
+        .dc-download-btn__button {
+            background-color: red;
+        }
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: download-btn */
@@ -214,6 +296,18 @@
 // /*.....................................*/
 // /* TEMPLATE: download-wallet */
 .dc-download-wallet {
+    padding: 133px 63px 219px 80px;
+
+    &__text-small {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 26px;
+        letter-spacing: 0.01em;
+        color: rgba(221, 234, 250, 0.92);
+        margin-bottom: 56px;
+    }
 
     @include media-breakpoint-down (sm) {
     }
@@ -224,7 +318,6 @@
 // /*.....................................*/
 // /* TEMPLATE: exchange-widget */
 .dc-exchange-widget {
-    padding: 46px 94px 79px 0px;
     float: right;
 
     &__block {
@@ -250,7 +343,7 @@
         line-height: 20px;
     }
 
-    &__img {
+    &__img { 
         height: 20px;
         width: 20px;
         margin-right: 8px;
@@ -343,9 +436,74 @@
 // /*.....................................*/
 // /* TEMPLATE: faq */
 .dc-faq {
+    padding: 120px 175px;
+
+    &__title {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    &__item {
+        border-width: 1px 0px 0px 0px;
+        border-style: solid;
+        border-color: rgba(196, 222, 255, 0.12)
+    }
+
+    &__caption {
+        padding: 16px 24px 18px 24px;
+    }
+
+    &__heading {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 26px;
+        color: rgba(221, 234, 250, 0.92);
+        letter-spacing: 0.01em;
+    }
+
+    &__arrow {
+        float: right;
+        transition: all 300ms;
+        transform: rotate(0deg);
+    }
+
+    &__list {
+        border-width: 0px 0px 1px 0px;
+        border-style: solid;
+        border-color: rgba(196, 222, 255, 0.12)
+    }
+
+    &__content {
+        height: 0px;
+
+        p {
+            display: none;
+            opacity: 0;
+        }
+    }
+
+    &__item:hover {
+
+        .dc-faq__content {
+            transition: all 10000ms;
+            height: auto;
+
+            p {
+                transition: all 10000ms;
+                display: inline-block;
+                opacity: 1;
+            }
+        }
+
+        .dc-faq__arrow {
+            transition: all 300ms;
+            transform: rotate(180deg);
+        }
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: faq */
@@ -472,23 +630,25 @@
 // /*.....................................*/
 // /* TEMPLATE: highlight */
 .dc-highlight {
-    padding-right: 20px;
+    padding: 0px 16px 0px 16px;
+
     @include media-breakpoint-down (sm) {
 
     }
 }
 // /* /TEMPLATE: highlight */
 // /*.....................................*/
-
+ 
 // /*.....................................*/
 // /* TEMPLATE: highlights */
 .dc-highlights {
-    margin: 60px 80px 80px 80px;
+    padding: 60px 64px 80px 64px;
 
     .dcg-caption {
         margin-top: 16px;
-    } 
-    
+        color: rgba(196, 222, 255, 0.72);
+    }
+
     @include media-breakpoint-down (sm) {
     }
 } 
@@ -599,7 +759,7 @@
 // /*.....................................*/
 // /* TEMPLATE: main-title-info */
 .dc-main-title-info {
-    padding: 100px 0px 0px 80px;
+    padding: 54px 0px 0px 0px;
 
     &__caption {
         font-family: 'Inter';
@@ -670,23 +830,76 @@
     width: 100%;
 
     &__head {
-        /*background: rgba(196, 222, 255, 0.1);
-        border-style: solid;
-        border-color: rgba(196, 222, 255, 0.1);
-        border-radius: 8px;
-        border-width: 13px 42px 13px 0px;*/
         background: rgba(196, 222, 255, 0.1);
 
         th {
-            padding: 10px;
-            border-radius: 12px;
+            padding: 13px 0px 13px 0px;
+            text-align: start;
+            color: rgba(221, 234, 250, 0.92);
+        }
+
+        th:first-child {
+            border-radius: 8px 0px 0px 8px;
+            padding: 13px 0px 13px 16px;
+        }
+
+        th:last-child {
+            border-radius: 0px 8px 8px 0px;
+            padding: 13px 114px 13px 0px;
         }
     }
 
     &__item {
+        border-style: solid;
+        border-color: rgba(196, 222, 255, 0.1);
+        border-width: 0px 0px 1px 0px;
+
+        td:first-child {
+            padding-left: 17px;
+            padding-top: 5px;
+        }
+
+        td:last-child {
+            padding: 13px 0px;
+        }
     }
 
-    &__item:nth-child(2) {
+    &__device {
+        display: flex;
+
+        img {
+            margin-right: 6px;
+        }
+
+        span {
+            color: rgba(196, 222, 255, 0.72);
+        }
+    }
+
+    &__coin {
+        display: inline-block;
+
+        &:first-child {
+            margin-right: 45px;
+        }
+    }
+
+    &__text-box {
+        line-height: 56px;
+        color: rgba(196, 222, 255, 0.72);
+    }
+
+    &__item:hover {
+        background: rgba(196, 222, 255, 0.1);
+        border: none;
+
+        td:first-child {
+            border-radius: 8px 0px 0px 8px;
+        }
+
+        td:last-child {
+            border-radius: 0px 8px 8px 0px;
+        }
     }
 
     @include media-breakpoint-down (sm) {
@@ -698,13 +911,21 @@
 // /*.....................................*/
 // /* TEMPLATE: popular-pairs */
 .dc-popular-pairs {
-    padding: 0px 64px 0px 64px;
+    padding: 100px 64px 50px 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     &__title {
         text-align: center;
         margin-bottom: 40px;
-    } 
-    
+    }
+
+    &__button {
+        margin-top: 40px;
+        width: 221px;
+    }
+
     @include media-breakpoint-down (sm) {
     }
 }
@@ -812,9 +1033,14 @@
 // /*.....................................*/
 // /* TEMPLATE: table-order-icons */
 .dc-table-order-icons {
+    margin-left: 8px;
+
+    &__asc {
+        width: 9px;
+        height: 12px;
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: table-order-icons */

@@ -4370,7 +4370,7 @@ a:hover {
 /*.....................................*/
 /* Стили для всех заголовков */
 .dcg-h1 {
-  font-family: "Neue Montreal";
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 48px;
@@ -4391,7 +4391,7 @@ a:hover {
 }
 
 .dcg-h2 {
-  font-family: "Neue Montreal";
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
@@ -4407,7 +4407,7 @@ a:hover {
 }
 
 .dcg-h3 {
-  font-family: "Neue Montreal";
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
@@ -4530,6 +4530,9 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 /* section - блоки сайта */
 .dcg-section {
   background: #051429;
+}
+.dcg-section_padding {
+  padding: 46px 94px 79px 80px;
 }
 /* /section */
 /*.....................................*/
@@ -4719,8 +4722,93 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 .dc-copyright__text:first-child {
   margin-right: 12px;
 }
+.dc-download-btn {
+  display: inline-flex;
+  flex-direction: column;
+}
+.dc-download-btn__select {
+  width: 94px;
+  background-color: rgba(196, 222, 255, 0.16);
+  border-radius: 0px 0px 8px 8px;
+  text-align: center;
+  height: 0px;
+  transition: all 300ms;
+}
+.dc-download-btn__logo:first-child {
+  margin: 15px 0px;
+  height: 0px;
+  transition: all 300ms;
+}
+.dc-download-btn__logo:last-child {
+  margin-bottom: 15px;
+  height: 0px;
+  transition: all 300ms;
+}
+.dc-download-btn__img {
+  height: 0px;
+  transition: all 300ms;
+}
+.dc-download-btn__button {
+  display: inline-flex;
+  justify-content: center;
+  padding: 17px 33px 17px 25px;
+  position: relative;
+}
+.dc-download-btn__value {
+  display: inline-block;
+  height: 24px;
+  margin-right: 45px;
+}
+.dc-download-btn__value::after {
+  content: "";
+  height: 100%;
+  width: 1px;
+  background-color: rgba(196, 222, 255, 0.2);
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: 93px;
+}
+.dc-download-btn__caption {
+  display: inline-block;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 0.01em;
+  color: rgba(221, 234, 250, 0.92);
+  height: 24px;
+}
+.dc-download-btn .dc-download-btn__select:active {
+  height: 100px;
+  transition: all 300ms;
+}
+.dc-download-btn .dc-download-btn__select:active .dc-download-btn__logo {
+  height: 24px;
+  transition: all 300ms;
+}
+.dc-download-btn .dc-download-btn__select:active .dc-download-btn__img {
+  height: 24px;
+  transition: all 300ms;
+}
+.dc-download-btn .dc-download-btn__select:active .dc-download-btn__button {
+  background-color: red;
+}
+.dc-download-wallet {
+  padding: 133px 63px 219px 80px;
+}
+.dc-download-wallet__text-small {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 0.01em;
+  color: rgba(221, 234, 250, 0.92);
+  margin-bottom: 56px;
+}
 .dc-exchange-widget {
-  padding: 46px 94px 79px 0px;
   float: right;
 }
 .dc-exchange-widget__block {
@@ -4813,6 +4901,60 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 .dc-exchange-widget__button {
   border-radius: 12px;
 }
+.dc-faq {
+  padding: 120px 175px;
+}
+.dc-faq__title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.dc-faq__item {
+  border-width: 1px 0px 0px 0px;
+  border-style: solid;
+  border-color: rgba(196, 222, 255, 0.12);
+}
+.dc-faq__caption {
+  padding: 16px 24px 18px 24px;
+}
+.dc-faq__heading {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  color: rgba(221, 234, 250, 0.92);
+  letter-spacing: 0.01em;
+}
+.dc-faq__arrow {
+  float: right;
+  transition: all 300ms;
+  transform: rotate(0deg);
+}
+.dc-faq__list {
+  border-width: 0px 0px 1px 0px;
+  border-style: solid;
+  border-color: rgba(196, 222, 255, 0.12);
+}
+.dc-faq__content {
+  height: 0px;
+}
+.dc-faq__content p {
+  display: none;
+  opacity: 0;
+}
+.dc-faq__item:hover .dc-faq__content {
+  transition: all 10000ms;
+  height: auto;
+}
+.dc-faq__item:hover .dc-faq__content p {
+  transition: all 10000ms;
+  display: inline-block;
+  opacity: 1;
+}
+.dc-faq__item:hover .dc-faq__arrow {
+  transition: all 300ms;
+  transform: rotate(180deg);
+}
 .dc-footer * {
   color: rgba(196, 222, 255, 0.72);
 }
@@ -4868,13 +5010,14 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
   margin: 10px 0 0 0;
 }
 .dc-highlight {
-  padding-right: 20px;
+  padding: 0px 16px 0px 16px;
 }
 .dc-highlights {
-  margin: 60px 80px 80px 80px;
+  padding: 60px 64px 80px 64px;
 }
 .dc-highlights .dcg-caption {
   margin-top: 16px;
+  color: rgba(196, 222, 255, 0.72);
 }
 .dc-logo {
   display: inline-block;
@@ -4914,7 +5057,7 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
   margin-left: 7px;
 }
 .dc-main-title-info {
-  padding: 100px 0px 0px 80px;
+  padding: 54px 0px 0px 0px;
 }
 .dc-main-title-info__caption {
   font-family: "Inter";
@@ -4941,23 +5084,75 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
   width: 100%;
 }
 .dc-pairs-table__head {
-  /*background: rgba(196, 222, 255, 0.1);
-  border-style: solid;
-  border-color: rgba(196, 222, 255, 0.1);
-  border-radius: 8px;
-  border-width: 13px 42px 13px 0px;*/
   background: rgba(196, 222, 255, 0.1);
 }
 .dc-pairs-table__head th {
-  padding: 10px;
-  border-radius: 12px;
+  padding: 13px 0px 13px 0px;
+  text-align: start;
+  color: rgba(221, 234, 250, 0.92);
+}
+.dc-pairs-table__head th:first-child {
+  border-radius: 8px 0px 0px 8px;
+  padding: 13px 0px 13px 16px;
+}
+.dc-pairs-table__head th:last-child {
+  border-radius: 0px 8px 8px 0px;
+  padding: 13px 114px 13px 0px;
+}
+.dc-pairs-table__item {
+  border-style: solid;
+  border-color: rgba(196, 222, 255, 0.1);
+  border-width: 0px 0px 1px 0px;
+}
+.dc-pairs-table__item td:first-child {
+  padding-left: 17px;
+  padding-top: 5px;
+}
+.dc-pairs-table__item td:last-child {
+  padding: 13px 0px;
+}
+.dc-pairs-table__device {
+  display: flex;
+}
+.dc-pairs-table__device img {
+  margin-right: 6px;
+}
+.dc-pairs-table__device span {
+  color: rgba(196, 222, 255, 0.72);
+}
+.dc-pairs-table__coin {
+  display: inline-block;
+}
+.dc-pairs-table__coin:first-child {
+  margin-right: 45px;
+}
+.dc-pairs-table__text-box {
+  line-height: 56px;
+  color: rgba(196, 222, 255, 0.72);
+}
+.dc-pairs-table__item:hover {
+  background: rgba(196, 222, 255, 0.1);
+  border: none;
+}
+.dc-pairs-table__item:hover td:first-child {
+  border-radius: 8px 0px 0px 8px;
+}
+.dc-pairs-table__item:hover td:last-child {
+  border-radius: 0px 8px 8px 0px;
 }
 .dc-popular-pairs {
-  padding: 0px 64px 0px 64px;
+  padding: 100px 64px 50px 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .dc-popular-pairs__title {
   text-align: center;
   margin-bottom: 40px;
+}
+.dc-popular-pairs__button {
+  margin-top: 40px;
+  width: 221px;
 }
 .dc-report {
   padding: 0px 6px;
@@ -5005,6 +5200,13 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 .dc-soc-btns img {
   height: 24px;
   width: 24px;
+}
+.dc-table-order-icons {
+  margin-left: 8px;
+}
+.dc-table-order-icons__asc {
+  width: 9px;
+  height: 12px;
 }
 /*.....................................*/
 /* TEMPLATE: classes */

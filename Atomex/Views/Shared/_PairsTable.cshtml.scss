@@ -4,23 +4,76 @@
     width: 100%;
 
     &__head {
-        /*background: rgba(196, 222, 255, 0.1);
-        border-style: solid;
-        border-color: rgba(196, 222, 255, 0.1);
-        border-radius: 8px;
-        border-width: 13px 42px 13px 0px;*/
         background: rgba(196, 222, 255, 0.1);
 
         th {
-            padding: 10px;
-            border-radius: 12px;
+            padding: 13px 0px 13px 0px;
+            text-align: start;
+            color: rgba(221, 234, 250, 0.92);
+        }
+
+        th:first-child {
+            border-radius: 8px 0px 0px 8px;
+            padding: 13px 0px 13px 16px;
+        }
+
+        th:last-child {
+            border-radius: 0px 8px 8px 0px;
+            padding: 13px 114px 13px 0px;
         }
     }
 
     &__item {
+        border-style: solid;
+        border-color: rgba(196, 222, 255, 0.1);
+        border-width: 0px 0px 1px 0px;
+
+        td:first-child {
+            padding-left: 17px;
+            padding-top: 5px;
+        }
+
+        td:last-child {
+            padding: 13px 0px;
+        }
     }
 
-    &__item:nth-child(2) {
+    &__device {
+        display: flex;
+
+        img {
+            margin-right: 6px;
+        }
+
+        span {
+            color: rgba(196, 222, 255, 0.72);
+        }
+    }
+
+    &__coin {
+        display: inline-block;
+
+        &:first-child {
+            margin-right: 45px;
+        }
+    }
+
+    &__text-box {
+        line-height: 56px;
+        color: rgba(196, 222, 255, 0.72);
+    }
+
+    &__item:hover {
+        background: rgba(196, 222, 255, 0.1);
+        border: none;
+
+        td:first-child {
+            border-radius: 8px 0px 0px 8px;
+        }
+
+        td:last-child {
+            border-radius: 0px 8px 8px 0px;
+        }
     }
 
     @include media-breakpoint-down (sm) {

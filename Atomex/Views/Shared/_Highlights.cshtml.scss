@@ -1,12 +1,13 @@
 // /*.....................................*/
 // /* TEMPLATE: highlights */
 .dc-highlights {
-    margin: 60px 80px 80px 80px;
+    padding: 60px 64px 80px 64px;
 
     .dcg-caption {
         margin-top: 16px;
-    } 
-    
+        color: rgba(196, 222, 255, 0.72);
+    }
+
     @include media-breakpoint-down (sm) {
     }
 } 
