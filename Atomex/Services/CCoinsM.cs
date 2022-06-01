@@ -14,7 +14,8 @@ public class CCoinsM : CBaseDbM
     /// <summary>
     ///     Конструктор. Передает модель БД родителю.
     /// </summary>
-    public CCoinsM(CDbM db) : base(db) { }
+    public CCoinsM(CDbM db) : base(db, null) { }
+    //public CCoinsM(CDbM db, CDbSingM dbSign) : base(db, dbSign) { }
 
     /// <summary>
     ///     Возвращает словарь с моделями монет по ключу name монеты.
@@ -124,8 +125,9 @@ public class CCoinsM : CBaseDbM
 
         foreach (var coin in coins)
         {
-            var has_coin = HasCoin(coin);
 
+            var has_coin = HasCoin(coin);
+            
             if (has_coin != null) 
                 await UpdateCoinAsync(coin, has_coin, false);
             else

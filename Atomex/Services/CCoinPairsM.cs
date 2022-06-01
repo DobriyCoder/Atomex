@@ -15,7 +15,8 @@ public class CCoinPairsM : CBaseDbM
     /// <summary>
     ///     Конструктор. заполняет  необходимые поля при создании модели. Передает модель БД родителю.
     /// </summary>
-    public CCoinPairsM(CDbM db, CCoinsM coins) : base(db)
+    public CCoinPairsM(CDbM db, CCoinsM coins) : base(db, null)
+    //public CCoinPairsM(CDbM db, CCoinsM coins, CDbSingM dbSign) : base(db, dbSign)
     {
         coinsModel = coins;
         /*db.CoinPairs = GetPairsData();*/
@@ -40,6 +41,7 @@ public class CCoinPairsM : CBaseDbM
     private IEnumerable<CCoinPairDataM>? GetPairsData(uint shift, int limit, CCoinDataM[] coins)
     {
         uint count = this.coinsModel.Count();
+        if (count == 0) yield break;
         
         for (uint i = shift; i < shift + limit; i++)
         {

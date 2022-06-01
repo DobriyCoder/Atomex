@@ -2,7 +2,7 @@ jQuery(function ($) {
     //--------------------------------------
     // UI
     (function () {
-        
+        $('select').selectmenu();
     })();
     
     //--------------------------------------
@@ -104,6 +104,13 @@ jQuery('.dc-filter').dcTpl(function ($, Export) {
    var $self = $(this);
 });
 // /filter
+//--------------------------------------------
+
+// filter-form
+jQuery('.dc-filter-form').dcTpl(function ($, Export) {
+   var $self = $(this);
+});
+// /filter-form
 //--------------------------------------------
 
 // footer
@@ -216,6 +223,13 @@ jQuery('.dc-pagination').dcTpl(function ($, Export) {
    var $self = $(this);
 });
 // /pagination
+//--------------------------------------------
+
+// pair-info
+jQuery('.dc-pair-info').dcTpl(function ($, Export) {
+   var $self = $(this);
+});
+// /pair-info
 //--------------------------------------------
 
 // pairs-table
