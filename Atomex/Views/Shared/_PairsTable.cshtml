@@ -2,27 +2,32 @@
 
 <table class="dc-pairs-table">
     <tr class="dc-pairs-table__head">
-        <th>From - To</th>
-        <th>Price</th>
-        <th>Network Fee</th>
-        <th>Instant volume</th>
-        <th>Traded  volume @await Html.PartialAsync("_TableOrderIcons")</th>
-        <th>Availability</th>
+        <th class="dcg-caption">From - To</th>
+        <th class="dcg-caption">Price</th>
+        <th class="dcg-caption">Network Fee</th>
+        <th class="dcg-caption">Instant volume</th>
+        <th class="dcg-caption">Traded  volume @await Html.PartialAsync("_TableOrderIcons")</th>
+        <th class="dcg-caption">Availability</th>
     </tr>
-
+     
     @for (int i = 0; i < 6; i++)
     {
         <tr class="dc-pairs-table__item">
             <td> 
-                @await Html.PartialAsync("_Coin")
-                @await Html.PartialAsync("_Coin")
+                <div class="dc-pairs-table__coin">@await Html.PartialAsync("_Coin")</div>
+                <div class="dc-pairs-table__coin">@await Html.PartialAsync("_Coin")</div>
             </td>
 
-            <td><span class="dc-pairs-table__text-box">≈ $13.10580488</span></td>
-            <td><span class="dc-pairs-table__text-box">$0.00968022</span></td>
-            <td><span class="dc-pairs-table__text-box">83,862.9812 ETH</span></td>
-            <td><span class="dc-pairs-table__text-box">$83,862.9812</span></td>
-            <td><img src="/images/mobile.svg" alt="icon-mobile"/><span>apps</span></td> 
+            <td><span class="dc-pairs-table__text-box dcg-caption">≈ $13.10580488</span></td>
+            <td><span class="dc-pairs-table__text-box dcg-caption">$0.00968022</span></td>
+            <td><span class="dc-pairs-table__text-box dcg-caption">83,862.9812 ETH</span></td>
+            <td><span class="dc-pairs-table__text-box dcg-caption">$83,862.9812</span></td>
+            <td>
+                <div class="dc-pairs-table__device">
+                    <img src="/images/mobile.svg" alt="icon-mobile"/>
+                    <span class="dcg-caption">apps</span>
+                </div>
+            </td> 
         </tr>
-    }
+    }      
 </table>
