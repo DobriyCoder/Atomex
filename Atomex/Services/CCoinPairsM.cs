@@ -36,10 +36,10 @@ public class CCoinPairsM : CBaseDbM
             }
         }
     }
-
+    
     private IEnumerable<CCoinPairDataM>? GetPairsData(uint shift, int limit, CCoinDataM[] coins)
     {
-        uint count = (uint)coins.Length;
+        uint count = this.coinsModel.Count();
         
         for (uint i = shift; i < shift + limit; i++)
         {
@@ -52,7 +52,10 @@ public class CCoinPairsM : CBaseDbM
                 continue;
             }
 
-            yield return new CCoinPairDataM(coins[index1], coins[index2], GetMeta(coins[index1].id, coins[index2].id));
+            var coin1 = this.coinsModel.GetCoinByIndex((int)index1);
+            var coin2 = this.coinsModel.GetCoinByIndex((int)index2);
+
+            yield return new CCoinPairDataM(coin1, coin2, GetMeta(coin1.id, coin2.id));
         }
     }
 
@@ -87,8 +90,7 @@ public class CCoinPairsM : CBaseDbM
     /// </summary>
     public IEnumerable<CCoinPairDataVM>? GetPairs(int page, int count, string? filter = null)
     {
-        var coins = coinsModel.GetTrueCoins(filter).ToArray();
-        if (coins.Count() == 0) return null;
+        CCoinDataM[] coins = null;// coinsModel.GetTrueCoins(filter).ToArray();
 
         return GetPairsData((uint)(--page * count), count, coins)
             .Select(p => new CCoinPairDataVM()
@@ -104,7 +106,7 @@ public class CCoinPairsM : CBaseDbM
     /// </summary>
     public IEnumerable<CCoinPairDataVM> GetPairs(CCoinPairDataM pair)
     {
-        var coins = coinsModel.GetTrueCoins().ToArray();
+        CCoinDataM[] coins = null;// coinsModel.GetTrueCoins().ToArray();
         //var coins = new CCoinDataM[0];
         return GetPairsData(0, 10, coins)
             .Select(p => new CCoinPairDataVM

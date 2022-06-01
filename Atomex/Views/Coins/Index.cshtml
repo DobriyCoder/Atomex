@@ -1,5 +1,6 @@
 ﻿@inject CBlocksHelperVM BlocksHelper
 @model CCoinsVM
+
 @{
     ViewData["Title"] = Model.SeoInfo.title == "" ? "Coins Page" : Model.SeoInfo.title;
     ViewData["Description"] = Model.SeoInfo.text == "" ? "" : Model.SeoInfo.text;
@@ -14,7 +15,7 @@
         </div>
         <div class="dcg-section">
             @await Html.PartialAsync("_FilterForm")
-            @await Html.PartialAsync("_CoinsTable")
+            @await Html.PartialAsync("_CoinsTable", Model.coins)
             <div class="row">
                 @*<div class="col">@await Html.PartialAsync("_ItemsCountMenu")</div>*@
                 <div class="col">@await Html.PartialAsync("_Pagination", BlocksHelper.GetPagination(Model.maxPage, Model.page))</div>

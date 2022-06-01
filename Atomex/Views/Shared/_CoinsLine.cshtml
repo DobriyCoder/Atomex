@@ -1,16 +1,11 @@
-﻿@*@model I_coins-line *@
+﻿@model IEnumerable<CCoinDataVM>
 
 <div class="dc-coins-line">
     <ul class="dc-coins-line__list">
-        <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin")</li>
-        <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin")</li>
-        <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin")</li>
-        <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin")</li>
-        <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin")</li>
-        <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin")</li>
-        <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin")</li>
-        <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin")</li>
-        <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin")</li> 
+        @foreach(var coin in Model)
+        {
+            <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin", coin.data)</li>
+        }
     </ul>
 
     <a href="#" class="dc-coins-line__more dcg-caption">

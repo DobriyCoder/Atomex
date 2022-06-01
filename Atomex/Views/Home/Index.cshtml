@@ -1,5 +1,6 @@
 ﻿@model CHomeVM
 @inject CBlocksHelperVM BlocksHelper
+
 @{
     ViewData["Title"] = Model.SeoInfo.title == "" ? "CriptoApi" : Model.SeoInfo.title;
     ViewData["Description"] = Model.SeoInfo.text == "" ? "" : Model.SeoInfo.text;
@@ -20,7 +21,7 @@
             </div>
         </div>
         <div class="dcg-section">
-            @await Html.PartialAsync("_CoinsLine")
+            @await Html.PartialAsync("_CoinsLine", BlocksHelper.GetCoinList(9))
         </div>
         <div class="dcg-section">
             @await Html.PartialAsync("_Highlights")

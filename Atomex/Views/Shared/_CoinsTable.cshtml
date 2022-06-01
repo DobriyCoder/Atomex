@@ -1,4 +1,4 @@
-﻿@*@model I_coins-table *@
+﻿@model IEnumerable<CCoinDataVM>
 
 <table class="dc-pairs-table">
     <tr>
@@ -9,17 +9,17 @@
         <th>Availability</th>
     </tr>
 
-    @for (int i = 0; i < 6; i++)
+    @foreach (var coin in Model)
     {
         <tr>
             <td>
-                @await Html.PartialAsync("_Coin")
+                @await Html.PartialAsync("_Coin", coin.data)
             </td>
 
-            <td><span>≈ $13.10580488</span></td>
-            <td><span>$360.9812B</span></td>
-            <td><span>-3.46%</span></td>
-            <td><span>app</span></td>
+            <td><span>≈ @coin.data.usd_price</span></td>
+            <td><span>$@coin.data.market_cap</span></td>
+            <td><span>@coin.data.day_change</span></td>
+            <td><span>@CConst.AVAILABILITY</span></td>
         </tr>
     }
 </table>

@@ -186,7 +186,10 @@ public class CCoinsM : CBaseDbM
             );
     }
     public IEnumerable<CCoinDataM> GetCoins() => db.Coins.Where(c => c.enable.Value);
-
+    public CCoinDataM GetCoinByIndex(int index)
+    {
+        return db.Coins.Skip(index).First();
+    }
     public IEnumerable<CCoinDataM> GetTrueCoins(string? filter = null)
     {
         filter = filter == null ? "" : filter;
