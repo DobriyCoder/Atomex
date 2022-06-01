@@ -15,12 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="CoinGecko">
-      <HintPath>..\CoinGecko\bin\Release\netstandard2.0\CoinGecko.dll</HintPath>
-    </Reference>
-    <Reference Include="CoinpaprikaAPI">
-      <HintPath>..\CoinpaprikaAPI\bin\Release\netstandard2.0\CoinpaprikaAPI.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\CoinGecko\CoinGecko.csproj" />
+    <ProjectReference Include="..\CoinpaprikaAPI\CoinpaprikaAPI.csproj" />
   </ItemGroup>
 
 </Project>
