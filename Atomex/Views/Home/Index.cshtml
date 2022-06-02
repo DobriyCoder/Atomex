@@ -10,35 +10,35 @@
 
 <div class="dc-main-page-content">
     <div class="container">
-        <div class="dcg-section dcg-section_main-part dcg-bg-basic">
+        <div class="dcg-section dcg-section_padding-heading dcg-bg-basic">
             <div class="row">
                 <div class="col">
                     @await Html.PartialAsync("_MainTitleInfo")
                 </div>
                 <div class="col">
-                    @await Html.PartialAsync("_ExchangeWidget")
+                    @await Html.PartialAsync("_ExchangeWidget") 
                 </div>
             </div>
         </div>
         <div class="dcg-section dcg-section_border dcg-section_coins-line">
             @await Html.PartialAsync("_CoinsLine", BlocksHelper.GetCoinList(9))
         </div>
-        <div class="dcg-section dcg-section_border dcg-section_highlights">
+        <div class="dcg-section dcg-section_border dcg-section_padding-small">
             @await Html.PartialAsync("_Highlights")
         </div>
-        <div class="dcg-section dcg-section_benefits"> 
+        <div class="dcg-section dcg-section_padding-big"> 
             @await Html.PartialAsync("_Benefits")
         </div>
-        <div class="dcg-section dcg-section_popular-pairs">
+        <div class="dcg-section dcg-section_padding-small">
             @await Html.PartialAsync("_PopularPairs")
         </div>
-        <div class="dcg-section dcg-section_download-wallet">
+        <div class="dcg-section dcg-section_padding-small">
             @await Html.PartialAsync("_DownloadWallet")
         </div>
-        <div class="dcg-section dcg-section_reports">
+        <div class="dcg-section dcg-section_padding-big">
             @await Html.PartialAsync("_Reports")
         </div>
-        <div class="dcg-section dcg-section_border dcg-section_faq">
+        <div class="dcg-section dcg-section_border dcg-section_padding-big">
             @await Html.PartialAsync("_Faq")
         </div>
     </div>

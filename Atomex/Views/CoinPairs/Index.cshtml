@@ -9,11 +9,11 @@
 
 <div class="dc-pairs-page-content">
     <div class="container">
-        <div class="dcg-section">
+        <div class="dcg-section dcg-section_padding-heading">
             @await Html.PartialAsync("_Breadcrumbs")
             @await Html.PartialAsync("_MainTitle")
         </div>
-        <div class="dcg-section">
+        <div class="dcg-section dcg-section_padding-small">
             @await Html.PartialAsync("_FilterForm")
             @await Html.PartialAsync("_PairsTable", Model.pairs)
             <div class="row">
@@ -21,7 +21,7 @@
                 <div class="col">@await Html.PartialAsync("_Pagination", BlocksHelper.GetPagination(Model.maxPage, Model.page))</div>
             </div>
         </div>
-        <div class="dcg-section">
+        <div class="dcg-section dcg-section_padding-small">
             @await Html.PartialAsync("_DownloadWallet")
         </div>
     </div>        

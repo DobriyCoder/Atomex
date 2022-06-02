@@ -103,6 +103,10 @@
         color: rgba(196, 222, 255, 0.32);
     }
 
+    &__item:last-child {
+        color: rgba(196, 222, 255, 0.32);
+    }
+
     @include media-breakpoint-down (sm) {
     }
 }
@@ -188,9 +192,83 @@
 // /*.....................................*/
 // /* TEMPLATE: coins-table */
 .dc-coins-table {
+    width: 100%;
+    margin-top: 34px;
+
+    &__head {
+        background: rgba(196, 222, 255, 0.1);
+
+        th {
+            padding: 13px 0px 13px 0px;
+            text-align: start;
+            color: rgba(221, 234, 250, 0.92);
+        }
+
+        th:first-child {
+            border-radius: 8px 0px 0px 8px;
+            padding: 13px 0px 13px 16px;
+        }
+
+        th:last-child {
+            border-radius: 0px 8px 8px 0px;
+            padding: 13px 114px 13px 0px;
+        }
+    }
+
+    &__item {
+        border-style: solid;
+        border-color: rgba(196, 222, 255, 0.1);
+        border-width: 0px 0px 1px 0px;
+
+        td:first-child {
+            padding-left: 17px;
+            padding-top: 5px;
+        }
+
+        td:last-child {
+            padding: 13px 0px;
+        }
+    }
+
+    &__device {
+        display: flex;
+
+        img {
+            margin-right: 6px;
+        }
+
+        span {
+            color: rgba(196, 222, 255, 0.72);
+        }
+    }
+
+    &__coin {
+        display: inline-block;
+
+        &:first-child {
+            margin-right: 45px;
+        }
+    }
+
+    &__text-box {
+        line-height: 56px;
+        color: rgba(196, 222, 255, 0.72);
+    }
+
+    &__item:hover {
+        background: rgba(196, 222, 255, 0.1);
+        border: none;
+
+        td:first-child {
+            border-radius: 8px 0px 0px 8px;
+        }
+
+        td:last-child {
+            border-radius: 0px 8px 8px 0px;
+        }
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: coins-table */
@@ -839,9 +917,39 @@
 // /*.....................................*/
 // /* TEMPLATE: pagination */
 .dc-pagination {
+    margin-top: 32px;
+    float: right;
+    color: rgba(221, 234, 250, 0.92);
+
+    &__list {
+        display: inline-block;
+    }
+
+    &__list-item-wrapper {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    &__item {
+        line-height: 44px;
+
+        &_active {
+            display: inline-block;
+            border: 0px solid;
+            background-color: rgba(196, 222, 255, 0.1);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            text-align: center;
+        }
+    }
+
+    &__btn-next {
+        display: inline-block;
+        cursor: pointer;
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: pagination */
@@ -862,6 +970,7 @@
 // /* TEMPLATE: pairs-table */
 .dc-pairs-table {
     width: 100%;
+    margin-top: 24px;
 
     &__head {
         background: rgba(196, 222, 255, 0.1);
@@ -936,6 +1045,12 @@
         }
     }
 
+    &__coin-logo {
+        display: inline-block;
+        margin-right: 43px;
+    } 
+
+    
     @include media-breakpoint-down (sm) {
     }
 }
@@ -1052,6 +1167,7 @@
 // /*.....................................*/
 // /* TEMPLATE: sort */
 .dc-sort {
+    float: right;
 
     @include media-breakpoint-down (sm) {
 

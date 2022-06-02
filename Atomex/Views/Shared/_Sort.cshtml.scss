@@ -1,6 +1,7 @@
 // /*.....................................*/
 // /* TEMPLATE: sort */
 .dc-sort {
+    float: right;
 
     @include media-breakpoint-down (sm) {
 
