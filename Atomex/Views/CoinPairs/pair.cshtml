@@ -41,7 +41,7 @@
             @await Html.PartialAsync("_DownloadWallet")
         </div>
         <div class="dcg-section">
-            @await Html.PartialAsync("_CoinsLine")
-        </div
+            @await Html.PartialAsync("_CoinsLine", BlocksHelper.GetCoinList(9))
+        </div>
     </div>
 </div>

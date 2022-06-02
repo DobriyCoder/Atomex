@@ -1,5 +1,6 @@
 ﻿@model CCoinVM
 @inject CBlocksHelperVM BlocksHelper
+
 @{
     ViewData["Title"] = Model.SeoInfo.title == "" ? "Coin Page" : Model.SeoInfo.title;
     ViewData["Description"] = Model.SeoInfo.text == "" ? "" : Model.SeoInfo.text;
@@ -36,7 +37,7 @@
             @await Html.PartialAsync("_DownloadWallet")
         </div>
         <div class="dcg-section">
-            @await Html.PartialAsync("_CoinsLine")
+            @await Html.PartialAsync("_CoinsLine", BlocksHelper.GetCoinList(9))
         </div>
     </div>
 </div>

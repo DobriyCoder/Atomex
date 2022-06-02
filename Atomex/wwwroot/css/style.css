@@ -4692,6 +4692,10 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 .dc-coin__title {
   margin: 3px 0px 0px 7px;
 }
+.dc-coin-desc__text {
+  column-count: 2;
+  column-gap: 100px;
+}
 .dc-coins-line {
   display: flex;
   justify-content: center;
