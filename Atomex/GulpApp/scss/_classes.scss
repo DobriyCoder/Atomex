@@ -26,6 +26,8 @@
 
 .dcg-bg-selection {background: #3293F1;}
 .dcg-cl-selection {color: #3293F1;}
+
+.dcg-cl-secondary {color: #00D7CB;}
 // /test
 /*.....................................*/
 html, body {}
@@ -324,13 +326,52 @@ textarea {}
 /* section - блоки сайта */
 .dcg-section {
     background: #051429;
-
-    &_padding {
+    /*_Main*/
+    &_main-part {
         padding: 46px 94px 79px 80px;
     }
 
+    &_coins-line {
+    }
+
+    &_highlights {
+        padding: 60px 64px 80px 64px;
+    }
+
+    &_benefits {
+        padding: 128px 168px 29px 124px;
+    }
+
+    &_popular-pairs {
+        padding: 100px 64px 50px 64px;
+    }
+
+    &_download-wallet {
+        padding: 133px 63px 219px 80px;
+    }
+
+    &_reports {
+        padding-top: 120px;
+    }
+
+    &_faq {
+        padding: 120px 175px;
+    }
+
+    &_border {
+        border-bottom: 1px solid #19263A;
+    }
+    /*_Coins*/
     &_breadcrumbs {
         padding: 60px 0px 80px 80px;
+    }
+
+    &_filter-form {
+        padding: 40px 64px 0px 64px;
+    }
+
+    &_download-wallet {
+        padding: 133px 0px 223px 80px;
     } 
     
     & + & {
@@ -358,20 +399,12 @@ textarea {}
 /*.....................................*/
 /* common */
 /*.....................................*/
-.dcg-active {
-    color: #0FD4E2;
-}
-/*.....................................*/
 .dcg-caption {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
     line-height: 22px;
-}
-/*.....................................*/
-.dcg-secondary-clr {
-    color: #00D7CB;
 }
 /*.....................................*/
 .dcg-icon-left {
@@ -385,7 +418,7 @@ textarea {}
         vertical-align: middle;
     }
 }
-
+/*.....................................*/
 .dcg-icon-right {
     &::after {
         content: "";
@@ -397,6 +430,15 @@ textarea {}
         vertical-align: middle;
         margin-left: 11px;
     }
+}
+/*.....................................*/
+.dcg-link-text {
+    color: #00D7CB;
+    cursor: pointer;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.01em;
 }
 /*.....................................*/
 /* /common */

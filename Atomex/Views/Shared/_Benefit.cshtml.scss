@@ -29,16 +29,12 @@
 
     &__link-arrow {
         margin-left: 6px;
+        cursor: pointer; 
     } 
     
     &__link-text {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
         font-size: 17px;
         line-height: 26px;
-        letter-spacing: 0.01em;
-        color: #00D7CB;
     }
 
     &__img {

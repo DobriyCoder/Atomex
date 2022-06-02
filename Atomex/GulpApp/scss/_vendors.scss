@@ -26,10 +26,12 @@
 .ui-checkboxradio-label {
 
     &.ui-checkboxradio-checked {
-        &::before {}
+        &::before {
+        }
     }
 
-    .ui-checkboxradio-icon {}
+    .ui-checkboxradio-icon {
+    }
 }
 // /checkbox
 
@@ -37,36 +39,49 @@
 .ui-checkboxradio-radio-label {
 
     &.ui-checkboxradio-checked {
-        &::before {}
+        &::before {
+        }
     }
 
-    .ui-checkboxradio-icon {}
+    .ui-checkboxradio-icon {
+    }
 
-    .ui-checkboxradio-icon-space {}
+    .ui-checkboxradio-icon-space {
+    }
 
     &.ui-checkboxradio-checked {
 
-        .ui-checkboxradio-icon {}
+        .ui-checkboxradio-icon {
+        }
     }
 }
 // /radio
 /*.....................................*/
 // меню выбора (select)
 .ui-selectmenu-button {
+    border: 1px solid rgba(196, 222, 255, 0.1);
+    border-radius: 8px;
 
     .ui-selectmenu-icon {
+        height: 20px;
+        width: 20px;
+        background-image: url(/images/app-store.svg);
 
-        &:before {}
+        &:before {
+        }
     }
 
     &.ui-selectmenu-button-open {
 
         .ui-selectmenu-icon {
-            &:before {}
+
+            &:before {
+            }
         }
     }
 
-    .ui-selectmenu-text {}
+    .ui-selectmenu-text {
+    }
 }
 
 .ui-selectmenu-menu {
@@ -74,10 +89,11 @@
     ul {
 
         li {
-
+            
             .ui-menu-item-wrapper {
 
-                &.ui-state-active, &:hover {}
+                &.ui-state-active, &:hover {
+                }
             }
         }
     }

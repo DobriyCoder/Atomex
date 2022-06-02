@@ -13,7 +13,7 @@
             @await Html.PartialAsync("_Breadcrumbs")
             @await Html.PartialAsync("_MainTitle")
         </div>
-        <div class="dcg-section">
+        <div class="dcg-section dcg-section_filter-form">
             @await Html.PartialAsync("_FilterForm")
             @await Html.PartialAsync("_CoinsTable", Model.coins)
             <div class="row">
@@ -21,7 +21,7 @@
                 <div class="col">@await Html.PartialAsync("_Pagination", BlocksHelper.GetPagination(Model.maxPage, Model.page))</div>
             </div>
         </div>
-        <div class="dcg-section">
+        <div class="dcg-section dcg-section_download-wallet">
             @await Html.PartialAsync("_DownloadWallet") 
         </div>
     </div>        
