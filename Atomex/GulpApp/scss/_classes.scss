@@ -328,9 +328,12 @@ textarea {}
     &_padding {
         padding: 46px 94px 79px 80px;
     }
+
+    &_breadcrumbs {
+        padding: 60px 0px 80px 80px;
+    } 
     
     & + & {
-        
     }
 
     &_dark {
@@ -365,7 +368,6 @@ textarea {}
     font-weight: 400;
     font-size: 15px;
     line-height: 22px;
-    color: rgba(221, 234, 250, 0.92);
 }
 /*.....................................*/
 .dcg-secondary-clr {

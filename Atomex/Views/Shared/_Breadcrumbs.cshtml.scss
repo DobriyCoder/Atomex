@@ -2,8 +2,23 @@
 // /* TEMPLATE: breadcrumbs */
 .dc-breadcrumbs {
 
-    @include media-breakpoint-down (sm) {
+    &__item {
+        display: inline-block;
+        color: rgba(196, 222, 255, 0.72);
+    }
 
+    &__item:nth-child(even)::before {
+        content: '/';
+        color: rgba(196, 222, 255, 0.32);
+        margin-right: 8px;
+        margin-left: 5px;
+    }
+
+    &__item:hover {
+        color: rgba(196, 222, 255, 0.32);
+    }
+
+    @include media-breakpoint-down (sm) {
     }
 }
 // /* /TEMPLATE: breadcrumbs */

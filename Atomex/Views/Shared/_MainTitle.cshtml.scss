@@ -1,9 +1,11 @@
 // /*.....................................*/
 // /* TEMPLATE: main-title */
 .dc-main-title {
-
+    &__caption {
+        margin-top: 24px; 
+    } 
+    
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: main-title */
