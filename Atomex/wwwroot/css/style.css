@@ -4544,6 +4544,31 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 .dcg-section_padding-big {
   padding: 100px 165px 100px 165px;
 }
+.dcg-section_light-three-left {
+  background-image: url("../images/light-bottom-one.png"), url("../images/light-bottom-two.png"), url("../images/light-bottom-left.png"), url("../images/light-dots.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: top;
+}
+.dcg-section_light-three-right {
+  background-image: url("../images/light-bottom-one.png"), url("../images/light-bottom-two.png"), url("../images/light-bottom-right.png"), url("../images/light-dots.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: top;
+  z-index: 3;
+}
+.dcg-section_light-two {
+  background-image: url(../images/light-bottom-left.png), url(../images/light-dots.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: top;
+  z-index: 3;
+}
+.dcg-section_border-bottom {
+  border-width: 0px 0px 1px 0px;
+  border-color: rgba(196, 222, 255, 0.12);
+  border-style: solid;
+}
 /* /section */
 /*.....................................*/
 /* common */
@@ -5131,6 +5156,15 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
   font-size: 15px;
   line-height: 22px;
 }
+.dc-footer-menu__title {
+  color: rgba(196, 222, 255, 0.72);
+}
+.dc-footer-menu__item {
+  color: rgba(221, 234, 250, 0.92);
+}
+.dc-footer-menu__last-item {
+  margin-top: 16px;
+}
 .dc-header {
   /*&__logo {
       display: flex;
@@ -5336,9 +5370,6 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 }
 .dc-report__more {
   margin-right: 8px;
-}
-.dc-reports__blocks {
-  padding: 0px 171px;
 }
 .dc-reports__title {
   text-align: center;

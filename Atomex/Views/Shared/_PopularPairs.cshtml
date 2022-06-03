@@ -4,5 +4,5 @@
 <div class="dc-popular-pairs">
     <h2 class="dcg-h2 dc-popular-pairs__title">Popular exchange pairs</h2>
     @await Html.PartialAsync("_PairsTable", BlocksHelper.GetPairList(6))
-    <a asp-controller="CoinPairs" class="dcg-btn">View all crypto pairs</a> 
+    <a asp-controller="CoinPairs" class="dc-popular-pairs__button dcg-btn">View all crypto pairs</a> 
 </div>

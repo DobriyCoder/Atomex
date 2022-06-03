@@ -17,6 +17,18 @@
         line-height: 22px;
     }
 
+    &__title {
+        color: rgba(196, 222, 255, 0.72);
+    }
+
+    &__item {
+        color: rgba(221, 234, 250, 0.92);
+    }
+
+    &__last-item {
+        margin-top: 16px;
+    }
+
     @include media-breakpoint-down (sm) {
     }
 }

@@ -10,7 +10,7 @@
 
 <div class="dc-main-page-content">
     <div class="container">
-        <div class="dcg-section dcg-section_padding-heading dcg-bg-basic">
+        <div class="dcg-section dcg-section_padding-heading dcg-section_light-three-left dcg-bg-basic ">
             <div class="row">
                 <div class="col">
                     @await Html.PartialAsync("_MainTitleInfo")
@@ -20,10 +20,10 @@
                 </div>
             </div>
         </div>
-        <div class="dcg-section dcg-section_border dcg-section_coins-line">
+        <div class="dcg-section dcg-section_border-bottom dcg-section_border dcg-section_coins-line">
             @await Html.PartialAsync("_CoinsLine", BlocksHelper.GetCoinList(9))
         </div>
-        <div class="dcg-section dcg-section_border dcg-section_padding-small">
+        <div class="dcg-section dcg-section_border-bottom dcg-section_padding-small">
             @await Html.PartialAsync("_Highlights")
         </div>
         <div class="dcg-section dcg-section_padding-big"> 
@@ -38,7 +38,7 @@
         <div class="dcg-section dcg-section_padding-big">
             @await Html.PartialAsync("_Reports")
         </div>
-        <div class="dcg-section dcg-section_border dcg-section_padding-big">
+        <div class="dcg-section dcg-section_border-bottom dcg-section_padding-big">
             @await Html.PartialAsync("_Faq")
         </div>
     </div>
