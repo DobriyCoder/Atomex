@@ -12,7 +12,7 @@
 
 <div class="dc-pairs-page-content">
     <div class="container">
-        <div class="dcg-section">
+        <div class="dcg-section dcg-section_border-bottom dcg-section_padding-heading">
             <div class="row">
                 <div class="col">
                     @await Html.PartialAsync("_Breadcrumbs")
@@ -25,22 +25,22 @@
                 </div>
             </div>
         </div>
-        <div class="dcg-section">
+        <div class="dcg-section dcg-section_padding-small">
             @await Html.PartialAsync("_PairInfo")
         </div>
-        <div class="dcg-section">
+        <div class="dcg-section dcg-section_padding-small">
             @await Html.PartialAsync("_CoinDesc")
         </div>
-        <div class="dcg-section">
+        <div class="dcg-section dcg-section_padding-small">
             @await Html.PartialAsync("_PopularPairs")
         </div>
-        <div class="dcg-section">
+        <div class="dcg-section dcg-section_padding-big">
             @await Html.PartialAsync("_Faq")
         </div>
-        <div class="dcg-section">
+        <div class="dcg-section dcg-section_padding-small">
             @await Html.PartialAsync("_DownloadWallet")
         </div>
-        <div class="dcg-section">
+        <div class="dcg-section dcg-section_border-bottom">
             @await Html.PartialAsync("_CoinsLine", BlocksHelper.GetCoinList(9))
         </div>
     </div>

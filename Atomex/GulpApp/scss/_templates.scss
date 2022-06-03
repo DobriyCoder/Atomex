@@ -137,9 +137,16 @@
 // /*.....................................*/
 // /* TEMPLATE: coin-desc */
 .dc-coin-desc {
+
+    h2 {
+        color: rgba(221, 234, 250, 0.92);
+        margin-bottom: 32px;
+    }
+
     &__text {
         column-count: 2;
         column-gap: 100px;
+        color: rgba(196, 222, 255, 0.72);
     }
 
     @include media-breakpoint-down (sm) {
@@ -151,9 +158,27 @@
 // /*.....................................*/
 // /* TEMPLATE: coin-info */
 .dc-coin-info {
+    &__title {
+        padding-bottom: 40px;
+        border-width: 0px 0px 1px 0px;
+        border-style: solid;
+        border-color: rgba(196, 222, 255, 0.06);
+        margin-bottom: 24px;
+    }
+
+    &__caption {
+        color: rgba(196, 222, 255, 0.72);
+    }
+
+    &__value {
+        color: rgba(221, 234, 250, 0.92);
+
+        &_positive {
+            color: #00D7CB;
+        }
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: coin-info */
@@ -301,6 +326,7 @@
 .dc-download-btn {
     display: inline-flex;
     flex-direction: column;
+    margin-bottom: 16px;
 
     &__select {
         width: 94px;
@@ -681,14 +707,14 @@
         line-height: 30px;
     }
 
-    li:first-child {
-        margin-top: 10px;
-    }
-
     a {
         font-weight: 400;
         font-size: 15px;
         line-height: 22px;
+    }
+
+    ul {
+        margin: 16px 0px;
     }
 
     &__title {
@@ -700,7 +726,7 @@
     }
 
     &__last-item {
-        margin-top: 16px;
+        color: rgba(221, 234, 250, 0.92);
     }
 
     @include media-breakpoint-down (sm) {
@@ -712,9 +738,14 @@
 // /*.....................................*/
 // /* TEMPLATE: graph-widget */
 .dc-graph-widget {
+    margin-top: 32px;
 
+    iframe {
+        border-radius: 32px;
+        width: 100% !important;
+        height: 497px !important;
+    }
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: graph-widget */
@@ -863,10 +894,18 @@
 // /*.....................................*/
 // /* TEMPLATE: main-title */
 .dc-main-title {
+    margin-bottom: 30px;
+
     &__caption {
-        margin-top: 24px; 
-    } 
-    
+        margin-top: 24px;
+        margin-bottom: 8px;
+        color: rgba(221, 234, 250, 0.92);
+    }
+
+    &__desc {
+        color: rgba(196, 222, 255, 0.72);
+    }
+
     @include media-breakpoint-down (sm) {
     }
 }
@@ -886,8 +925,8 @@
 
     &__download {
         margin-top: 40px;
-    } 
-    
+    }
+
     &__warning {
         font-family: 'Inter';
         font-style: normal;
@@ -895,7 +934,6 @@
         font-size: 15px;
         line-height: 22px;
         color: rgba(196, 222, 255, 0.72);
-        margin-top: 16px;
     }
 
     @include media-breakpoint-down (sm) {
@@ -970,9 +1008,28 @@
 // /*.....................................*/
 // /* TEMPLATE: pair-info */
 .dc-pair-info {
+    &__title {
+        padding-bottom: 40px;
+        margin-bottom: 40px;
+        border-width: 0px 0px 1px 0px;
+        border-style: solid;
+        border-color: rgba(196, 222, 255, 0.06);
+        margin-bottom: 24px;
+    }
+
+    &__caption {
+        color: rgba(196, 222, 255, 0.72);
+    }
+
+    &__value {
+        color: rgba(221, 234, 250, 0.92);
+
+        &_positive {
+            color: #00D7CB;
+        }
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: pair-info */
