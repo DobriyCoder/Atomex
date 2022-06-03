@@ -9,7 +9,7 @@ public class CBaseDbM
     /// <summary>
     ///     Конструктор модели сервиса базы данных.
     /// </summary>
-    public CBaseDbM (CDbM db, CDbSingM dbSign)
+    public CBaseDbM (CDbM db)
     {
         this.db = db;
         this.dbSign = dbSign;

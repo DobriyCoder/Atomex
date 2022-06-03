@@ -11,10 +11,14 @@ namespace CryptoApi.Services;
 /// </summary>
 public class CCoinsM : CBaseDbM
 {
+    IConfiguration conf;
     /// <summary>
     ///     Конструктор. Передает модель БД родителю.
     /// </summary>
-    public CCoinsM(CDbM db) : base(db, null) { }
+    public CCoinsM(CDbM db, IConfiguration conf) : base(db) 
+    {
+        this.conf = conf;
+    }
     //public CCoinsM(CDbM db, CDbSingM dbSign) : base(db, dbSign) { }
 
     /// <summary>
@@ -115,13 +119,24 @@ public class CCoinsM : CBaseDbM
 
         return new_coin;
     }
+    private CDbM CreateDb ()
+    {
+        var optionsBuilder = new DbContextOptionsBuilder<CDbM>();
 
+        var options = optionsBuilder
+                .UseSqlServer(conf.GetConnectionString("DefaultConnection"))
+                .Options;
+
+        return new CDbM(options);
+    }
     /// <summary>
     ///     Асинхронно добавляет монеты.
     /// </summary>
     public async Task AddCoinsAsync(IEnumerable<IApiCoin> coins)
     {
         if (coins == null) return;
+        var old_db = this.db;
+        this.db = CreateDb();
 
         foreach (var coin in coins)
         {
@@ -137,6 +152,9 @@ public class CCoinsM : CBaseDbM
         }
 
         await db.SaveChangesAsync();
+
+        this.db.Dispose();
+        this.db = old_db;
     }
 
     /// <summary>
@@ -151,7 +169,12 @@ public class CCoinsM : CBaseDbM
 
     public int TrueCount(string? filter = null)
     {
-        return GetTrueCoins(filter).Count();
+        filter = filter == null ? "" : filter;
+
+        var coins = db.Coins
+            .Where(c => c.enable.Value && (filter == "" || c.name.Contains(filter) || c.name_full.Contains(filter)));
+
+        return coins.Count();
     }
 
     /// <summary>

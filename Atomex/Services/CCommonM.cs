@@ -10,7 +10,7 @@ public class CCommonM : CBaseDbM
     /// <summary>
     ///     Конструктор модели сервиса common. Передает экземпляр модели базы данных родителю.
     /// </summary>
-    public CCommonM(CDbM db) : base(db, null) { }
+    public CCommonM(CDbM db) : base(db) { }
     //public CCommonM(CDbM db, CDbSingM dbSign) : base(db, dbSign) { }
 
     /// <summary>
