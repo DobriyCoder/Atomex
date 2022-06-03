@@ -4,7 +4,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 96px;
+
+    &:not(:last-child) {
+        margin-bottom: 96px;
+    }
 
     &__text {
         display: inline-block;
@@ -29,9 +32,9 @@
 
     &__link-arrow {
         margin-left: 6px;
-        cursor: pointer; 
-    } 
-    
+        cursor: pointer;
+    }
+
     &__link-text {
         font-size: 17px;
         line-height: 26px;

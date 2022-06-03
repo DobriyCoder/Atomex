@@ -336,42 +336,29 @@ textarea {}
     }
 
     &_padding-big {
-        padding: 100px 165px 100px 165px;
+        padding: 95px 165px 95px 165px;
     }
 
-
-
-    &_light-three-left::after {
-        background-image: url("../images/light-bottom-one.png"), url("../images/light-bottom-two.png"), url("../images/light-bottom-left.png"), url("../images/light-dots.png");
+    &_light-bottom-left {
+        background-image: url("/images/background-main.png");
         background-repeat: no-repeat;
         background-size: 100% 100%;
-        background-position: top;
     }
 
-    &_light-three-left::before {
-
-    }
-        
-    &_light-three-right {
-    background-image: url("../images/light-bottom-one.png"), url("../images/light-bottom-two.png"), url("../images/light-bottom-right.png"), url("../images/light-dots.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: top;
-    z-index: 3;
-    }
-
-    &_light-two {
-        background-image: url(../images/light-bottom-left.png), url(../images/light-dots.png);
+    &_light-left {
+        background-image: url("/images/background-left.png");
         background-repeat: no-repeat;
         background-size: 100% 100%;
-        background-position: top;
-        z-index: 3;
     }
 
     &_border-bottom {
         border-width: 0px 0px 1px 0px;
         border-color: rgba(196, 222, 255, 0.12);
         border-style: solid;
+    }
+
+    &_mini {
+        height: 435px;
     }
 
     & + & {
