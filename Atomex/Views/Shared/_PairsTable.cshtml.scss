@@ -2,6 +2,7 @@
 // /* TEMPLATE: pairs-table */
 .dc-pairs-table {
     width: 100%;
+    margin-top: 24px;
 
     &__head {
         background: rgba(196, 222, 255, 0.1);
@@ -76,6 +77,12 @@
         }
     }
 
+    &__coin-logo {
+        display: inline-block;
+        margin-right: 43px;
+    } 
+
+    
     @include media-breakpoint-down (sm) {
     }
 }

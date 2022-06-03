@@ -326,54 +326,54 @@ textarea {}
 /* section - блоки сайта */
 .dcg-section {
     background: #051429;
-    /*_Main*/
-    &_main-part {
-        padding: 46px 94px 79px 80px;
+
+    &_padding-heading {
+        padding: 50px 94px 85px 80px;
     }
 
-    &_coins-line {
+    &_padding-small {
+        padding: 65px 64px 75px 70px;
     }
 
-    &_highlights {
-        padding: 60px 64px 80px 64px;
+    &_padding-big {
+        padding: 100px 165px 100px 165px;
     }
 
-    &_benefits {
-        padding: 128px 168px 29px 124px;
+
+
+    &_light-three-left::after {
+        background-image: url("../images/light-bottom-one.png"), url("../images/light-bottom-two.png"), url("../images/light-bottom-left.png"), url("../images/light-dots.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: top;
     }
 
-    &_popular-pairs {
-        padding: 100px 64px 50px 64px;
+    &_light-three-left::before {
+
+    }
+        
+    &_light-three-right {
+    background-image: url("../images/light-bottom-one.png"), url("../images/light-bottom-two.png"), url("../images/light-bottom-right.png"), url("../images/light-dots.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: top;
+    z-index: 3;
     }
 
-    &_download-wallet {
-        padding: 133px 63px 219px 80px;
+    &_light-two {
+        background-image: url(../images/light-bottom-left.png), url(../images/light-dots.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: top;
+        z-index: 3;
     }
 
-    &_reports {
-        padding-top: 120px;
+    &_border-bottom {
+        border-width: 0px 0px 1px 0px;
+        border-color: rgba(196, 222, 255, 0.12);
+        border-style: solid;
     }
 
-    &_faq {
-        padding: 120px 175px;
-    }
-
-    &_border {
-        border-bottom: 1px solid #19263A;
-    }
-    /*_Coins*/
-    &_breadcrumbs {
-        padding: 60px 0px 80px 80px;
-    }
-
-    &_filter-form {
-        padding: 40px 64px 0px 64px;
-    }
-
-    &_download-wallet {
-        padding: 133px 0px 223px 80px;
-    } 
-    
     & + & {
     }
 

@@ -7,14 +7,26 @@
         line-height: 30px;
     }
 
-    li:first-child {
-        margin-top: 10px;
-    }
-
     a {
         font-weight: 400;
         font-size: 15px;
         line-height: 22px;
+    }
+
+    ul {
+        margin: 16px 0px;
+    }
+
+    &__title {
+        color: rgba(196, 222, 255, 0.72);
+    }
+
+    &__item {
+        color: rgba(221, 234, 250, 0.92);
+    }
+
+    &__last-item {
+        color: rgba(221, 234, 250, 0.92);
     }
 
     @include media-breakpoint-down (sm) {

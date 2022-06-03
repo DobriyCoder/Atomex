@@ -1,9 +1,14 @@
 // /*.....................................*/
 // /* TEMPLATE: graph-widget */
 .dc-graph-widget {
+    margin-top: 32px;
 
+    iframe {
+        border-radius: 32px;
+        width: 100% !important;
+        height: 497px !important;
+    }
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: graph-widget */

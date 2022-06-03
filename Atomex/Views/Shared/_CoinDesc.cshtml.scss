@@ -1,9 +1,16 @@
 // /*.....................................*/
 // /* TEMPLATE: coin-desc */
 .dc-coin-desc {
+
+    h2 {
+        color: rgba(221, 234, 250, 0.92);
+        margin-bottom: 32px;
+    }
+
     &__text {
         column-count: 2;
         column-gap: 100px;
+        color: rgba(196, 222, 255, 0.72);
     }
 
     @include media-breakpoint-down (sm) {

@@ -18,6 +18,10 @@
         color: rgba(196, 222, 255, 0.32);
     }
 
+    &__item:last-child {
+        color: rgba(196, 222, 255, 0.32);
+    }
+
     @include media-breakpoint-down (sm) {
     }
 }

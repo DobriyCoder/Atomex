@@ -103,6 +103,10 @@
         color: rgba(196, 222, 255, 0.32);
     }
 
+    &__item:last-child {
+        color: rgba(196, 222, 255, 0.32);
+    }
+
     @include media-breakpoint-down (sm) {
     }
 }
@@ -133,9 +137,16 @@
 // /*.....................................*/
 // /* TEMPLATE: coin-desc */
 .dc-coin-desc {
+
+    h2 {
+        color: rgba(221, 234, 250, 0.92);
+        margin-bottom: 32px;
+    }
+
     &__text {
         column-count: 2;
         column-gap: 100px;
+        color: rgba(196, 222, 255, 0.72);
     }
 
     @include media-breakpoint-down (sm) {
@@ -147,9 +158,27 @@
 // /*.....................................*/
 // /* TEMPLATE: coin-info */
 .dc-coin-info {
+    &__title {
+        padding-bottom: 40px;
+        border-width: 0px 0px 1px 0px;
+        border-style: solid;
+        border-color: rgba(196, 222, 255, 0.06);
+        margin-bottom: 24px;
+    }
+
+    &__caption {
+        color: rgba(196, 222, 255, 0.72);
+    }
+
+    &__value {
+        color: rgba(221, 234, 250, 0.92);
+
+        &_positive {
+            color: #00D7CB;
+        }
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: coin-info */
@@ -188,9 +217,83 @@
 // /*.....................................*/
 // /* TEMPLATE: coins-table */
 .dc-coins-table {
+    width: 100%;
+    margin-top: 34px;
+
+    &__head {
+        background: rgba(196, 222, 255, 0.1);
+
+        th {
+            padding: 13px 0px 13px 0px;
+            text-align: start;
+            color: rgba(221, 234, 250, 0.92);
+        }
+
+        th:first-child {
+            border-radius: 8px 0px 0px 8px;
+            padding: 13px 0px 13px 16px;
+        }
+
+        th:last-child {
+            border-radius: 0px 8px 8px 0px;
+            padding: 13px 114px 13px 0px;
+        }
+    }
+
+    &__item {
+        border-style: solid;
+        border-color: rgba(196, 222, 255, 0.1);
+        border-width: 0px 0px 1px 0px;
+
+        td:first-child {
+            padding-left: 17px;
+            padding-top: 5px;
+        }
+
+        td:last-child {
+            padding: 13px 0px;
+        }
+    }
+
+    &__device {
+        display: flex;
+
+        img {
+            margin-right: 6px;
+        }
+
+        span {
+            color: rgba(196, 222, 255, 0.72);
+        }
+    }
+
+    &__coin {
+        display: inline-block;
+
+        &:first-child {
+            margin-right: 45px;
+        }
+    }
+
+    &__text-box {
+        line-height: 56px;
+        color: rgba(196, 222, 255, 0.72);
+    }
+
+    &__item:hover {
+        background: rgba(196, 222, 255, 0.1);
+        border: none;
+
+        td:first-child {
+            border-radius: 8px 0px 0px 8px;
+        }
+
+        td:last-child {
+            border-radius: 0px 8px 8px 0px;
+        }
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: coins-table */
@@ -223,6 +326,7 @@
 .dc-download-btn {
     display: inline-flex;
     flex-direction: column;
+    margin-bottom: 16px;
 
     &__select {
         width: 94px;
@@ -603,14 +707,26 @@
         line-height: 30px;
     }
 
-    li:first-child {
-        margin-top: 10px;
-    }
-
     a {
         font-weight: 400;
         font-size: 15px;
         line-height: 22px;
+    }
+
+    ul {
+        margin: 16px 0px;
+    }
+
+    &__title {
+        color: rgba(196, 222, 255, 0.72);
+    }
+
+    &__item {
+        color: rgba(221, 234, 250, 0.92);
+    }
+
+    &__last-item {
+        color: rgba(221, 234, 250, 0.92);
     }
 
     @include media-breakpoint-down (sm) {
@@ -622,9 +738,14 @@
 // /*.....................................*/
 // /* TEMPLATE: graph-widget */
 .dc-graph-widget {
+    margin-top: 32px;
 
+    iframe {
+        border-radius: 32px;
+        width: 100% !important;
+        height: 497px !important;
+    }
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: graph-widget */
@@ -773,10 +894,18 @@
 // /*.....................................*/
 // /* TEMPLATE: main-title */
 .dc-main-title {
+    margin-bottom: 30px;
+
     &__caption {
-        margin-top: 24px; 
-    } 
-    
+        margin-top: 24px;
+        margin-bottom: 8px;
+        color: rgba(221, 234, 250, 0.92);
+    }
+
+    &__desc {
+        color: rgba(196, 222, 255, 0.72);
+    }
+
     @include media-breakpoint-down (sm) {
     }
 }
@@ -796,8 +925,8 @@
 
     &__download {
         margin-top: 40px;
-    } 
-    
+    }
+
     &__warning {
         font-family: 'Inter';
         font-style: normal;
@@ -805,7 +934,6 @@
         font-size: 15px;
         line-height: 22px;
         color: rgba(196, 222, 255, 0.72);
-        margin-top: 16px;
     }
 
     @include media-breakpoint-down (sm) {
@@ -839,9 +967,39 @@
 // /*.....................................*/
 // /* TEMPLATE: pagination */
 .dc-pagination {
+    margin-top: 32px;
+    float: right;
+    color: rgba(221, 234, 250, 0.92);
+
+    &__list {
+        display: inline-block;
+    }
+
+    &__list-item-wrapper {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    &__item {
+        line-height: 44px;
+
+        &_active {
+            display: inline-block;
+            border: 0px solid;
+            background-color: rgba(196, 222, 255, 0.1);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            text-align: center;
+        }
+    }
+
+    &__btn-next {
+        display: inline-block;
+        cursor: pointer;
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: pagination */
@@ -850,9 +1008,28 @@
 // /*.....................................*/
 // /* TEMPLATE: pair-info */
 .dc-pair-info {
+    &__title {
+        padding-bottom: 40px;
+        margin-bottom: 40px;
+        border-width: 0px 0px 1px 0px;
+        border-style: solid;
+        border-color: rgba(196, 222, 255, 0.06);
+        margin-bottom: 24px;
+    }
+
+    &__caption {
+        color: rgba(196, 222, 255, 0.72);
+    }
+
+    &__value {
+        color: rgba(221, 234, 250, 0.92);
+
+        &_positive {
+            color: #00D7CB;
+        }
+    }
 
     @include media-breakpoint-down (sm) {
-
     }
 }
 // /* /TEMPLATE: pair-info */
@@ -862,6 +1039,7 @@
 // /* TEMPLATE: pairs-table */
 .dc-pairs-table {
     width: 100%;
+    margin-top: 24px;
 
     &__head {
         background: rgba(196, 222, 255, 0.1);
@@ -936,6 +1114,12 @@
         }
     }
 
+    &__coin-logo {
+        display: inline-block;
+        margin-right: 43px;
+    } 
+
+    
     @include media-breakpoint-down (sm) {
     }
 }
@@ -960,7 +1144,7 @@
     }
 
     @include media-breakpoint-down (sm) {
-    }
+    } 
 }
 // /* /TEMPLATE: popular-pairs */
 // /*.....................................*/
@@ -1001,7 +1185,7 @@
 .dc-reports {
 
     &__blocks{
-        padding: 0px 171px;
+        //padding: 0px 171px;
     }
     
     &__title{
@@ -1052,6 +1236,7 @@
 // /*.....................................*/
 // /* TEMPLATE: sort */
 .dc-sort {
+    float: right;
 
     @include media-breakpoint-down (sm) {
 
