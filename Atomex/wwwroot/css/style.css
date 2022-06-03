@@ -4542,32 +4542,25 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
   padding: 65px 64px 75px 70px;
 }
 .dcg-section_padding-big {
-  padding: 100px 165px 100px 165px;
+  padding: 95px 165px 95px 165px;
 }
-.dcg-section_light-three-left::after {
-  background-image: url("../images/light-bottom-one.png"), url("../images/light-bottom-two.png"), url("../images/light-bottom-left.png"), url("../images/light-dots.png");
+.dcg-section_light-bottom-left {
+  background-image: url("/images/background-main.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-position: top;
 }
-.dcg-section_light-three-right {
-  background-image: url("../images/light-bottom-one.png"), url("../images/light-bottom-two.png"), url("../images/light-bottom-right.png"), url("../images/light-dots.png");
+.dcg-section_light-left {
+  background-image: url("/images/background-left.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-position: top;
-  z-index: 3;
-}
-.dcg-section_light-two {
-  background-image: url(../images/light-bottom-left.png), url(../images/light-dots.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: top;
-  z-index: 3;
 }
 .dcg-section_border-bottom {
   border-width: 0px 0px 1px 0px;
   border-color: rgba(196, 222, 255, 0.12);
   border-style: solid;
+}
+.dcg-section_mini {
+  height: 435px;
 }
 /* /section */
 /*.....................................*/
@@ -4723,6 +4716,8 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.dc-benefit:not(:last-child) {
   margin-bottom: 96px;
 }
 .dc-benefit__text {
@@ -4914,6 +4909,7 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
   display: inline-flex;
   flex-direction: column;
   margin-bottom: 16px;
+  box-shadow: 8px 13px 20px rgba(15, 6, 41, 0.22), inset 0px -1px 2px rgba(135, 103, 226, 0.07);
 }
 .dc-download-btn__select {
   width: 94px;
@@ -4993,6 +4989,14 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
   letter-spacing: 0.01em;
   color: rgba(221, 234, 250, 0.92);
   margin-bottom: 56px;
+}
+.dc-download-wallet__decorative-blocks {
+  display: block;
+}
+.dc-download-wallet__decorative-img {
+  position: relative;
+  top: 0px;
+  right: -100px;
 }
 .dc-exchange-widget {
   float: right;
