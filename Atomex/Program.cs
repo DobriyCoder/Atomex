@@ -14,9 +14,7 @@ builder.Services.AddDbContext<CDbM>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 , ServiceLifetime.Transient);
 
-/*builder.Services.AddDbContext<CDbSingM>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-, ServiceLifetime.Singleton);*/
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddTransient<CCommonM>();
 builder.Services.AddTransient<CCoinsM>();

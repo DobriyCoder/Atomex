@@ -1,6 +1,13 @@
-﻿@*@model I_breadcrumbs *@
+﻿@model (string controller, string title, string pageTitle)
 
 <ul class="dc-breadcrumbs">
-    <li class="dc-breadcrumbs__item dcg-caption"><a asp-controller="Home">Home</a></li>
-    <li class="dc-breadcrumbs__item dcg-caption"><span>Coin Pairs</span></li>
+
+    <li class="dc-breadcrumbs__item dcg-caption"><a asp-controller="Home" asp-action="Index">Home</a></li>
+    
+    @if (Model.controller != "")
+    {
+        <li class="dc-breadcrumbs__item dcg-caption"><a asp-controller="@Model.controller" asp-action="Index">@Model.title</a></li>
+    }
+
+    <li class="dc-breadcrumbs__item dcg-caption"><span>@Model.pageTitle</span></li>
 </ul> 

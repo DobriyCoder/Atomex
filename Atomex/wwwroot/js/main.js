@@ -94,7 +94,13 @@ jQuery('.dc-exchange-widget').dcTpl(function ($, Export) {
 
 // faq
 jQuery('.dc-faq').dcTpl(function ($, Export) {
-   var $self = $(this);
+    var $self = $(this);
+
+    $self.on("click", ".dcj-btn", function () {
+        var $this = $(this);
+        $this.toggleClass("dcg-active");
+        $this.find(".dcj-content").slideToggle();
+    });
 });
 // /faq
 //--------------------------------------------
@@ -234,7 +240,13 @@ jQuery('.dc-pair-info').dcTpl(function ($, Export) {
 
 // pairs-table
 jQuery('.dc-pairs-table').dcTpl(function ($, Export) {
-   var $self = $(this);
+    var $self = $(this);
+
+    $self.on("click", ".dcj-btn", function () {
+        var $this = $(this);
+        var url = $this.find('.dcj-link').attr('href');
+        window.location.href = url;
+    });
 });
 // /pairs-table
 //--------------------------------------------

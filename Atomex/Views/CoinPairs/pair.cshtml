@@ -15,7 +15,7 @@
         <div class="dcg-section dcg-section_mini dcg-section_light-left dcg-section_border-bottom dcg-section_padding-heading">
             <div class="row">
                 <div class="col">
-                    @await Html.PartialAsync("_Breadcrumbs")
+                    @await Html.PartialAsync("_Breadcrumbs", (controller: "CoinPairs", title: "Coin Pairs", pageTitle: $"Exchange {Model.pair.coin1.name} to {Model.pair.coin2.name}"))
                     @await Html.PartialAsync("_MainTitle")
                     @await Html.PartialAsync("_DownloadBtn")
                     <p>No registration or identity verification required.</p>
@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="dcg-section dcg-section_padding-small">
-            @await Html.PartialAsync("_PairInfo")
+            @await Html.PartialAsync("_PairInfo", Model.pair.data)
         </div>
         <div class="dcg-section dcg-section_padding-small">
             @await Html.PartialAsync("_CoinDesc")

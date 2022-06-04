@@ -1,4 +1,4 @@
-﻿@*@model I_pair-info *@
+﻿@model CCoinPairDataM
 
 <div class="dc-pair-info">
     <h2 class="dcg-h2 dc-pair-info__title">Live ETH to XTZ price chart</h2>
@@ -6,27 +6,27 @@
         <div class="col">
             <div class="dc-coin-info__item">
                 <div class="dc-coin-info__caption dcg-caption">Price</div>
-                <h3 class="dcg-h3 dc-coin-info__value">$13.10580488</h3>
+                <h3 class="dcg-h3 dc-coin-info__value">$@Model.price_1</h3>
             </div>
         </div>
         <div class="col">
             <div class="dc-coin-info__item">
                 <div class="dc-coin-info__caption dcg-caption">Available volume</div>
-                <h3 class="dcg-h3 dc-coin-info__value">$360.9812B</h3>
+                <h3 class="dcg-h3 dc-coin-info__value">$@Model.volume_24h_1</h3>
             </div>
         </div>
         <div class="col">
             <div class="dc-coin-info__item">
                 <div class="dc-coin-info__caption dcg-caption">Network fees</div>
-                <h3 class="dcg-h3 dc-coin-info__value">$4.1237232</h3>
+                <h3 class="dcg-h3 dc-coin-info__value">$@CConst.NETWORK_FEE</h3>
             </div>
         </div>
         <div class="col">
             <div class="dc-coin-info__item">
                 <div class="dc-coin-info__caption dcg-caption">24h change</div>
-                <h3 class="dcg-h3 dc-coin-info__value dc-coin-info__value_positive">+4.13%</h3>
+                <h3 class="dcg-h3 dc-coin-info__value dc-coin-info__value_positive"><change>@Model.coin_1.day_percent_change</change></h3>
             </div>
         </div>
     </div>
-    @await Html.PartialAsync("_GraphWidget")
+    @await Html.PartialAsync("_GraphWidget", (coin1: Model.coin_1.name, coin2: Model.coin_2.name))
 </div>

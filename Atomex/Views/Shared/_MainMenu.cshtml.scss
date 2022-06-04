@@ -21,7 +21,7 @@
         margin-top: 4px;
     }
 
-    li:hover::after {
+    li:hover::after, li.dcg-active::after {
         transition: all 250ms;
         width: 100%;
     }
@@ -29,7 +29,6 @@
     a {
 
         &:hover, &.dcg-active {
-            
         }
 
         &.dcg-icon-right::after {

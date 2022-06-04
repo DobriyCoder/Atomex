@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace Sass.TagHelpers
+namespace CryptoApi.TagHelpers
 {
     public class SvgTagHelper : TagHelper
     {

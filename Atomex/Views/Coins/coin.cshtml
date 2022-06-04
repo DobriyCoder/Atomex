@@ -13,7 +13,7 @@
         <div class="dcg-section dcg-section_mini dcg-section_border-bottom dcg-section_light-left dcg-section_padding-heading">
             <div class="row">
                 <div class="col">
-                    @await Html.PartialAsync("_Breadcrumbs")
+                    @await Html.PartialAsync("_Breadcrumbs", (controller: "Coins", title: "Coins", pageTitle: Model.coin.data.name_full))
                     @await Html.PartialAsync("_MainTitle")
                 </div>
                 <div class="col">
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="dcg-section dcg-section_padding-small">
-            @await Html.PartialAsync("_CoinInfo")
+            @await Html.PartialAsync("_CoinInfo", Model.coin.data)
         </div>
         <div class="dcg-section dcg-section_padding-small">
             @await Html.PartialAsync("_CoinDesc")

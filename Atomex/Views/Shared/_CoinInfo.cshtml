@@ -1,4 +1,5 @@
-﻿@*@model I_coin-info *@
+﻿@inject CBlocksHelperVM BlocksHelper
+@model CCoinDataM 
 
 <div class="dc-coin-info">
     <h2 class="dcg-h2 dc-coin-info__title">Ethereum to USD price chart</h2>
@@ -6,21 +7,21 @@
         <div class="col">
             <div class="dc-coin-info__item">
                 <div class="dc-coin-info__caption dcg-caption">Price</div>
-                <h3 class="dcg-h3 dc-coin-info__value">$13.10580488</h3>
+                <h3 class="dcg-h3 dc-coin-info__value">$@Model.usd_price</h3>
             </div>
         </div>
         <div class="col">
             <div class="dc-coin-info__item">
                 <div class="dc-coin-info__caption dcg-caption">Market cap</div>
-                <h3 class="dcg-h3 dc-coin-info__value">$360.9812B</h3>
+                <h3 class="dcg-h3 dc-coin-info__value">$@Model.market_cap</h3>
             </div>
         </div>
         <div class="col">
             <div class="dc-coin-info__item">
                 <div class="dc-coin-info__caption dcg-caption">24h change</div>
-                <h3 class="dcg-h3 dc-coin-info__value dc-coin-info__value_positive">+4.13%</h3>
+                <h3 class="dcg-h3 dc-coin-info__value dc-coin-info__value_positive"><change>@Model.day_percent_change</change></h3>
             </div>
         </div>
     </div>  
-    @await Html.PartialAsync("_GraphWidget")
+    @await Html.PartialAsync("_GraphWidget", (coin1: Model.name, coin2: "usd"))
 </div>

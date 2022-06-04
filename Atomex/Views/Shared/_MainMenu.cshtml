@@ -1,11 +1,12 @@
 ﻿@*@model I_main-menu *@
+@inject CBlocksHelperVM BlocksHelper
 
 <nav class="dc-main-menu">
     <ul>
-        <li><a asp-controller="Home" asp-action="Index">Wallet</a></li>
-        <li><a asp-controller="Coins" asp-action="Index">Coins</a></li>
-        <li><a asp-controller="CoinPairs" asp-action="Index">Coin Pairs</a></li>
-        <li><a href="/actualizer/test" class="dcg-icon-right">Docs</a></li>
-        <li><a href="#">Downloads</a></li>
+        <li class="@BlocksHelper.GetActiveClass("Home")"><a asp-controller="Home" asp-action="Index">Wallet</a></li>
+        <li class="@BlocksHelper.GetActiveClass("Coins")"><a asp-controller="Coins" asp-action="Index">Coins</a></li>
+        <li class="@BlocksHelper.GetActiveClass("CoinPairs")"><a asp-controller="CoinPairs" asp-action="Index">Coin Pairs</a></li>
+        <li class="@BlocksHelper.GetActiveClass("")"><a href="/actualizer/test" class="dcg-icon-right">Docs</a></li>
+        <li class="@BlocksHelper.GetActiveClass("")"><a href="#">Downloads</a></li>
     </ul>
 </nav>

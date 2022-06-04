@@ -4608,6 +4608,14 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
 }
 
 /*.....................................*/
+.dcg-change_sub {
+  color: #E1457C;
+}
+.dcg-change_sup {
+  color: #00D7CB;
+}
+
+/*.....................................*/
 /* /common */
 /* /CLASSES */
 /*------------------------------------------------------------*/
@@ -5123,22 +5131,9 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
   border-color: rgba(196, 222, 255, 0.12);
 }
 .dc-faq__content {
-  height: 0px;
-}
-.dc-faq__content p {
   display: none;
-  opacity: 0;
 }
-.dc-faq__item:hover .dc-faq__content {
-  transition: all 10000ms;
-  height: auto;
-}
-.dc-faq__item:hover .dc-faq__content p {
-  transition: all 10000ms;
-  display: inline-block;
-  opacity: 1;
-}
-.dc-faq__item:hover .dc-faq__arrow {
+.dc-faq__item.dcg-active .dc-faq__arrow {
   transition: all 300ms;
   transform: rotate(180deg);
 }
@@ -5250,7 +5245,7 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
   display: block;
   margin-top: 4px;
 }
-.dc-main-menu li:hover::after {
+.dc-main-menu li:hover::after, .dc-main-menu li.dcg-active::after {
   transition: all 250ms;
   width: 100%;
 }
@@ -5356,6 +5351,7 @@ button.dcg-btn_color[disabled], [type=button].dcg-btn_color[disabled], [type=sub
   border-style: solid;
   border-color: rgba(196, 222, 255, 0.1);
   border-width: 0px 0px 1px 0px;
+  cursor: pointer;
 }
 .dc-pairs-table__item td:first-child {
   padding-left: 17px;

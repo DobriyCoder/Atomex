@@ -612,27 +612,10 @@
     }
 
     &__content {
-        height: 0px;
-
-        p {
-            display: none;
-            opacity: 0;
-        }
+        display: none;
     }
 
-    &__item:hover {
-
-        .dc-faq__content {
-            transition: all 10000ms;
-            height: auto;
-
-            p {
-                transition: all 10000ms;
-                display: inline-block;
-                opacity: 1;
-            }
-        }
-
+    &__item.dcg-active {
         .dc-faq__arrow {
             transition: all 300ms;
             transform: rotate(180deg);
@@ -884,7 +867,7 @@
         margin-top: 4px;
     }
 
-    li:hover::after {
+    li:hover::after, li.dcg-active::after {
         transition: all 250ms;
         width: 100%;
     }
@@ -892,7 +875,6 @@
     a {
 
         &:hover, &.dcg-active {
-            
         }
 
         &.dcg-icon-right::after {
@@ -1081,6 +1063,7 @@
         border-style: solid;
         border-color: rgba(196, 222, 255, 0.1);
         border-width: 0px 0px 1px 0px;
+        cursor: pointer;
 
         td:first-child {
             padding-left: 17px;

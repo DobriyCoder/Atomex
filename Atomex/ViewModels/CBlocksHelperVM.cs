@@ -13,16 +13,26 @@ public class CBlocksHelperVM
     IConfiguration conf;
     CCoinsM coinsModel;
     CCoinPairsM pairsModel;
+    IHttpContextAccessor contextAccessor;
 
+    public string GetActiveClass(string controller, string action = "Index")
+    {
+        var context = contextAccessor.HttpContext;
+        string? r_contr = (string?)context.GetRouteValue("controller");
+        string? r_action = (string?)context.GetRouteValue("action");
+
+        return r_contr == controller && r_action == action ? "dcg-active" : "";
+    }
     /// <summary>
     ///     Конструктор. заполняет  необходимые поля при создании модели.
     /// </summary>
-    public CBlocksHelperVM (IConfiguration conf, CDbM db, CCoinsM coins_model, CCoinPairsM pairs_model)
+    public CBlocksHelperVM (IHttpContextAccessor context, IConfiguration conf, CDbM db, CCoinsM coins_model, CCoinPairsM pairs_model)
     {
         this.db = db;
         this.coinsModel = coins_model;
         this.pairsModel = pairs_model;
         this.conf = conf;
+        contextAccessor = context;
     }
     /// <summary>
     ///     Возвращает список монет относительно кол-ва и номера страницы.

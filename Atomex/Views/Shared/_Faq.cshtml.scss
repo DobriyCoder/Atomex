@@ -40,27 +40,10 @@
     }
 
     &__content {
-        height: 0px;
-
-        p {
-            display: none;
-            opacity: 0;
-        }
+        display: none;
     }
 
-    &__item:hover {
-
-        .dc-faq__content {
-            transition: all 10000ms;
-            height: auto;
-
-            p {
-                transition: all 10000ms;
-                display: inline-block;
-                opacity: 1;
-            }
-        }
-
+    &__item.dcg-active {
         .dc-faq__arrow {
             transition: all 300ms;
             transform: rotate(180deg);

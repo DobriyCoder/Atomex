@@ -12,20 +12,21 @@
 
     @foreach (var pair in Model)
     {
-        <tr class="dc-pairs-table__item">
+        <tr class="dc-pairs-table__item dcj-btn">
             <td> 
                 <div class="dc-pairs-table__coin-logo">@await Html.PartialAsync("_Coin", pair.coin1)</div>
                 @await Html.PartialAsync("_Coin", pair.coin2)
+                <a class="dcg-dn dcj-link" asp-controller="CoinPairs" asp-action="Pair" asp-route-coin1="@pair.coin1.name" asp-route-coin2="@pair.coin2.name"></a>
             </td>
 
-            <td><span class="dc-pairs-table__text-box dcg-caption">≈ $13.10580488</span></td>
-            <td><span class="dc-pairs-table__text-box dcg-caption">$0.00968022</span></td>
-            <td><span class="dc-pairs-table__text-box dcg-caption">83,862.9812 ETH</span></td>
-            <td><span class="dc-pairs-table__text-box dcg-caption">$83,862.9812</span></td>
+            <td><span class="dc-pairs-table__text-box dcg-caption">≈ $@pair.data.price_1</span></td>
+            <td><span class="dc-pairs-table__text-box dcg-caption">$@CConst.NETWORK_FEE</span></td>
+            <td><span class="dc-pairs-table__text-box dcg-caption">@pair.coin1.volume_24h @pair.coin1.name</span></td>
+            <td><span class="dc-pairs-table__text-box dcg-caption">$@pair.coin2.volume_24h</span></td>
             <td>
                 <div class="dc-pairs-table__device">
                     <img src="/images/mobile.svg" alt="icon-mobile"/>
-                    <span class="dcg-caption">apps</span>
+                    <span class="dcg-caption">@CConst.AVAILABILITY</span>
                 </div>
             </td> 
         </tr>
