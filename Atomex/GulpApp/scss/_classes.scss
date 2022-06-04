@@ -336,7 +336,7 @@ textarea {}
     }
 
     &_padding-big {
-        padding: 95px 165px 95px 165px;
+        padding: 95px 150px 95px 150px;
     }
 
     &_light-bottom-left {
@@ -361,6 +361,10 @@ textarea {}
         height: 435px;
     }
 
+    &_hidden {
+        overflow: hidden;
+    }
+
     & + & {
     }
 
@@ -380,6 +384,10 @@ textarea {}
     }
 
     &_error {
+    }
+
+    @include media-breakpoint-down (xl) {
+        //background-color: red;
     }
 }
 /* /section */
