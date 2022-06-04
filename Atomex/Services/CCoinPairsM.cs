@@ -11,15 +11,17 @@ namespace CryptoApi.Services;
 public class CCoinPairsM : CBaseDbM
 {
     CCoinsM coinsModel;
+    CCommonM commonModel;
 
     /// <summary>
     ///     Конструктор. заполняет  необходимые поля при создании модели. Передает модель БД родителю.
     /// </summary>
-    public CCoinPairsM(CDbM db, CCoinsM coins) : base(db)
+    public CCoinPairsM(CDbM db, CCoinsM coins, CCommonM common) : base(db)
     //public CCoinPairsM(CDbM db, CCoinsM coins, CDbSingM dbSign) : base(db, dbSign)
     {
         coinsModel = coins;
         /*db.CoinPairs = GetPairsData();*/
+        commonModel = common;
     }
 
     public IEnumerable<CCoinPairDataM> GetPairsData (string? filter = null)
@@ -129,7 +131,8 @@ public class CCoinPairsM : CBaseDbM
             {
                 data = p,
                 coin1 = p.coin_1,
-                coin2 = p.coin_2
+                coin2 = p.coin_2,
+                commonModel = commonModel,
             });
     }
 
@@ -143,7 +146,8 @@ public class CCoinPairsM : CBaseDbM
             {
                 data = p,
                 coin1 = p.coin_1,
-                coin2 = p.coin_2
+                coin2 = p.coin_2,
+                commonModel = commonModel,
             });
     }
 
@@ -159,7 +163,8 @@ public class CCoinPairsM : CBaseDbM
         {
             data = new CCoinPairDataM(coin1.data, coin2.data, GetMeta(coin1.data.id, coin2.data.id)),
             coin1 = coin1.data,
-            coin2 = coin2.data
+            coin2 = coin2.data,
+            commonModel = commonModel,
         };
     }
 

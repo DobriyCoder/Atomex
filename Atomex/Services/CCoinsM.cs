@@ -12,12 +12,14 @@ namespace CryptoApi.Services;
 public class CCoinsM : CBaseDbM
 {
     IConfiguration conf;
+    CCommonM commonModel;
     /// <summary>
     ///     Конструктор. Передает модель БД родителю.
     /// </summary>
-    public CCoinsM(CDbM db, IConfiguration conf) : base(db) 
+    public CCoinsM(CDbM db, IConfiguration conf, CCommonM common) : base(db) 
     {
         this.conf = conf;
+        this.commonModel = common;
     }
     //public CCoinsM(CDbM db, CDbSingM dbSign) : base(db, dbSign) { }
 
@@ -176,7 +178,11 @@ public class CCoinsM : CBaseDbM
 
         return coins.Count();
     }
-
+    int Test(CCoinDataM c)
+    {
+        //Console.WriteLine($"{c.name}");
+        return (int)c.id;
+    }
     /// <summary>
     ///     Достает монеты из БД используя исходное заданное количество и номер страницы.
     /// </summary>
@@ -189,26 +195,28 @@ public class CCoinsM : CBaseDbM
             {
                 Type type = typeof(CCoinDataM);
                 return type.GetProperty(order).GetValue(c, null);
-            });*/
+            }).Select(c => c);*/
 
         /*if (filter != "" && filter != null)
             result = result.Where(c => c.name.Contains(filter) || c.name_full.Contains(filter));*/
-            
-        return result
-            .Where(c => c.enable.Value)
-            .Skip((page - 1) * count)
-            .Take(count)
+        int t = 0;
+        //db.Database.SqlQuery("");
+        return result.AsQueryable()
             .Include(c => c.ext)
             .Include(c => c.meta)
-            .Select(c => 
-                //c.meta = db.CoinsMeta.Where(m => m.coins_id == c.id);
-                //c.ext = db.CoinsExt.Where(e => e.coins_id == c.id);
-
+            //.Join(db.CoinsExt, c => c.id, e => e.coins_id, (c, e) => n)
+            .Where(c => c.enable.Value)
+            //.OrderBy((c) => c.usd_price)
+            .Skip((page - 1) * count)
+            .Take(count)
+            .Select(c =>
                 new CCoinDataVM()
                 {
-                    data = c
+                    data = c,
+                    commonModel = commonModel
                 }
-            );
+            )
+        ;
     }
     public IEnumerable<CCoinDataM> GetCoins() => db.Coins.Where(c => c.enable.Value);
     public CCoinDataM GetCoinByIndex(int index)
@@ -222,7 +230,7 @@ public class CCoinsM : CBaseDbM
         return db.Coins
             .Where(c => c.enable.Value && (filter == "" || c.name.Contains(filter) || c.name_full.Contains(filter)))
             .Include(c => c.ext);
-            //.Where(c => c.ext.Count() > 0);
+        //.Where(c => c.ext.Count() > 0);
     }
 
     /// <summary>
