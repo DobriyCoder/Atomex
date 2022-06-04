@@ -2,16 +2,25 @@
 // /* TEMPLATE: copyright */
 .dc-copyright {
     line-height: 20px;
+    color: rgba(196, 222, 255, 0.32);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
 
     &__text {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 15px;
     }
 
-    &__text:first-child {
-        margin-right: 12px;
+    &__text:not(:first-child) {
+        margin-left: 16px;
+    }
+
+    &__link {
+        border-width: 0px 0px 1px 0px;
+        border-color: rgba(196, 222, 255, 0.32);
+        border-style: solid;
+        margin-left: 16px;
+        cursor: pointer;
     }
 
     @include media-breakpoint-down (sm) {

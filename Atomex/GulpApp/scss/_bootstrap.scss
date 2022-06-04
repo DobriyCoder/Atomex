@@ -4,20 +4,22 @@ $grid-gutter-width: 12px;
 $grid-breakpoints: (
   xs: 0,
   // Small screen / phone
-  sm: 576px,
+  sm: 586px,
   // Medium screen / tablet
-  md: 768px,
+  md: 850px,
   // Large screen / desktop
-  lg: 992px,
+  lg: 1010px,
   // Extra large screen / wide desktop
-  xl: 1200px
+  xl: 1240px,
+  xxl: 1530px  
 );
 
 $container-max-widths: (
   sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1452px // width + $grid-gutter-width * 2
+  md: 780px,
+  lg: 940px,
+  xl: 1160px,
+  xxl: 1452px
 );
-
+ 
 @import "node_modules/bootstrap/scss/bootstrap-grid";

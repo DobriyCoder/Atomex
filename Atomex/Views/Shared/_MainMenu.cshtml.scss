@@ -14,15 +14,15 @@
     li::after {
         content: '';
         width: 0%;
-        height: 3px;
+        height: 2px;
         background: #00D7CB;
         border-radius: 2px;
         display: block;
         margin-top: 4px;
+        transition: all 250ms;
     }
 
     li:hover::after, li.dcg-active::after {
-        transition: all 250ms;
         width: 100%;
     }
 
