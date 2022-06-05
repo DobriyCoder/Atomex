@@ -11,36 +11,10 @@
         padding: 14px 65px 0 0;
     }
 
-    li::after {
-        content: '';
-        width: 0%;
-        height: 2px;
-        background: #00D7CB;
-        border-radius: 2px;
-        display: block;
-        margin-top: 4px;
-        transition: all 250ms;
-    }
-
-    li:hover::after, li.dcg-active::after {
-        width: 100%;
-    }
-
-    a {
-
-        &:hover, &.dcg-active {
-        }
-
-        &.dcg-icon-right::after {
-            margin-left: 7px;
-        }
-    }
-
-
     @include media-breakpoint-down (lg) {
 
         & {
-            margin-top: 32px;
+            margin-bottom: 20px;
         }
 
         ul {

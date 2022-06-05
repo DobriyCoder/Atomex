@@ -21,7 +21,7 @@
                 <div class="col">@await Html.PartialAsync("_Pagination", BlocksHelper.GetPagination(Model.maxPage, Model.page))</div>
             </div>
         </div>
-        <div class="dcg-section dcg-section_padding-small dcg-section_light-bottom-left">
+        <div class="dcg-section_hidden dcg-section dcg-section_padding-small dcg-section_light-bottom-left">
             @await Html.PartialAsync("_DownloadWallet")
         </div>
     </div>        

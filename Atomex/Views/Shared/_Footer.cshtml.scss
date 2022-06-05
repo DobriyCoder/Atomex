@@ -46,17 +46,6 @@
             justify-content: start;
             gap: 120px;
         }
-        /*.row {
-            flex-direction: column;
-        }
-
-        .row:first-child {
-            order: 2;
-        }
-
-        .row:last-child {
-            order: 1;
-        }*/
     }
 
     @include media-breakpoint-down (md) {
@@ -66,21 +55,19 @@
 
         &__menu {
             justify-content: start;
-            gap: 120px;
-        }
-    }
-
-    @include media-breakpoint-down (md) {
-
-        &__menu {
-            gap: 60px;
+            gap: 130px;
         }
     }
 
     @include media-breakpoint-down (sm) {
 
+        &__wrap {
+            padding: 40px 32px 50px 32px;
+        }
+
         &__menu {
             gap: 40px;
+            display: block;
         }
     }
 }

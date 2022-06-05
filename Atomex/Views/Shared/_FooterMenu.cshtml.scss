@@ -50,6 +50,14 @@
             margin-bottom: 8px;
         }
     }
+
+    @include media-breakpoint-down (sm) {
+        & {
+            display: inline-block;
+            width: 135px;
+            margin-top: 30px;
+        }
+    }
 }
 // /* /TEMPLATE: footer-menu */
 // /*.....................................*/

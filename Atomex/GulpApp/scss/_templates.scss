@@ -740,6 +740,8 @@
 
     &__caption {
         padding: 16px 24px 18px 24px;
+        display: flex;
+        justify-content: space-between;
     }
 
     &__heading {
@@ -852,17 +854,6 @@
             justify-content: start;
             gap: 120px;
         }
-        /*.row {
-            flex-direction: column;
-        }
-
-        .row:first-child {
-            order: 2;
-        }
-
-        .row:last-child {
-            order: 1;
-        }*/
     }
 
     @include media-breakpoint-down (md) {
@@ -872,21 +863,19 @@
 
         &__menu {
             justify-content: start;
-            gap: 120px;
-        }
-    }
-
-    @include media-breakpoint-down (md) {
-
-        &__menu {
-            gap: 60px;
+            gap: 130px;
         }
     }
 
     @include media-breakpoint-down (sm) {
 
+        &__wrap {
+            padding: 40px 32px 50px 32px;
+        }
+
         &__menu {
             gap: 40px;
+            display: block;
         }
     }
 }
@@ -966,6 +955,14 @@
         li {
             line-height: 22px;
             margin-bottom: 8px;
+        }
+    }
+
+    @include media-breakpoint-down (sm) {
+        & {
+            display: inline-block;
+            width: 135px;
+            margin-top: 30px;
         }
     }
 }
@@ -1157,36 +1154,10 @@
         padding: 14px 65px 0 0;
     }
 
-    li::after {
-        content: '';
-        width: 0%;
-        height: 2px;
-        background: #00D7CB;
-        border-radius: 2px;
-        display: block;
-        margin-top: 4px;
-        transition: all 250ms;
-    }
-
-    li:hover::after, li.dcg-active::after {
-        width: 100%;
-    }
-
-    a {
-
-        &:hover, &.dcg-active {
-        }
-
-        &.dcg-icon-right::after {
-            margin-left: 7px;
-        }
-    }
-
-
     @include media-breakpoint-down (lg) {
 
         & {
-            margin-top: 32px;
+            margin-bottom: 20px;
         }
 
         ul {
