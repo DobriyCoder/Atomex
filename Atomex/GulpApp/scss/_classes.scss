@@ -386,8 +386,18 @@ textarea {}
     &_error {
     }
 
-    @include media-breakpoint-down (xl) {
-        //background-color: red;
+    @include media-breakpoint-down (lg) {
+        &_padding-heading {
+            padding: 50px 104px 0px 104px;
+        }
+
+        &_padding-small {
+            padding: 48px 32px 48px 32px;
+        }
+
+        &_padding-big {
+            padding: 76px 32px 76px 32px;
+        }
     }
 }
 /* /section */

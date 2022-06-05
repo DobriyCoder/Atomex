@@ -37,8 +37,32 @@
     }
 
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (lg) {
+
+        & {
+            margin-top: 32px;
+        }
+
+        ul {
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        li {
+            font-family: 'Helvetica Neue';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 30px;
+            letter-spacing: 0.01em;
+            color: rgba(221, 234, 250, 0.92);
+            display: inline-block;
+        }
+
+        li:hover::after, li.dcg-active::after {
+            width: 100%;
+        }
+        // /* /TEMPLATE: main-menu */
+        // /*.....................................*/
     }
 }
-// /* /TEMPLATE: main-menu */
-// /*.....................................*/

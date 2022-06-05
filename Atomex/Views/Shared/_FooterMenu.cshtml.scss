@@ -14,12 +14,17 @@
         display: inline;
 
         span::after {
+            width: 0%;
+            transition: all 300ms;
+        }
+
+        span:hover::after {
             content: '';
-            display: inline-block;
+            display: block;
             width: 100%;
             height: 2px;
             background-color: rgba(221, 234, 250, 0.92);
-            position: relative;
+            transition: all 300ms;
         }
     }
 
@@ -39,7 +44,11 @@
         color: rgba(221, 234, 250, 0.92);
     }
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (lg) {
+        li {
+            line-height: 22px;
+            margin-bottom: 8px;
+        }
     }
 }
 // /* /TEMPLATE: footer-menu */

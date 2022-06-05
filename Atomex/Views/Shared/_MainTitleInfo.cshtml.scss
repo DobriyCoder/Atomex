@@ -22,7 +22,16 @@
         color: rgba(196, 222, 255, 0.72);
     }
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (lg) {
+        & {
+            padding: 0px;
+            text-align: center;
+            margin-bottom: 47px;
+        }
+
+        &__download {
+            display: none;
+        }
     }
 }
 // /* /TEMPLATE: main-title-info */

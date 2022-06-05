@@ -22,7 +22,14 @@
         margin-left: 8px;
     }
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (lg) {
+        & {
+            //position: absolute
+        }
+
+        ul {
+            display: flex;
+        }
     }
 }
 // /* /TEMPLATE: coins-line */

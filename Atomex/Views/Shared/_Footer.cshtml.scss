@@ -22,7 +22,15 @@
         margin: 16px 0px 16px 0px;
     }
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (lg) {
+        &__wrap {
+            padding: 64px 32px 64px 32px;
+        }
+
+        &__menu {
+            justify-content: start;
+            gap: 120px;
+        }
     }
 }
 // /* /TEMPLATE: footer */

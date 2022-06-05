@@ -9,7 +9,11 @@
     .dcg-btn {
     }
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (lg) {
+        & {
+            flex-direction: column;
+            margin-top: 40px;
+        }
     }
 }
 // /* /TEMPLATE: main-btn-menu */
