@@ -13,7 +13,7 @@
         display: inline-block;
         max-width: 600px;
     }
-     
+
     &__title {
         margin-bottom: 16px;
         padding-right: 100px;
@@ -47,7 +47,25 @@
         height: 308px;
     }
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (xl) {
+        &__text {
+            display: inline-block;
+            max-width: 450px;
+        }
+    }
+
+    @include media-breakpoint-down (lg) {
+        flex-wrap: wrap;
+
+        &__text {
+            display: inline-block;
+            max-width: 100%;
+            order: 2;
+        }
+
+        .dc-benefit__img {
+            order: 1;
+        }
     }
 }
 // /* /TEMPLATE: benefit */

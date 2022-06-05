@@ -9,7 +9,24 @@
     .dcg-btn {
     }
 
+    @include media-breakpoint-down (xl) {
+        .dcg-btn {
+            &::after {
+                display: none;
+            }
+        }
+    }
+
     @include media-breakpoint-down (sm) {
+        display: block;
+
+        .dcg-btn {
+            display: block;
+
+            &::after {
+                display: inline-block;
+            }
+        }
     }
 }
 // /* /TEMPLATE: main-btn-menu */

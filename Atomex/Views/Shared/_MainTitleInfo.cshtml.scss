@@ -3,6 +3,7 @@
 .dc-main-title-info {
     padding: 54px 0px 0px 0px;
 
+
     &__caption {
         font-size: 15px;
         line-height: 22px;
@@ -22,7 +23,8 @@
         color: rgba(196, 222, 255, 0.72);
     }
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (xl) {
+        text-align: center;
     }
 }
 // /* /TEMPLATE: main-title-info */

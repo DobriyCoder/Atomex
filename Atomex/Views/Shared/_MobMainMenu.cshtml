@@ -1,5 +1,11 @@
 ﻿@*@model I_mob-main-menu *@
 
 <div class="dc-mob-main-menu">
-    mob-main-menu
+    <div class="dc-mob-main-menu__burger dcj-btn">
+        <div></div>
+    </div>
+    <div class="dc-mob-main-menu__slide dcj-slide">
+        @await Html.PartialAsync("_MainMenu")
+        @await Html.PartialAsync("_MainBtnMenu")
+    </div>
 </div>

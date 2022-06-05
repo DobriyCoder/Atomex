@@ -6,6 +6,6 @@
     "hover-min": false,
     "animate.min": false,
     "font-awesome.min": false,
-    "classes": false
+    "classes": true
   }
 }

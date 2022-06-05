@@ -111,7 +111,10 @@
         border-radius: 12px;
     }
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (xl) {
+        margin: auto;
+        float: none;
+        width: 563px;
     }
 }
 // /* /TEMPLATE: exchange-widget */

@@ -38,6 +38,21 @@
 
 
     @include media-breakpoint-down (sm) {
+        ul {
+            display: block;
+        }
+
+        li {
+            &::after {
+                display: none;
+            }
+        }
+
+        a {
+            &::after {
+                display: none;
+            }
+        }
     }
 }
 // /* /TEMPLATE: main-menu */

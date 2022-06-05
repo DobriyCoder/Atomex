@@ -1,14 +1,16 @@
 // /*.....................................*/
 // /* TEMPLATE: logo */
 .dc-logo {
-    display: inline-block;
+    display: block;
+    height: 30px;
+    width: 148px;
 
-    img{
+    img {
         height: 30px;
         width: 148px;
     }
-    @include media-breakpoint-down (sm) {
 
+    @include media-breakpoint-down (sm) {
     }
 }
 // /* /TEMPLATE: logo */
