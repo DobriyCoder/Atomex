@@ -173,6 +173,18 @@ a {
         cursor: auto;
     }
 
+    &.dcg-btn_big-padding {
+        padding: 15px 95px 10px 95px;
+        margin-bottom: 16px;
+        display: none;
+
+        @include media-breakpoint-down (lg) {
+            & {
+                display: inline-block;
+            }
+        }
+    }
+
     &.dcg-btn_light {
         background: rgba(196, 222, 255, 0.24);
         box-shadow: 8px 13px 20px rgba(15, 6, 41, 0.22), inset 0px -1px 2px rgba(135, 103, 226, 0.07);
@@ -235,6 +247,12 @@ a {
         }
     }
 
+    &.dcg-btn_transparent {
+        background-color: rgba(196, 222, 255, 0);
+        border: 1px solid rgba(196, 222, 255, 0.16);
+        border-radius: 8px;
+    }
+
     &.dcg-btn_big {
     }
 
@@ -255,6 +273,7 @@ a {
 
     &.dcg-btn_pag-dotts {
     }
+
 
 
     @include media-breakpoint-down (xs) {
@@ -386,8 +405,40 @@ textarea {}
     &_error {
     }
 
-    @include media-breakpoint-down (xl) {
-        //background-color: red;
+    @include media-breakpoint-down (lg) {
+        &_padding-heading {
+            padding: 50px 30px 0px 30px;
+        }
+
+        &_padding-small {
+            padding: 48px 32px 48px 32px;
+        }
+
+        &_padding-big {
+            padding: 76px 32px 76px 32px;
+        }
+
+        &_mini {
+            height: 445px;
+        }
+
+        &_mobile-height {
+            height: 790px;
+        }
+    }
+
+    @include media-breakpoint-down (md) {
+        &_padding-heading {
+            padding: 32px 24px;
+        }
+
+        &_padding-small {
+            padding: 48px 32px 48px 32px;
+        }
+
+        &_padding-big {
+            padding: 76px 32px 76px 32px;
+        }
     }
 }
 /* /section */
@@ -400,6 +451,10 @@ textarea {}
     font-weight: 400;
     font-size: 15px;
     line-height: 22px;
+
+    &_color {
+        color: rgba(196, 222, 255, 0.72);
+    }
 }
 /*.....................................*/
 .dcg-icon-left {
@@ -446,6 +501,95 @@ textarea {}
     }
 }
 /*.....................................*/
-/* /common */
-/* /CLASSES */
-/*------------------------------------------------------------*/
+.dcg-exchange-widget {
+    display: inline-block;
+    position: static;
+
+
+    @include media-breakpoint-down (lg) {
+        & {
+            float: none;
+            position: static;
+            display: flex;
+            justify-content: center;
+            margin-top: 60px;
+        }
+    }
+
+    @include media-breakpoint-down (sm) {
+        & {
+            float: none;
+            position: absolute;
+            top: -40px;
+            left: -3.6%;
+            display: flex;
+
+            .dc-exchange-widget__block {
+                width: 94%;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+
+    @include media-breakpoint-down (xs) {
+        & {
+            float: none;
+
+            .dc-exchange-widget__block {
+                width: 94%;
+            }
+
+            .dc-exchange-widget__block > * {
+                width: 94%;
+            }
+        }
+    }
+}
+/*.....................................*/
+.margin-decorative {
+    display: block;
+
+    @include media-breakpoint-down (lg) {
+        & {
+            margin-top: 450px;
+        }
+    }
+
+    @include media-breakpoint-down (md) {
+        & {
+            margin-top: 400px;
+        }
+    }
+}
+/*.....................................*/
+.dcg-pairs-block {
+    display: inline-block;
+}
+/*.....................................*/
+.dcg-button-block {
+    display: inline-block;
+
+    @include media-breakpoint-down (lg) {
+        & {
+            display: none;
+        }
+    }
+}
+/*.....................................*/
+.dcg-main-botton-link {
+    display: inline-block;
+    
+    &:not(:last-child){
+        margin-right: 16px;
+    }
+}
+/*.....................................*/
+.dcg-mobile-margin {
+    margin-bottom: 800px;
+}
+
+
+    /* /common */
+    /* /CLASSES */
+    /*------------------------------------------------------------*/

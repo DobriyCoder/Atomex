@@ -11,7 +11,11 @@
 
     &__img-wrapper {
         display: inline-block;
-        margin-right: 13px;
+        //margin-right: 13px;
+        img {
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
     }
 
     &__content {
@@ -23,8 +27,38 @@
         margin-right: 8px;
     }
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (lg) {
+        &__block {
+            display: flex;
+            padding: 28px 40px 32px 25px;
+            align-items: center;
+        }
+
+        &__img-wrapper {
+            width: 58px;
+
+            img {
+                width: 58px;
+                height: 40px;
+            }
+        }
+
+        &__content {
+            margin-left: 16px;
+            width: 65%;
+        }
     }
+        @include media-breakpoint-down (md) {
+            & {
+                margin-bottom: 16px;
+            }
+
+            &__content {
+                margin-left: 16px;
+                
+            }
+        }
+    
 }
 // /* /TEMPLATE: report */
 // /*.....................................*/

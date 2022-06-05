@@ -94,11 +94,25 @@
         }
 
         .dc-benefit__img {
-
         }
     }
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (lg) {
+        .dc-benefit:nth-child(odd) {
+
+            .dc-benefit__text {
+                padding: 0px;
+                order: 2;
+            }
+        }
+
+        .dc-benefit:nth-child(even) {
+
+            .dc-benefit__text {
+                padding: 0px;
+                order: 2;
+            }
+        }
     }
 }
 // /* /TEMPLATE: benefits */
@@ -230,7 +244,14 @@
         margin-left: 8px;
     }
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (lg) {
+        & {
+            //position: absolute
+        }
+
+        ul {
+            display: flex;
+        }
     }
 }
 // /* /TEMPLATE: coins-line */
@@ -475,7 +496,39 @@
         right: -100px;
     }
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (lg) {
+        & {
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+
+        &__decorative-img {
+            position: relative;
+            top: 0px;
+            right: -100px;
+            height: 450px;
+            width: 1000px;
+        }
+    }
+
+    @include media-breakpoint-down (md) {
+        &__decorative-img {
+            position: relative;
+            top: 0px;
+            right: -100px;
+            height: 450px;
+            width: 1000px;
+        }
+
+        &_wrapper-main {
+            width: 100%;
+            text-align: center;
+        }
+
+        & {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
     }
 }
 // /* /TEMPLATE: download-wallet */
@@ -594,10 +647,7 @@
         border-radius: 12px;
     }
 
-    @include media-breakpoint-down (xl) {
-        margin: auto;
-        float: none;
-        width: 563px;
+    @include media-breakpoint-down (sm) {
     }
 }
 // /* /TEMPLATE: exchange-widget */
@@ -706,7 +756,22 @@
         margin: 16px 0px 16px 0px;
     }
 
+    @include media-breakpoint-down (lg) {
+        &__wrap {
+            padding: 64px 32px 64px 32px;
+        }
+
+        &__menu {
+            justify-content: start;
+            gap: 120px;
+        }
+    }
+
     @include media-breakpoint-down (sm) {
+
+        &__menu {
+            
+        }
     }
 }
 // /* /TEMPLATE: footer */
@@ -751,12 +816,17 @@
         display: inline;
 
         span::after {
+            width: 0%;
+            transition: all 300ms;
+        }
+
+        span:hover::after {
             content: '';
-            display: inline-block;
+            display: block;
             width: 100%;
             height: 2px;
             background-color: rgba(221, 234, 250, 0.92);
-            position: relative;
+            transition: all 300ms;
         }
     }
 
@@ -776,7 +846,11 @@
         color: rgba(221, 234, 250, 0.92);
     }
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (lg) {
+        li {
+            line-height: 22px;
+            margin-bottom: 8px;
+        }
     }
 }
 // /* /TEMPLATE: footer-menu */
@@ -812,7 +886,83 @@
         margin: 10px 0 0 0;
     }
 
+    &__burger {
+        display: none;
+        width: 24px;
+        height: 18px;
+        position: relative;
+        margin-top: 15px;
+        margin-left: 20px;
+    }
+
+    &__burger div {
+        width: 24px;
+        height: 2px;
+        background: #C4C4C4;
+        border-radius: 1px;
+        display: inline-block;
+        top: 8px;
+        position: absolute;
+    }
+
+    &__burger::before,
+    &__burger::after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background: #C4C4C4;
+        border-radius: 1px;
+        display: inline-block;
+        transition: all 200ms;
+    }
+
+    &__burger::before {
+        top: 0px;
+        transform: rotate(0deg);
+    }
+
+    &__burger::after {
+        bottom: 0px;
+        transform: rotate(0deg);
+    }
+
+    &__burger.dcg-active::after, &__burger:hover::after {
+        transform: rotate(45deg);
+        bottom: 8px;
+    }
+
+    &__burger.dcg-active::before, &__burger:hover::before {
+        transform: rotate(-45deg);
+        top: 8px;
+    }
+
+    &__burger.dcg-active div, &__burger:hover div {
+        transform: scale(0);
+        transition: all 50ms;
+    }
+    &__burger.dcg-active, &__burger:hover {
+        .dc-header {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
     @include media-breakpoint-down (md) {
+        &__burger {
+            display: inline-block;
+        }
+
+        &__menu {
+            display: none;
+        }
+
+        &__buttons {
+            display: none;
+        }
     }
 }
 // /* /TEMPLATE: header */
@@ -823,8 +973,10 @@
 .dc-highlight {
     padding: 0px 16px 0px 16px;
 
-    @include media-breakpoint-down (sm) {
-
+    @include media-breakpoint-down (md) {
+        & {
+            margin-bottom: 32px;
+        }
     }
 }
 // /* /TEMPLATE: highlight */
@@ -894,15 +1046,6 @@
     }
 
     @include media-breakpoint-down (sm) {
-        display: block;
-
-        .dcg-btn {
-            display: block;
-
-            &::after {
-                display: inline-block;
-            }
-        }
     }
 }
 // /* /TEMPLATE: main-btn-menu */
@@ -947,22 +1090,18 @@
     }
 
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (lg) {
+
+        & {
+            margin-top: 32px;
+        }
+
         ul {
-            display: block;
+            flex-direction: column;
+            gap: 8px;
         }
 
-        li {
-            &::after {
-                display: none;
-            }
-        }
-
-        a {
-            &::after {
-                display: none;
-            }
-        }
+    @include media-breakpoint-down (sm) {
     }
 }
 // /* /TEMPLATE: main-menu */
@@ -1014,8 +1153,7 @@
         color: rgba(196, 222, 255, 0.72);
     }
 
-    @include media-breakpoint-down (xl) {
-        text-align: center;
+    @include media-breakpoint-down (sm) {
     }
 }
 // /* /TEMPLATE: main-title-info */
@@ -1277,7 +1415,9 @@
     } 
 
     
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (lg) {
+        //position: absolute;
+        //overflow: hidden;
     }
 }
 // /* /TEMPLATE: pairs-table */
@@ -1298,6 +1438,7 @@
     &__button {
         margin-top: 40px;
         width: 221px;
+        text-align: center;
     }
 
     @include media-breakpoint-down (sm) {
@@ -1319,7 +1460,11 @@
 
     &__img-wrapper {
         display: inline-block;
-        margin-right: 13px;
+        //margin-right: 13px;
+        img {
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
     }
 
     &__content {
@@ -1331,8 +1476,38 @@
         margin-right: 8px;
     }
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (lg) {
+        &__block {
+            display: flex;
+            padding: 28px 40px 32px 25px;
+            align-items: center;
+        }
+
+        &__img-wrapper {
+            width: 58px;
+
+            img {
+                width: 58px;
+                height: 40px;
+            }
+        }
+
+        &__content {
+            margin-left: 16px;
+            width: 65%;
+        }
     }
+        @include media-breakpoint-down (md) {
+            & {
+                margin-bottom: 16px;
+            }
+
+            &__content {
+                margin-left: 16px;
+                
+            }
+        }
+    
 }
 // /* /TEMPLATE: report */
 // /*.....................................*/
@@ -1441,6 +1616,12 @@
 // /*.....................................*/
 
 /*.....................................*/
+/* TEMPLATE: _logo */
+.dc-logo {}
+/* /TEMPLATE: _logo */
+/*.....................................*/
+
+/*.....................................*/
 /* TEMPLATE: classes */
 .dc-classes {
     // background: #e4e3e3;
@@ -1478,12 +1659,6 @@
     @include media-breakpoint-down (sm) {}
 }
 /* /TEMPLATE: classes */
-/*.....................................*/
-
-/*.....................................*/
-/* TEMPLATE: _logo */
-.dc-logo {}
-/* /TEMPLATE: _logo */
 /*.....................................*/
 
 /*.....................................*/

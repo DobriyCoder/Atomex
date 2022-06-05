@@ -84,7 +84,9 @@
     } 
 
     
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (lg) {
+        //position: absolute;
+        //overflow: hidden;
     }
 }
 // /* /TEMPLATE: pairs-table */

@@ -10,13 +10,15 @@
 
 <div class="dc-main-page-content">
     <div class="container">
-        <div class="dcg-section dcg-section_padding-heading dcg-section_light-bottom-left dcg-bg-basic ">
+        <div class="dcg-section dcg-section_mobile-height dcg-section_padding-heading dcg-section_light-bottom-left dcg-bg-basic ">
             <div class="row">
                 <div class="col">
                     @await Html.PartialAsync("_MainTitleInfo")
                 </div>
-                <div class="col-12 col-xxl-6">
-                    @await Html.PartialAsync("_ExchangeWidget")  
+                <div class="col-12 col-md">
+                    <div class="dcg-exchange-widget">
+                        @await Html.PartialAsync("_ExchangeWidget")
+                    </div>
                 </div>
             </div>
         </div>

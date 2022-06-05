@@ -3,6 +3,15 @@
 <div class="dc-header">
     <div class="container">
         <div class="dc-header__wrap">
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-2 d-flex justify-content-between">
+                    <div class="dc-header__logo">@await Html.PartialAsync("_Logo")</div>
+                    <div class="dc-header__burger">
+                        <div></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md">
+                    <div class="dc-header__menu">@await Html.PartialAsync("_MainMenu")</div>
             <div class="row">
                 <div class="col col-md-2">
                     @await Html.PartialAsync("_Logo")
