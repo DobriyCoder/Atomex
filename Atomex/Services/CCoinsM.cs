@@ -186,27 +186,15 @@ public class CCoinsM : CBaseDbM
     /// <summary>
     ///     Достает монеты из БД используя исходное заданное количество и номер страницы.
     /// </summary>
-    public IEnumerable<CCoinDataVM> GetCoins(int page, int count, string? filter = null, string? order = null)
+    public IEnumerable<CCoinDataVM> GetCoins(int page, int count, string? filter = null, string? order = null, string order_type = "ask")
     {
-        var result = db.Coins;
-
-        /*if (order != null)
-            result = result.OrderByDescending(c =>
-            {
-                Type type = typeof(CCoinDataM);
-                return type.GetProperty(order).GetValue(c, null);
-            }).Select(c => c);*/
-
         /*if (filter != "" && filter != null)
             result = result.Where(c => c.name.Contains(filter) || c.name_full.Contains(filter));*/
-        int t = 0;
-        //db.Database.SqlQuery("");
-        return result.AsQueryable()
+        
+        var query = db.Coins.AsQueryable()
             .Include(c => c.ext)
             .Include(c => c.meta)
-            //.Join(db.CoinsExt, c => c.id, e => e.coins_id, (c, e) => n)
             .Where(c => c.enable.Value)
-            //.OrderBy((c) => c.usd_price)
             .Skip((page - 1) * count)
             .Take(count)
             .Select(c =>
@@ -217,6 +205,22 @@ public class CCoinsM : CBaseDbM
                 }
             )
         ;
+
+        if (order != null)
+            if (order_type == "ask")
+                return query.AsEnumerable().OrderBy(c =>
+                {
+                    Type type = typeof(CCoinDataM);
+                    return type.GetProperty(order)?.GetValue(c.data, null) ?? 0;
+                });
+            else
+                return query.AsEnumerable().OrderByDescending(c =>
+                {
+                    Type type = typeof(CCoinDataM);
+                    return type.GetProperty(order)?.GetValue(c.data, null) ?? 0;
+                });
+
+        return query;
     }
     public IEnumerable<CCoinDataM> GetCoins() => db.Coins.Where(c => c.enable.Value);
     public CCoinDataM GetCoinByIndex(int index)

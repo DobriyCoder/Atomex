@@ -1,9 +1,10 @@
-﻿@*@model I_sort *@
+﻿@model Dictionary<string, string>
 
 <div class="dc-sort">
-    <select name="from" placeholder="sort">
-        <option value="Price">Price</option>
-        <option value="Network Fee">Network Fee</option>
-        <option value="Instant volume">Instant volume</option>
+    <select name="sort" placeholder="sort">
+        @foreach(var item in Model)
+        {
+            <option value="@item.Value">@item.Key</option>
+        }
     </select>
 </div>

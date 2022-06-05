@@ -48,6 +48,7 @@ public class CCoinsVM
     {
         string? page_str = (string?)context.Request.Query["page"];
         string? order = (string?)context.Request.Query["order"];
+        string? order_type = (string?)context.Request.Query["order_type"];
         string? filter = (string?)context.Request.Query["filter"];
 
         filter = (filter == "" || filter == "#" || filter == null) ? null : filter;
@@ -59,6 +60,6 @@ public class CCoinsVM
         //
         page = page_str == null ? 1 : Int32.Parse(page_str);
         page = page <= maxPage ? page : maxPage;
-        coins = blocks.GetCoinList(count, page, filter, order);
+        coins = blocks.GetCoinList(count, page, filter, order, order_type ?? "ask");
     }
 }

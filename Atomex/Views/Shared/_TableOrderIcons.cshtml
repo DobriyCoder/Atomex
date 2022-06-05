@@ -1,6 +1,6 @@
-﻿@*@model I_table-order-icons *@
+﻿@model (string order, string title)
 
 <span class="dc-table-order-icons">
-    <a href="#" class="dc-table-order-icons__desc"><img src="/images/double-arrows-white.svg" alt="arrows"/></a>
-    <a href="#" class="dc-table-order-icons__asc"><img src="#" alt=""/></a>
+    <a href="?order=@Model.order" class="dc-table-order-icons__desc"><img src="/images/double-arrows-white.svg" alt="arrows"/></a>
+    <a href="?order=@Model.order&order_type=desk" class="dc-table-order-icons__asc"><img src="#" alt=""/></a>
 </span>

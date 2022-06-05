@@ -3,9 +3,9 @@
 <table class="dc-coins-table">
     <tr class="dc-coins-table__head">
         <th class="dcg-caption">Name</th>
-        <th class="dcg-caption">Price @await Html.PartialAsync("_TableOrderIcons")</th>
-        <th class="dcg-caption">Market Cap @await Html.PartialAsync("_TableOrderIcons")</th>
-        <th class="dcg-caption">24h change @await Html.PartialAsync("_TableOrderIcons")</th>
+        <th class="dcg-caption">Price @await Html.PartialAsync("_TableOrderIcons", (order: "usd_price", title: ""))</th>
+        <th class="dcg-caption">Market Cap @await Html.PartialAsync("_TableOrderIcons", (order: "day_percent_change", title: ""))</th>
+        <th class="dcg-caption">24h change @await Html.PartialAsync("_TableOrderIcons", (order: "day_percent_change", title: ""))</th>
         <th class="dcg-caption">Availability</th>
     </tr>
 
