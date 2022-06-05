@@ -4,16 +4,16 @@
     <div class="container">
         <div class="dc-footer__wrap">
             <div class="row">
-                <div class="col-12 col-lg-5">
+                <div class="col-12 col-xl order-2 order-xl-1">
                     @await Html.PartialAsync("_Logo")
                     @await Html.PartialAsync("_FooterDesc")
                     @await Html.PartialAsync("_SocBtns")
                     @await Html.PartialAsync("_Copyright")
                 </div>
-                <div class="col">
+                <div class="col-12 col-xl order-1">
                     <div class="dc-footer__menu">
                         @await Html.PartialAsync("_FooterMenu")
-                        @await Html.PartialAsync("_FooterMenu") 
+                        @await Html.PartialAsync("_FooterMenu")
                         @await Html.PartialAsync("_FooterMenu")
                     </div> 
                 </div>      

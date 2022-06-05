@@ -1,13 +1,15 @@
 // /*.....................................*/
 // /* TEMPLATE: exchange-widget */
 .dc-exchange-widget {
-    float: right;
+    width: 100%;
 
     &__block {
         background-color: #0D274D;
         border-radius: 20px;
         padding: 51px 58px 40px 54px;
         display: inline-block;
+        float: right;
+        width: 100%;
     }
 
     &__coin {
@@ -15,7 +17,7 @@
         border-radius: 16px;
         padding: 28px 24px 18px 20px;
         margin-bottom: 12px;
-    } 
+    }
 
     &__logo {
         display: inline-flex;
@@ -26,7 +28,7 @@
         line-height: 20px;
     }
 
-    &__img { 
+    &__img {
         height: 20px;
         width: 20px;
         margin-right: 8px;
@@ -60,13 +62,14 @@
 
     &__button {
         margin-top: 16px;
-        padding: 12px 183px 16px 183px;
+        width: 100%;
         font-family: 'Inter';
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
         line-height: 24px;
         color: rgba(196, 222, 255, 0.97);
+        display: block;
     }
 
     &__coins {
@@ -111,10 +114,48 @@
         border-radius: 12px;
     }
 
-    @include media-breakpoint-down (xl) {
-        margin: auto;
-        float: none;
-        width: 563px;
+    @include media-breakpoint-down (xxl) {
+        & {
+            width: 90%;
+        }
+    }
+
+    @include media-breakpoint-down (lg) {
+        & {
+            width: 100%;
+        }
+
+        &__block {
+            padding: 51px 58px 40px 54px;
+        }
+    }
+
+    @include media-breakpoint-down (md) {
+        & {
+            width: 100%;
+        }
+
+        &__block {
+            padding: 40px 45px 30px 40px;
+        }
+    }
+
+    @include media-breakpoint-down (sm) {
+        & {
+            width: 100%;
+        }
+
+        &__arrows {
+            right: 44%;
+        }
+
+        &__coin {
+            margin-bottom: 30px;
+        }
+
+        &__block {
+            padding: 30px 30px 25px 30px;
+        }
     }
 }
 // /* /TEMPLATE: exchange-widget */

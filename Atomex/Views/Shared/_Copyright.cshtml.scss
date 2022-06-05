@@ -23,7 +23,11 @@
         cursor: pointer;
     }
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (md) {
+        &__text:first-child {
+            display: block;
+            margin-bottom: 15px;
+        }
     }
 }
 // /* /TEMPLATE: copyright */

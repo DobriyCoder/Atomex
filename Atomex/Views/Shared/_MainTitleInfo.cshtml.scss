@@ -34,6 +34,18 @@
             display: none;
         }
     }
+
+    @include media-breakpoint-down (lg) {
+        & {
+            padding: 54px 0px 0px 0px;
+        }
+    }
+
+    @include media-breakpoint-down (md) {
+        & {
+            padding: 54px 0px 0px 0px;
+        }
+    }
 }
 // /* /TEMPLATE: main-title-info */
 // /*.....................................*/

@@ -7,7 +7,7 @@
         color: rgba(196, 222, 255, 0.72);
     }
 
-    &__item:nth-child(even)::before {
+    &__item:not(:first-child)::before {
         content: '/';
         color: rgba(196, 222, 255, 0.32);
         margin-right: 8px;

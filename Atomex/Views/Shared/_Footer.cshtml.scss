@@ -3,7 +3,7 @@
 .dc-footer {
 
     &__wrap {
-        padding: 64px 128px 64px 80px;
+        padding: 64px 128px 40px 80px;
         background-color: #051429;
     }
 
@@ -11,6 +11,10 @@
         display: flex;
         justify-content: end;
         gap: 99px;
+    }
+
+    &__menu div {
+        display: inline-block;
     }
 
     .dc-logo {
@@ -22,7 +26,40 @@
         margin: 16px 0px 16px 0px;
     }
 
+    @include media-breakpoint-down (xl) {
+        &__wrap {
+            padding: 64px 80px 40px 80px;
+        }
+
+        &__menu {
+            justify-content: end;
+            gap: 63px;
+        }
+    }
+
     @include media-breakpoint-down (lg) {
+        &__wrap {
+            padding: 64px 32px 40px 32px;
+        }
+
+        &__menu {
+            justify-content: start;
+            gap: 120px;
+        }
+        /*.row {
+            flex-direction: column;
+        }
+
+        .row:first-child {
+            order: 2;
+        }
+
+        .row:last-child {
+            order: 1;
+        }*/
+    }
+
+    @include media-breakpoint-down (md) {
         &__wrap {
             padding: 64px 32px 64px 32px;
         }
@@ -33,12 +70,19 @@
         }
     }
 
+    @include media-breakpoint-down (md) {
+
+        &__menu {
+            gap: 60px;
+        }
+    }
+
     @include media-breakpoint-down (sm) {
 
         &__menu {
-            
+            gap: 40px;
         }
     }
 }
-// /* /TEMPLATE: footer */
-// /*.....................................*/
+    // /* /TEMPLATE: footer */
+    // /*.....................................*/

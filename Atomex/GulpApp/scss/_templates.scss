@@ -12,6 +12,7 @@
     &__text {
         display: inline-block;
         max-width: 600px;
+        margin-top: 30px;
     }
 
     &__title {
@@ -45,6 +46,11 @@
         border-radius: 12px;
         width: 423px;
         height: 308px;
+        margin: 0px auto;
+
+        img {
+            display: none;
+        }
     }
 
     @include media-breakpoint-down (xl) {
@@ -127,7 +133,7 @@
         color: rgba(196, 222, 255, 0.72);
     }
 
-    &__item:nth-child(even)::before {
+    &__item:not(:first-child)::before {
         content: '/';
         color: rgba(196, 222, 255, 0.32);
         margin-right: 8px;
@@ -185,6 +191,9 @@
     }
 
     @include media-breakpoint-down (sm) {
+        &__text {
+            column-count: 1;
+        }
     }
 }
 // /* /TEMPLATE: coin-desc */
@@ -226,6 +235,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 
     &__list {
         display: inline-block;
@@ -262,6 +272,7 @@
 .dc-coins-table {
     width: 100%;
     margin-top: 34px;
+    overflow: hidden;
 
     &__head {
         background: rgba(196, 222, 255, 0.1);
@@ -367,7 +378,11 @@
         cursor: pointer;
     }
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (md) {
+        &__text:first-child {
+            display: block;
+            margin-bottom: 15px;
+        }
     }
 }
 // /* /TEMPLATE: copyright */
@@ -506,7 +521,7 @@
             position: relative;
             top: 0px;
             right: -100px;
-            height: 450px;
+            height: 400px;
             width: 1000px;
         }
     }
@@ -516,8 +531,8 @@
             position: relative;
             top: 0px;
             right: -100px;
-            height: 450px;
-            width: 1000px;
+            height: 300px;
+            width: 1300px;
         }
 
         &_wrapper-main {
@@ -530,6 +545,17 @@
             margin-bottom: 50px;
         }
     }
+
+    @include media-breakpoint-down (sm) {
+        &__decorative-img {
+            position: relative;
+            top: 0px;
+            right: 0px;
+            height: 250px;
+            width: 1300px;
+            margin-top: 20px;
+        }
+    }
 }
 // /* /TEMPLATE: download-wallet */
 // /*.....................................*/
@@ -537,13 +563,15 @@
 // /*.....................................*/
 // /* TEMPLATE: exchange-widget */
 .dc-exchange-widget {
-    float: right;
+    width: 100%;
 
     &__block {
         background-color: #0D274D;
         border-radius: 20px;
         padding: 51px 58px 40px 54px;
         display: inline-block;
+        float: right;
+        width: 100%;
     }
 
     &__coin {
@@ -551,7 +579,7 @@
         border-radius: 16px;
         padding: 28px 24px 18px 20px;
         margin-bottom: 12px;
-    } 
+    }
 
     &__logo {
         display: inline-flex;
@@ -562,7 +590,7 @@
         line-height: 20px;
     }
 
-    &__img { 
+    &__img {
         height: 20px;
         width: 20px;
         margin-right: 8px;
@@ -596,13 +624,14 @@
 
     &__button {
         margin-top: 16px;
-        padding: 12px 183px 16px 183px;
+        width: 100%;
         font-family: 'Inter';
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
         line-height: 24px;
         color: rgba(196, 222, 255, 0.97);
+        display: block;
     }
 
     &__coins {
@@ -647,7 +676,48 @@
         border-radius: 12px;
     }
 
+    @include media-breakpoint-down (xxl) {
+        & {
+            width: 90%;
+        }
+    }
+
+    @include media-breakpoint-down (lg) {
+        & {
+            width: 100%;
+        }
+
+        &__block {
+            padding: 51px 58px 40px 54px;
+        }
+    }
+
+    @include media-breakpoint-down (md) {
+        & {
+            width: 100%;
+        }
+
+        &__block {
+            padding: 40px 45px 30px 40px;
+        }
+    }
+
     @include media-breakpoint-down (sm) {
+        & {
+            width: 100%;
+        }
+
+        &__arrows {
+            right: 44%;
+        }
+
+        &__coin {
+            margin-bottom: 30px;
+        }
+
+        &__block {
+            padding: 30px 30px 25px 30px;
+        }
     }
 }
 // /* /TEMPLATE: exchange-widget */
@@ -696,6 +766,8 @@
 
     &__content {
         display: none;
+        padding-left: 24px; 
+        padding-bottom: 20px;
     }
 
     &__item.dcg-active {
@@ -737,7 +809,7 @@
 .dc-footer {
 
     &__wrap {
-        padding: 64px 128px 64px 80px;
+        padding: 64px 128px 40px 80px;
         background-color: #051429;
     }
 
@@ -745,6 +817,10 @@
         display: flex;
         justify-content: end;
         gap: 99px;
+    }
+
+    &__menu div {
+        display: inline-block;
     }
 
     .dc-logo {
@@ -756,7 +832,40 @@
         margin: 16px 0px 16px 0px;
     }
 
+    @include media-breakpoint-down (xl) {
+        &__wrap {
+            padding: 64px 80px 40px 80px;
+        }
+
+        &__menu {
+            justify-content: end;
+            gap: 63px;
+        }
+    }
+
     @include media-breakpoint-down (lg) {
+        &__wrap {
+            padding: 64px 32px 40px 32px;
+        }
+
+        &__menu {
+            justify-content: start;
+            gap: 120px;
+        }
+        /*.row {
+            flex-direction: column;
+        }
+
+        .row:first-child {
+            order: 2;
+        }
+
+        .row:last-child {
+            order: 1;
+        }*/
+    }
+
+    @include media-breakpoint-down (md) {
         &__wrap {
             padding: 64px 32px 64px 32px;
         }
@@ -767,15 +876,22 @@
         }
     }
 
+    @include media-breakpoint-down (md) {
+
+        &__menu {
+            gap: 60px;
+        }
+    }
+
     @include media-breakpoint-down (sm) {
 
         &__menu {
-            
+            gap: 40px;
         }
     }
 }
-// /* /TEMPLATE: footer */
-// /*.....................................*/
+    // /* /TEMPLATE: footer */
+    // /*.....................................*/
 
 // /*.....................................*/
 // /* TEMPLATE: footer-desc */
@@ -814,20 +930,20 @@
         font-size: 15px;
         line-height: 22px;
         display: inline;
+    }
 
-        span::after {
-            width: 0%;
-            transition: all 300ms;
-        }
+    span::after {
+        content: '';
+        display: block;
+        width: 0%;
+        transition: all 300ms;
+    }
 
-        span:hover::after {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 2px;
-            background-color: rgba(221, 234, 250, 0.92);
-            transition: all 300ms;
-        }
+    span:hover::after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: rgba(221, 234, 250, 0.92);
     }
 
     ul {
@@ -886,82 +1002,39 @@
         margin: 10px 0 0 0;
     }
 
-    &__burger {
-        display: none;
-        width: 24px;
-        height: 18px;
-        position: relative;
-        margin-top: 15px;
-        margin-left: 20px;
-    }
-
-    &__burger div {
-        width: 24px;
-        height: 2px;
-        background: #C4C4C4;
-        border-radius: 1px;
+    &__logo {
         display: inline-block;
-        top: 8px;
-        position: absolute;
     }
 
-    &__burger::before,
-    &__burger::after {
-        content: '';
-        position: absolute;
-        width: 24px;
-        height: 2px;
-        background: #C4C4C4;
-        border-radius: 1px;
-        display: inline-block;
-        transition: all 200ms;
-    }
-
-    &__burger::before {
+    &__wrap.dcg-active {
+        position: fixed;
         top: 0px;
-        transform: rotate(0deg);
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
     }
 
-    &__burger::after {
-        bottom: 0px;
-        transform: rotate(0deg);
-    }
-
-    &__burger.dcg-active::after, &__burger:hover::after {
-        transform: rotate(45deg);
-        bottom: 8px;
-    }
-
-    &__burger.dcg-active::before, &__burger:hover::before {
-        transform: rotate(-45deg);
-        top: 8px;
-    }
-
-    &__burger.dcg-active div, &__burger:hover div {
-        transform: scale(0);
-        transition: all 50ms;
-    }
-    &__burger.dcg-active, &__burger:hover {
-        .dc-header {
-            position: fixed;
-            top: 0px;
-            left: 0px;
-            width: 100%;
-            height: 100%;
+    @include media-breakpoint-down (lg) {
+        &__wrap {
+            border-width: 0px 0px 1px 0px;
+            border-style: solid;
+            border-color: rgba(196, 222, 255, 0.12);
         }
-    }
 
-    @include media-breakpoint-down (md) {
-        &__burger {
-            display: inline-block;
+        & .dcg-active {
+            height: 100%;
+            overflow: visible;
+
+            &__wrap {
+                border: none;
+            }
         }
 
         &__menu {
-            display: none;
         }
 
         &__buttons {
-            display: none;
         }
     }
 }
@@ -1043,9 +1116,29 @@
                 display: none;
             }
         }
+
+        & {
+            justify-content: center;
+            margin-top: 10px;
+        }
+    }
+
+    @include media-breakpoint-down (md) {
+        a {
+            margin-bottom: 24px;
+        }
     }
 
     @include media-breakpoint-down (sm) {
+        display: block;
+
+        .dcg-btn {
+            display: block;
+
+            &::after {
+                display: inline-block;
+            }
+        }
     }
 }
 // /* /TEMPLATE: main-btn-menu */
@@ -1101,12 +1194,24 @@
             gap: 8px;
         }
 
-    @include media-breakpoint-down (sm) {
+        li {
+            font-family: 'Helvetica Neue';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 30px;
+            letter-spacing: 0.01em;
+            color: rgba(221, 234, 250, 0.92);
+            display: inline-block;
+        }
+
+        li:hover::after, li.dcg-active::after {
+            width: 100%;
+        }
+        // /* /TEMPLATE: main-menu */
+        // /*.....................................*/
     }
 }
-// /* /TEMPLATE: main-menu */
-// /*.....................................*/
-
 // /*.....................................*/
 // /* TEMPLATE: main-title */
 .dc-main-title {
@@ -1153,7 +1258,28 @@
         color: rgba(196, 222, 255, 0.72);
     }
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (lg) {
+        & {
+            padding: 0px;
+            text-align: center;
+            margin-bottom: 47px;
+        }
+
+        &__download {
+            display: none;
+        }
+    }
+
+    @include media-breakpoint-down (lg) {
+        & {
+            padding: 54px 0px 0px 0px;
+        }
+    }
+
+    @include media-breakpoint-down (md) {
+        & {
+            padding: 54px 0px 0px 0px;
+        }
     }
 }
 // /* /TEMPLATE: main-title-info */
@@ -1334,6 +1460,7 @@
 .dc-pairs-table {
     width: 100%;
     margin-top: 24px;
+    overflow: hidden;
 
     &__head {
         background: rgba(196, 222, 255, 0.1);
@@ -1412,9 +1539,9 @@
     &__coin-logo {
         display: inline-block;
         margin-right: 43px;
-    } 
+    }
 
-    
+
     @include media-breakpoint-down (lg) {
         //position: absolute;
         //overflow: hidden;
@@ -1442,7 +1569,7 @@
     }
 
     @include media-breakpoint-down (sm) {
-    } 
+    }
 }
 // /* /TEMPLATE: popular-pairs */
 // /*.....................................*/
@@ -1616,12 +1743,6 @@
 // /*.....................................*/
 
 /*.....................................*/
-/* TEMPLATE: _logo */
-.dc-logo {}
-/* /TEMPLATE: _logo */
-/*.....................................*/
-
-/*.....................................*/
 /* TEMPLATE: classes */
 .dc-classes {
     // background: #e4e3e3;
@@ -1659,6 +1780,12 @@
     @include media-breakpoint-down (sm) {}
 }
 /* /TEMPLATE: classes */
+/*.....................................*/
+
+/*.....................................*/
+/* TEMPLATE: _logo */
+.dc-logo {}
+/* /TEMPLATE: _logo */
 /*.....................................*/
 
 /*.....................................*/
