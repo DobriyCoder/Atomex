@@ -15,14 +15,28 @@
                 <div class="col">
                     @await Html.PartialAsync("_Breadcrumbs", (controller: "Coins", title: "Coins", pageTitle: Model.coin.data.name_full))
                     @await Html.PartialAsync("_MainTitle")
+                    <div>
+                        <div class="dcg-main-botton-link">
+                            <span class="dcg-caption dcg-link-text">Coin Website</span>
+                            <img src="/images/window-open-color.svg"/>
+                        </div>
+                        <div class="dcg-main-botton-link">
+                            <span class="dcg-caption dcg-link-text">Explorer</span>
+                            <img src="/images/window-open-color.svg"/>
+                        </div>
+                    </div>
                 </div>
-                <div class="col">
-                    @await Html.PartialAsync("_ExchangeWidget")
+                <div class="col-12 col-md">
+                    <div class="dcg-exchange-widget">
+                        @await Html.PartialAsync("_ExchangeWidget")
+                    </div>
                 </div>
             </div>
         </div>
         <div class="dcg-section dcg-section_padding-small">
-            @await Html.PartialAsync("_CoinInfo", Model.coin.data)
+            <div class="margin-decorative">
+                @await Html.PartialAsync("_CoinInfo", Model.coin.data)
+            </div>
         </div>
         <div class="dcg-section dcg-section_padding-small">
             @await Html.PartialAsync("_CoinDesc")

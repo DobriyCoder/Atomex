@@ -63,7 +63,7 @@
         }
 
         &__img {
-            width: 700px;
+            width: 100%;
             height: 356px;
         }
 
@@ -501,13 +501,36 @@
 
     @include media-breakpoint-down (lg) {
         & {
-            margin_top: 100px;
+            margin-top: 100px;
             margin-bottom: 100px;
         }
 
-        &__decorative-img { 
-            height: 350px;
+        &__decorative-img {
+            position: relative;
+            top: 0px;
+            right: -100px;
+            height: 450px;
             width: 1000px;
+        }
+    }
+
+    @include media-breakpoint-down (md) {
+        &__decorative-img {
+            position: relative;
+            top: 0px;
+            right: -100px;
+            height: 450px;
+            width: 1000px;
+        }
+
+        &_wrapper-main {
+            width: 100%;
+            text-align: center;
+        }
+
+        & {
+            margin-top: 50px;
+            margin-bottom: 50px;
         }
     }
 }
@@ -747,6 +770,13 @@
             gap: 120px;
         }
     }
+
+    @include media-breakpoint-down (sm) {
+
+        &__menu {
+            
+        }
+    }
 }
 // /* /TEMPLATE: footer */
 // /*.....................................*/
@@ -965,8 +995,10 @@
 .dc-highlight {
     padding: 0px 16px 0px 16px;
 
-    @include media-breakpoint-down (sm) {
-
+    @include media-breakpoint-down (md) {
+        & {
+            margin-bottom: 32px;
+        }
     }
 }
 // /* /TEMPLATE: highlight */
@@ -1365,6 +1397,7 @@
     &__button {
         margin-top: 40px;
         width: 221px;
+        text-align: center;
     }
 
     @include media-breakpoint-down (sm) {
@@ -1387,6 +1420,10 @@
     &__img-wrapper {
         display: inline-block;
         //margin-right: 13px;
+        img {
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
     }
 
     &__content {
@@ -1416,9 +1453,20 @@
 
         &__content {
             margin-left: 16px;
-            width: 195px;
+            width: 65%;
         }
     }
+        @include media-breakpoint-down (md) {
+            & {
+                margin-bottom: 16px;
+            }
+
+            &__content {
+                margin-left: 16px;
+                
+            }
+        }
+    
 }
 // /* /TEMPLATE: report */
 // /*.....................................*/
@@ -1533,6 +1581,46 @@
 /*.....................................*/
 
 /*.....................................*/
+/* TEMPLATE: classes */
+.dc-classes {
+    // background: #e4e3e3;
+    width: 1024px;
+    margin: auto;
+    section {
+        text-align: center;
+    }
+    &__checkbox-wrapper {
+        label {
+            display: block;
+        }
+    }
+    &__container {
+        padding: 15px;
+        text-align: center;
+    }
+    &__container-headline {
+        text-align: center;
+    }
+    &__container-list {
+        font-size: 20px;
+    }
+/*..................................... Buttons*/
+.dcg-button {
+    width: 150px;
+    margin: 10px;
+}
+/*..................................... Inputs*/
+.dcg-input {
+    width: 200px;
+    margin: 10px;
+}
+/*.....................................*/
+    @include media-breakpoint-down (sm) {}
+}
+/* /TEMPLATE: classes */
+/*.....................................*/
+
+/*.....................................*/
 /* TEMPLATE: _menu */
 .dc-menu {
 
@@ -1614,44 +1702,4 @@
     }
 }
 /* /TEMPLATE: _menu */
-/*.....................................*/
-
-/*.....................................*/
-/* TEMPLATE: classes */
-.dc-classes {
-    // background: #e4e3e3;
-    width: 1024px;
-    margin: auto;
-    section {
-        text-align: center;
-    }
-    &__checkbox-wrapper {
-        label {
-            display: block;
-        }
-    }
-    &__container {
-        padding: 15px;
-        text-align: center;
-    }
-    &__container-headline {
-        text-align: center;
-    }
-    &__container-list {
-        font-size: 20px;
-    }
-/*..................................... Buttons*/
-.dcg-button {
-    width: 150px;
-    margin: 10px;
-}
-/*..................................... Inputs*/
-.dcg-input {
-    width: 200px;
-    margin: 10px;
-}
-/*.....................................*/
-    @include media-breakpoint-down (sm) {}
-}
-/* /TEMPLATE: classes */
 /*.....................................*/

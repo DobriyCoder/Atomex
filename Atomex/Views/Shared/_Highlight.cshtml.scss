@@ -3,8 +3,10 @@
 .dc-highlight {
     padding: 0px 16px 0px 16px;
 
-    @include media-breakpoint-down (sm) {
-
+    @include media-breakpoint-down (md) {
+        & {
+            margin-bottom: 32px;
+        }
     }
 }
 // /* /TEMPLATE: highlight */

@@ -32,6 +32,13 @@
             gap: 120px;
         }
     }
+
+    @include media-breakpoint-down (sm) {
+
+        &__menu {
+            
+        }
+    }
 }
 // /* /TEMPLATE: footer */
 // /*.....................................*/

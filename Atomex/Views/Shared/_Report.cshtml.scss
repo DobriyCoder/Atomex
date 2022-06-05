@@ -12,6 +12,10 @@
     &__img-wrapper {
         display: inline-block;
         //margin-right: 13px;
+        img {
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
     }
 
     &__content {
@@ -41,9 +45,20 @@
 
         &__content {
             margin-left: 16px;
-            width: 195px;
+            width: 65%;
         }
     }
+        @include media-breakpoint-down (md) {
+            & {
+                margin-bottom: 16px;
+            }
+
+            &__content {
+                margin-left: 16px;
+                
+            }
+        }
+    
 }
 // /* /TEMPLATE: report */
 // /*.....................................*/
