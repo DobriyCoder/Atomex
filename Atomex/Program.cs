@@ -4,6 +4,7 @@ using CryptoApi.Services;
 using CryptoApi.Sitemap;
 using CryptoApi.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using ILogger = CryptoApi.Services.ILogger;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +32,7 @@ builder.Services.AddTransient<CActualizerM>();
 builder.Services.AddSingleton<CApiManager>();
 builder.Services.AddSingleton<IRunnerM, CRunnerM>();
 builder.Services.AddTransient<ISitemap, CSitemap>();
+builder.Services.AddTransient<ILogger, CLogger>();
 
 var app = builder.Build();
 

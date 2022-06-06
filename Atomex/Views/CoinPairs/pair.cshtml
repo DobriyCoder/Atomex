@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col">
                     @await Html.PartialAsync("_Breadcrumbs", (controller: "CoinPairs", title: "Coin Pairs", pageTitle: $"Exchange {Model.pair.coin1.name} to {Model.pair.coin2.name}"))
-                    @await Html.PartialAsync("_MainTitle")
+                    @await Html.PartialAsync("_MainTitle", Model.PageHead)
                     <div class="dcg-pairs-button-block">
                         <button class="dcg-btn_big-padding">
                             <img src="/images/app-store.svg"/>
@@ -42,13 +42,13 @@
             </div>
         </div>
         <div class="dcg-section dcg-section_padding-small">
-            @await Html.PartialAsync("_CoinDesc")
+            @await Html.PartialAsync("_CoinDesc", Model.Description)
         </div>
         <div class="dcg-section dcg-section_padding-small">
             @await Html.PartialAsync("_PopularPairs")
         </div>
         <div class="dcg-section dcg-section_padding-big">
-            @await Html.PartialAsync("_Faq")
+            @await Html.PartialAsync("_Faq", Model.Faq)
         </div>
         <div class="dcg-section dcg-section_hidden dcg-section_padding-small dcg-section_light-bottom-left">
             @await Html.PartialAsync("_DownloadWallet")

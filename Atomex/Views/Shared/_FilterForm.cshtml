@@ -1,15 +1,16 @@
 ﻿@*@model I_filter-form *@
+@inject CBlocksHelperVM BlocksHelper
 
 <form class="dc-filter-form">
     <div class="row">
         <div class="col">@*@await Html.PartialAsync("_Filter")*@</div>
         <div class="col">
-            @await Html.PartialAsync("_Sort", new Dictionary<string, string> 
+            @await Html.PartialAsync("_Sort", (current: BlocksHelper.GetQuery("order"), list: new Dictionary<string, string> 
             {
                 {"Price", "usd_price"},
-                {"Market Cap", "day_percent_change"},
+                {"Market Cap", "market_cap"},
                 {"24h change", "day_percent_change"},
-            })
+            }))
         </div>
     </div>
 </form>

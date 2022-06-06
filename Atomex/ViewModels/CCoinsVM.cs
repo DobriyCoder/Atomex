@@ -58,7 +58,8 @@ public class CCoinsVM
         maxPage = model.GetMaxPage(count, filter);
         maxPage = maxPage == 0 ? 1 : maxPage;
         //
-        page = page_str == null ? 1 : Int32.Parse(page_str);
+        Int32.TryParse(page_str, out page);
+        page = page == 0 ? 1 : page;
         page = page <= maxPage ? page : maxPage;
         coins = blocks.GetCoinList(count, page, filter, order, order_type ?? "ask");
     }

@@ -8,10 +8,16 @@
             continuity += (pair.Value == "" || pair.Value == "#") ? "" : $"&{pair.Key}={pair.Value}";
 
     string current_page = Context.Request.Query.ContainsKey("page") ? Context.Request.Query["page"] : "1";
+    int current_page_num = int.Parse(current_page);
 }
 @if (Model.Count > 1)
 {
     <div class="dc-pagination">
+        @if (current_page_num > 1)
+        {
+            <a class="dc-pagination__prev" href="?page=@(current_page_num - 1)@continuity">Prev</a>
+        }
+
         <ul class="dc-pagination__list">
             @foreach ((string Url, string Title) item in Model)
             {
@@ -33,7 +39,11 @@
                 }
             }
         </ul>
-        
+
+        @if (current_page_num < Model.Count - 1)
+        {
+            <a class="dc-pagination__next" href="?page=@(current_page_num + 1)@continuity">Next</a>
+        }
     </div>
 }
 

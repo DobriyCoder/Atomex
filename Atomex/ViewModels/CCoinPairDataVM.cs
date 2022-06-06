@@ -23,23 +23,24 @@ public class CCoinPairDataVM
         meta = new List<CCoinPairsMetaDataM> ();
     }
 
-    public decimal? networkFee
+    public string? networkFee
     {
         get
         {
             string? text = data["ext", "network fee"] != null ? data["ext", "network fee"]?.value : commonModel["pair ext", "network fee"]?.value;
-            string? value = CTextTmpM.Parse(text, data["network fee tpl", "network fee"]?.value, data);
-            decimal.TryParse(value, out decimal fee);
+            text = text == null ? CConst.NETWORK_FEE.ToString() : text;
+            //decimal.TryParse(value, out decimal fee);
 
-            return fee;
+            return text;
         }
     }
 
-    public EAvailability? Availability
+    public EAvailability? availability
     {
         get
         {
             string? text = data["ext", "availability"] != null ? data["ext", "availability"]?.value : commonModel["pair ext", "availability"]?.value;
+            text = text == null ? CConst.AVAILABILITY.ToString() : text;
 
             if (!Enum.TryParse(text, out EAvailability result)) return EAvailability.Soon;
             return result;

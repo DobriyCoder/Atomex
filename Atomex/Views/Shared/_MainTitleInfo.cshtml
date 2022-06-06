@@ -1,10 +1,9 @@
-﻿@*@model I_main-title-info *@
+﻿@model CTextBlockVM
 
 <div class="dc-main-title-info">
-    <p class="dcg-link-text dc-main-title-info__caption">The most traded anonymous cross-chain DEX</p>
+    <p class="dcg-link-text dc-main-title-info__caption">@Model.text</p>
     <h1 class="dcg-h1">
-        Exchange between BTC, ETH and more anonymously.
-        No intermediaries.
+        @Model.title
     </h1>
     <div class="dc-main-title-info__download">
         @await Html.PartialAsync("_DownloadBtn")

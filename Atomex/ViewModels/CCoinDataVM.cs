@@ -13,7 +13,7 @@ public class CCoinDataVM
 
     public CCommonM commonModel { get; set; }
 
-    public EAvailability? Availability
+    public EAvailability? availability
     {
         get
         {

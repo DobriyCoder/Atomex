@@ -15,14 +15,7 @@ public class CBlocksHelperVM
     CCoinPairsM pairsModel;
     IHttpContextAccessor contextAccessor;
 
-    public string GetActiveClass(string controller, string action = "Index")
-    {
-        var context = contextAccessor.HttpContext;
-        string? r_contr = (string?)context.GetRouteValue("controller");
-        string? r_action = (string?)context.GetRouteValue("action");
-
-        return r_contr == controller && r_action == action ? "dcg-active" : "";
-    }
+    
     /// <summary>
     ///     Конструктор. заполняет  необходимые поля при создании модели.
     /// </summary>
@@ -33,6 +26,20 @@ public class CBlocksHelperVM
         this.pairsModel = pairs_model;
         this.conf = conf;
         contextAccessor = context;
+    }
+    public string GetActiveClass(string controller, string action = "Index")
+    {
+        var context = contextAccessor.HttpContext;
+        string? r_contr = (string?)context.GetRouteValue("controller");
+        string? r_action = (string?)context.GetRouteValue("action");
+
+        return r_contr == controller && r_action == action ? "dcg-active" : "";
+    }
+
+    public string GetQuery (string key)
+    {
+        var context = contextAccessor.HttpContext;
+        return context.Request.Query[key].ToString() ?? "";
     }
     /// <summary>
     ///     Возвращает список монет относительно кол-ва и номера страницы.

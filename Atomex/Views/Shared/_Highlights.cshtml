@@ -1,10 +1,10 @@
-﻿@*@model I_highlights *@
+﻿@model IEnumerable<CTextBlockVM>
 
 <div class="dc-highlights">
     <div class="row">
-        <div class="col-12 col-md">@await Html.PartialAsync("_Highlight")</div>
-        <div class="col-12 col-md">@await Html.PartialAsync("_Highlight")</div>
-        <div class="col-12 col-md">@await Html.PartialAsync("_Highlight")</div>
-        <div class="col-12 col-md">@await Html.PartialAsync("_Highlight")</div>
+        @foreach (var item in Model)
+        {
+            <div class="col-12 col-md">@await Html.PartialAsync("_Highlight", item)</div>
+        }
     </div>
 </div>

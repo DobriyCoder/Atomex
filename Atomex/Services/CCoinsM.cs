@@ -13,13 +13,15 @@ public class CCoinsM : CBaseDbM
 {
     IConfiguration conf;
     CCommonM commonModel;
+    ILogger logger;
     /// <summary>
     ///     Конструктор. Передает модель БД родителю.
     /// </summary>
-    public CCoinsM(CDbM db, IConfiguration conf, CCommonM common) : base(db) 
+    public CCoinsM(CDbM db, IConfiguration conf, CCommonM common, ILogger logger) : base(db) 
     {
         this.conf = conf;
         this.commonModel = common;
+        this.logger = logger;
     }
     //public CCoinsM(CDbM db, CDbSingM dbSign) : base(db, dbSign) { }
 
@@ -68,9 +70,10 @@ public class CCoinsM : CBaseDbM
     /// </summary>
     public async Task AddCoinAsync(IApiCoin coin, bool save = true)
     {
-        await db.Coins.AddAsync(ApiToData(coin));
-            //db.SaveChangesAsync();
+        var true_coin = ApiToData(coin);
+        await db.Coins.AddAsync(true_coin);
         if (save) await db.SaveChangesAsync();
+        logger.Write(true_coin, ELogMode.Add);
     }
 
     /// <summary>
@@ -79,8 +82,8 @@ public class CCoinsM : CBaseDbM
     public async Task UpdateCoinAsync(IApiCoin coin, CCoinDataM? has_coin, bool save = true)
     {
         ApiToData(coin, has_coin);
-        //await db.SaveChanges();
         if (save) await db.SaveChangesAsync();
+        logger.Write(has_coin, ELogMode.Update);
     }
 
     /// <summary>
@@ -145,7 +148,7 @@ public class CCoinsM : CBaseDbM
 
             var has_coin = HasCoin(coin);
             
-            if (has_coin != null) 
+            if (has_coin != null)
                 await UpdateCoinAsync(coin, has_coin, false);
             else
                 await AddCoinAsync(coin, false);

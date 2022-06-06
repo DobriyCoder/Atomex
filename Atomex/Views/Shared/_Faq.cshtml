@@ -1,46 +1,19 @@
-﻿@*@model I_faq *@
+﻿@model IEnumerable<CTextBlockVM>
 
 <div class="dc-faq">
     <h2 class="dc-faq__title dcg-h2">Frequently Asked Questions</h2>
     <ul class="dc-faq__list">
-        <li class="dc-faq__item dcj-btn">
-            <div class="dc-faq__caption">
-                <span class="dc-faq__heading">What are decentralized exchanges (DEX)?</span>
-                <img class="dc-faq__arrow" src="/images/down-color.svg"/>
-            </div>
-            <div class="dc-faq__content dcj-content">
-                <p>content</p>
-            </div>
-        </li>
-
-        <li class="dc-faq__item">
-            <div class="dc-faq__caption">
-                <span class="dc-faq__heading">How do cross-chain DEXs work?</span> 
-                <img class="dc-faq__arrow" src="/images/down-color.svg"/>
-            </div>
-            <div class="dc-faq__content">
-                <p>content</p>
-            </div>
-        </li>
-
-        <li class="dc-faq__item">
-            <div class="dc-faq__caption">
-                <span class="dc-faq__heading">How does a decentralized exchange differ from a normal cryptocurrency exchange (or centralized exchange)?</span>
-                <img class="dc-faq__arrow" src="/images/down-color.svg"/>
-            </div>
-            <div class="dc-faq__content">
-                <p>content</p>
-            </div>
-        </li>
-
-        <li class="dc-faq__item">
-            <div class="dc-faq__caption">
-                <span class="dc-faq__heading">What are decentralized exchanges (DEX)?</span>
-                <img class="dc-faq__arrow" src="/images/down-color.svg"/>
-            </div>
-            <div class="dc-faq__content">
-                <p>content</p>
-            </div>
-        </li>
+        @foreach (var item in Model)
+        {
+            <li class="dc-faq__item dcj-btn">
+                <div class="dc-faq__caption">
+                    <span class="dc-faq__heading">@item.title</span>
+                    <img class="dc-faq__arrow" src="/images/down-color.svg"/>
+                </div>
+                <div class="dc-faq__content dcj-content">
+                    <p>@item.text</p>
+                </div>
+            </li>
+        }
     </ul>
 </div>

@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col">
                     @await Html.PartialAsync("_Breadcrumbs", (controller: "Coins", title: "Coins", pageTitle: Model.coin.data.name_full))
-                    @await Html.PartialAsync("_MainTitle")
+                    @await Html.PartialAsync("_MainTitle", Model.PageHead)
                     <div class="dcg-main-botton-link-block">
                         <div class="dcg-main-botton-link">
                             <span class="dcg-caption dcg-link-text">Coin Website</span>
@@ -37,13 +37,13 @@
             </div>
         </div>
         <div class="dcg-section dcg-section_padding-small">
-            @await Html.PartialAsync("_CoinDesc")
+            @await Html.PartialAsync("_CoinDesc", Model.Description)
         </div>
         <div class="dcg-section dcg-section_padding-small">
             @await Html.PartialAsync("_PopularPairs")
         </div>
         <div class="dcg-section dcg-section_padding-big">
-            @await Html.PartialAsync("_Faq")
+            @await Html.PartialAsync("_Faq", Model.Faq)
         </div>
         <div class="dcg-section dcg-section_hidden dcg-section_padding-small dcg-section_light-bottom-left">
             @await Html.PartialAsync("_DownloadWallet")

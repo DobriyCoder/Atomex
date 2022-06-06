@@ -4,7 +4,6 @@
 @{
     ViewData["Title"] = Model.SeoInfo.title == "" ? "CriptoApi" : Model.SeoInfo.title;
     ViewData["Description"] = Model.SeoInfo.text == "" ? "" : Model.SeoInfo.text;
-    ViewData["Title"] = "Home Page";
     ViewData["PageClass"] = "dc-main-page";
 }
 
@@ -13,7 +12,7 @@
         <div class="dcg-section dcg-section_mobile-height dcg-section_padding-heading dcg-section_light-bottom-left dcg-bg-basic ">
             <div class="row">
                 <div class="col">
-                    @await Html.PartialAsync("_MainTitleInfo")
+                    @await Html.PartialAsync("_MainTitleInfo", Model.PageHead)
                 </div>
                 <div class="col-12 col-md d-flex justify-content-center">
                     @await Html.PartialAsync("_ExchangeWidget")
@@ -24,7 +23,7 @@
             @await Html.PartialAsync("_CoinsLine", BlocksHelper.GetCoinList(9))
         </div>
         <div class="dcg-section dcg-section_border-bottom dcg-section_padding-small">
-            @await Html.PartialAsync("_Highlights")
+            @await Html.PartialAsync("_Highlights", Model.TextBlocks)
         </div>
         <div class="dcg-section dcg-section_padding-big"> 
             @await Html.PartialAsync("_Benefits")
@@ -39,7 +38,7 @@
             @await Html.PartialAsync("_Reports")
         </div>
         <div class="dcg-section dcg-section_border-bottom dcg-section_padding-big">
-            @await Html.PartialAsync("_Faq")
+            @await Html.PartialAsync("_Faq", Model.Faq)
         </div>
     </div>
 </div>

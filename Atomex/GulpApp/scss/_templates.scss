@@ -235,7 +235,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow-x: auto;
 
     &__list {
         display: inline-block;
@@ -733,6 +733,7 @@
     }
 
     &__item {
+        cursor: pointer;
         border-width: 1px 0px 0px 0px;
         border-style: solid;
         border-color: rgba(196, 222, 255, 0.12)
@@ -768,7 +769,7 @@
 
     &__content {
         display: none;
-        padding-left: 24px; 
+        padding-left: 24px;
         padding-bottom: 20px;
     }
 
@@ -1361,7 +1362,9 @@
     margin-top: 32px;
     float: right;
     color: rgba(221, 234, 250, 0.92);
-
+    &__prev {
+        margin-right: 20px;
+    }
     &__list {
         display: inline-block;
     }
@@ -1429,9 +1432,14 @@
 // /*.....................................*/
 // /* TEMPLATE: pairs-table */
 .dc-pairs-table {
+    overflow-x: auto;
     width: 100%;
-    margin-top: 24px;
-    overflow: hidden;
+
+    table {
+        width: 100%;
+        min-width: 1014px;
+        margin-top: 24px;
+    }
 
     &__head {
         background: rgba(196, 222, 255, 0.1);

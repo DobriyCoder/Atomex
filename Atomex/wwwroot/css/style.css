@@ -5807,7 +5807,7 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow-x: auto;
 }
 .dc-coins-line__list {
   display: inline-block;
@@ -6186,6 +6186,7 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   margin-bottom: 40px;
 }
 .dc-faq__item {
+  cursor: pointer;
   border-width: 1px 0px 0px 0px;
   border-style: solid;
   border-color: rgba(196, 222, 255, 0.12);
@@ -6590,6 +6591,9 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   float: right;
   color: rgba(221, 234, 250, 0.92);
 }
+.dc-pagination__prev {
+  margin-right: 20px;
+}
 .dc-pagination__list {
   display: inline-block;
 }
@@ -6631,9 +6635,13 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   color: #00D7CB;
 }
 .dc-pairs-table {
+  overflow-x: auto;
   width: 100%;
+}
+.dc-pairs-table table {
+  width: 100%;
+  min-width: 1014px;
   margin-top: 24px;
-  overflow: hidden;
 }
 .dc-pairs-table__head {
   background: rgba(196, 222, 255, 0.1);
