@@ -9,6 +9,7 @@
 
     &__list {
         display: inline-block;
+        min-width: 1158px;
     }
 
     &__item {
@@ -18,19 +19,39 @@
 
     &__more {
         color: #00D7CB;
+        display: block;
     }
 
     &__arrow {
         margin-left: 8px;
     }
 
-    @include media-breakpoint-down (lg) {
+    @include media-breakpoint-down (xl) {
         & {
-            //position: absolute
+            padding-left: 46px;
+            padding-right: 46px;
+            justify-content: start;
         }
+    }
 
+    @include media-breakpoint-down (lg) {
         ul {
             display: flex;
+        }
+
+        &__list {
+            min-width: 1100px;
+        }
+    }
+
+    @include media-breakpoint-down (md) {
+        & {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        &__list {
+            min-width: 1100px;
         }
     }
 }

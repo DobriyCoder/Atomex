@@ -14,20 +14,6 @@
         display: inline;
     }
 
-    span::after {
-        content: '';
-        display: block;
-        width: 0%;
-        transition: all 300ms;
-    }
-
-    span:hover::after {
-        content: '';
-        width: 100%;
-        height: 2px;
-        background-color: rgba(221, 234, 250, 0.92);
-    }
-
     ul {
         margin: 16px 0px;
     }

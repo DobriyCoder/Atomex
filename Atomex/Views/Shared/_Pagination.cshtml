@@ -15,7 +15,7 @@
     <div class="dc-pagination">
         @if (current_page_num > 1)
         {
-            <a class="dc-pagination__prev" href="?page=@(current_page_num - 1)@continuity">Prev</a>
+            <a class="dc-pagination__prev dcg-caption" href="?page=@(current_page_num - 1)@continuity">Prev</a>
         }
 
         <ul class="dc-pagination__list">
@@ -42,7 +42,7 @@
 
         @if (current_page_num < Model.Count - 1)
         {
-            <a class="dc-pagination__next" href="?page=@(current_page_num + 1)@continuity">Next</a>
+            <a class="dc-pagination__next dcg-caption" href="?page=@(current_page_num + 1)@continuity">Next<img src="/images/arrow-right-grey.svg"/></a>
         }
     </div>
 }

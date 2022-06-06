@@ -4,9 +4,12 @@
     margin-top: 32px;
     float: right;
     color: rgba(221, 234, 250, 0.92);
+
     &__prev {
         margin-right: 20px;
+        color: rgba(196, 222, 255, 0.72);
     }
+
     &__list {
         display: inline-block;
     }
@@ -14,6 +17,14 @@
     &__list-item-wrapper {
         display: inline-block;
         margin-right: 20px;
+        color: rgba(196, 222, 255, 0.72);
+    }
+
+    &__next {
+        color: rgba(196, 222, 255, 0.72);
+        img {
+            margin-left: 8px;
+        }
     }
 
     &__item {

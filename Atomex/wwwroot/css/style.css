@@ -5811,6 +5811,7 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 }
 .dc-coins-line__list {
   display: inline-block;
+  min-width: 1158px;
 }
 .dc-coins-line__item {
   display: inline-block;
@@ -5818,13 +5819,33 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 }
 .dc-coins-line__more {
   color: #00D7CB;
+  display: block;
 }
 .dc-coins-line__arrow {
   margin-left: 8px;
 }
+@media (max-width: 1529.98px) {
+  .dc-coins-line {
+    padding-left: 46px;
+    padding-right: 46px;
+    justify-content: start;
+  }
+}
 @media (max-width: 1239.98px) {
   .dc-coins-line ul {
     display: flex;
+  }
+  .dc-coins-line__list {
+    min-width: 1100px;
+  }
+}
+@media (max-width: 1009.98px) {
+  .dc-coins-line {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .dc-coins-line__list {
+    min-width: 1100px;
   }
 }
 
@@ -6305,18 +6326,6 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   line-height: 22px;
   display: inline;
 }
-.dc-footer-menu span::after {
-  content: "";
-  display: block;
-  width: 0%;
-  transition: all 300ms;
-}
-.dc-footer-menu span:hover::after {
-  content: "";
-  width: 100%;
-  height: 2px;
-  background-color: rgba(221, 234, 250, 0.92);
-}
 .dc-footer-menu ul {
   margin: 16px 0px;
 }
@@ -6446,6 +6455,22 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   gap: 32px;
   justify-content: end;
   padding: 14px 65px 0 0;
+}
+.dc-main-menu li::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background: #00D7CB;
+  border-radius: 2px;
+  display: block;
+  margin-top: 4px;
+  transition: all 250ms;
+}
+.dc-main-menu li:hover::after {
+  width: 100%;
+}
+.dc-main-menu a.dcg-icon-right::after {
+  margin-left: 7px;
 }
 @media (max-width: 1239.98px) {
   .dc-main-menu {
@@ -6593,6 +6618,7 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 }
 .dc-pagination__prev {
   margin-right: 20px;
+  color: rgba(196, 222, 255, 0.72);
 }
 .dc-pagination__list {
   display: inline-block;
@@ -6600,6 +6626,13 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 .dc-pagination__list-item-wrapper {
   display: inline-block;
   margin-right: 20px;
+  color: rgba(196, 222, 255, 0.72);
+}
+.dc-pagination__next {
+  color: rgba(196, 222, 255, 0.72);
+}
+.dc-pagination__next img {
+  margin-left: 8px;
 }
 .dc-pagination__item {
   line-height: 44px;
