@@ -5584,6 +5584,25 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   height: 25px;
   width: 25px;
   background-image: url(/images/down.svg);
+  transform: rotate(0deg);
+  transition: all 300ms;
+}
+.ui-selectmenu-button.ui-selectmenu-button-open {
+  border-width: 1px 1px 0px 1px;
+  border-radius: 8px 8px 0px 0px;
+}
+.ui-selectmenu-button.ui-selectmenu-button-open::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 30px;
+  border-width: 0px;
+  border-style: solid;
+  border-color: rgba(196, 222, 255, 0.1);
+}
+.ui-selectmenu-button.ui-selectmenu-button-open .ui-selectmenu-icon {
+  transform: rotate(180deg);
+  transition: all 300ms;
 }
 .ui-selectmenu-button .ui-selectmenu-text {
   line-height: 25px;
@@ -5593,21 +5612,6 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   font-size: 15px;
   line-height: 22px;
   color: rgba(196, 222, 255, 0.32);
-}
-
-.ui-selectmenu-button:hover {
-  border-width: 1px 1px 0px 1px;
-  border-radius: 8px 8px 0px 0px;
-}
-
-.ui-selectmenu-button:hover::after {
-  content: "";
-  display: block;
-  height: 4px;
-  width: 30px;
-  border-width: 0px;
-  border-style: solid;
-  border-color: rgba(196, 222, 255, 0.1);
 }
 
 .ui-selectmenu-menu {
@@ -5628,6 +5632,13 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 .ui-selectmenu-menu ul li {
   padding-left: 15px !important;
 }
+.ui-selectmenu-menu ul li .ui-menu-item-wrapper.ui-state-active {
+  margin: 0px !important;
+}
+.ui-selectmenu-menu ul li .ui-menu-item-wrapper:hover {
+  color: rgba(196, 222, 255, 0.72);
+}
+
 /*.....................................*/
 /*.....................................*/
 /*.....................................*/
@@ -6620,6 +6631,10 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   margin-right: 20px;
   color: rgba(196, 222, 255, 0.72);
 }
+.dc-pagination__prev img {
+  transform: rotate(180deg);
+  margin-right: 8px;
+}
 .dc-pagination__list {
   display: inline-block;
 }
@@ -6695,7 +6710,9 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 .dc-pairs-table__item {
   border-style: solid;
   border-color: rgba(196, 222, 255, 0.1);
-  border-width: 0px 0px 1px 0px;
+  border-width: 1px 0px 0px 0px;
+}
+.dc-pairs-table__item {
   cursor: pointer;
 }
 .dc-pairs-table__item td:first-child {
@@ -6726,6 +6743,11 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 }
 .dc-pairs-table__item:hover {
   background: rgba(196, 222, 255, 0.1);
+}
+.dc-pairs-table__item:hover {
+  border: none;
+}
+.dc-pairs-table__item:hover + .dc-pairs-table__item:hover {
   border: none;
 }
 .dc-pairs-table__item:hover td:first-child {

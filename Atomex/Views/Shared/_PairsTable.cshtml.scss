@@ -33,7 +33,10 @@
     &__item {
         border-style: solid;
         border-color: rgba(196, 222, 255, 0.1);
-        border-width: 0px 0px 1px 0px;
+        border-width: 1px 0px 0px 0px;
+    }
+
+    &__item {
         cursor: pointer;
 
         td:first-child {
@@ -73,7 +76,14 @@
 
     &__item:hover {
         background: rgba(196, 222, 255, 0.1);
-        border: none;
+
+        & {
+            border: none;
+        }
+
+        & + & {
+            border: none;
+        }
 
         td:first-child {
             border-radius: 8px 0px 0px 8px;
