@@ -29,7 +29,7 @@ public class CoinPairsController : Controller
     /// <summary>
     ///     Отображает страницу всех пар.
     /// </summary>
-    [Route("/crypto-pairs")]
+    [Route("/custome/crypto-pairs")]
     public IActionResult Index([FromServices] CCoinPairsVM model, int page, string filter = null)
     {
         if (filter == null)
@@ -49,7 +49,7 @@ public class CoinPairsController : Controller
     /// <summary>
     ///     Отображает страницу конкретной пары. Через get параметры принимает идентификаторы самих пар.
     /// </summary>
-    [Route("/crypto-pairs/{coin1}-to-{coin2}")]
+    [Route("/custome/crypto-pairs/{coin1}-to-{coin2}")]
     public IActionResult Pair([FromServices] CCoinPairVM model)
     {
         ViewBag.Blocks = blocksHelper;

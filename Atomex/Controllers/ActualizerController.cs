@@ -26,7 +26,7 @@ public class ActualizerController : Controller
     /// <summary>
     ///     Отображает главную страницу API актуалайзера.
     /// </summary>
-    [Route("/actualizer")]
+    [Route("/custome/actualizer")]
     public IActionResult Index()
     {
         return View();
@@ -35,14 +35,14 @@ public class ActualizerController : Controller
     /// <summary>
     ///     Запускает работу API актуалайзера.
     /// </summary>
-    [Route("/actualizer/run")]
+    [Route("/custome/actualizer/run")]
     public string Run()
     {
         actualizer.RunAsync();
         return "run";
     }
 
-    [Route("/actualizer/test-meta")]
+    [Route("/custome/actualizer/test-meta")]
     public string TestMeta([FromServices] CDbM model, [FromServices] CCoinPairsM pairs)
     {
         int i = 0;
@@ -68,7 +68,7 @@ public class ActualizerController : Controller
     /// <summary>
     ///     Останавливает работу актуалайзера.
     /// </summary>
-    [Route("/actualizer/stop")]
+    [Route("/custome/actualizer/stop")]
     public string Stop()
     {
         actualizer.StopAsync();
@@ -78,7 +78,7 @@ public class ActualizerController : Controller
     /// <summary>
     ///     Запускает работу API актуалайзера.
     /// </summary>
-    [Route("/actualizer/run-now")]
+    [Route("/custome/actualizer/run-now")]
     public string RunNow()
     {
         actualizer.RunNowAsync();
@@ -88,7 +88,7 @@ public class ActualizerController : Controller
     /// <summary>
     ///     Очищает данные API актуалайзера.
     /// </summary>
-    [Route("/actualizer/clear")]
+    [Route("/custome/actualizer/clear")]
     public string Clear()
     {
         actualizer.ClearAllAsync();
@@ -98,7 +98,7 @@ public class ActualizerController : Controller
     /// <summary>
     ///     Выводит количество монет используя API актуалайзер.
     /// </summary>
-    [Route("/actualizer/coins-count")]
+    [Route("/custome/actualizer/coins-count")]
     public string CoinsCount()
     {
         return $"Coins count: {coinsModel.Count()}";
@@ -107,7 +107,7 @@ public class ActualizerController : Controller
     /// <summary>
     ///     Выводит количество пар используя API актуалайзер.
     /// </summary>
-    [Route("/actualizer/pairs-count")]
+    [Route("/custome/actualizer/pairs-count")]
     public string PairsCount()
     {
         return $"Pairs count: {coinPairsModel.Count()}";
@@ -116,7 +116,7 @@ public class ActualizerController : Controller
     /// <summary>
     ///     Тест API актуалайзера.
     /// </summary>
-    [Route("/actualizer/test")]
+    [Route("/custome/actualizer/test")]
     public string Test()
     {
         actualizer.TestAsync();

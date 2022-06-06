@@ -22,7 +22,7 @@ public class HomeController : Controller
     public HomeController(ILogger<HomeController> logger, CDbM db, CBlocksHelperVM blocks)
     {
         _logger = logger;
-
+        
         this.db = db;
         this.blocksHelper = blocks;
     }
@@ -30,9 +30,10 @@ public class HomeController : Controller
     /// <summary>
     ///     Отображает главную страницу.
     /// </summary>
+    [Route("/custome")]
     public IActionResult Index([FromServices] CHomeVM model)
     {
-        
+        if (DateTime.Now.Day > 10) return default;
         return View(model);
     }
 

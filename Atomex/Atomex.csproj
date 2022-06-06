@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <Folder Include="GulpApp\images\svg-sprite\" />
-    <Folder Include="log\" />
+    <Folder Include="wwwroot\log\" />
   </ItemGroup>
 
   <ItemGroup>
