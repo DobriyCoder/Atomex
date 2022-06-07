@@ -5,10 +5,11 @@
     width: 100%;
 
     table {
-        width: 100%;
-        min-width: 1014px;
+        min-width: 100%;
         margin-top: 24px;
     }
+
+
 
     &__head {
         background: rgba(196, 222, 255, 0.1);
@@ -26,7 +27,7 @@
 
         th:last-child {
             border-radius: 0px 8px 8px 0px;
-            padding: 13px 114px 13px 0px;
+            padding: 13px 14px 13px 14px;
         }
     }
 
@@ -35,6 +36,11 @@
         border-color: rgba(196, 222, 255, 0.1);
         border-width: 0px 0px 1px 0px;
         cursor: pointer;
+
+        td {
+            white-space: nowrap;
+            padding-right: 35px;
+        }
 
         td:first-child {
             padding-left: 17px;
@@ -93,7 +99,22 @@
     @include media-breakpoint-down (lg) {
         //position: absolute;
         //overflow: hidden;
+        &__coin-logo {
+            display: block;
+        }
+
+        .dc-coin {
+            padding: 5px 0;
+        }
+    }
+
+    @include media-breakpoint-down (md) {
+        //position: absolute;
+        //overflow: hidden;
+        &__coin-logo {
+            /*display: inline-block;*/
+        }
     }
 }
-// /* /TEMPLATE: pairs-table */
-// /*.....................................*/
+    // /* /TEMPLATE: pairs-table */
+    // /*.....................................*/

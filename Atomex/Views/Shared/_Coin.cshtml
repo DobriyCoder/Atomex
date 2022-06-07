@@ -1,6 +1,9 @@
 ﻿@model CCoinDataM 
-
+@{
+    string img = Model.image == "missing_large.png" ? "/images/bitcoin.png" : Model.image;
+}
 <a asp-controller="Coins" asp-action="Coin" asp-route-coin="@Model.name" class="dc-coin">
-    <img class="dc-coin__img" src="@Model.image" alt="@Model.name_full" />
-    <span class="dc-coin__title dcg-caption">@Model.name_full</span>
+    <img class="dc-coin__img" src="@img" alt="@Model.name_full" />
+    <span class="dc-coin__title dcg-caption d-none d-md-inline">@Model.name_full</span>
+    <span class="dc-coin__title dcg-caption d-md-none">@Model.name</span>
 </a>    

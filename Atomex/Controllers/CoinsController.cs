@@ -30,7 +30,7 @@ public class CoinsController : Controller
     /// <summary>
     ///     Отображает страницу всех монет.
     /// </summary>
-    [Route("/custome/coins")]
+    [Route("/custom/coins")]
     public IActionResult Index([FromServices] CCoinsVM model)
     {
         model.Init(HttpContext);
@@ -41,7 +41,7 @@ public class CoinsController : Controller
     /// <summary>
     ///     Отображает страницу конкретной монеты. Через get параметры принимает идентификатор самой монеты.
     /// </summary>
-    [Route("/custome/coins/{coin}")]
+    [Route("/custom/coins/{coin}")]
     public IActionResult Coin([FromServices] CCoinVM model)
     {
         ViewBag.Blocks = blocksHelper;

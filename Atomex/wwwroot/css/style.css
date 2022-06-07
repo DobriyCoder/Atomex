@@ -5766,6 +5766,11 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 }
 .dc-coin__title {
   margin: 3px 0px 0px 7px;
+  overflow: hidden;
+  max-width: 100px;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 .dc-coin__img {
   height: 25px;
@@ -5850,9 +5855,11 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 }
 
 .dc-coins-table {
-  width: 100%;
+  overflow-x: auto;
+}
+.dc-coins-table table {
+  min-width: 100%;
   margin-top: 34px;
-  overflow: hidden;
 }
 .dc-coins-table__head {
   background: rgba(196, 222, 255, 0.1);
@@ -5860,6 +5867,7 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 .dc-coins-table__head th {
   padding: 13px 0px 13px 0px;
   text-align: start;
+  white-space: nowrap;
   color: rgba(221, 234, 250, 0.92);
 }
 .dc-coins-table__head th:first-child {
@@ -5868,12 +5876,16 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 }
 .dc-coins-table__head th:last-child {
   border-radius: 0px 8px 8px 0px;
-  padding: 13px 114px 13px 0px;
+  padding: 13px 14px 13px 14px;
 }
 .dc-coins-table__item {
   border-style: solid;
   border-color: rgba(196, 222, 255, 0.1);
   border-width: 0px 0px 1px 0px;
+}
+.dc-coins-table__item td {
+  white-space: nowrap;
+  padding-right: 35px;
 }
 .dc-coins-table__item td:first-child {
   padding-left: 17px;
@@ -5911,6 +5923,26 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 .dc-coins-table__item:hover td:last-child {
   border-radius: 0px 8px 8px 0px;
 }
+.dc-coins-table .dc-coin__title {
+  max-width: 200px;
+}
+@media (max-width: 1239.98px) {
+  .dc-coins-table__coin-logo {
+    display: block;
+  }
+  .dc-coins-table .dc-coin {
+    padding: 5px 0;
+  }
+  .dc-coins-table .dc-coin__title {
+    max-width: 100px;
+  }
+}
+@media (max-width: 1009.98px) {
+  .dc-coins-table__coin-logo {
+    /*display: inline-block;*/
+  }
+}
+
 .dc-copyright {
   line-height: 20px;
   color: rgba(196, 222, 255, 0.32);
@@ -6672,8 +6704,7 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   width: 100%;
 }
 .dc-pairs-table table {
-  width: 100%;
-  min-width: 1014px;
+  min-width: 100%;
   margin-top: 24px;
 }
 .dc-pairs-table__head {
@@ -6690,13 +6721,17 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 }
 .dc-pairs-table__head th:last-child {
   border-radius: 0px 8px 8px 0px;
-  padding: 13px 114px 13px 0px;
+  padding: 13px 14px 13px 14px;
 }
 .dc-pairs-table__item {
   border-style: solid;
   border-color: rgba(196, 222, 255, 0.1);
   border-width: 0px 0px 1px 0px;
   cursor: pointer;
+}
+.dc-pairs-table__item td {
+  white-space: nowrap;
+  padding-right: 35px;
 }
 .dc-pairs-table__item td:first-child {
   padding-left: 17px;
@@ -6738,6 +6773,20 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   display: inline-block;
   margin-right: 43px;
 }
+@media (max-width: 1239.98px) {
+  .dc-pairs-table__coin-logo {
+    display: block;
+  }
+  .dc-pairs-table .dc-coin {
+    padding: 5px 0;
+  }
+}
+@media (max-width: 1009.98px) {
+  .dc-pairs-table__coin-logo {
+    /*display: inline-block;*/
+  }
+}
+
 .dc-popular-pairs {
   display: flex;
   flex-direction: column;

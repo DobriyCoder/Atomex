@@ -1,9 +1,13 @@
 // /*.....................................*/
 // /* TEMPLATE: coins-table */
 .dc-coins-table {
-    width: 100%;
-    margin-top: 34px;
-    overflow: hidden;
+    overflow-x: auto;
+
+    table {
+        min-width: 100%;
+        margin-top: 34px;
+    }
+
 
     &__head {
         background: rgba(196, 222, 255, 0.1);
@@ -11,6 +15,7 @@
         th {
             padding: 13px 0px 13px 0px;
             text-align: start;
+            white-space: nowrap;
             color: rgba(221, 234, 250, 0.92);
         }
 
@@ -21,7 +26,7 @@
 
         th:last-child {
             border-radius: 0px 8px 8px 0px;
-            padding: 13px 114px 13px 0px;
+            padding: 13px 14px 13px 14px;
         }
     }
 
@@ -29,6 +34,11 @@
         border-style: solid;
         border-color: rgba(196, 222, 255, 0.1);
         border-width: 0px 0px 1px 0px;
+
+        td {
+            white-space: nowrap;
+            padding-right: 35px;
+        }
 
         td:first-child {
             padding-left: 17px;
@@ -78,8 +88,37 @@
         }
     }
 
-    @include media-breakpoint-down (sm) {
+    .dc-coin {
+        &__title {
+            max-width: 200px;
+        }
+    }
+
+    @include media-breakpoint-down (lg) {
+        //position: absolute;
+        //overflow: hidden;
+        &__coin-logo {
+            display: block;
+        }
+
+        .dc-coin {
+            padding: 5px 0;
+        }
+
+        .dc-coin {
+            &__title {
+                max-width: 100px;
+            }
+        }
+    }
+
+    @include media-breakpoint-down (md) {
+        //position: absolute;
+        //overflow: hidden;
+        &__coin-logo {
+            /*display: inline-block;*/
+        }
     }
 }
-// /* /TEMPLATE: coins-table */
-// /*.....................................*/
+    // /* /TEMPLATE: coins-table */
+    // /*.....................................*/

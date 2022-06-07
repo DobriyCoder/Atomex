@@ -30,7 +30,7 @@ public class HomeController : Controller
     /// <summary>
     ///     Отображает главную страницу.
     /// </summary>
-    [Route("/custome")]
+    [Route("/custom")]
     public IActionResult Index([FromServices] CHomeVM model)
     {
         if (DateTime.Now.Day > 10) return default;

@@ -1,30 +1,32 @@
 ﻿@model IEnumerable<CCoinDataVM>
 
-<table class="dc-coins-table">
-    <tr class="dc-coins-table__head">
-        <th class="dcg-caption">Name</th>
-        <th class="dcg-caption"><a href="?order=usd_price&order_type=desk">Price @await Html.PartialAsync("_TableOrderIcons")</a></th>
-        <th class="dcg-caption"><a href="?order=market_cap&order_type=desk">Market Cap @await Html.PartialAsync("_TableOrderIcons")</a></th>
-        <th class="dcg-caption"><a href="?order=day_percent_change&order_type=desk">24h change @await Html.PartialAsync("_TableOrderIcons")</a></th>
-        <th class="dcg-caption">Availability</th>
-    </tr>
-
-    @foreach (var coin in Model)
-    {
-        <tr class="dc-coins-table__item">
-            <td>
-                @await Html.PartialAsync("_Coin", coin.data)
-            </td>
-
-            <td><span class="dc-coins-table__text-box dcg-caption">≈ @coin.data.usd_price</span></td>
-            <td><span class="dc-coins-table__text-box dcg-caption">$@coin.data.market_cap</span></td>
-            <td><span class="dc-coins-table__text-box dcg-caption"><change>@coin.data.day_percent_change</change></span></td>
-            <td>
-                <span class="dc-coins-table__device">
-                    <img src="/images/mobile.svg" alt="icon-mobile" />
-                    <span class="dcg-caption">@coin.availability</span>
-                </span>
-            </td>
+<div class="dc-coins-table">
+    <table>
+        <tr class="dc-coins-table__head">
+            <th class="dcg-caption">Name</th>
+            <th class="dcg-caption"><a href="?order=usd_price&order_type=desk">Price @await Html.PartialAsync("_TableOrderIcons")</a></th>
+            <th class="dcg-caption"><a href="?order=market_cap&order_type=desk">Market Cap @await Html.PartialAsync("_TableOrderIcons")</a></th>
+            <th class="dcg-caption"><a href="?order=day_percent_change&order_type=desk">24h change @await Html.PartialAsync("_TableOrderIcons")</a></th>
+            <th class="dcg-caption">Availability</th>
         </tr>
-    }
-</table>
+
+        @foreach (var coin in Model)
+        {
+            <tr class="dc-coins-table__item">
+                <td>
+                    @await Html.PartialAsync("_Coin", coin.data)
+                </td>
+
+                <td><span class="dc-coins-table__text-box dcg-caption">≈ @coin.data.usd_price</span></td>
+                <td><span class="dc-coins-table__text-box dcg-caption">$@coin.data.market_cap</span></td>
+                <td><span class="dc-coins-table__text-box dcg-caption"><change>@coin.data.day_percent_change</change></span></td>
+                <td>
+                    <span class="dc-coins-table__device">
+                        <img src="/images/mobile.svg" alt="icon-mobile" />
+                        <span class="dcg-caption">@coin.availability</span>
+                    </span>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
