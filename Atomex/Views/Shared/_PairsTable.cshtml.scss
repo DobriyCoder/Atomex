@@ -32,13 +32,13 @@
     }
 
     &__item {
-        border-style: solid;
-        border-color: rgba(196, 222, 255, 0.1);
-        border-width: 1px 0px 0px 0px;
-    }
-
-    &__item {
         cursor: pointer;
+
+        & + & {
+            border-style: solid;
+            border-color: rgba(196, 222, 255, 0.1);
+            border-width: 1px 0px 0px 0px;
+        }
 
         td {
             white-space: nowrap;
@@ -82,12 +82,9 @@
 
     &__item:hover {
         background: rgba(196, 222, 255, 0.1);
+        border: none;
 
-        & {
-            border: none;
-        }
-
-        & + & {
+        & + .dc-pairs-table__item {
             border: none;
         }
 

@@ -8,6 +8,7 @@
     &__prev {
         margin-right: 20px;
         color: rgba(196, 222, 255, 0.72);
+
         img {
             transform: rotate(180deg);
             margin-right: 8px;
@@ -26,6 +27,7 @@
 
     &__next {
         color: rgba(196, 222, 255, 0.72);
+
         img {
             margin-left: 8px;
         }
@@ -51,7 +53,15 @@
     }
 
     @include media-breakpoint-down (sm) {
+        &__prev {
+            display: none;
+        }
+
+        &__next {
+            display: none;
+        }
+
     }
 }
-// /* /TEMPLATE: pagination */
-// /*.....................................*/
+    // /* /TEMPLATE: pagination */
+    // /*.....................................*/
