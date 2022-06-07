@@ -108,7 +108,7 @@ public class CBlocksHelperVM
     /// <summary>
     ///     Возвращает список монет относительно кол-ва и номера страницы.
     /// </summary>
-    public IEnumerable<CCoinDataVM> GetCoinList(int count, int page = 1, string filter = "", string? order = null, string order_type = "ask")
+    public IEnumerable<CCoinDataVM> GetCoinList(int count, int page = 1, string filter = "", string? order = "c.id", string order_type = "asc")
     {
         return coinsModel.GetCoins(page, count, filter, order, order_type);
     }

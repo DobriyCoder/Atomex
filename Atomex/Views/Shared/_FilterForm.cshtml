@@ -7,9 +7,9 @@
         <div class="col">
             @await Html.PartialAsync("_Sort", (current: BlocksHelper.GetQuery("order"), list: new Dictionary<string, string> 
             {
-                {"Price", "usd_price"},
-                {"Market Cap", "market_cap"},
-                {"24h change", "day_percent_change"},
+                {"Price", "e.usd_price"},
+                {"Market Cap", "e.market_cap"},
+                {"24h change", "e.usd_price"},
             }))
         </div>
     </div>

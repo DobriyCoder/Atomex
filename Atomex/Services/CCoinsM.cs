@@ -189,41 +189,50 @@ public class CCoinsM : CBaseDbM
     /// <summary>
     ///     Достает монеты из БД используя исходное заданное количество и номер страницы.
     /// </summary>
-    public IEnumerable<CCoinDataVM> GetCoins(int page, int count, string? filter = null, string? order = null, string order_type = "ask")
+    public IEnumerable<CCoinDataVM> GetCoins(int page, int count, string? filter = null, string? order = "c.id", string order_type = "asc")
     {
-        /*if (filter != "" && filter != null)
-            result = result.Where(c => c.name.Contains(filter) || c.name_full.Contains(filter));*/
-        
-        var query = db.Coins.AsQueryable()
-            .Include(c => c.ext)
-            .Include(c => c.meta)
-            .Where(c => c.enable.Value)
-            .Skip((page - 1) * count)
-            .Take(count)
-            .Select(c =>
-                new CCoinDataVM()
-                {
-                    data = c,
-                    commonModel = commonModel
-                }
-            )
+
+        string query = 
+            $"select c.* from coins as c" +
+                $" join coinsext as e on c.id = e.coins_id" +
+                $" where c.last_updated = e.last_updated" +
+                $" order by {order} {order_type}" +
+                $" offset {(page - 1) * count} rows" +
+                $" fetch next {count} rows ONLY"
         ;
 
-        if (order != null)
-            if (order_type == "ask")
-                return query.AsEnumerable().OrderBy(c =>
-                {
-                    Type type = typeof(CCoinDataM);
-                    return type.GetProperty(order)?.GetValue(c.data, null) ?? 0;
-                });
-            else
-                return query.AsEnumerable().OrderByDescending(c =>
-                {
-                    Type type = typeof(CCoinDataM);
-                    return type.GetProperty(order)?.GetValue(c.data, null) ?? 0;
-                });
+        var coins = db.Coins.FromSqlRaw(query)
+            .Select(c => new CCoinDataVM()
+            {
+                data = c,
+                commonModel = commonModel
+            })
+            .ToList();
+        ;
 
-        return query;
+        coins = JoinExtToCoins(coins);
+        
+        return coins;
+    }
+    public List<CCoinDataVM> JoinExtToCoins (List<CCoinDataVM> coins)
+    {
+        string query = $"select * from coinsext where ";
+
+        foreach (var coin in coins)
+        {
+            query += $"coins_id = {coin.data.id} or ";
+        }
+
+        query = query.TrimEnd(" or ".ToCharArray());
+
+        var ext = db.CoinsExt.FromSqlRaw(query).ToList();
+        
+        foreach (var coin in coins)
+        {
+            coin.data.l_ext = ext.Where(e => e.coins_id == coin.data.id).ToList();
+        }
+
+        return coins;
     }
     public IEnumerable<CCoinDataM> GetCoins() => db.Coins.Where(c => c.enable.Value);
     public CCoinDataM GetCoinByIndex(int index)
