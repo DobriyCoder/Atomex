@@ -8,6 +8,10 @@
     &__prev {
         margin-right: 20px;
         color: rgba(196, 222, 255, 0.72);
+        img {
+            transform: rotate(180deg);
+            margin-right: 8px;
+        }
     }
 
     &__list {
