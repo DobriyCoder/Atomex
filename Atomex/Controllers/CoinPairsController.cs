@@ -1,6 +1,6 @@
 ﻿using CryptoApi.Models;
 using CryptoApi.Models.DB;
-using CryptoApi.ViewModels;
+using CryptoApi.ViewModels; 
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
