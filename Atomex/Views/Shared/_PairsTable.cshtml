@@ -21,7 +21,12 @@
                     <a class="dcg-dn dcj-link" asp-controller="CoinPairs" asp-action="Pair" asp-route-coin1="@pair.coin1.name" asp-route-coin2="@pair.coin2.name"></a>
                 </td>
 
-                <td><span class="dc-pairs-table__text-box dcg-caption">≈ $@pair.data.price_1</span></td>
+                <td>
+                    @if (pair.data.price_1 != null)
+                    {
+                        <span class="dc-pairs-table__text-box dcg-caption">≈ $@pair.data.price_1</span>
+                    }
+                </td>
                 <td><span class="dc-pairs-table__text-box dcg-caption">$@pair.networkFee</span></td>
                 <td><span class="dc-pairs-table__text-box dcg-caption">@pair.coin1.volume_24h @pair.coin1.name</span></td>
                 <td><span class="dc-pairs-table__text-box dcg-caption">$@pair.coin2.volume_24h</span></td>

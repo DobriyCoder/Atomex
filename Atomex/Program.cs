@@ -43,6 +43,15 @@ if (!app.Environment.IsDevelopment())
 }
 app.UseStaticFiles();
 
+/*app.Run(async context =>
+{
+    string file_name = DateTime.Now.ToString("dd.MM.yyyy") + ".log";
+    string path = app.Environment.ContentRootPath + app.Configuration.GetSection("Logger").GetValue<string>("Path") + file_name;
+    if (!File.Exists(path)) File.Create(path);
+    //File.AppendAllText(path, "test");
+    await context.Response.WriteAsync(path);
+});*/
+
 app.UseRouting();
 
 app.UseAuthorization();

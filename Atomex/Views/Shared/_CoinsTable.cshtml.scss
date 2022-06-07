@@ -115,6 +115,8 @@
     @include media-breakpoint-down (md) {
         //position: absolute;
         //overflow: hidden;
+        padding-bottom: 20px;
+
         &__coin-logo {
             /*display: inline-block;*/
         }

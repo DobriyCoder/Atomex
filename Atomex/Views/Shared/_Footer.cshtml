@@ -1,4 +1,5 @@
-﻿@*@model I_footer *@
+﻿@inject CBlocksHelperVM BlocksHelper
+@*@model I_footer *@
 
 <div class="dc-footer">
     <div class="container">
@@ -12,9 +13,9 @@
                 </div>
                 <div class="col-12 col-xl order-1">
                     <div class="dc-footer__menu">
-                        @await Html.PartialAsync("_FooterMenu")
-                        @await Html.PartialAsync("_FooterMenu")
-                        @await Html.PartialAsync("_FooterMenu")
+                        @await Html.PartialAsync("_FooterMenu", BlocksHelper.GetFooterMenu())
+                        @await Html.PartialAsync("_FooterMenu", BlocksHelper.GetFooterCoinsMenu())
+                        @await Html.PartialAsync("_FooterMenu", BlocksHelper.GetFooterPairsMenu())
                     </div> 
                 </div>      
             </div>

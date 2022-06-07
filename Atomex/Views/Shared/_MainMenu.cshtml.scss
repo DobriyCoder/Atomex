@@ -22,7 +22,7 @@
         transition: all 250ms;
     }
 
-    li:hover::after {
+    li:hover::after, li.dcg-active::after {
         width: 100%;
     }
 

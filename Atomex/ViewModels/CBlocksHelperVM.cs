@@ -27,6 +27,70 @@ public class CBlocksHelperVM
         this.conf = conf;
         contextAccessor = context;
     }
+
+    public CMenuVM GetFooterMenu()
+    {
+        return new CMenuVM()
+        {
+            Title = "Atomex",
+
+            Links = new List<CLinkVM>()
+            {
+                new CLinkVM("Exchange"),
+                new CLinkVM("Wallet"),
+                new CLinkVM("Downloads"),
+                new CLinkVM("Docs"),
+            }
+        };
+    }
+
+    public CMenuVM GetFooterCoinsMenu()
+    {
+        var coins = GetCoinList(4);
+
+        var links = new List<CLinkVM>();
+
+        foreach (var coin in coins)
+        {
+            var data = new Dictionary<string, string>() { { "coin", coin.data.name } };
+            links.Add(new CLinkVM(coin.data.name_full, "Coins", "Coin", data));
+        }
+
+        return new CMenuVM()
+        {
+            Title = "Supported Coins",
+            Links = links,
+            MoreLink = new CLinkVM("View all coins", controller: "Coins")
+        };
+    }
+
+    public CMenuVM GetFooterPairsMenu()
+    {
+        var pairs = GetPairList(5);
+
+        var links = new List<CLinkVM>();
+
+        foreach (var pair in pairs)
+        {
+            var data = new Dictionary<string, string>() 
+            {
+                { "coin1", pair.data.name_1 },
+                { "coin2", pair.data.name_2 }
+            };
+
+            string title = $"{pair.data.name_1.ToUpper()} to {pair.data.name_2.ToUpper()}";
+
+            links.Add(new CLinkVM(title, "CoinPairs", "Pair", data));
+        }
+
+        return new CMenuVM()
+        {
+            Title = "Exchange Pairs",
+            Links = links,
+            MoreLink = new CLinkVM("View all coin pairs", controller: "CoinPairs")
+        };
+    }
+
     public string GetActiveClass(string controller, string action = "Index")
     {
         var context = contextAccessor.HttpContext;

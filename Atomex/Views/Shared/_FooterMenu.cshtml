@@ -1,14 +1,17 @@
-﻿@*@model I_footer-menu *@
+﻿@model CMenuVM
 
 <nav class="dc-footer-menu">
-    <h5 class="dcg-caption dc-footer-menu__title">Atomex</h5>
+    <h5 class="dcg-caption dc-footer-menu__title">@Model.Title</h5>
 
     <ul>
-        <li><a class="dc-footer-menu__item" href="#"><span>Exchange</span></a></li>
-        <li><a class="dc-footer-menu__item" href="#"><span>Wallet</span></a></li>
-        <li><a class="dc-footer-menu__item" href="#"><span>Downloads</span></a></li>
-        <li><a class="dc-footer-menu__item" href="#"><span>Docs</span></a></li>
+        @foreach (var item in Model.Links)
+        {
+            <li><a class="dc-footer-menu__item" asp-controller="@item.controller" asp-action="@item.action" asp-all-route-data="@item.data"><span>@item.title</span></a></li>
+        }
     </ul>
      
-    <a class="dc-footer-menu__last-item" href="#">View all coins</a> 
+    @if (Model.MoreLink != null)
+    {
+        <a class="dc-footer-menu__last-item" asp-controller="@Model.MoreLink.controller" asp-action="@Model.MoreLink.action" asp-all-route-data="@Model.MoreLink.data">@Model.MoreLink.title</a> 
+    }
 </nav>
