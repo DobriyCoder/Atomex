@@ -35,7 +35,7 @@ public class ActualizerController : Controller
     /// <summary>
     ///     Запускает работу API актуалайзера.
     /// </summary>
-    [Route("/custome/actualizer/run")]
+    [Route("/custom/actualizer/run")]
     public string Run()
     {
         actualizer.RunAsync();
