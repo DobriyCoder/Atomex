@@ -6059,13 +6059,7 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   text-align: center;
 }
 .dc-download-btn__logo {
-  margin: 5px 0px;
-}
-.dc-download-btn__logo:first-child {
-  margin: 15px 0px;
-}
-.dc-download-btn__logo:last-child {
-  margin: 5px 0px 15px 0px;
+  margin: 12px 0px;
 }
 .dc-download-btn__button {
   display: inline-flex;
