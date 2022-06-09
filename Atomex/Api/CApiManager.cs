@@ -93,7 +93,6 @@ namespace CryptoApi.Api
             {
                 foreach (var list in lists)
                 {
-                    Console.WriteLine(list.GetType());
                     foreach(var coin in list.GetEnumerable())
                         yield return coin;
                 }

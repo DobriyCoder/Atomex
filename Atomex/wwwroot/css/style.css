@@ -5850,13 +5850,32 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
     padding-right: 46px;
     justify-content: start;
   }
+  .dc-coins-line__item {
+    margin-right: 10px;
+  }
+  .dc-coins-line__list {
+    min-width: auto;
+  }
 }
 @media (max-width: 1239.98px) {
+  .dc-coins-line {
+    padding-left: 20px;
+    padding-right: 10px;
+  }
   .dc-coins-line ul {
     display: flex;
   }
   .dc-coins-line__list {
-    min-width: 1100px;
+    min-width: auto;
+  }
+  .dc-coins-line__item {
+    width: 79px;
+  }
+  .dc-coins-line .dcg-caption_full {
+    display: none !important;
+  }
+  .dc-coins-line .dcg-caption_small {
+    display: block !important;
   }
 }
 @media (max-width: 1009.98px) {
@@ -5865,7 +5884,7 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
     padding-right: 25px;
   }
   .dc-coins-line__list {
-    min-width: 1100px;
+    min-width: auto;
   }
   .dc-coins-line__item {
     display: inline-block;
@@ -6005,28 +6024,24 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   flex-direction: column;
   margin-bottom: 16px;
   box-shadow: 8px 13px 20px rgba(15, 6, 41, 0.22), inset 0px -1px 2px rgba(135, 103, 226, 0.07);
+  position: relative;
 }
 .dc-download-btn__select {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  z-index: 100;
   width: 94px;
   background-color: rgba(196, 222, 255, 0.16);
   border-radius: 0px 0px 8px 8px;
   text-align: center;
-  height: 0px;
-  transition: all 300ms;
 }
 .dc-download-btn__logo:first-child {
   margin: 15px 0px;
-  height: 0px;
-  transition: all 300ms;
 }
 .dc-download-btn__logo:last-child {
   margin-bottom: 15px;
-  height: 0px;
-  transition: all 300ms;
-}
-.dc-download-btn__img {
-  height: 0px;
-  transition: all 300ms;
 }
 .dc-download-btn__button {
   display: inline-flex;
@@ -6060,21 +6075,6 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   letter-spacing: 0.01em;
   color: rgba(221, 234, 250, 0.92);
   height: 24px;
-}
-.dc-download-btn .dc-download-btn__select:active {
-  height: 100px;
-  transition: all 300ms;
-}
-.dc-download-btn .dc-download-btn__select:active .dc-download-btn__logo {
-  height: 24px;
-  transition: all 300ms;
-}
-.dc-download-btn .dc-download-btn__select:active .dc-download-btn__img {
-  height: 24px;
-  transition: all 300ms;
-}
-.dc-download-btn .dc-download-btn__select:active .dc-download-btn__button {
-  background-color: red;
 }
 .dc-download-wallet__text-small {
   font-family: "Inter";

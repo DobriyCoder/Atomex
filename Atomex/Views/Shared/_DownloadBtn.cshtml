@@ -1,15 +1,23 @@
 ﻿@*@model I_download-btn *@
+@inject CBlocksHelperVM BlocksHelper
+
+@{
+    var items = BlocksHelper.GetDownloadBtnData();
+    var current = items.First();
+}
 
 <div class="dc-download-btn">
     <div class="dc-download-btn__button dcg-btn">
-        <div class="dc-download-btn__value">
-            <img src="/images/windows-brand.svg" alt="windows-icon" />
+        <div class="dc-download-btn__value dcj-btn">
+            <img class="dcj-curr-img" src="/images/@current[0]" alt="@current[2]" />
             <img src="/images/down.svg" alt="arrow-down" />
         </div>
-        <div class="dc-download-btn__caption">Get Windows app</div>
+        <a href="@current[1]" class="dc-download-btn__caption dcj-curr-link" target="_blank">@current[2]</a>
     </div>
-    <ul class="dc-download-btn__select">
-        <li class="dc-download-btn__logo"><a href="#"><img class="dc-download-btn__img" src="/images/ubuntu-brand.svg" alt="ubuntu-icon" /></a></l>
-        <li class="dc-download-btn__logo"><a href="#"><img class="dc-download-btn__img" src="/images/apple-brand.svg" alt="apple-icon" /></a></li>
+    <ul class="dc-download-btn__select dcj-select">
+        @foreach (var item in items)
+        {
+            <li class="dcj-item dc-download-btn__logo" data-img="/images/@item[0]" data-url="@item[1]" data-title="@item[2]"><a href="#"><img class="dc-download-btn__img" src="/images/@item[0]" alt="@item[2]" /></a></li>
+        }
     </ul>
 </div>  

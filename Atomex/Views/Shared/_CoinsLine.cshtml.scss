@@ -36,15 +36,40 @@
             padding-right: 46px;
             justify-content: start;
         }
+
+        &__item {
+            margin-right: 10px;
+        }
+
+        &__list {
+            min-width: auto;
+        }
     }
 
     @include media-breakpoint-down (lg) {
+        padding-left: 20px;
+        padding-right: 10px;
+
         ul {
             display: flex;
         }
 
         &__list {
-            min-width: 1100px;
+            min-width: auto;
+        }
+
+        &__item {
+            width: 79px;
+        }
+
+        .dcg-caption {
+            &_full {
+                display: none !important;
+            }
+
+            &_small {
+                display: block !important;
+            }
         }
     }
 
@@ -55,7 +80,7 @@
         }
 
         &__list {
-            min-width: 1100px;
+            min-width: auto;
         }
 
         &__item {
@@ -67,9 +92,11 @@
         &__list {
             min-width: auto;
         }
+
         .dcg-caption {
             margin-left: 20px;
         }
+
         &__item {
             margin-right: 0px;
         }

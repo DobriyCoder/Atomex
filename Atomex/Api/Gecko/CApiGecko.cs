@@ -18,20 +18,27 @@ namespace CryptoApi.Api.Gecko
             int page = 1;
             List<CoinMarkets> markets;
             int count = 0;
-
+            int page_count = 0;
+            int delay = 5000;
+            Console.WriteLine("Start loading...");
             while(true)
             {
+                Console.Write($"{++page_count}. {count}. before ");
+
                 try
                 {
                     markets = client.CoinsClient.GetCoinMarkets("usd", new string[] { }, "market_cap_desc", 250, page++, false, "", "").Result;
+                    //Thread.Sleep(2000);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
-                    Thread.Sleep(5000);
+                    Console.WriteLine($"err: ex.Message");
+                    Thread.Sleep(delay);
+                    delay += 1000;
                     continue;
                 }
 
+                Console.WriteLine($"after: {markets.Count}; delay: {delay}");
                 if (markets.Count == 0) break;
 
                 foreach (CoinMarkets market in markets)

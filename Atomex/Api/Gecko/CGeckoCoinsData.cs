@@ -22,25 +22,34 @@ namespace CryptoApi.Api.Gecko
                 //Console.WriteLine("image: " + coin.Image.Large.AbsoluteUri);
                 //Console.WriteLine("image: " + coin.Image.Small.AbsoluteUri);
                 //Console.WriteLine("image: " + coin.Image.Thumb.AbsoluteUri);
-
-                yield return new CApiCoin
+                CApiCoin new_coin = default;
+                try
                 {
-                    Image = coin.Image.ToString(),
-                    Donor = key,
-                    Id = coin.Id,
-                    FullName = coin.Name,
-                    Name = coin.Symbol,
-                    UsdPrice = coin.CurrentPrice,
-                    MarketCap = coin.MarketCap,
-                    Low = coin.Low24H,
-                    High = coin.High24H,
+                    new_coin = new CApiCoin
+                    {
+                        Image = coin.Image.ToString(),
+                        Donor = key,
+                        Id = coin.Id,
+                        FullName = coin.Name,
+                        Name = coin.Symbol,
+                        UsdPrice = coin.CurrentPrice,
+                        MarketCap = coin.MarketCap,
+                        Low = coin.Low24H,
+                        High = coin.High24H,
 
-                    CirculatingSupply = coin.CirculatingSupply,
-                    TotalSupply = coin.TotalSupply,
-                    MarketCapRank = coin.MarketCapRank,
-                    TotalVolume = coin.TotalVolume
-                };
+                        CirculatingSupply = coin.CirculatingSupply,
+                        TotalSupply = coin.TotalSupply,
+                        MarketCapRank = coin.MarketCapRank,
+                        TotalVolume = coin.TotalVolume
+                    };
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine($"GetEnumerable err: {ex.Message}");
+                }
+                
 
+                yield return new_coin;
                 /*yield return new CApiCoin
                 {
                     Image = coin.Image.Large.AbsoluteUri,

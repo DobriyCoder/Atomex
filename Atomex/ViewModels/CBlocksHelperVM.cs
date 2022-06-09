@@ -28,6 +28,23 @@ public class CBlocksHelperVM
         contextAccessor = context;
     }
 
+    public List<string[]> GetDownloadBtnData()
+    {
+        return new List<string[]>()
+        {
+            new string[] { "ubuntu-brand.svg", "https://wallet.atomex.me/", "Web Wallet" },
+            new string[] { "ubuntu-brand.svg", "https://wallet.atomex.me/", "Web Wallet" },
+            new string[] { "ubuntu-brand.svg", "https://wallet.atomex.me/", "Web Wallet" },
+            new string[] { "ubuntu-brand.svg", "https://wallet.atomex.me/", "Web Wallet" },
+            new string[] { "ubuntu-brand.svg", "https://wallet.atomex.me/", "Web Wallet" },
+            new string[] { "ubuntu-brand.svg", "https://wallet.atomex.me/", "Web Wallet" },
+        };
+    }
+
+    public CCoinPairDataVM GetExchangeWidgetData()
+    {
+        return GetPairList(1).FirstOrDefault();
+    }
     public CMenuVM GetFooterMenu()
     {
         return new CMenuVM()

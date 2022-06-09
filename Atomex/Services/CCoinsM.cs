@@ -81,7 +81,15 @@ public class CCoinsM : CBaseDbM
     /// </summary>
     public async Task UpdateCoinAsync(IApiCoin coin, CCoinDataM? has_coin, bool save = true)
     {
-        ApiToData(coin, has_coin);
+        try
+        {
+            ApiToData(coin, has_coin);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"UpdateCoinAsync err: {ex}");
+        }
+
         if (save) await db.SaveChangesAsync();
         logger.Write(has_coin, ELogMode.Update);
     }
@@ -145,15 +153,21 @@ public class CCoinsM : CBaseDbM
 
         foreach (var coin in coins)
         {
+            try
+            {
+                var has_coin = HasCoin(coin);
 
-            var has_coin = HasCoin(coin);
-            
-            if (has_coin != null)
-                await UpdateCoinAsync(coin, has_coin, false);
-            else
-                await AddCoinAsync(coin, false);
+                if (has_coin != null)
+                    await UpdateCoinAsync(coin, has_coin, false);
+                else
+                    await AddCoinAsync(coin, false);
 
-            await db.SaveChangesAsync();
+                await db.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"AddCoinsAsync err: {ex} {ex.Message}");
+            }
         }
 
         await db.SaveChangesAsync();
