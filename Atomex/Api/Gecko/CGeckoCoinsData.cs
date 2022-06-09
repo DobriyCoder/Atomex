@@ -17,13 +17,11 @@ namespace CryptoApi.Api.Gecko
         }
         public IEnumerable<IApiCoin> GetEnumerable()
         {
-            Console.WriteLine($"GetEnumerable.");
             foreach(var coin in coins_full)
             {
                 //Console.WriteLine("image: " + coin.Image.Large.AbsoluteUri);
                 //Console.WriteLine("image: " + coin.Image.Small.AbsoluteUri);
                 //Console.WriteLine("image: " + coin.Image.Thumb.AbsoluteUri);
-                Console.WriteLine($"GetEnumerable++ {coin.Name}");
 
                 yield return new CApiCoin
                 {

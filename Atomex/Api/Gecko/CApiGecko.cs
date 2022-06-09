@@ -16,20 +16,32 @@ namespace CryptoApi.Api.Gecko
         IEnumerable<CoinMarkets> GetAllMarkets ()
         {
             int page = 1;
+            List<CoinMarkets> markets;
+            int count = 0;
 
             while(true)
             {
-                Console.WriteLine("before");
-                var markets = client.CoinsClient.GetCoinMarkets("usd", new string[] { }, "market_cap_desc", 250, page++, false, "", "").Result;
-                Console.WriteLine("after " + markets.Count + " " + (page - 1));
+                try
+                {
+                    markets = client.CoinsClient.GetCoinMarkets("usd", new string[] { }, "market_cap_desc", 250, page++, false, "", "").Result;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    Thread.Sleep(5000);
+                    continue;
+                }
 
                 if (markets.Count == 0) break;
-                
+
                 foreach (CoinMarkets market in markets)
                 {
+                    count++;
                     yield return market;
                 }
             }
+
+            Console.WriteLine($"All count: {count}");
         }
         public async Task<IApiCoinsData> GetCoinsAsync()
         {
