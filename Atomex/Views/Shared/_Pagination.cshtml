@@ -40,7 +40,7 @@
             }
         </ul>
 
-        @if (current_page_num < Model.Count - 1)
+        @if (current_page_num < Model.Count)
         {
             <a class="dc-pagination__next dcg-caption" href="?page=@(current_page_num + 1)@continuity">Next<img src="/images/arrow-right-grey.svg"/></a>
         }
