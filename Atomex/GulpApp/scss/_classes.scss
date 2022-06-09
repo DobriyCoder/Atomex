@@ -158,6 +158,10 @@ a {
     padding: 15px 20px 17px;
     letter-spacing: 0.01em;
     transition: all 200ms;
+    text-align: center;
+    transition-property: border-radius;
+    transition-delay: 300ms;
+
 
     &:active {
         background: rgba(196, 222, 255, 0.16);
@@ -229,7 +233,7 @@ a {
     &.dcg-btn_color {
         background: #1E3E93;
         line-height: 24px;
-        padding: 12px 24px 14px;
+        padding: 14px 24px 14px;
 
         &:active {
             background: #0F3088;
@@ -381,7 +385,7 @@ textarea {}
     }
 
     &_hidden {
-        overflow: hidden;
+        overflow-x: clip;
     }
 
     & + & {
@@ -444,6 +448,10 @@ textarea {}
 
         &_padding-small {
             padding: 40px 15px 40px 15px;
+        }
+
+        &_padding-heading {
+            padding: 32px 14px 20px 14px;
         }
     }
 }
@@ -565,6 +573,13 @@ textarea {}
         & {
             margin-bottom: 20px;
         }
+    }
+}
+/*.....................................*/
+.dcg-opened {
+    .dcg-btn {
+        border-radius: 8px 8px 8px 0px;
+        transition-property: none;
     }
 }
 /* /common */

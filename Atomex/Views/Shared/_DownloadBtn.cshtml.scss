@@ -14,9 +14,13 @@
         left: 0;
         z-index: 100;
         width: 94px;
-        background-color: rgba(196, 222, 255, 0.16);
+        background-color: rgba(37, 54, 78, 1);
         border-radius: 0px 0px 8px 8px;
         text-align: center;
+    }
+
+    &__logo {
+        margin: 5px 0px;
     }
 
     &__logo:first-child {
@@ -24,7 +28,7 @@
     }
 
     &__logo:last-child {
-        margin-bottom: 15px;
+        margin: 5px 0px 15px 0px;
     }
 
     &__img {
@@ -67,7 +71,7 @@
         height: 24px; // ===========
     }
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (lg) {
     }
 }
 // /* /TEMPLATE: download-btn */

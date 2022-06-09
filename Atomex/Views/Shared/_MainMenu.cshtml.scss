@@ -14,7 +14,7 @@
     li::after {
         content: '';
         width: 0%;
-        height: 3px;
+        height: 2px;
         background: #00D7CB;
         border-radius: 2px;
         display: block;
@@ -48,7 +48,7 @@
         }
 
         li {
-            font-family: 'Helvetica Neue';
+            //font-family: 'Helvetica Neue';
             font-style: normal;
             font-weight: 400;
             font-size: 24px;

@@ -176,6 +176,7 @@
     }
 
     @include media-breakpoint-down (sm) {
+        margin: 3px 0px 0px 0px;
     }
 }
 // /* /TEMPLATE: coin */
@@ -330,7 +331,7 @@
         }
 
         .dcg-caption {
-            margin-left: 20px;
+            margin-left: 6px;
         }
 
         &__item {
@@ -498,6 +499,10 @@
             display: block;
             margin-bottom: 15px;
         }
+
+        &__text:not(:first-child) {
+            margin-left: 0px;
+        }
     }
 }
 // /* /TEMPLATE: copyright */
@@ -519,9 +524,13 @@
         left: 0;
         z-index: 100;
         width: 94px;
-        background-color: rgba(196, 222, 255, 0.16);
+        background-color: rgba(37, 54, 78, 1);
         border-radius: 0px 0px 8px 8px;
         text-align: center;
+    }
+
+    &__logo {
+        margin: 5px 0px;
     }
 
     &__logo:first-child {
@@ -529,7 +538,7 @@
     }
 
     &__logo:last-child {
-        margin-bottom: 15px;
+        margin: 5px 0px 15px 0px;
     }
 
     &__img {
@@ -572,7 +581,7 @@
         height: 24px; // ===========
     }
 
-    @include media-breakpoint-down (sm) {
+    @include media-breakpoint-down (lg) {
     }
 }
 // /* /TEMPLATE: download-btn */
@@ -714,6 +723,7 @@
         line-height: 20px;
         color: rgba(196, 222, 255, 0.5);
         letter-spacing: 0.2px;
+        text-align: end;
     }
 
     &__button {
@@ -810,7 +820,7 @@
         }
 
         &__block {
-            padding: 30px 30px 25px 30px;
+            padding: 30px 20px 25px 20px;
         }
     }
 }
@@ -936,7 +946,7 @@
 
         &__menu {
             justify-content: end;
-            gap: 63px;
+            gap: 59px;
         }
     }
 
@@ -1239,7 +1249,7 @@
     li::after {
         content: '';
         width: 0%;
-        height: 3px;
+        height: 2px;
         background: #00D7CB;
         border-radius: 2px;
         display: block;
@@ -1273,7 +1283,7 @@
         }
 
         li {
-            font-family: 'Helvetica Neue';
+            //font-family: 'Helvetica Neue';
             font-style: normal;
             font-weight: 400;
             font-size: 24px;
@@ -1762,20 +1772,25 @@
 
         &__content {
             margin-left: 16px;
-            width: 65%;
+            width: 69%;
         }
     }
-        @include media-breakpoint-down (md) {
-            & {
-                margin-bottom: 16px;
-            }
 
-            &__content {
-                margin-left: 16px;
-                
-            }
+    @include media-breakpoint-down (md) {
+        & {
+            margin-bottom: 16px;
         }
-    
+
+        &__content {
+            margin-left: 16px;
+        }
+    }
+
+    @include media-breakpoint-down (sm) {
+        &__block {
+            padding: 20px 15px 20px 15px;
+        }
+    }
 }
 // /* /TEMPLATE: report */
 // /*.....................................*/
@@ -1784,11 +1799,11 @@
 // /* TEMPLATE: reports */
 .dc-reports {
 
-    &__blocks{
+    &__blocks {
         //padding: 0px 171px;
     }
-    
-    &__title{
+
+    &__title {
         text-align: center;
         margin-bottom: 40px;
     }

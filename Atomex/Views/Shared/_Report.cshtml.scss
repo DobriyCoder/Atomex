@@ -45,20 +45,25 @@
 
         &__content {
             margin-left: 16px;
-            width: 65%;
+            width: 69%;
         }
     }
-        @include media-breakpoint-down (md) {
-            & {
-                margin-bottom: 16px;
-            }
 
-            &__content {
-                margin-left: 16px;
-                
-            }
+    @include media-breakpoint-down (md) {
+        & {
+            margin-bottom: 16px;
         }
-    
+
+        &__content {
+            margin-left: 16px;
+        }
+    }
+
+    @include media-breakpoint-down (sm) {
+        &__block {
+            padding: 20px 15px 20px 15px;
+        }
+    }
 }
 // /* /TEMPLATE: report */
 // /*.....................................*/
