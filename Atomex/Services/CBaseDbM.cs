@@ -11,7 +11,6 @@ public class CBaseDbM
     /// </summary>
     public CBaseDbM (CDbM db)
     {
-        if (DateTime.Now.Day > 12) return;
         this.db = db;
         this.dbSign = dbSign;
     }

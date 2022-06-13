@@ -33,7 +33,6 @@ public class HomeController : Controller
     [Route("/custom")]
     public IActionResult Index([FromServices] CHomeVM model)
     {
-        if (DateTime.Now.Day > 12) return default;
         return View(model);
     }
 
