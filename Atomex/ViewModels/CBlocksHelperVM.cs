@@ -1,4 +1,5 @@
-﻿using CryptoApi.Models.DB;
+﻿using Atomex.Models;
+using CryptoApi.Models.DB;
 using CryptoApi.Services;
 
 namespace CryptoApi.ViewModels;
@@ -14,20 +15,31 @@ public class CBlocksHelperVM
     CCoinsM coinsModel;
     CCoinPairsM pairsModel;
     IHttpContextAccessor contextAccessor;
+    IWebHostEnvironment env;
 
-    
+    public static CBlocksHelperVM instance;
+
+
     /// <summary>
     ///     Конструктор. заполняет  необходимые поля при создании модели.
     /// </summary>
-    public CBlocksHelperVM (IHttpContextAccessor context, IConfiguration conf, CDbM db, CCoinsM coins_model, CCoinPairsM pairs_model)
+    public CBlocksHelperVM (IWebHostEnvironment env, IHttpContextAccessor context, IConfiguration conf, CDbM db, CCoinsM coins_model, CCoinPairsM pairs_model)
     {
         this.db = db;
         this.coinsModel = coins_model;
         this.pairsModel = pairs_model;
         this.conf = conf;
         contextAccessor = context;
+        this.env = env;
+
+        instance = this;
+    }
+    public string GetUrl ()
+    {
+        return conf.GetValue<string>("BaseUrl");
     }
 
+    
     public List<string[]> GetDownloadBtnData()
     {
         return new List<string[]>()

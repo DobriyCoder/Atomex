@@ -1,4 +1,5 @@
-﻿@model IEnumerable<CCoinDataVM>
+﻿@inject CBlocksHelperVM BlocksHelper
+@model IEnumerable<CCoinDataVM>
 
 <div class="dc-coins-table">
     <table>
@@ -27,7 +28,7 @@
                 <td><span class="dc-coins-table__text-box dcg-caption"><change>@coin.data.day_percent_change</change></span></td>
                 <td>
                     <span class="dc-coins-table__device">
-                        <img src="/images/apps-icon.svg" alt="icon-mobile" />
+                        <img src="@BlocksHelper.GetUrl()images/apps-icon.svg" alt="icon-mobile" />
                         <span class="dcg-caption">@coin.availability</span>
                     </span>
                 </td>

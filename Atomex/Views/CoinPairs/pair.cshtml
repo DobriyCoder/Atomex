@@ -19,7 +19,7 @@
                     @await Html.PartialAsync("_MainTitle", Model.PageHead)
                     <div class="dcg-pairs-button-block">
                         <button class="dcg-btn_big-padding">
-                            <img src="/images/app-store.svg"/>
+                            <img src="@BlocksHelper.GetUrl()images/app-store.svg"/>
                         </button>
                         <div class="dcg-button-block">
                             @await Html.PartialAsync("_DownloadBtn")

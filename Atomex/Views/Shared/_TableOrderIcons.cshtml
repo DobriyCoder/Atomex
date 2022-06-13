@@ -1,4 +1,5 @@
-﻿<span class="dc-table-order-icons">
-    <span class="dc-table-order-icons__desc"><img src="/images/double-arrows-white.svg" alt="arrows"/></span>
+﻿@inject CBlocksHelperVM BlocksHelper
+<span class="dc-table-order-icons">
+    <span class="dc-table-order-icons__desc"><img src="@BlocksHelper.GetUrl()images/double-arrows-white.svg" alt="arrows"/></span>
     <span class="dc-table-order-icons__asc"><img src="#" alt=""/></span>
 </span>

@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@inject CBlocksHelperVM BlocksHelper
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -9,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="~/css/lib.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="@BlocksHelper.GetUrl()css/lib.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="@BlocksHelper.GetUrl()css/style.css" asp-append-version="true" />
 </head>
 <body class="@ViewData["PageClass"]">
     @await Html.PartialAsync("_Header")
@@ -18,7 +19,7 @@
     @await Html.PartialAsync("_Footer")
     @*@RenderSection("PageHead")*@
 
-    <script src="~/js/lib.min.js"></script>
-    <script src="~/js/main.js"></script>
+    <script src="@BlocksHelper.GetUrl()js/lib.min.js"></script>
+    <script src="@BlocksHelper.GetUrl()js/main.js"></script>
 </body>
 </html>

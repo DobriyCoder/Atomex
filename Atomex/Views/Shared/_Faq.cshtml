@@ -1,4 +1,5 @@
-﻿@model IEnumerable<CTextBlockVM>
+﻿@inject CBlocksHelperVM BlocksHelper
+@model IEnumerable<CTextBlockVM>
 
 <div class="dc-faq">
     <h2 class="dc-faq__title dcg-h2">Frequently Asked Questions</h2>
@@ -8,7 +9,7 @@
             <li class="dc-faq__item dcj-btn">
                 <div class="dc-faq__caption">
                     <span class="dc-faq__heading">@item.title</span>
-                    <img class="dc-faq__arrow" src="/images/down-color.svg"/>
+                    <img class="dc-faq__arrow" src="@BlocksHelper.GetUrl()images/down-color.svg"/>
                 </div>
                 <div class="dc-faq__content dcj-content">
                     <p>@item.text</p>

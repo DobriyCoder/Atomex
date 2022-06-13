@@ -1,4 +1,5 @@
-﻿@model IEnumerable<CCoinPairDataVM>
+﻿@inject CBlocksHelperVM BlocksHelper
+@model IEnumerable<CCoinPairDataVM>
 
 <div class="dc-pairs-table">
     <table>
@@ -32,7 +33,7 @@
                 <td><span class="dc-pairs-table__text-box dcg-caption">$@pair.coin2.volume_24h</span></td>
                 <td>
                     <div class="dc-pairs-table__device">
-                        <img src="/images/apps-icon.svg" alt="icon-mobile" />
+                        <img src="@BlocksHelper.GetUrl()images/apps-icon.svg" alt="icon-mobile" />
                         <span class="dcg-caption">@pair.availability</span>
                     </div>
                 </td> 

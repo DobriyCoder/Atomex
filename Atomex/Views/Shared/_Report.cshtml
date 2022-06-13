@@ -1,14 +1,15 @@
-﻿@*@model I_report *@
+﻿@inject CBlocksHelperVM BlocksHelper
+@*@model I_report *@
 
 <div class="dc-report">
     <div class="dc-report__block">
         <div class="dc-report__img-wrapper">
-            <img src="/images/arrows-big.svg" alt="arrow" />
+            <img src="@BlocksHelper.GetUrl()images/arrows-big.svg" alt="arrow" />
         </div>
         <div class="dc-report__content">
             <p class="">Atomic swap smart-contracts</p>
             <a href="#" class="dcg-link-text dc-report__more">View report</a>
-            <img src="/images/arrow-right.svg" alt=""/>
+            <img src="@BlocksHelper.GetUrl()images/arrow-right.svg" alt=""/>
         </div>
     </div>
 </div> 

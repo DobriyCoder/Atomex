@@ -1,6 +1,7 @@
 ﻿using CoinGecko.Clients;
 using CoinGecko.Entities.Response.Coins;
 using CoinGecko.Interfaces;
+using CryptoApi.Services;
 
 namespace CryptoApi.Api.Gecko
 {
@@ -20,10 +21,11 @@ namespace CryptoApi.Api.Gecko
             int count = 0;
             int page_count = 0;
             int delay = 5000;
-            Console.WriteLine("Start loading...");
+            CLogger.instance.Write("Start loading...");
+
             while(true)
             {
-                Console.Write($"{++page_count}. {count}. before ");
+                CLogger.instance.Write($"{++page_count}. {count}. before ");
 
                 try
                 {
@@ -32,13 +34,13 @@ namespace CryptoApi.Api.Gecko
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"err: ex.Message");
+                    CLogger.instance.Write($"err: ex.Message");
                     Thread.Sleep(delay);
                     delay += 1000;
                     continue;
                 }
 
-                Console.WriteLine($"after: {markets.Count}; delay: {delay}");
+                CLogger.instance.Write($"after: {markets.Count}; delay: {delay}");
                 if (markets.Count == 0) break;
 
                 foreach (CoinMarkets market in markets)

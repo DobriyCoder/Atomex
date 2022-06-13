@@ -1,4 +1,5 @@
-﻿@inject IConfiguration conf
+﻿@inject CBlocksHelperVM BlocksHelper
+@inject IConfiguration conf
 @model List<(string Url, string Title)>
 @{
     string continuity = "";
@@ -15,7 +16,7 @@
     <div class="dc-pagination">
         @if (current_page_num > 1)
         {
-            <a class="dc-pagination__prev dcg-caption" href="?page=@(current_page_num - 1)@continuity"><img src="/images/arrow-right-grey.svg"/>Prev</a>
+            <a class="dc-pagination__prev dcg-caption" href="?page=@(current_page_num - 1)@continuity"><img src="@BlocksHelper.GetUrl()images/arrow-right-grey.svg"/>Prev</a>
         }
 
         <ul class="dc-pagination__list">
@@ -42,7 +43,7 @@
 
         @if (current_page_num < Model.Count - 1)
         {
-            <a class="dc-pagination__next dcg-caption" href="?page=@(current_page_num + 1)@continuity">Next<img src="/images/arrow-right-grey.svg"/></a>
+            <a class="dc-pagination__next dcg-caption" href="?page=@(current_page_num + 1)@continuity">Next<img src="@BlocksHelper.GetUrl()images/arrow-right-grey.svg"/></a>
         }
     </div>
 }

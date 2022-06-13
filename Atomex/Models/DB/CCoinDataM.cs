@@ -19,6 +19,7 @@ public class CCoinDataM
     {
         get
         {
+            return _image;
             return _image != null ? _image : "/images/coin-unknown.png";
         }
         set
@@ -77,8 +78,8 @@ public class CCoinDataM
     /// <summary>
     ///     Возвращает все метаданные монеты, при условии совпадения group & option.
     /// </summary>
-    public CCoinsMetaDataM this[string group, string option]
+    public CCoinsMetaDataM? this[string group, string option]
     {
-        get => meta.Where(x => x.group == group && x.option == option).FirstOrDefault();
+        get => meta?.Where(x => x.group == group && x.option == option).FirstOrDefault();
     }
 }

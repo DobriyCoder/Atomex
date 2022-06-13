@@ -1,4 +1,5 @@
 ﻿using CoinGecko.Entities.Response.Coins;
+using CryptoApi.Services;
 using System.Collections;
 
 namespace CryptoApi.Api.Gecko
@@ -32,20 +33,20 @@ namespace CryptoApi.Api.Gecko
                         Id = coin.Id,
                         FullName = coin.Name,
                         Name = coin.Symbol,
-                        UsdPrice = coin.CurrentPrice,
-                        MarketCap = coin.MarketCap,
-                        Low = coin.Low24H,
-                        High = coin.High24H,
+                        UsdPrice = coin.CurrentPrice ?? 0,
+                        MarketCap = coin.MarketCap ?? 0,
+                        Low = coin.Low24H ?? 0,
+                        High = coin.High24H ?? 0,
 
                         CirculatingSupply = coin.CirculatingSupply,
-                        TotalSupply = coin.TotalSupply,
-                        MarketCapRank = coin.MarketCapRank,
-                        TotalVolume = coin.TotalVolume
+                        TotalSupply = coin.TotalSupply ?? 0,
+                        MarketCapRank = coin.MarketCapRank ?? 0,
+                        TotalVolume = coin.TotalVolume ?? 0,
                     };
                 }
                 catch(Exception ex)
                 {
-                    Console.WriteLine($"GetEnumerable err: {ex.Message}");
+                    CLogger.instance.Write($"GetEnumerable err: {ex.Message}");
                 }
                 
 

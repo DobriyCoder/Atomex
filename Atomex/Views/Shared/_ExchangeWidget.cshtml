@@ -3,8 +3,8 @@
 
 @{
     var pair = BlocksHelper.GetExchangeWidgetData();
-    string img1 = pair.coin1.image == "missing_large.png" ? "/images/bitcoin.png" : pair.coin1.image;
-    string img2 = pair.coin2.image == "missing_large.png" ? "/images/bitcoin.png" : pair.coin2.image;
+    string img1 = pair.coin1.image == "missing_large.png" ? BlocksHelper.GetUrl() + "images/bitcoin.png" : pair.coin1.image;
+    string img2 = pair.coin2.image == "missing_large.png" ? @BlocksHelper.GetUrl() + "images/bitcoin.png" : pair.coin2.image;
 }
 
 <div class="dc-exchange-widget">
@@ -26,7 +26,7 @@
             </div>
             <div class="dc-exchange-widget__coin">
                 <div class="dc-exchange-widget__logo">
-                    <img class="dc-exchange-widget__img" src="/images/tezos-logo.png" alt="XTZ"/>
+                    <img class="dc-exchange-widget__img" src="@BlocksHelper.GetUrl()images/tezos-logo.png" alt="XTZ"/>
                     @pair.data.name_2
                 </div>
                 <div class="dc-exchange-widget__numbers">
@@ -38,24 +38,24 @@
                     </p>
                 </div>
             </div>
-            <img class="dc-exchange-widget__arrows" src="/images/arrows-change.svg"/>
+            <img class="dc-exchange-widget__arrows" src="@BlocksHelper.GetUrl()images/arrows-change.svg"/>
         </div>
         <div class="dc-exchange-widget__text dcg-caption">
             <div class="dc-exchange-widget__info">
                 Available 83,862.9812 XTZ
-                <img src="/images/question.svg"/>
+                <img src="@BlocksHelper.GetUrl()images/question.svg"/>
             </div>
             <div class="dc-exchange-widget__info">
                 <span>1 @pair.data.name_1 = @pair.data.price_2 @pair.data.name_2</span> 
                 <span class="dc-exchange-widget__slash">/</span> 
                 <span>$@pair.coin2.usd_price</span>
-                <img src="/images/question.svg"/>
+                <img src="@BlocksHelper.GetUrl()images/question.svg"/>
             </div>
             <div class="dc-exchange-widget__info">
                 Network fees @CConst.NETWORK_FEE @pair.data.name_1
-                <img src="/images/question.svg"/>
+                <img src="@BlocksHelper.GetUrl()images/question.svg"/>
             </div>
         </div>
-        <a class="dcg-btn dcg-btn_color dc-exchange-widget__button dcg-bg-btn" asp-controller="CoinPairs" asp-action="Pair" asp-route-coin1="@pair.coin1.name" asp-route-coin2="@pair.coin2.name">Exchange</a>
+        <a class="dcg-btn dcg-btn_color dc-exchange-widget__button dcg-bg-btn" href="https://atomex.me/downloads">Exchange</a>
     </div>
 </div> 

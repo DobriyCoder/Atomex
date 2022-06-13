@@ -29,8 +29,8 @@ builder.Services.AddTransient<CCoinPairVM>();
 builder.Services.AddTransient<CHomeVM>();
 
 builder.Services.AddTransient<CActualizerM>();
-builder.Services.AddSingleton<CApiManager>();
-builder.Services.AddSingleton<IRunnerM, CRunnerM>();
+builder.Services.AddTransient<CApiManager>();
+builder.Services.AddTransient<IRunnerM, CRunnerM>();
 builder.Services.AddTransient<ISitemap, CSitemap>();
 builder.Services.AddTransient<ILogger, CLogger>();
 

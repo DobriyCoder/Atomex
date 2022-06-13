@@ -1,4 +1,5 @@
-﻿using CryptoApi.Api;
+﻿using Atomex.Models;
+using CryptoApi.Api;
 using CryptoApi.Models.DB;
 using CryptoApi.ViewModels;
 using Microsoft.EntityFrameworkCore;
@@ -14,14 +15,17 @@ public class CCoinsM : CBaseDbM
     IConfiguration conf;
     CCommonM commonModel;
     ILogger logger;
+    IWebHostEnvironment env;
+
     /// <summary>
     ///     Конструктор. Передает модель БД родителю.
     /// </summary>
-    public CCoinsM(CDbM db, IConfiguration conf, CCommonM common, ILogger logger) : base(db) 
+    public CCoinsM(IWebHostEnvironment env, CDbM db, IConfiguration conf, CCommonM common, ILogger logger) : base(db) 
     {
         this.conf = conf;
         this.commonModel = common;
         this.logger = logger;
+        this.env = env;
     }
     //public CCoinsM(CDbM db, CDbSingM dbSign) : base(db, dbSign) { }
 
@@ -70,10 +74,17 @@ public class CCoinsM : CBaseDbM
     /// </summary>
     public async Task AddCoinAsync(IApiCoin coin, bool save = true)
     {
-        var true_coin = ApiToData(coin);
-        await db.Coins.AddAsync(true_coin);
+        try
+        {
+            var true_coin = ApiToData(coin);
+            db.Coins.Add(true_coin);
+            logger.Write(true_coin, ELogMode.Add);
+        }
+        catch (Exception ex)
+        {
+            logger.Write($"AddCoinAsync err: {ex.Message}");
+        }
         if (save) await db.SaveChangesAsync();
-        logger.Write(true_coin, ELogMode.Add);
     }
 
     /// <summary>
@@ -91,7 +102,16 @@ public class CCoinsM : CBaseDbM
         }
 
         if (save) await db.SaveChangesAsync();
-        logger.Write(has_coin, ELogMode.Update);
+        //logger.Write(has_coin, ELogMode.Update);
+    }
+
+    public string? SaveCoinIcon(string url, string name)
+    {
+        string icon_url = conf.GetValue<string>("BaseUrl") + "coin-icons/";
+        string path = env.WebRootPath.TrimEnd('/') + icon_url;
+        string? file_name = CImgLoader.Load(url, path, name);
+
+        return file_name == null ? file_name : icon_url + file_name;
     }
 
     /// <summary>
@@ -104,13 +124,13 @@ public class CCoinsM : CBaseDbM
 
         if (data == null)
             new_coin.enable = true;
-
+        
         new_coin.donor = coin.Donor;
         new_coin.donor_id = coin.Id;
         new_coin.name_full = coin.FullName;
         new_coin.name = coin.Name;
         new_coin.slug = coin.Name;
-        new_coin.image = coin.Image ?? new_coin.image;
+        new_coin.image = new_coin.image == null || new_coin.image == "" ? SaveCoinIcon(coin.Image, coin.Name) : new_coin.image;
         new_coin.last_updated = now;
 
         if (coin.UsdPrice == null) return new_coin;
@@ -122,8 +142,8 @@ public class CCoinsM : CBaseDbM
             low = coin.Low,
             high = coin.High,
             last_updated = now,
-            circulating_supply = coin.CirculatingSupply,
-            total_supply = coin.TotalSupply.ToString(),
+            circulating_supply = "",//coin.CirculatingSupply,
+            total_supply = "",//coin.TotalSupply?.ToString() ?? "",
             market_cap_rank = coin.MarketCapRank,
             total_volume = coin.TotalVolume
         };
@@ -157,20 +177,26 @@ public class CCoinsM : CBaseDbM
             {
                 var has_coin = HasCoin(coin);
 
+                if (has_coin != null && has_coin.donor_id != coin.Id)
+                {
+                    coin.Name = coin.Id;
+                    has_coin = HasCoin(coin);
+                }
+
                 if (has_coin != null)
                     await UpdateCoinAsync(coin, has_coin, false);
                 else
                     await AddCoinAsync(coin, false);
 
-                await db.SaveChangesAsync();
+                db.SaveChanges();
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"AddCoinsAsync err: {ex} {ex.Message}");
+                CLogger.instance.Write($"AddCoinsAsync err: {ex} {ex.Message}");
             }
         }
 
-        await db.SaveChangesAsync();
+        db.SaveChanges();
 
         this.db.Dispose();
         this.db = old_db;

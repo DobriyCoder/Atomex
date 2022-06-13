@@ -8,7 +8,9 @@
 
   <ItemGroup>
     <Folder Include="GulpApp\images\svg-sprite\" />
+    <Folder Include="wwwroot\custom\coin-icons\" />
     <Folder Include="wwwroot\log\" />
+    <Folder Include="wwwroot\coin-icons\" />
   </ItemGroup>
 
   <ItemGroup>
