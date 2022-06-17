@@ -5892,7 +5892,6 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   .dc-coins-line {
     padding-left: 46px;
     padding-right: 46px;
-    justify-content: start;
   }
   .dc-coins-line__item {
     margin-right: 10px;
@@ -5926,12 +5925,14 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   .dc-coins-line {
     padding-left: 25px;
     padding-right: 25px;
+    justify-content: start;
   }
   .dc-coins-line__list {
     min-width: auto;
   }
   .dc-coins-line__item {
     display: inline-block;
+    margin: 22px 32 px 22px 0px;
   }
 }
 @media (max-width: 849.98px) {
@@ -5968,7 +5969,7 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 }
 .dc-coins-table__head th:last-child {
   border-radius: 0px 8px 8px 0px;
-  padding: 13px 14px 13px 14px;
+  padding: 13px 14px 13px 0px;
 }
 .dc-coins-table__item {
   cursor: pointer;
@@ -6874,7 +6875,7 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 }
 .dc-pairs-table__head th:last-child {
   border-radius: 0px 8px 8px 0px;
-  padding: 13px 14px 13px 14px;
+  padding: 13px 14px 13px 0px;
 }
 .dc-pairs-table__item {
   cursor: pointer;
@@ -6897,6 +6898,7 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 }
 .dc-pairs-table__device {
   display: flex;
+  margin-top: 3px;
 }
 .dc-pairs-table__device img {
   margin-right: 6px;

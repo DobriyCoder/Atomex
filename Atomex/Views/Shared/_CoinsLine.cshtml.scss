@@ -34,7 +34,6 @@
         & {
             padding-left: 46px;
             padding-right: 46px;
-            justify-content: start;
         }
 
         &__item {
@@ -77,6 +76,7 @@
         & {
             padding-left: 25px;
             padding-right: 25px;
+            justify-content: start;
         }
 
         &__list {
@@ -85,6 +85,7 @@
 
         &__item {
             display: inline-block;
+            margin: 22px 32 px 22px 0px;
         }
     }
 

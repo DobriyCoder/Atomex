@@ -27,7 +27,7 @@
 
         th:last-child {
             border-radius: 0px 8px 8px 0px;
-            padding: 13px 14px 13px 14px;
+            padding: 13px 14px 13px 0px;
         }
     }
 
@@ -57,6 +57,7 @@
 
     &__device {
         display: flex;
+        margin-top: 3px;
 
         img {
             margin-right: 6px;

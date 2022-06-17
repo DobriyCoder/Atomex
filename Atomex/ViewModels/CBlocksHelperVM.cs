@@ -7,7 +7,7 @@ namespace CryptoApi.ViewModels;
 /// <summary>
 ///     Вспомогательный класс (сервис) для удобства работы в файлах cshtml.
 /// </summary>
-public class CBlocksHelperVM
+public class CBlocksHelperVM 
 {
     CDbM db;
     WebApplication app;

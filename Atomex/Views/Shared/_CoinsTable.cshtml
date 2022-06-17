@@ -7,6 +7,7 @@
             <th class="dcg-caption">Name</th>
             <th class="dcg-caption"><a href="?order=e.usd_price&order_type=desc">Price @await Html.PartialAsync("_TableOrderIcons")</a></th>
             <th class="dcg-caption"><a href="?order=e.market_cap&order_type=desc">Market Cap @await Html.PartialAsync("_TableOrderIcons")</a></th>
+            <th class="dcg-caption"><a href="?order=e.usd_price&order_type=asc">24 Volume @await Html.PartialAsync("_TableOrderIcons")</a></th>
             <th class="dcg-caption"><a href="?order=e.usd_price&order_type=asc">24h change @await Html.PartialAsync("_TableOrderIcons")</a></th>
             <th class="dcg-caption">Availability</th>
         </tr>
@@ -26,6 +27,7 @@
                     }
                 </td>
                 <td><span class="dc-coins-table__text-box dcg-caption">$@coin.data.market_cap</span></td>
+                <td><span class="dc-coins-table__text-box dcg-caption">$@coin.data.volume_24h</span></td>
                 <td><span class="dc-coins-table__text-box dcg-caption"><change>@coin.data.day_percent_change</change></span></td>
                 <td>
                     <span class="dc-coins-table__device">

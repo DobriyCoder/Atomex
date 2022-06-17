@@ -14,7 +14,6 @@
             @await Html.PartialAsync("_MainTitle", Model.PageHead)
         </div>
         <div class="dcg-section dcg-section_padding-small">
-            @await Html.PartialAsync("_FilterForm")
             @await Html.PartialAsync("_PairsTable", Model.pairs)
             <div class="row">
                 @*<div class="col">@await Html.PartialAsync("_ItemsCountMenu")</div>*@

@@ -299,7 +299,6 @@
         & {
             padding-left: 46px;
             padding-right: 46px;
-            justify-content: start;
         }
 
         &__item {
@@ -342,6 +341,7 @@
         & {
             padding-left: 25px;
             padding-right: 25px;
+            justify-content: start;
         }
 
         &__list {
@@ -350,6 +350,7 @@
 
         &__item {
             display: inline-block;
+            margin: 22px 32 px 22px 0px;
         }
     }
 
@@ -398,7 +399,7 @@
 
         th:last-child {
             border-radius: 0px 8px 8px 0px;
-            padding: 13px 14px 13px 14px;
+            padding: 13px 14px 13px 0px;
         }
     }
 
@@ -1697,7 +1698,7 @@
 
         th:last-child {
             border-radius: 0px 8px 8px 0px;
-            padding: 13px 14px 13px 14px;
+            padding: 13px 14px 13px 0px;
         }
     }
 
@@ -1727,6 +1728,7 @@
 
     &__device {
         display: flex;
+        margin-top: 3px;
 
         img {
             margin-right: 6px;
