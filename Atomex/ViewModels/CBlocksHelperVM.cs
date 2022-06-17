@@ -44,11 +44,25 @@ public class CBlocksHelperVM
     {
         return new List<string[]>()
         {
-            new string[] { "chrome-icon.svg", "https://wallet.atomex.me/", "Web Wallet" },
             new string[] { "windows-brand.svg", "https://github.com/atomex-me/atomex.client.desktop/releases/download/1.2.11/Atomex.Client-1.2.11.0-x64.msi", "Windows" },
-            new string[] { "ubuntu-brand.svg", "https://wallet.atomex.me/", "Ubuntu" },
             new string[] { "apple-brand.svg", "https://github.com/atomex-me/atomex.client.desktop/releases/download/1.2.11/Atomex.1.2.11.dmg", "macOC" },
+            new string[] { "ubuntu-brand.svg", "https://wallet.atomex.me/", "Linux" },
             new string[] { "android-icon.svg", "https://play.google.com/store/apps/details?id=com.atomex.android", "Android" },
+            new string[] { "apple-brand.svg", "https://apps.apple.com/us/app/atomex-wallet-dex/id1534717828", "IOC" },
+            new string[] { "chrome-icon.svg", "https://wallet.atomex.me/", "Web Wallet" }
+        };
+    }
+
+    public List<string[]> GetDownloadBtnDataMobile()
+    {
+        return new List<string[]>()
+        {
+            new string[] { "windows-brand.svg", "https://github.com/atomex-me/atomex.client.desktop/releases/download/1.2.11/Atomex.Client-1.2.11.0-x64.msi", "Windows" },
+            new string[] { "apple-brand.svg", "https://github.com/atomex-me/atomex.client.desktop/releases/download/1.2.11/Atomex.1.2.11.dmg", "macOC" },
+            new string[] { "ubuntu-brand.svg", "https://wallet.atomex.me/", "Linux" },
+            new string[] { "android-icon.svg", "https://play.google.com/store/apps/details?id=com.atomex.android", "Android" },
+            new string[] { "apple-brand.svg", "https://apps.apple.com/us/app/atomex-wallet-dex/id1534717828", "IOC" },
+            new string[] { "chrome-icon.svg", "https://wallet.atomex.me/", "Web Wallet" }
         };
     }
 
@@ -106,7 +120,7 @@ public class CBlocksHelperVM
                 { "coin2", pair.data.name_2 }
             };
 
-            string title = $"{pair.data.name_1.ToUpper()} to {pair.data.name_2.ToUpper()}";
+            string title = $"{pair.data.name_1.ToLower()} to {pair.data.name_2.ToLower()}";
 
             links.Add(new CLinkVM(title, "CoinPairs", "Pair", data));
         }

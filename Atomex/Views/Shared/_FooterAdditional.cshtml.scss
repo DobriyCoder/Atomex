@@ -1,0 +1,50 @@
+// /*.....................................*/
+// /* TEMPLATE: footer-menu */
+.dc-footer-additional {
+    width: 86px;
+
+    li {
+        line-height: 30px;
+    }
+
+    a {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        display: inline;
+    }
+
+    ul {
+        margin: 0px 0px;
+    }
+
+    &__title {
+        color: rgba(196, 222, 255, 0.72);
+    }
+
+    &__item {
+        color: rgba(221, 234, 250, 0.92);
+    }
+
+    &__last-item {
+        color: rgba(221, 234, 250, 0.92);
+    }
+
+    @include media-breakpoint-down (lg) {
+        li {
+            line-height: 22px;
+            margin-bottom: 8px;
+        }
+    }
+
+    @include media-breakpoint-down (sm) {
+        & {
+            display: inline-block;
+            width: 135px;
+            margin-top: 30px;
+            vertical-align: top;
+        }
+    }
+}
+// /* /TEMPLATE: footer-menu */
+// /*.....................................*/

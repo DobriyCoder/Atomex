@@ -13,7 +13,8 @@
                 </div>
                 <div class="col-12 col-xl order-1">
                     <div class="dc-footer__menu">
-                        @await Html.PartialAsync("_FooterMenu", BlocksHelper.GetFooterMenu())
+                        <!-- @await Html.PartialAsync("_FooterMenu", BlocksHelper.GetFooterMenu()) -->
+                        @await Html.PartialAsync("_FooterAdditional")
                         @await Html.PartialAsync("_FooterMenu", BlocksHelper.GetFooterCoinsMenu())
                         @await Html.PartialAsync("_FooterMenu", BlocksHelper.GetFooterPairsMenu())
                     </div> 

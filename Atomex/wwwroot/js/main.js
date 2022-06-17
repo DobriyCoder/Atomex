@@ -54,6 +54,13 @@ jQuery('.dc-coin-info').dcTpl(function ($, Export) {
 // /coin-info
 //--------------------------------------------
 
+// coin-pair
+jQuery('.dc-coin-pair').dcTpl(function ($, Export) {
+   var $self = $(this);
+});
+// /coin-pair
+//--------------------------------------------
+
 // coins-line
 jQuery('.dc-coins-line').dcTpl(function ($, Export) {
    var $self = $(this);
@@ -63,7 +70,13 @@ jQuery('.dc-coins-line').dcTpl(function ($, Export) {
 
 // coins-table
 jQuery('.dc-coins-table').dcTpl(function ($, Export) {
-   var $self = $(this);
+    var $self = $(this);
+
+    $self.on("click", ".dcj-btn", function () {
+        var $this = $(this);
+        var url = $this.find('.dcj-link').attr('href');
+        window.location.href = url;
+    });
 });
 // /coins-table
 //--------------------------------------------
@@ -175,6 +188,13 @@ jQuery('.dc-footer').dcTpl(function ($, Export) {
    var $self = $(this);
 });
 // /footer
+//--------------------------------------------
+
+// footer-additional
+jQuery('.dc-footer-additional').dcTpl(function ($, Export) {
+   var $self = $(this);
+});
+// /footer-additional
 //--------------------------------------------
 
 // footer-desc

@@ -236,6 +236,34 @@
 // /*.....................................*/
 
 // /*.....................................*/
+// /* TEMPLATE: coin */
+.dc-coin {
+    display: inline-flex;
+    padding: 10px 0px;
+
+    &__title {
+        margin: 3px 0px 0px 7px;
+        overflow: hidden;
+        max-width: 100px;
+        min-width: 50px;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+
+    &__img {
+        height: 25px;
+        width: 25px;
+    }
+
+    @include media-breakpoint-down (sm) {
+        margin: 3px 0px 0px 0px;
+    }
+}
+// /* /TEMPLATE: coin */
+// /*.....................................*/
+
+// /*.....................................*/
 // /* TEMPLATE: coins-line */
 .dc-coins-line {
     white-space: nowrap;
@@ -375,9 +403,13 @@
     }
 
     &__item {
-        border-style: solid;
-        border-color: rgba(196, 222, 255, 0.1);
-        border-width: 0px 0px 1px 0px;
+        cursor: pointer;
+
+        & + & {
+            border-style: solid;
+            border-color: rgba(196, 222, 255, 0.1);
+            border-width: 1px 0px 0px 0px;
+        }
 
         td {
             white-space: nowrap;
@@ -422,6 +454,10 @@
     &__item:hover {
         background: rgba(196, 222, 255, 0.1);
         border: none;
+
+        & + .dc-coins-table__item {
+            border: none;
+        }
 
         td:first-child {
             border-radius: 8px 0px 0px 8px;
@@ -511,11 +547,18 @@
 // /*.....................................*/
 // /* TEMPLATE: download-btn */
 .dc-download-btn {
-    display: inline-flex;
     flex-direction: column;
     margin-bottom: 16px;
     box-shadow: 8px 13px 20px rgba(15, 6, 41, 0.22), inset 0px -1px 2px rgba(135, 103, 226, 0.07);
     position: relative;
+
+    &_desctop {
+        display: inline-flex;
+    }
+
+    &_mobile {
+        display: none;
+    }
 
     &__select {
         position: absolute;
@@ -574,6 +617,13 @@
     }
 
     @include media-breakpoint-down (lg) {
+        &_desctop {
+            display: none;
+        }
+
+        &_mobile {
+            display: inline-flex;
+        }
     }
 }
 // /* /TEMPLATE: download-btn */
@@ -659,6 +709,7 @@
 // /* TEMPLATE: exchange-widget */
 .dc-exchange-widget {
     width: 100%;
+    display: none;
 
     &__block {
         background-color: #0D274D;
@@ -980,6 +1031,57 @@
     // /*.....................................*/
 
 // /*.....................................*/
+// /* TEMPLATE: footer-menu */
+.dc-footer-additional {
+    width: 86px;
+
+    li {
+        line-height: 30px;
+    }
+
+    a {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        display: inline;
+    }
+
+    ul {
+        margin: 0px 0px;
+    }
+
+    &__title {
+        color: rgba(196, 222, 255, 0.72);
+    }
+
+    &__item {
+        color: rgba(221, 234, 250, 0.92);
+    }
+
+    &__last-item {
+        color: rgba(221, 234, 250, 0.92);
+    }
+
+    @include media-breakpoint-down (lg) {
+        li {
+            line-height: 22px;
+            margin-bottom: 8px;
+        }
+    }
+
+    @include media-breakpoint-down (sm) {
+        & {
+            display: inline-block;
+            width: 135px;
+            margin-top: 30px;
+            vertical-align: top;
+        }
+    }
+}
+// /* /TEMPLATE: footer-menu */
+// /*.....................................*/
+
+// /*.....................................*/
 // /* TEMPLATE: footer-desc */
 .dc-footer-desc {
     font-family: 'Inter';
@@ -1247,6 +1349,10 @@
         display: block;
         margin-top: 4px;
         transition: all 250ms;
+    }
+
+    li:first-child {
+        display: none;
     }
 
     li:hover::after, li.dcg-active::after {
@@ -1664,6 +1770,10 @@
     &__coin-logo {
         display: inline-block;
         margin-right: 43px;
+        
+        a:first-child {
+            margin-right: 15px;
+        }
     }
 
 

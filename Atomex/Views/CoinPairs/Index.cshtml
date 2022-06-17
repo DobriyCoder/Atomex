@@ -24,5 +24,8 @@
         <div class="dcg-section_hidden dcg-section dcg-section_padding-small dcg-section_light-bottom-left">
             @await Html.PartialAsync("_DownloadWallet")
         </div>
+        <div class="dcg-section dcg-section_hidden dcg-section_border-bottom dcg-section_border dcg-section_coins-line">
+            @await Html.PartialAsync("_CoinsLine", BlocksHelper.GetCoinList(9))
+        </div>
     </div>        
 </div>

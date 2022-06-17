@@ -42,7 +42,7 @@ body {
     font-weight: 400;
     font-size: 17px;
     line-height: 26px;
-    background: #090E15;
+    background: #051429;
     color: rgba(221, 234, 250, 0.92);
 
     @include media-breakpoint-down (sm) {
@@ -569,6 +569,7 @@ textarea {}
     margin-bottom: 800px;
 }
 .dcg-main-botton-link-block {
+    display: none;
     @include media-breakpoint-down (sm) {
         & {
             margin-bottom: 20px;

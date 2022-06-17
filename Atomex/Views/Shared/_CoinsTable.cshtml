@@ -13,9 +13,10 @@
 
         @foreach (var coin in Model)
         {
-            <tr class="dc-coins-table__item">
+            <tr class="dc-coins-table__item dcj-btn">
                 <td>
                     @await Html.PartialAsync("_Coin", coin.data)
+                    <a class="dcg-dn dcj-link" asp-controller="Coins" asp-action="Coin" asp-route-coin="@coin.data.name"></a>
                 </td>
 
                 <td>

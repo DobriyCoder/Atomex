@@ -11,6 +11,7 @@
     <Folder Include="wwwroot\custom\coin-icons\" />
     <Folder Include="wwwroot\log\" />
     <Folder Include="wwwroot\coin-icons\" />
+    <Folder Include="wwwroot\coin-icons\" />
   </ItemGroup>
 
   <ItemGroup>
