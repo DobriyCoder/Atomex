@@ -6628,6 +6628,9 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   gap: 15px;
   justify-content: end;
 }
+.dc-main-btn-menu a:last-child {
+  display: none;
+}
 @media (max-width: 1529.98px) {
   .dc-main-btn-menu .dcg-btn::after {
     display: none;
@@ -6672,14 +6675,14 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   margin-top: 4px;
   transition: all 250ms;
 }
-.dc-main-menu li:first-child {
-  display: none;
-}
 .dc-main-menu li:hover::after, .dc-main-menu li.dcg-active::after {
   width: 100%;
 }
 .dc-main-menu a.dcg-icon-right::after {
   margin-left: 7px;
+}
+.dc-main-menu_none {
+  display: none;
 }
 @media (max-width: 1239.98px) {
   .dc-main-menu {

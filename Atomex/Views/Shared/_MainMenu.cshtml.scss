@@ -22,10 +22,6 @@
         transition: all 250ms;
     }
 
-    li:first-child {
-        display: none;
-    }
-
     li:hover::after, li.dcg-active::after {
         width: 100%;
     }
@@ -40,6 +36,10 @@
         }
     }
 
+    &_none {
+        display: none;
+    } 
+    
     @include media-breakpoint-down (lg) {
 
         & {
