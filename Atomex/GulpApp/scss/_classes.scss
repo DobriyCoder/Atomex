@@ -587,15 +587,17 @@ textarea {}
 .dcg-table {
     &__tr {
         display: flex;
+        align-items: center;
+        min-width: 1148px;
     }
+
     &__ti {
-
     }
+
     &__th {
-
     }
-    &__td {
 
+    &__td {
     }
 }
 /* /common */

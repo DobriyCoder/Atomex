@@ -9,10 +9,10 @@
 
     &__tetx {
         color: rgba(196, 222, 255, 0.72);
+        margin-bottom: 16px;
     }
 
     &__link {
-        margin-top: 16px;
     }
 
     @include media-breakpoint-down (sm) {

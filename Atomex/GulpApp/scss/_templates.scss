@@ -375,46 +375,65 @@
 // /* TEMPLATE: coins-table */
 .dc-coins-table {
     overflow-x: auto;
+    width: 100%;
 
     .dcg-table {
         min-width: 100%;
-        margin-top: 34px;
+        margin-top: 24px;
 
         &__th {
-            padding: 13px 0px 13px 0px;
+            margin: 13px 0px 13px 0px;
             text-align: start;
-            white-space: nowrap;
             color: rgba(221, 234, 250, 0.92);
+            line-height: 26px;
         }
 
         &__th:first-child {
-            border-radius: 8px 0px 0px 8px;
-            padding: 13px 0px 13px 16px;
+            margin: 13px 35px 13px 16px;
         }
 
         &__th:last-child {
-            border-radius: 0px 8px 8px 0px;
-            padding: 13px 14px 13px 0px;
         }
 
         &__td {
             white-space: nowrap;
-            padding-right: 35px;
         }
 
         &__td:first-child {
-            padding-left: 17px;
-            padding-top: 5px;
+            margin-left: 16px;
+            margin-right: 35px;
         }
 
         &__td:last-child {
             padding: 13px 0px;
         }
+
+        &__first {
+            width: 17%;
+        }
+
+        &__second {
+            width: 20%;
+        }
+
+        &__three {
+            width: 20%;
+        }
+
+        &__four {
+            width: 20%;
+        }
+
+        &__five {
+            width: 20%;
+        }
     }
+
 
 
     &__head {
         background: rgba(196, 222, 255, 0.1);
+        border-radius: 8px;
     }
 
     &__item {
@@ -429,6 +448,7 @@
 
     &__device {
         display: flex;
+        margin-top: 3px;
 
         img {
             margin-right: 6px;
@@ -455,41 +475,41 @@
     &__item:hover {
         background: rgba(196, 222, 255, 0.1);
         border: none;
+        border-radius: 8px;
 
         & + .dc-coins-table__item {
             border: none;
         }
 
-        td:first-child {
+        .dcg-table__td:first-child {
             border-radius: 8px 0px 0px 8px;
         }
 
-        td:last-child {
+        .dcg-table__td:last-child {
             border-radius: 0px 8px 8px 0px;
         }
     }
 
-    .dc-coin {
-        &__title {
-            max-width: 200px;
+    &__coin-logo {
+        display: inline-block;
+        margin-right: 43px;
+
+        .dc-coin:first-child {
+            margin-right: 46px;
         }
     }
+
 
     @include media-breakpoint-down (lg) {
         //position: absolute;
         //overflow: hidden;
         &__coin-logo {
             display: block;
+            margin-right: 0;
         }
 
         .dc-coin {
             padding: 5px 0;
-        }
-
-        .dc-coin {
-            &__title {
-                max-width: 100px;
-            }
         }
     }
 
@@ -497,6 +517,27 @@
         //position: absolute;
         //overflow: hidden;
         padding-bottom: 20px;
+
+        &__coin-logo {
+            /*display: inline-block;*/
+        }
+    }
+
+    @include media-breakpoint-down (sm) {
+        //position: absolute;
+        //overflow: hidden;
+        padding-bottom: 20px;
+
+        .dcg-table__first {
+            width: 15%;
+        }
+
+        &__coin-logo {
+
+            .dc-coin:first-child {
+                margin-right: 0px;
+            }
+        }
 
         &__coin-logo {
             /*display: inline-block;*/
@@ -524,11 +565,11 @@
     }
 
     &__link {
+        display: none;
         border-width: 0px 0px 1px 0px;
         border-color: rgba(196, 222, 255, 0.32);
         border-style: solid;
         margin-left: 16px;
-        cursor: pointer;
     }
 
     @include media-breakpoint-down (md) {
@@ -966,7 +1007,7 @@
 
     &__menu {
         display: flex;
-        justify-content: end;
+        justify-content: center;
         gap: 89px;
     }
 
@@ -989,7 +1030,7 @@
         }
 
         &__menu {
-            justify-content: end;
+            justify-content: center;
             gap: 59px;
         }
     }
@@ -1023,8 +1064,11 @@
         }
 
         &__menu {
-            gap: 40px;
             display: block;
+        }
+
+        .dc-footer-menu:first-child {
+            margin-right: 40px;
         }
     }
 }
@@ -1093,10 +1137,10 @@
 
     &__tetx {
         color: rgba(196, 222, 255, 0.72);
+        margin-bottom: 16px;
     }
 
     &__link {
-        margin-top: 16px;
     }
 
     @include media-breakpoint-down (sm) {
@@ -1680,33 +1724,54 @@
         margin-top: 24px;
 
         &__th {
-            padding: 13px 0px 13px 0px;
+            margin: 13px 0px 13px 0px;
             text-align: start;
             color: rgba(221, 234, 250, 0.92);
+            line-height: 26px;
         }
 
         &__th:first-child {
-            border-radius: 8px 0px 0px 8px;
-            padding: 13px 0px 13px 16px;
+            margin: 13px 35px 13px 16px;
         }
 
         &__th:last-child {
-            border-radius: 0px 8px 8px 0px;
-            padding: 13px 14px 13px 0px;
         }
 
         &__td {
             white-space: nowrap;
-            padding-right: 35px;
         }
 
         &__td:first-child {
-            padding-left: 17px;
-            padding-top: 5px;
+            margin-left: 16px;
+            margin-right: 35px;
         }
 
         &__td:last-child {
             padding: 13px 0px;
+        }
+
+        &__first {
+            width: 27%;
+        }
+
+        &__second {
+            width: 10%;
+        }
+
+        &__three {
+            width: 16%;
+        }
+
+        &__four {
+            width: 17%;
+        }
+
+        &__five {
+            width: 10%;
+        }
+
+        &__six {
+            width: 16%;
         }
     }
 
@@ -1714,6 +1779,7 @@
 
     &__head {
         background: rgba(196, 222, 255, 0.1);
+        border-radius: 8px;
     }
 
     &__item {
@@ -1755,6 +1821,7 @@
     &__item:hover {
         background: rgba(196, 222, 255, 0.1);
         border: none;
+        border-radius: 8px;
 
         & + .dc-pairs-table__item {
             border: none;
@@ -1773,8 +1840,8 @@
         display: inline-block;
         margin-right: 43px;
 
-        a:first-child {
-            margin-right: 15px;
+        .dc-coin:first-child {
+            margin-right: 46px;
         }
     }
 
@@ -1796,6 +1863,27 @@
         //position: absolute;
         //overflow: hidden;
         padding-bottom: 20px;
+
+        &__coin-logo {
+            /*display: inline-block;*/
+        }
+    }
+
+    @include media-breakpoint-down (sm) {
+        //position: absolute;
+        //overflow: hidden;
+        padding-bottom: 20px;
+
+        .dcg-table__first {
+            width: 15%;
+        }
+
+        &__coin-logo {
+
+            .dc-coin:first-child {
+                margin-right: 0px;
+            }
+        }
 
         &__coin-logo {
             /*display: inline-block;*/
@@ -1988,6 +2076,9 @@
 
 
     @include media-breakpoint-down (sm) {
+        li + li {
+            margin-left: 6px;
+        }
     }
 }
 // /* /TEMPLATE: soc-btns */

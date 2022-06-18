@@ -8,21 +8,25 @@
 }
 
 <div class="dc-coins-page-content">
-    <div class="container">
-        <div class="dcg-section dcg-section_padding-heading dcg-section_light-left dcg-section_border-bottom">
+    <div class="dcg-section dcg-section_padding-heading dcg-section_light-left dcg-section_border-bottom">
+        <div class="container">
             @await Html.PartialAsync("_Breadcrumbs", (controller: "", title: "", pageTitle: "Coins"))
             @await Html.PartialAsync("_MainTitle", Model.PageHead)
         </div>
-        <div class="dcg-section dcg-section_padding-small">
-            @*@await Html.PartialAsync("_FilterForm")*@
+    </div>
+    <div class="dcg-section dcg-section_padding-small">
+        @*@await Html.PartialAsync("_FilterForm")*@
+        <div class="container">
             @await Html.PartialAsync("_CoinsTable", Model.coins)
             <div class="row">
                 @*<div class="col">@await Html.PartialAsync("_ItemsCountMenu")</div>*@
                 <div class="col">@await Html.PartialAsync("_Pagination", BlocksHelper.GetPagination(Model.maxPage, Model.page))</div>
             </div>
         </div>
-        <div class="dcg-section dcg-section_hidden dcg-section_padding-small dcg-section_light-bottom-left">
+    </div>
+    <div class="dcg-section dcg-section_hidden dcg-section_padding-small dcg-section_light-bottom-left">
+        <div class="container">
             @await Html.PartialAsync("_DownloadWallet")  
         </div>
-    </div>        
+    </div>       
 </div>

@@ -4,35 +4,34 @@
 <div class="dc-pairs-table">
     <div class="dcg-table">
         <div class="dcg-table__tr dc-pairs-table__head">
-            <span class="dcg-table__ti dcg-table__th dcg-caption">From - To</span>
-            <span class="dcg-table__ti dcg-table__th dcg-caption">Price</span>
-            <span class="dcg-table__ti dcg-table__th dcg-caption">Market Cap</span>
-            <span class="dcg-table__ti dcg-table__th dcg-caption">24 Volume</span>
-            <span class="dcg-table__ti dcg-table__th dcg-caption">24h change</span>
-            <span class="dcg-table__ti dcg-table__th dcg-caption"></span>
+            <span class="dcg-table__ti dcg-table__th dcg-table__first dcg-caption">From - To</span>
+            <span class="dcg-table__ti dcg-table__th dcg-table__second dcg-caption">Price</span>
+            <span class="dcg-table__ti dcg-table__th dcg-table__three dcg-caption">Market Cap</span>
+            <span class="dcg-table__ti dcg-table__th dcg-table__four dcg-caption">24 Volume</span>
+            <span class="dcg-table__ti dcg-table__th dcg-table__five dcg-caption">24h change</span>
         </div>
 
         @foreach (var pair in Model)
         {
             <a asp-controller="CoinPairs" asp-action="Pair" asp-route-coin1="@pair.coin1.name" asp-route-coin2="@pair.coin2.name" class="dcg-table__tr dc-pairs-table__item dcj-btn">
-                <span class="dcg-table__ti dcg-table__td"> 
+                <span class="dcg-table__ti dcg-table__td dcg-table__first"> 
                     <span class="dc-pairs-table__coin-logo">
                         @await Html.PartialAsync("_CoinPair", pair.coin1)
                         @await Html.PartialAsync("_CoinPair", pair.coin2)
                     </span>
                 </span>
 
-                <span class="dcg-table__ti dcg-table__td">
+                <span class="dcg-table__ti dcg-table__td dcg-table__second">
                     @if (pair.data.price_1 != null)
                     {
                         <span class="dc-pairs-table__text-box dcg-caption">≈ $@pair.data.price_1</span>
                     }
                 </span>
-                <span class="dcg-table__ti dcg-table__td"><span class="dc-pairs-table__text-box dcg-caption">$@pair.coin1.market_cap</span></span>
-                <span class="dcg-table__ti dcg-table__td"><span class="dc-pairs-table__text-box dcg-caption">@pair.coin1.volume_24h @pair.coin1.name</span></span>
-                <span class="dcg-table__ti dcg-table__td"><span class="dc-pairs-table__text-box dcg-caption">@pair.coin1.day_percent_change%</span></span>
+                <span class="dcg-table__ti dcg-table__td dcg-table__three"><span class="dc-pairs-table__text-box dcg-caption">$@pair.coin1.market_cap</span></span>
+                <span class="dcg-table__ti dcg-table__td dcg-table__four"><span class="dc-pairs-table__text-box dcg-caption">@pair.coin1.volume_24h @pair.coin1.name</span></span>
+                <span class="dcg-table__ti dcg-table__td dcg-table__five"><span class="dc-pairs-table__text-box dcg-caption">@pair.coin1.day_percent_change%</span></span>
                 
-                <span class="dcg-table__ti dcg-table__td">
+                <span class="dcg-table__ti dcg-table__td dcg-table__six">
                     <button class="dcg-btn">Exchange</button>
                 </span>
             </a>

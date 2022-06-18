@@ -9,8 +9,8 @@
 }
 
 <div class="dc-pairs-page-content">
-    <div class="container">
-        <div class="dcg-section dcg-section_mini dcg-section_border-bottom dcg-section_light-left dcg-section_padding-heading">
+    <div class="dcg-section dcg-section_mini dcg-section_border-bottom dcg-section_light-left dcg-section_padding-heading">
+        <div class="container">
             <div class="row">
                 <div class="col">
                     @await Html.PartialAsync("_Breadcrumbs", (controller: "Coins", title: "Coins", pageTitle: Model.coin.data.name_full))
@@ -31,27 +31,41 @@
                 </div>
             </div>
         </div>
-        <div class="dcg-section dcg-section_padding-small">
+    </div>
+    <div class="dcg-section dcg-section_padding-small">
+        <div class="container">
             <div class="margin-decorative">
                 @await Html.PartialAsync("_CoinInfo", Model.coin.data)
             </div>
         </div>
-        <div class="dcg-section dcg-section_padding-small">
+    </div>
+    <div class="dcg-section dcg-section_padding-small">
+        <div class="container">
             @await Html.PartialAsync("_CoinDesc", Model.Description)
         </div>
-        <div class="dcg-section dcg-section_padding-small">
+    </div>
+    <div class="dcg-section dcg-section_padding-small">
+        <div class="container">
             @await Html.PartialAsync("_PopularPairs")
         </div>
-        <div class="dcg-section dcg-section_padding-big">
+    </div>
+    <div class="dcg-section dcg-section_padding-big">
+        <div class="container">
             @await Html.PartialAsync("_SeoTexts", Model.TextBlocks)
         </div>
-        <div class="dcg-section dcg-section_padding-big">
+    </div>
+    <div class="dcg-section dcg-section_padding-big">
+        <div class="container">
             @await Html.PartialAsync("_Faq", Model.Faq)
         </div>
-        <div class="dcg-section dcg-section_hidden dcg-section_padding-small dcg-section_light-bottom-left">
+    </div>
+    <div class="dcg-section dcg-section_hidden dcg-section_padding-small dcg-section_light-bottom-left">
+        <div class="container">
             @await Html.PartialAsync("_DownloadWallet")
         </div>
-        <div class="dcg-section dcg-section_border-bottom">
+    </div>
+    <div class="dcg-section dcg-section_border-bottom">
+        <div class="container">
             @await Html.PartialAsync("_CoinsLine", BlocksHelper.GetCoinList(9))
         </div>
     </div>

@@ -9,7 +9,7 @@
 
     &__menu {
         display: flex;
-        justify-content: end;
+        justify-content: center;
         gap: 89px;
     }
 
@@ -32,7 +32,7 @@
         }
 
         &__menu {
-            justify-content: end;
+            justify-content: center;
             gap: 59px;
         }
     }
@@ -66,8 +66,11 @@
         }
 
         &__menu {
-            gap: 40px;
             display: block;
+        }
+
+        .dc-footer-menu:first-child {
+            margin-right: 40px;
         }
     }
 }

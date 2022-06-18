@@ -7,6 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Shared\_FooterAdditional.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Shared\_FooterAdditional.cshtml.js" />
+    <None Remove="Views\Shared\_FooterAdditional.cshtml.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="GulpApp\images\svg-sprite\" />
     <Folder Include="wwwroot\custom\coin-icons\" />
     <Folder Include="wwwroot\log\" />

@@ -16,11 +16,11 @@
     }
 
     &__link {
+        display: none;
         border-width: 0px 0px 1px 0px;
         border-color: rgba(196, 222, 255, 0.32);
         border-style: solid;
         margin-left: 16px;
-        cursor: pointer;
     }
 
     @include media-breakpoint-down (md) {

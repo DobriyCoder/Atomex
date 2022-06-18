@@ -26,6 +26,9 @@
 
 
     @include media-breakpoint-down (sm) {
+        li + li {
+            margin-left: 6px;
+        }
     }
 }
 // /* /TEMPLATE: soc-btns */
