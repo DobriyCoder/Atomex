@@ -5,7 +5,7 @@
     <ul class="dc-coins-line__list">
         @foreach(var coin in Model)
         {
-            <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin", coin.data)</li>
+            <li class="dc-coins-line__item">@await Html.PartialAsync("_Coin", (data: coin.data, link: true))</li>
         }
     </ul>
 

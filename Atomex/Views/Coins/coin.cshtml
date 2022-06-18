@@ -43,6 +43,9 @@
             @await Html.PartialAsync("_PopularPairs")
         </div>
         <div class="dcg-section dcg-section_padding-big">
+            @await Html.PartialAsync("_SeoTexts", Model.TextBlocks)
+        </div>
+        <div class="dcg-section dcg-section_padding-big">
             @await Html.PartialAsync("_Faq", Model.Faq)
         </div>
         <div class="dcg-section dcg-section_hidden dcg-section_padding-small dcg-section_light-bottom-left">

@@ -376,31 +376,45 @@
 .dc-coins-table {
     overflow-x: auto;
 
-    table {
+    .dcg-table {
         min-width: 100%;
         margin-top: 34px;
-    }
 
-
-    &__head {
-        background: rgba(196, 222, 255, 0.1);
-
-        th {
+        &__th {
             padding: 13px 0px 13px 0px;
             text-align: start;
             white-space: nowrap;
             color: rgba(221, 234, 250, 0.92);
         }
 
-        th:first-child {
+        &__th:first-child {
             border-radius: 8px 0px 0px 8px;
             padding: 13px 0px 13px 16px;
         }
 
-        th:last-child {
+        &__th:last-child {
             border-radius: 0px 8px 8px 0px;
             padding: 13px 14px 13px 0px;
         }
+
+        &__td {
+            white-space: nowrap;
+            padding-right: 35px;
+        }
+
+        &__td:first-child {
+            padding-left: 17px;
+            padding-top: 5px;
+        }
+
+        &__td:last-child {
+            padding: 13px 0px;
+        }
+    }
+
+
+    &__head {
+        background: rgba(196, 222, 255, 0.1);
     }
 
     &__item {
@@ -410,20 +424,6 @@
             border-style: solid;
             border-color: rgba(196, 222, 255, 0.1);
             border-width: 1px 0px 0px 0px;
-        }
-
-        td {
-            white-space: nowrap;
-            padding-right: 35px;
-        }
-
-        td:first-child {
-            padding-left: 17px;
-            padding-top: 5px;
-        }
-
-        td:last-child {
-            padding: 13px 0px;
         }
     }
 
@@ -1675,31 +1675,45 @@
     overflow-x: auto;
     width: 100%;
 
-    table {
+    .dcg-table {
         min-width: 100%;
         margin-top: 24px;
+
+        &__th {
+            padding: 13px 0px 13px 0px;
+            text-align: start;
+            color: rgba(221, 234, 250, 0.92);
+        }
+
+        &__th:first-child {
+            border-radius: 8px 0px 0px 8px;
+            padding: 13px 0px 13px 16px;
+        }
+
+        &__th:last-child {
+            border-radius: 0px 8px 8px 0px;
+            padding: 13px 14px 13px 0px;
+        }
+
+        &__td {
+            white-space: nowrap;
+            padding-right: 35px;
+        }
+
+        &__td:first-child {
+            padding-left: 17px;
+            padding-top: 5px;
+        }
+
+        &__td:last-child {
+            padding: 13px 0px;
+        }
     }
 
 
 
     &__head {
         background: rgba(196, 222, 255, 0.1);
-
-        th {
-            padding: 13px 0px 13px 0px;
-            text-align: start;
-            color: rgba(221, 234, 250, 0.92);
-        }
-
-        th:first-child {
-            border-radius: 8px 0px 0px 8px;
-            padding: 13px 0px 13px 16px;
-        }
-
-        th:last-child {
-            border-radius: 0px 8px 8px 0px;
-            padding: 13px 14px 13px 0px;
-        }
     }
 
     &__item {
@@ -1709,20 +1723,6 @@
             border-style: solid;
             border-color: rgba(196, 222, 255, 0.1);
             border-width: 1px 0px 0px 0px;
-        }
-
-        td {
-            white-space: nowrap;
-            padding-right: 35px;
-        }
-
-        td:first-child {
-            padding-left: 17px;
-            padding-top: 5px;
-        }
-
-        td:last-child {
-            padding: 13px 0px;
         }
     }
 
@@ -1760,11 +1760,11 @@
             border: none;
         }
 
-        td:first-child {
+        .dcg-table__td:first-child {
             border-radius: 8px 0px 0px 8px;
         }
 
-        td:last-child {
+        .dcg-table__td:last-child {
             border-radius: 0px 8px 8px 0px;
         }
     }
@@ -1772,7 +1772,7 @@
     &__coin-logo {
         display: inline-block;
         margin-right: 43px;
-        
+
         a:first-child {
             margin-right: 15px;
         }
@@ -1917,6 +1917,47 @@
     }
 }
 // /* /TEMPLATE: reports */
+// /*.....................................*/
+
+// /*.....................................*/
+// /* TEMPLATE: seo-texts */
+.dc-seo-texts {
+    &__item {
+        &::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+
+    &__item + &__item {
+        margin-top: 30px;
+    }
+
+    .dcg-h2 {
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        transition: all 300ms;
+        overflow: hidden;
+
+        &_collapsed {
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+        }
+    }
+
+    &__more {
+        float: right;
+    }
+
+    @include media-breakpoint-down (sm) {
+    }
+}
+// /* /TEMPLATE: seo-texts */
 // /*.....................................*/
 
 // /*.....................................*/

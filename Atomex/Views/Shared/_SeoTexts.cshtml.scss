@@ -1,0 +1,40 @@
+// /*.....................................*/
+// /* TEMPLATE: seo-texts */
+.dc-seo-texts {
+    &__item {
+        &::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+
+    &__item + &__item {
+        margin-top: 30px;
+    }
+
+    .dcg-h2 {
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        transition: all 300ms;
+        overflow: hidden;
+
+        &_collapsed {
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+        }
+    }
+
+    &__more {
+        float: right;
+    }
+
+    @include media-breakpoint-down (sm) {
+    }
+}
+// /* /TEMPLATE: seo-texts */
+// /*.....................................*/

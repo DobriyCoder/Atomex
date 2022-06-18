@@ -38,7 +38,7 @@
         </div>
         <div class="dcg-section dcg-section_padding-small">
             <div class="margin-decorative">
-                @await Html.PartialAsync("_PairInfo", Model.pair.data)
+                @await Html.PartialAsync("_CoinInfo", Model.pair.coin1)
             </div>
         </div>
         <div class="dcg-section dcg-section_padding-small">
@@ -46,6 +46,9 @@
         </div>
         <div class="dcg-section dcg-section_padding-small">
             @await Html.PartialAsync("_PopularPairs")
+        </div>
+        <div class="dcg-section dcg-section_padding-big">
+            @await Html.PartialAsync("_SeoTexts", Model.TextBlocks)
         </div>
         <div class="dcg-section dcg-section_padding-big">
             @await Html.PartialAsync("_Faq", Model.Faq)

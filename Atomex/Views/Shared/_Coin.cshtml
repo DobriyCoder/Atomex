@@ -1,10 +1,23 @@
 ﻿@inject CBlocksHelperVM BlocksHelper
-@model CCoinDataM 
+@model (CCoinDataM data, bool link)
 @{
-    string img = Model.image == null ? $"{BlocksHelper.GetUrl()}images/bitcoin.png" : Model.image;
+    string img = Model.data.image == null ? $"{BlocksHelper.GetUrl()}images/bitcoin.png" : Model.data.image;
 }
-<a asp-controller="Coins" asp-action="Coin" asp-route-coin="@Model.name" class="dc-coin">
-    <img class="dc-coin__img" src="@img" alt="@Model.name_full" />
-    <span class="dc-coin__title dcg-caption dcg-caption_full d-none d-md-inline">@Model.name_full</span>
-    <span class="dc-coin__title dcg-caption dcg-caption_small d-md-none">@Model.name.ToUpper()</span>
-</a>    
+
+@if (Model.link)
+{
+    <a asp-controller="Coins" asp-action="Coin" asp-route-coin="@Model.data.name" class="dc-coin">
+        <img class="dc-coin__img" src="@img" alt="@Model.data.name_full" />
+        <span class="dc-coin__title dcg-caption dcg-caption_full d-none d-md-inline">@Model.data.name_full</span>
+        <span class="dc-coin__title dcg-caption dcg-caption_small d-md-none">@Model.data.name.ToUpper()</span>
+    </a>
+}
+else 
+{
+    <span class="dc-coin">
+        <img class="dc-coin__img" src="@img" alt="@Model.data.name_full" />
+        <span class="dc-coin__title dcg-caption dcg-caption_full d-none d-md-inline">@Model.data.name_full</span>
+        <span class="dc-coin__title dcg-caption dcg-caption_small d-md-none">@Model.data.name.ToUpper()</span>
+    </span>  
+}
+      

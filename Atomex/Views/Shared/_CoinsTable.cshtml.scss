@@ -3,31 +3,45 @@
 .dc-coins-table {
     overflow-x: auto;
 
-    table {
+    .dcg-table {
         min-width: 100%;
         margin-top: 34px;
-    }
 
-
-    &__head {
-        background: rgba(196, 222, 255, 0.1);
-
-        th {
+        &__th {
             padding: 13px 0px 13px 0px;
             text-align: start;
             white-space: nowrap;
             color: rgba(221, 234, 250, 0.92);
         }
 
-        th:first-child {
+        &__th:first-child {
             border-radius: 8px 0px 0px 8px;
             padding: 13px 0px 13px 16px;
         }
 
-        th:last-child {
+        &__th:last-child {
             border-radius: 0px 8px 8px 0px;
             padding: 13px 14px 13px 0px;
         }
+
+        &__td {
+            white-space: nowrap;
+            padding-right: 35px;
+        }
+
+        &__td:first-child {
+            padding-left: 17px;
+            padding-top: 5px;
+        }
+
+        &__td:last-child {
+            padding: 13px 0px;
+        }
+    }
+
+
+    &__head {
+        background: rgba(196, 222, 255, 0.1);
     }
 
     &__item {
@@ -37,20 +51,6 @@
             border-style: solid;
             border-color: rgba(196, 222, 255, 0.1);
             border-width: 1px 0px 0px 0px;
-        }
-
-        td {
-            white-space: nowrap;
-            padding-right: 35px;
-        }
-
-        td:first-child {
-            padding-left: 17px;
-            padding-top: 5px;
-        }
-
-        td:last-child {
-            padding: 13px 0px;
         }
     }
 

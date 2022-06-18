@@ -2,40 +2,32 @@
 @model IEnumerable<CCoinDataVM>
 
 <div class="dc-coins-table">
-    <table>
-        <tr class="dc-coins-table__head">
-            <th class="dcg-caption">Name</th>
-            <th class="dcg-caption"><a href="?order=e.usd_price&order_type=desc">Price @await Html.PartialAsync("_TableOrderIcons")</a></th>
-            <th class="dcg-caption"><a href="?order=e.market_cap&order_type=desc">Market Cap @await Html.PartialAsync("_TableOrderIcons")</a></th>
-            <th class="dcg-caption"><a href="?order=e.usd_price&order_type=asc">24 Volume @await Html.PartialAsync("_TableOrderIcons")</a></th>
-            <th class="dcg-caption"><a href="?order=e.usd_price&order_type=asc">24h change @await Html.PartialAsync("_TableOrderIcons")</a></th>
-            <th class="dcg-caption">Availability</th>
-        </tr>
+    <div class="dcg-table">
+        <div class="dcg-table__tr dc-coins-table__head">
+            <span class="dcg-table__ti dcg-table__th dcg-caption">Name</span>
+            <span class="dcg-table__ti dcg-table__th dcg-caption">Price</span>
+            <span class="dcg-table__ti dcg-table__th dcg-caption">Market Cap</span>
+            <span class="dcg-table__ti dcg-table__th dcg-caption">24 Volume</span>
+            <span class="dcg-table__ti dcg-table__th dcg-caption">24h change</span>
+        </div>
 
         @foreach (var coin in Model)
         {
-            <tr class="dc-coins-table__item dcj-btn">
-                <td>
-                    @await Html.PartialAsync("_Coin", coin.data)
-                    <a class="dcg-dn dcj-link" asp-controller="Coins" asp-action="Coin" asp-route-coin="@coin.data.name"></a>
-                </td>
+            <a asp-controller="Coins" asp-action="Coin" asp-route-coin="@coin.data.name" class="dcg-table__tr dc-coins-table__item dcj-btn">
+                <sapn class="dcg-table__ti dcg-table__td">
+                    @await Html.PartialAsync("_Coin", (data: coin.data, link: false))
+                </sapn>
 
-                <td>
+                <sapn class="dcg-table__ti dcg-table__td">
                     @if (coin.data.usd_price != null)
                     {
                         <span class="dc-coins-table__text-box dcg-caption">≈ @coin.data.usd_price</span>
                     }
-                </td>
-                <td><span class="dc-coins-table__text-box dcg-caption">$@coin.data.market_cap</span></td>
-                <td><span class="dc-coins-table__text-box dcg-caption">$@coin.data.volume_24h</span></td>
-                <td><span class="dc-coins-table__text-box dcg-caption"><change>@coin.data.day_percent_change</change></span></td>
-                <td>
-                    <span class="dc-coins-table__device">
-                        <img src="@BlocksHelper.GetUrl()images/apps-icon.svg" alt="icon-mobile" />
-                        <span class="dcg-caption">@coin.availability</span>
-                    </span>
-                </td>
-            </tr>
+                </sapn>
+                <sapn class="dcg-table__ti dcg-table__td"><span class="dc-coins-table__text-box dcg-caption">$@coin.data.market_cap</span></sapn>
+                <sapn class="dcg-table__ti dcg-table__td"><span class="dc-coins-table__text-box dcg-caption">$@coin.data.volume_24h</span></sapn>
+                <sapn class="dcg-table__ti dcg-table__td"><span class="dc-coins-table__text-box dcg-caption"><change>@coin.data.day_percent_change</change></span></sapn>
+            </a>
         }
-    </table>
+    </div>
 </div>

@@ -5569,6 +5569,10 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   transition-property: none;
 }
 
+/*.....................................*/
+.dcg-table__tr {
+  display: flex;
+}
 /* /common */
 /* /CLASSES */
 /*------------------------------------------------------------*/
@@ -5950,26 +5954,37 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 .dc-coins-table {
   overflow-x: auto;
 }
-.dc-coins-table table {
+.dc-coins-table .dcg-table {
   min-width: 100%;
   margin-top: 34px;
 }
-.dc-coins-table__head {
-  background: rgba(196, 222, 255, 0.1);
-}
-.dc-coins-table__head th {
+.dc-coins-table .dcg-table__th {
   padding: 13px 0px 13px 0px;
   text-align: start;
   white-space: nowrap;
   color: rgba(221, 234, 250, 0.92);
 }
-.dc-coins-table__head th:first-child {
+.dc-coins-table .dcg-table__th:first-child {
   border-radius: 8px 0px 0px 8px;
   padding: 13px 0px 13px 16px;
 }
-.dc-coins-table__head th:last-child {
+.dc-coins-table .dcg-table__th:last-child {
   border-radius: 0px 8px 8px 0px;
   padding: 13px 14px 13px 0px;
+}
+.dc-coins-table .dcg-table__td {
+  white-space: nowrap;
+  padding-right: 35px;
+}
+.dc-coins-table .dcg-table__td:first-child {
+  padding-left: 17px;
+  padding-top: 5px;
+}
+.dc-coins-table .dcg-table__td:last-child {
+  padding: 13px 0px;
+}
+.dc-coins-table__head {
+  background: rgba(196, 222, 255, 0.1);
 }
 .dc-coins-table__item {
   cursor: pointer;
@@ -5978,17 +5993,6 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   border-style: solid;
   border-color: rgba(196, 222, 255, 0.1);
   border-width: 1px 0px 0px 0px;
-}
-.dc-coins-table__item td {
-  white-space: nowrap;
-  padding-right: 35px;
-}
-.dc-coins-table__item td:first-child {
-  padding-left: 17px;
-  padding-top: 5px;
-}
-.dc-coins-table__item td:last-child {
-  padding: 13px 0px;
 }
 .dc-coins-table__device {
   display: flex;
@@ -6857,25 +6861,36 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   overflow-x: auto;
   width: 100%;
 }
-.dc-pairs-table table {
+.dc-pairs-table .dcg-table {
   min-width: 100%;
   margin-top: 24px;
 }
-.dc-pairs-table__head {
-  background: rgba(196, 222, 255, 0.1);
-}
-.dc-pairs-table__head th {
+.dc-pairs-table .dcg-table__th {
   padding: 13px 0px 13px 0px;
   text-align: start;
   color: rgba(221, 234, 250, 0.92);
 }
-.dc-pairs-table__head th:first-child {
+.dc-pairs-table .dcg-table__th:first-child {
   border-radius: 8px 0px 0px 8px;
   padding: 13px 0px 13px 16px;
 }
-.dc-pairs-table__head th:last-child {
+.dc-pairs-table .dcg-table__th:last-child {
   border-radius: 0px 8px 8px 0px;
   padding: 13px 14px 13px 0px;
+}
+.dc-pairs-table .dcg-table__td {
+  white-space: nowrap;
+  padding-right: 35px;
+}
+.dc-pairs-table .dcg-table__td:first-child {
+  padding-left: 17px;
+  padding-top: 5px;
+}
+.dc-pairs-table .dcg-table__td:last-child {
+  padding: 13px 0px;
+}
+.dc-pairs-table__head {
+  background: rgba(196, 222, 255, 0.1);
 }
 .dc-pairs-table__item {
   cursor: pointer;
@@ -6884,17 +6899,6 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   border-style: solid;
   border-color: rgba(196, 222, 255, 0.1);
   border-width: 1px 0px 0px 0px;
-}
-.dc-pairs-table__item td {
-  white-space: nowrap;
-  padding-right: 35px;
-}
-.dc-pairs-table__item td:first-child {
-  padding-left: 17px;
-  padding-top: 5px;
-}
-.dc-pairs-table__item td:last-child {
-  padding: 13px 0px;
 }
 .dc-pairs-table__device {
   display: flex;
@@ -6923,10 +6927,10 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 .dc-pairs-table__item:hover + .dc-pairs-table__item {
   border: none;
 }
-.dc-pairs-table__item:hover td:first-child {
+.dc-pairs-table__item:hover .dcg-table__td:first-child {
   border-radius: 8px 0px 0px 8px;
 }
-.dc-pairs-table__item:hover td:last-child {
+.dc-pairs-table__item:hover .dcg-table__td:last-child {
   border-radius: 0px 8px 8px 0px;
 }
 .dc-pairs-table__coin-logo {
@@ -7025,6 +7029,30 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 .dc-reports__title {
   text-align: center;
   margin-bottom: 40px;
+}
+.dc-seo-texts__item::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.dc-seo-texts__item + .dc-seo-texts__item {
+  margin-top: 30px;
+}
+.dc-seo-texts .dcg-h2 {
+  margin-bottom: 20px;
+}
+.dc-seo-texts__text {
+  transition: all 300ms;
+  overflow: hidden;
+}
+.dc-seo-texts__text_collapsed {
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+.dc-seo-texts__more {
+  float: right;
 }
 .dc-soc-btns li {
   display: inline-block;

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<CTextBlockVM>
+
+<div class="dc-seo-texts" data-max="104" data-expand="Expand..." data-collapse="Collapse...">
+    @foreach(var item in Model)
+    {
+        <div class="dc-seo-texts__item">
+            <h3 class="dcg-h3">@item.title</h3>
+            <p class="dcj-text dc-seo-texts__text">@item.text</p>
+            <a href="#" class="dcj-more dc-seo-texts__more">Expand...</a>
+        </div>
+    }
+</div>
