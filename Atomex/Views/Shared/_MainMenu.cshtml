@@ -3,9 +3,9 @@
 
 <nav class="dc-main-menu">
     <ul>
-        <li class="@BlocksHelper.GetActiveClass("Home") dc-main-menu_none"><a asp-controller="Home" asp-action="Index">Wallet</a></li>
-        <li class="@BlocksHelper.GetActiveClass("Coins")"><a href="https://dev.atomex.me/custom/coins">Coins</a></li>
-        <li class="@BlocksHelper.GetActiveClass("CoinPairs")"><a href="https://dev.atomex.me/custom/crypto-pairs">Coin Pairs</a></li>
+        <li class="@BlocksHelper.GetActiveClass("Home")"><a href="https://wallet.atomex.me/">Atomex Wallet</a></li>
+        <li class="@BlocksHelper.GetActiveClass("Coins")"><a asp-controller="Coins" asp-action="Index">Coins</a></li>
+        <li class="@BlocksHelper.GetActiveClass("CoinPairs")"><a asp-controller="CoinPairs" asp-action="Index">Coin Pairs</a></li>
         <li class="@BlocksHelper.GetActiveClass("") dc-main-menu_none"><a href="/actualizer/test" class="dcg-icon-right">Docs</a></li>
         <li class="@BlocksHelper.GetActiveClass("") dc-main-menu_none"><a href="#">Downloads</a></li>
     </ul>

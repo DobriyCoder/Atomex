@@ -39,7 +39,10 @@ public class CBlocksHelperVM
         return conf.GetValue<string>("BaseUrl");
     }
 
-    
+    public string ToCurr (decimal num)
+    {
+        return num.ToString("C", new System.Globalization.CultureInfo("en-US"));
+    }
     public List<string[]> GetDownloadBtnData()
     {
         return new List<string[]>()

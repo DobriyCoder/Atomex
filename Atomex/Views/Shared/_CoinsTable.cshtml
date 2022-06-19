@@ -21,11 +21,11 @@
                 <sapn class="dcg-table__ti dcg-table__td dcg-table__second">
                     @if (coin.data.usd_price != null)
                     {
-                        <span class="dc-coins-table__text-box dcg-caption">≈ @coin.data.usd_price</span>
+                        <span class="dc-coins-table__text-box dcg-caption">≈ @BlocksHelper.ToCurr(coin.data.usd_price ?? 0)</span>
                     }
                 </sapn>
-                <sapn class="dcg-table__ti dcg-table__td dcg-table__three"><span class="dc-coins-table__text-box dcg-caption">$@coin.data.market_cap</span></sapn>
-                <sapn class="dcg-table__ti dcg-table__td dcg-table__four"><span class="dc-coins-table__text-box dcg-caption">$@coin.data.volume_24h</span></sapn>
+                <sapn class="dcg-table__ti dcg-table__td dcg-table__three"><span class="dc-coins-table__text-box dcg-caption">@BlocksHelper.ToCurr(coin.data.market_cap ?? 0)</span></sapn>
+                <sapn class="dcg-table__ti dcg-table__td dcg-table__four"><span class="dc-coins-table__text-box dcg-caption">@BlocksHelper.ToCurr(coin.data.volume_24h ?? 0)</span></sapn>
                 <sapn class="dcg-table__ti dcg-table__td dcg-table__five"><span class="dc-coins-table__text-box dcg-caption"><change>@coin.data.day_percent_change</change></span></sapn>
             </a>
         }

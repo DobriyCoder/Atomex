@@ -24,11 +24,11 @@
                 <span class="dcg-table__ti dcg-table__td dcg-table__second">
                     @if (pair.data.price_1 != null)
                     {
-                        <span class="dc-pairs-table__text-box dcg-caption">≈ $@pair.data.price_1</span>
+                        <span class="dc-pairs-table__text-box dcg-caption">≈ @BlocksHelper.ToCurr(pair.data.price_1 ?? 0)</span>
                     }
                 </span>
-                <span class="dcg-table__ti dcg-table__td dcg-table__three"><span class="dc-pairs-table__text-box dcg-caption">$@pair.coin1.market_cap</span></span>
-                <span class="dcg-table__ti dcg-table__td dcg-table__four"><span class="dc-pairs-table__text-box dcg-caption">@pair.coin1.volume_24h @pair.coin1.name</span></span>
+                <span class="dcg-table__ti dcg-table__td dcg-table__three"><span class="dc-pairs-table__text-box dcg-caption">@BlocksHelper.ToCurr(pair.coin1.market_cap ?? 0)</span></span>
+                <span class="dcg-table__ti dcg-table__td dcg-table__four"><span class="dc-pairs-table__text-box dcg-caption">@BlocksHelper.ToCurr(pair.coin1.volume_24h ?? 0) @pair.coin1.name</span></span>
                 <span class="dcg-table__ti dcg-table__td dcg-table__five"><span class="dc-pairs-table__text-box dcg-caption">@pair.coin1.day_percent_change%</span></span>
                 
                 <span class="dcg-table__ti dcg-table__td dcg-table__six">

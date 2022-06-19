@@ -7,19 +7,19 @@
         <div class="col">
             <div class="dc-coin-info__item">
                 <div class="dc-coin-info__caption dcg-caption">Price</div>
-                <h3 class="dcg-h3 dc-coin-info__value">$@Model.usd_price</h3>
+                <h3 class="dcg-h3 dc-coin-info__value">@BlocksHelper.ToCurr(Model.usd_price ?? 0)</h3>
             </div>
         </div>
         <div class="col">
             <div class="dc-coin-info__item">
                 <div class="dc-coin-info__caption dcg-caption">Market cap</div>
-                <h3 class="dcg-h3 dc-coin-info__value">$@Model.market_cap</h3>
+                <h3 class="dcg-h3 dc-coin-info__value">@BlocksHelper.ToCurr(Model.market_cap ?? 0)</h3>
             </div>
         </div>
         <div class="col">
             <div class="dc-coin-info__item">
                 <div class="dc-coin-info__caption dcg-caption">24 Volume</div>
-                <h3 class="dcg-h3 dc-coin-info__value">$@Model.volume_24h</h3>
+                <h3 class="dcg-h3 dc-coin-info__value">@BlocksHelper.ToCurr(Model.volume_24h ?? 0)</h3>
             </div>
         </div>
         <div class="col">
