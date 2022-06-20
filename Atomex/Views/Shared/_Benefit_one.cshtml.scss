@@ -1,0 +1,89 @@
+// /*.....................................*/
+// /* TEMPLATE: benefit */
+.dc-benefit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &:not(:last-child) {
+        margin-bottom: 96px;
+    }
+
+    &__text {
+        display: inline-block;
+        max-width: 600px;
+        margin-top: 30px;
+    }
+
+    &__title {
+        margin-bottom: 16px;
+        padding-right: 100px;
+    }
+
+    &__ad {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 26px;
+        letter-spacing: 0.01em;
+        color: rgba(196, 222, 255, 0.72);
+        margin-bottom: 16px;
+    }
+
+    &__link-arrow {
+        margin-left: 6px;
+        cursor: pointer;
+    }
+
+    &__link-text {
+        font-size: 17px;
+        line-height: 26px;
+    }
+
+    &__img {
+        //background: rgba(30, 62, 147, 0.08);
+        //border-radius: 12px;
+        width: auto;
+        height: auto;
+        margin: 0px auto;
+
+        img {
+            display: inline-block;
+            width: 528px;
+            height: 364px;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+    }
+
+    @include media-breakpoint-down (xl) {
+        &__text {
+            display: inline-block;
+            max-width: 450px;
+        }
+
+        &__link {
+            display: block;
+        }
+    }
+
+    @include media-breakpoint-down (lg) {
+        flex-wrap: wrap;
+
+        &__text {
+            display: inline-block;
+            max-width: 100%;
+            order: 2;
+        }
+
+        .dc-benefit__img {
+            order: 1;
+        }
+    }
+}
+// /* /TEMPLATE: benefit */
+// /*.....................................*/

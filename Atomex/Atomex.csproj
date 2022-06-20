@@ -7,10 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Shared\_Benefit.cshtml" />
     <Content Remove="Views\Shared\_FooterAdditional.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Views\Shared\_Benefit.cshtml.js" />
+    <None Remove="Views\Shared\_Benefit.cshtml.scss" />
     <None Remove="Views\Shared\_FooterAdditional.cshtml.js" />
     <None Remove="Views\Shared\_FooterAdditional.cshtml.scss" />
   </ItemGroup>

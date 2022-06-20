@@ -26,6 +26,27 @@ jQuery('.dc-benefits').dcTpl(function ($, Export) {
 // /benefits
 //--------------------------------------------
 
+// benefit_one
+jQuery('.dc-benefit_one').dcTpl(function ($, Export) {
+   var $self = $(this);
+});
+// /benefit_one
+//--------------------------------------------
+
+// benefit_three
+jQuery('.dc-benefit_three').dcTpl(function ($, Export) {
+   var $self = $(this);
+});
+// /benefit_three
+//--------------------------------------------
+
+// benefit_two
+jQuery('.dc-benefit_two').dcTpl(function ($, Export) {
+   var $self = $(this);
+});
+// /benefit_two
+//--------------------------------------------
+
 // breadcrumbs
 jQuery('.dc-breadcrumbs').dcTpl(function ($, Export) {
    var $self = $(this);
