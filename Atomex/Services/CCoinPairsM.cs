@@ -57,7 +57,6 @@ public class CCoinPairsM : CBaseDbM
             if (index1 == index2) continue;
 
             indexes_list.Add(new int[] { index1, index2 });
-            Console.WriteLine($"{index1}\t{index2}");
 
             current++;
         }

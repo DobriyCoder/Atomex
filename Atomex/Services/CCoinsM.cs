@@ -128,7 +128,7 @@ public class CCoinsM : CBaseDbM
         new_coin.donor = coin.Donor;
         new_coin.donor_id = coin.Id;
         new_coin.name_full = coin.FullName;
-        new_coin.name = coin.Name;
+        new_coin.name = coin.Name.ToUpper();
         new_coin.slug = coin.Name;
         new_coin.image = new_coin.image == null || new_coin.image == "" ? SaveCoinIcon(coin.Image, coin.Name) : new_coin.image;
         new_coin.last_updated = now;
@@ -236,7 +236,8 @@ public class CCoinsM : CBaseDbM
             $"select c.* from coins as c" +
                 $" join coinsext as e on c.id = e.coins_id" +
                 $" where c.last_updated = e.last_updated" +
-                $" order by {order} {order_type}" +
+                //$" order by {order} {order_type}" +
+                $" order by e.total_volume desc" +
                 $" offset {(page - 1) * count} rows" +
                 $" fetch next {count} rows ONLY"
         ;
@@ -277,7 +278,29 @@ public class CCoinsM : CBaseDbM
     public IEnumerable<CCoinDataM> GetCoins() => db.Coins.Where(c => c.enable.Value);
     public CCoinDataM GetCoinByIndex(int index)
     {
-        return db.Coins.Skip(index).Include(c => c.ext).Where(c => c.enable.Value).First();
+        string query =
+            $"select c.* from coins as c" +
+                $" join coinsext as e on c.id = e.coins_id" +
+                $" where c.last_updated = e.last_updated" +
+                $" order by e.total_volume desc" +
+                $" offset {index} rows" +
+                $" fetch next 1 rows ONLY"
+        ;
+
+        var coins = db.Coins.FromSqlRaw(query)
+            .Select(c => new CCoinDataVM()
+            {
+                data = c,
+                commonModel = commonModel
+            })
+            .ToList();
+        ;
+
+        coins = JoinExtToCoins(coins);
+
+        return coins.First().data;
+
+        //return db.Coins.Skip(index).Include(c => c.ext).Where(c => c.enable.Value).First();
     }
     public IEnumerable<CCoinDataM> GetTrueCoins(string? filter = null)
     {

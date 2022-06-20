@@ -51,7 +51,7 @@ public class CBlocksHelperVM
             new string[] { "apple-brand.svg", "https://github.com/atomex-me/atomex.client.desktop/releases/download/1.2.11/Atomex.1.2.11.dmg", "macOC" },
             new string[] { "ubuntu-brand.svg", "https://wallet.atomex.me/", "Linux" },
             new string[] { "android-icon.svg", "https://play.google.com/store/apps/details?id=com.atomex.android", "Android" },
-            new string[] { "apple-brand.svg", "https://apps.apple.com/us/app/atomex-wallet-dex/id1534717828", "IOC" },
+            new string[] { "apple-brand.svg", "https://apps.apple.com/us/app/atomex-wallet-dex/id1534717828", "IOS" },
             new string[] { "chrome-icon.svg", "https://wallet.atomex.me/", "Web Wallet" }
         };
     }
