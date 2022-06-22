@@ -33,6 +33,7 @@ public class HomeController : Controller
     [Route("/custom")]
     public IActionResult Index([FromServices] CHomeVM model)
     {
+        
         return View(model);
     }
 
