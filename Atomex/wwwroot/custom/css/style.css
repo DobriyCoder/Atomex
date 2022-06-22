@@ -5761,9 +5761,13 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 }
 .dc-benefits .dc-benefit:nth-child(even) .dc-benefit__img {
   order: 1;
+  background-color: #051429;
 }
 .dc-benefits .dc-benefit:nth-child(odd) .dc-benefit__text {
   padding: 38px 40px 0px 44px;
+}
+.dc-benefits .dc-benefit:nth-child(odd) .dc-benefit__img {
+  background-color: #051429;
 }
 @media (max-width: 1239.98px) {
   .dc-benefits .dc-benefit:nth-child(odd) .dc-benefit__text {
@@ -5773,6 +5777,210 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   .dc-benefits .dc-benefit:nth-child(even) .dc-benefit__text {
     padding: 0px;
     order: 2;
+  }
+}
+
+.dc-benefit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.dc-benefit:not(:last-child) {
+  margin-bottom: 96px;
+}
+.dc-benefit__text {
+  display: inline-block;
+  max-width: 600px;
+  margin-top: 30px;
+}
+.dc-benefit__title {
+  margin-bottom: 16px;
+  padding-right: 100px;
+}
+.dc-benefit__ad {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 0.01em;
+  color: rgba(196, 222, 255, 0.72);
+  margin-bottom: 16px;
+}
+.dc-benefit__link-arrow {
+  margin-left: 6px;
+  cursor: pointer;
+}
+.dc-benefit__link-text {
+  font-size: 17px;
+  line-height: 26px;
+}
+.dc-benefit__img {
+  width: auto;
+  height: auto;
+  margin: 0px auto;
+}
+.dc-benefit__img img {
+  display: inline-block;
+  width: 528px;
+  height: 364px;
+}
+.dc-benefit__link {
+  display: inline-block;
+}
+@media (max-width: 1529.98px) {
+  .dc-benefit__text {
+    display: inline-block;
+    max-width: 450px;
+  }
+  .dc-benefit__link {
+    display: block;
+  }
+}
+@media (max-width: 1239.98px) {
+  .dc-benefit {
+    flex-wrap: wrap;
+  }
+  .dc-benefit__text {
+    display: inline-block;
+    max-width: 100%;
+    order: 2;
+  }
+  .dc-benefit .dc-benefit__img {
+    order: 1;
+  }
+}
+
+.dc-benefit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.dc-benefit:not(:last-child) {
+  margin-bottom: 96px;
+}
+.dc-benefit__text {
+  display: inline-block;
+  max-width: 600px;
+  margin-top: 30px;
+}
+.dc-benefit__title {
+  margin-bottom: 16px;
+  padding-right: 100px;
+}
+.dc-benefit__ad {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 0.01em;
+  color: rgba(196, 222, 255, 0.72);
+  margin-bottom: 16px;
+}
+.dc-benefit__link-arrow {
+  margin-left: 6px;
+  cursor: pointer;
+}
+.dc-benefit__link-text {
+  font-size: 17px;
+  line-height: 26px;
+}
+.dc-benefit__img {
+  width: auto;
+  height: auto;
+  margin: 0px auto;
+}
+.dc-benefit__img img {
+  display: inline-block;
+  width: 528px;
+  height: 364px;
+}
+@media (max-width: 1529.98px) {
+  .dc-benefit__text {
+    display: inline-block;
+    max-width: 450px;
+  }
+}
+@media (max-width: 1239.98px) {
+  .dc-benefit {
+    flex-wrap: wrap;
+  }
+  .dc-benefit__text {
+    display: inline-block;
+    max-width: 100%;
+    order: 2;
+  }
+  .dc-benefit .dc-benefit__img {
+    order: 1;
+  }
+}
+
+.dc-benefit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.dc-benefit:not(:last-child) {
+  margin-bottom: 96px;
+}
+.dc-benefit__text {
+  display: inline-block;
+  max-width: 600px;
+  margin-top: 30px;
+}
+.dc-benefit__title {
+  margin-bottom: 16px;
+  padding-right: 100px;
+}
+.dc-benefit__ad {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 0.01em;
+  color: rgba(196, 222, 255, 0.72);
+  margin-bottom: 16px;
+}
+.dc-benefit__link-arrow {
+  margin-left: 6px;
+  cursor: pointer;
+}
+.dc-benefit__link-text {
+  font-size: 17px;
+  line-height: 26px;
+}
+.dc-benefit__img {
+  width: auto;
+  height: auto;
+  margin: 0px auto;
+}
+.dc-benefit__img img {
+  display: inline-block;
+  width: 528px;
+  height: 364px;
+}
+@media (max-width: 1529.98px) {
+  .dc-benefit__text {
+    display: inline-block;
+    max-width: 450px;
+  }
+}
+@media (max-width: 1239.98px) {
+  .dc-benefit {
+    flex-wrap: wrap;
+  }
+  .dc-benefit__text {
+    display: inline-block;
+    max-width: 100%;
+    order: 2;
+  }
+  .dc-benefit .dc-benefit__img {
+    order: 1;
   }
 }
 

@@ -1,4 +1,5 @@
 ﻿@*@model I_benefit *@
+@inject CBlocksHelperVM BlocksHelper
 
 <div class="dc-benefit"> 
     <div class="dc-benefit__text">
@@ -14,6 +15,6 @@
         </p>  
     </div>
     <div class="dc-benefit__img">
-        <img src="/images/benefit_one.png" alt="img"/>
+        <img src="@BlocksHelper.GetUrl()images/benefit_one.png" alt="img"/>
     </div>
 </div>  

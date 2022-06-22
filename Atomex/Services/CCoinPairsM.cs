@@ -43,7 +43,7 @@ public class CCoinPairsM : CBaseDbM
     private List<int[]> GetPairsIndexes(uint shift, int limit)
     {
         var indexes_list = new List<int[]>();
-        uint count = this.coinsModel.Count();
+        uint count = (uint)this.coinsModel.TrueCount();
         if (count == 0) return indexes_list;
 
         uint i = shift;

@@ -41,7 +41,7 @@ public class CBlocksHelperVM
 
     public string ToCurr (decimal num)
     {
-        return num.ToString("C", new System.Globalization.CultureInfo("en-US"));
+        return num.ToString("C", new System.Globalization.CultureInfo("en-US")).Replace(".00", "");
     }
     public List<string[]> GetDownloadBtnData()
     {

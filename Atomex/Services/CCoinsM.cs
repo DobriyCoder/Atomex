@@ -235,13 +235,12 @@ public class CCoinsM : CBaseDbM
         string query = 
             $"select c.* from coins as c" +
                 $" join coinsext as e on c.id = e.coins_id" +
-                $" where c.last_updated = e.last_updated" +
+                $" where c.last_updated = e.last_updated and c.[enable] = 1" +
                 //$" order by {order} {order_type}" +
                 $" order by e.total_volume desc" +
                 $" offset {(page - 1) * count} rows" +
                 $" fetch next {count} rows ONLY"
         ;
-
         var coins = db.Coins.FromSqlRaw(query)
             .Select(c => new CCoinDataVM()
             {
@@ -344,7 +343,7 @@ public class CCoinsM : CBaseDbM
     /// </summary>
     public int GetMaxPage (int count, string? filter = null)
     {
-        int max_count = (int)Math.Ceiling(Count(filter) / count * 1f);
+        int max_count = (int)Math.Ceiling(TrueCount(filter) / count * 1f);
         return max_count;
     }
 
