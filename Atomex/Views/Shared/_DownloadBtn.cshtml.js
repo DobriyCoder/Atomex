@@ -7,7 +7,19 @@ jQuery('.dc-download-btn').dcTpl(function ($, Export) {
     var curr_link_css = '.dcj-curr-link';
     var select_css = '.dcj-select';
     var item_css = '.dcj-item';
+    var win_css = '.dcj-win';
+    var mac_css = '.dcj-mac';
+    var linux_css = '.dcj-linux';
     var opened_class = 'dcg-opened';
+
+    $(document).on("dc_download_links", function (e, data) {
+        $self.find(win_css).attr('data-url', data.win);
+        $self.find(mac_css).attr('data-url', data.mac);
+        $self.find(linux_css).attr('data-url', data.linux);
+
+        $self.find(curr_link_css).attr('href', data.win);
+    });
+
 
     $self.on('click', btn_css, function (e) {
         e.stopPropagation();

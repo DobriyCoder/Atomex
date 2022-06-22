@@ -279,9 +279,8 @@ public class CCoinsM : CBaseDbM
     {
         string query =
             $"select c.* from coins as c" +
-                $" join coinsext as e on c.id = e.coins_id" +
-                $" where c.last_updated = e.last_updated" +
-                $" order by e.total_volume desc" +
+                $" where c.[enable] = 1" +
+                $" order by c.id" +
                 $" offset {index} rows" +
                 $" fetch next 1 rows ONLY"
         ;

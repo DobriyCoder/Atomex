@@ -7,19 +7,19 @@
         <div class="col">
             <div class="dc-coin-info__item">
                 <div class="dc-coin-info__caption dcg-caption">Price</div>
-                <h3 class="dcg-h3 dc-coin-info__value">@BlocksHelper.ToCurr(Model.price_1 ?? 0)</h3>
+                <h3 class="dcg-h3 dc-coin-info__value">@BlocksHelper.ToCurr(Model.price_1 ?? 0) @Model.name_2.ToLower()</h3>
             </div>
         </div>
         <div class="col">
             <div class="dc-coin-info__item">
-                <div class="dc-coin-info__caption dcg-caption">Available volume</div>
+                <div class="dc-coin-info__caption dcg-caption">Market cap</div>
+                <h3 class="dcg-h3 dc-coin-info__value">@BlocksHelper.ToCurr(Model.market_cap ?? 0)</h3>
+            </div>
+        </div>
+        <div class="col">
+            <div class="dc-coin-info__item">
+                <div class="dc-coin-info__caption dcg-caption">24 Volume</div>
                 <h3 class="dcg-h3 dc-coin-info__value">@BlocksHelper.ToCurr(Model.volume_24h_1 ?? 0)</h3>
-            </div>
-        </div>
-        <div class="col">
-            <div class="dc-coin-info__item">
-                <div class="dc-coin-info__caption dcg-caption">Network fees</div>
-                <h3 class="dcg-h3 dc-coin-info__value">@BlocksHelper.ToCurr((decimal)CConst.NETWORK_FEE)</h3>
             </div>
         </div>
         <div class="col">

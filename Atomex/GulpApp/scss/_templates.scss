@@ -1592,9 +1592,11 @@
     justify-content: end;
 
     a:last-child {
+        /*display: none;*/
+    }
+    .dcg-btn_dark {
         display: none;
     }
-
     .dcg-btn {
     }
 
@@ -2011,11 +2013,11 @@
         }
 
         &__first {
-            width: 27%;
+            width: 36%;
         }
 
         &__second {
-            width: 10%;
+            width: 36%;
         }
 
         &__three {

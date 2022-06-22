@@ -5388,12 +5388,12 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   padding: 95px 150px 95px 150px;
 }
 .dcg-section_light-bottom-left {
-  background-image: url("/images/background-main.png");
+  background-image: url("../images/background-main.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 .dcg-section_light-left {
-  background-image: url("/images/background-left.png");
+  background-image: url("../images/background-left.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -6837,6 +6837,9 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   justify-content: end;
 }
 .dc-main-btn-menu a:last-child {
+  /*display: none;*/
+}
+.dc-main-btn-menu .dcg-btn_dark {
   display: none;
 }
 @media (max-width: 1529.98px) {
@@ -7127,10 +7130,10 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   padding: 13px 0px;
 }
 .dc-pairs-table .dcg-table__first {
-  width: 27%;
+  width: 36%;
 }
 .dc-pairs-table .dcg-table__second {
-  width: 10%;
+  width: 36%;
 }
 .dc-pairs-table .dcg-table__three {
   width: 16%;

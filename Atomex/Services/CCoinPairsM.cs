@@ -110,7 +110,6 @@ public class CCoinPairsM : CBaseDbM
     public uint Count(string? filter = null)
     {
         int count = coinsModel.TrueCount(filter);
-
         uint pair_count = 0;
         for (uint i = 1; i < count; i++)
         {
