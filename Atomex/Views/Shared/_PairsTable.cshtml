@@ -30,7 +30,7 @@
                 </span>
                 @*<span class="dcg-table__ti dcg-table__td dcg-table__three"><span class="dc-pairs-table__text-box dcg-caption">@BlocksHelper.ToCurr(pair.coin1.market_cap ?? 0)</span></span>
                 <span class="dcg-table__ti dcg-table__td dcg-table__four"><span class="dc-pairs-table__text-box dcg-caption">@BlocksHelper.ToCurr(pair.coin1.volume_24h ?? 0) @pair.coin1.name</span></span>*@
-                <span class="dcg-table__ti dcg-table__td dcg-table__three"><span class="dc-pairs-table__text-box dcg-caption">@pair.coin1.day_percent_change%</span></span>
+                <span class="dcg-table__ti dcg-table__td dcg-table__three"><span class="dc-pairs-table__text-box dcg-caption"><change>@pair.data.day_percent_change</change></span></span>
                 <span class="dcg-table__ti dcg-table__td dcg-table__four">
                     <span class="dc-pairs-table__device">
                         <img src="@BlocksHelper.GetUrl()images/apps-icon.svg" alt="icon-mobile" />

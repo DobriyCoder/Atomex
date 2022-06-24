@@ -2,60 +2,69 @@
 @inject CBlocksHelperVM BlocksHelper
 
 @{
-    var pair = BlocksHelper.GetExchangeWidgetData();
-    string img1 = pair.coin1.image == "missing_large.png" ? BlocksHelper.GetUrl() + "images/bitcoin.png" : pair.coin1.image;
-    string img2 = pair.coin2.image == "missing_large.png" ? @BlocksHelper.GetUrl() + "images/bitcoin.png" : pair.coin2.image;
+    CCoinPairDataVM pair = BlocksHelper.GetExchangeWidgetData();
+    string img1 = "";
+    string img2 = "";
+
+    if (pair != null)
+    {
+        img1 = pair.coin1.image == "missing_large.png" ? BlocksHelper.GetUrl() + "images/bitcoin.png" : pair.coin1.image;
+        img2 = pair.coin2.image == "missing_large.png" ? @BlocksHelper.GetUrl() + "images/bitcoin.png" : pair.coin2.image;
+    }
 }
 
-<div class="dc-exchange-widget">
-    <div class="dc-exchange-widget__block">
-        <div class="dc-exchange-widget__coins">
-            <div class="dc-exchange-widget__coin">
-                <div class="dc-exchange-widget__logo">
-                    <img class="dc-exchange-widget__img" src="@img1"  alt="ETH"/>
-                    @pair.data.name_1
+@if (pair != null)
+{
+    <div class="dc-exchange-widget">
+        <div class="dc-exchange-widget__block">
+            <div class="dc-exchange-widget__coins">
+                <div class="dc-exchange-widget__coin">
+                    <div class="dc-exchange-widget__logo">
+                        <img class="dc-exchange-widget__img" src="@img1"  alt="ETH"/>
+                        @pair.data.name_1
+                    </div>
+                    <div class="dc-exchange-widget__numbers">  
+                        <p class="dc-exchange-widget__amount">
+                            1 
+                        </p>
+                        <p class="dc-exchange-widget__price">
+                            $@pair.coin1.usd_price
+                        </p>
+                    </div>
                 </div>
-                <div class="dc-exchange-widget__numbers">  
-                    <p class="dc-exchange-widget__amount">
-                        1 
-                    </p>
-                    <p class="dc-exchange-widget__price">
-                        $@pair.coin1.usd_price
-                    </p>
+                <div class="dc-exchange-widget__coin">
+                    <div class="dc-exchange-widget__logo">
+                        <img class="dc-exchange-widget__img" src="@BlocksHelper.GetUrl()images/tezos-logo.png" alt="XTZ"/>
+                        @pair.data.name_2
+                    </div>
+                    <div class="dc-exchange-widget__numbers">
+                        <p class="dc-exchange-widget__amount">
+                            @pair.data.price_2
+                        </p>
+                        <p class="dc-exchange-widget__price">
+                            $@pair.coin2.usd_price
+                        </p>
+                    </div>
+                </div>
+                <img class="dc-exchange-widget__arrows" src="@BlocksHelper.GetUrl()images/arrows-change.svg"/>
+            </div>
+            <div class="dc-exchange-widget__text dcg-caption">
+                <div class="dc-exchange-widget__info">
+                    Available 83,862.9812 XTZ
+                    <img src="@BlocksHelper.GetUrl()images/question.svg"/>
+                </div>
+                <div class="dc-exchange-widget__info">
+                    <span>1 @pair.data.name_1 = @pair.data.price_2 @pair.data.name_2</span> 
+                    <span class="dc-exchange-widget__slash">/</span> 
+                    <span>$@pair.coin2.usd_price</span>
+                    <img src="@BlocksHelper.GetUrl()images/question.svg"/>
+                </div>
+                <div class="dc-exchange-widget__info">
+                    Network fees @CConst.NETWORK_FEE @pair.data.name_1
+                    <img src="@BlocksHelper.GetUrl()images/question.svg"/>
                 </div>
             </div>
-            <div class="dc-exchange-widget__coin">
-                <div class="dc-exchange-widget__logo">
-                    <img class="dc-exchange-widget__img" src="@BlocksHelper.GetUrl()images/tezos-logo.png" alt="XTZ"/>
-                    @pair.data.name_2
-                </div>
-                <div class="dc-exchange-widget__numbers">
-                    <p class="dc-exchange-widget__amount">
-                        @pair.data.price_2
-                    </p>
-                    <p class="dc-exchange-widget__price">
-                        $@pair.coin2.usd_price
-                    </p>
-                </div>
-            </div>
-            <img class="dc-exchange-widget__arrows" src="@BlocksHelper.GetUrl()images/arrows-change.svg"/>
+            <a class="dcg-btn dcg-btn_color dc-exchange-widget__button dcg-bg-btn" href="https://atomex.me/downloads">Exchange</a>
         </div>
-        <div class="dc-exchange-widget__text dcg-caption">
-            <div class="dc-exchange-widget__info">
-                Available 83,862.9812 XTZ
-                <img src="@BlocksHelper.GetUrl()images/question.svg"/>
-            </div>
-            <div class="dc-exchange-widget__info">
-                <span>1 @pair.data.name_1 = @pair.data.price_2 @pair.data.name_2</span> 
-                <span class="dc-exchange-widget__slash">/</span> 
-                <span>$@pair.coin2.usd_price</span>
-                <img src="@BlocksHelper.GetUrl()images/question.svg"/>
-            </div>
-            <div class="dc-exchange-widget__info">
-                Network fees @CConst.NETWORK_FEE @pair.data.name_1
-                <img src="@BlocksHelper.GetUrl()images/question.svg"/>
-            </div>
-        </div>
-        <a class="dcg-btn dcg-btn_color dc-exchange-widget__button dcg-bg-btn" href="https://atomex.me/downloads">Exchange</a>
-    </div>
-</div> 
+    </div> 
+}
