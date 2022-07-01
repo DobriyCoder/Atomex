@@ -73,7 +73,7 @@
                 sw.WriteLine("\t<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">");
 
                 foreach (var page in pages)
-                    sw.WriteLine(sample.Replace("{url}", page.url).Replace("{lastmod}", lastmod));
+                    sw.WriteLine(sample.Replace("/custom{url}", page.url).Replace("{lastmod}", lastmod));
 
                 sw.WriteLine("\t</urlset>");
                 sw.WriteLine("</sitemapindex>");
@@ -114,7 +114,7 @@
                 content += "<sitemapindex xmlns=\"https://www.sitemaps.org/schemas/sitemap/0.9\">\n";
 
                 for (int i = 1; i < count + 1; i++)
-                    content += $"\t<sitemap>\r\t\t<loc>/sitemap-{i}.xml</loc>\r\t</sitemap>\n";
+                    content += $"\t<sitemap>\r\t\t<loc>/custom/sitemap-{i}.xml</loc>\r\t</sitemap>\n";
 
                 content += "</sitemapindex>";
             }
@@ -187,7 +187,7 @@
             result += "\t<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\r";
 
             foreach (var page in curr_pages)
-                result += sample.Replace("{url}", page.url).Replace("{lastmod}", lastmod) + "\r";
+                result += sample.Replace("{url}", $"/custom{page.url}").Replace("{lastmod}", lastmod) + "\r";
 
             result += "\t</urlset>\r";
             result += "</sitemapindex>";

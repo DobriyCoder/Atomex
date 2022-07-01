@@ -9,10 +9,10 @@ public class CSitemap : ISitemap
     }
     public async Task CreateAsync()
     {
-        var pages = new CPages(services);
-        CWriter writer = new CWriter(pages.GetPages(), pages.count);
+        //var pages = new CPages(services);
+        //CWriter writer = new CWriter(pages.GetPages(), pages.count);
         /*writer.UpdateMainSitemap();*/
-        await Task.Run(() => writer.UpdateMainSitemap());
+        //await Task.Run(() => writer.UpdateMainSitemap());
         /*await Task.Run(() => writer.Write());*/
     }
 
