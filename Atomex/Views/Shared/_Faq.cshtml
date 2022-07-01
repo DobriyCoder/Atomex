@@ -8,11 +8,11 @@
         {
             <li class="dc-faq__item dcj-btn">
                 <div class="dc-faq__caption">
-                    <span class="dc-faq__heading">@item.title</span>
+                    <span class="dc-faq__heading">@Html.Raw(item.title)</span>
                     <img class="dc-faq__arrow" src="@BlocksHelper.GetUrl()images/down-color.svg"/>
                 </div>
                 <div class="dc-faq__content dcj-content">
-                    <p>@item.text</p>
+                    <p>@Html.Raw(item.text)</p>
                 </div>
             </li>
         }

@@ -11,7 +11,17 @@ public class CCoinVM
     private CCoinsM model;
     private IConfiguration conf;
     private CCommonM commonModel;
+    private CBlocksHelperVM helper;
 
+
+    public IEnumerable<CCoinPairDataVM> LinkedPairs
+    {
+        get
+        {
+            string? ids = coin.data["pairs", "ids"]?.value ?? commonModel["coin pairs", "ids"]?.value ?? "";
+            return helper.GetLinkedPairs(ids);
+        }
+    }
     public CTextBlockVM SeoInfo
     {
         get
@@ -108,11 +118,12 @@ public class CCoinVM
     /// <summary>
     ///     Конструктор. заполняет  необходимые поля при создании модели.
     /// </summary>
-    public CCoinVM (CCoinsM model, IConfiguration conf, CCommonM common_model)
+    public CCoinVM (CCoinsM model, IConfiguration conf, CCommonM common_model, CBlocksHelperVM helper)
     {
         this.model = model;
         this.conf = conf;
         this.commonModel = common_model;
+        this.helper = helper;
     }
 
     /// <summary>

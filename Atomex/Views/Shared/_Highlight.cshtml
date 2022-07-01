@@ -1,6 +1,6 @@
 ﻿@model CTextBlockVM
 
 <div class="dc-highlight">
-    <h3 class="dc-highlight__title dcg-h3">@Model.title</h3>
-    <p class="dc-highlight__text dcg-caption">@Model.text</p>
+    <h3 class="dc-highlight__title dcg-h3">@Html.Raw(Model.title)</h3>
+    <p class="dc-highlight__text dcg-caption">@Html.Raw(Model.text)</p>
 </div>

@@ -5,7 +5,7 @@ namespace CryptoApi.Controllers;
 public class SitemapController : Controller
 {
 
-    [Route("/sitemap.xml")]
+    [Route("/custom/sitemap.xml")]
     public string? Index([FromServices] ISitemap sitemapModel)
     {
         string? result = sitemapModel.GetMainSitemap();
@@ -14,7 +14,7 @@ public class SitemapController : Controller
         return result;
     }
 
-    [Route("/sitemap-{index:int}.xml")]
+    [Route("/custom/sitemap-{index:int}.xml")]
     public string? Page([FromServices] ISitemap sitemapModel, int index) 
     {
         string? result = sitemapModel.GetSubSitemap(index);

@@ -1,8 +1,8 @@
-﻿@*@model I_popular-pairs *@
+﻿@model IEnumerable<CCoinPairDataVM>
 @inject CBlocksHelperVM BlocksHelper
 
 <div class="dc-popular-pairs">
     <h2 class="dcg-h2 dc-popular-pairs__title">Popular exchange pairs</h2>
-    @await Html.PartialAsync("_PairsTable", BlocksHelper.GetPairList(6))
+    @await Html.PartialAsync("_PairsTable", Model)
     <a asp-controller="CoinPairs" asp-action="Index" class="dc-popular-pairs__button dcg-btn dcg-btn_transparent">View all crypto pairs</a> 
 </div>

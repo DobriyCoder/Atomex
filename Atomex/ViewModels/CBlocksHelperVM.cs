@@ -34,6 +34,23 @@ public class CBlocksHelperVM
 
         instance = this;
     }
+
+    public IEnumerable<CCoinPairDataVM> GetLinkedPairs(string ids_line)
+    {
+        if (ids_line == "") return null;
+
+        string[] pair_lines = ids_line.Split(";");
+        List<uint[]> ids = new List<uint[]>();
+
+        foreach (var pair in pair_lines)
+        {
+            if (pair.Trim() == "") continue;
+            string[] ids_str = pair.Split(",");
+            ids.Add(new uint[] { uint.Parse(ids_str[0].Trim()), uint.Parse(ids_str[1].Trim()) });
+        }
+
+        return pairsModel.GetPairsByIds(ids);
+    }
     public string GetUrl ()
     {
         return conf.GetValue<string>("BaseUrl");

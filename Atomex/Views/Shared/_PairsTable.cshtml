@@ -1,43 +1,46 @@
 ﻿@inject CBlocksHelperVM BlocksHelper
 @model IEnumerable<CCoinPairDataVM>
 
-<div class="dc-pairs-table">
-    <div class="dcg-table">
-        <div class="dcg-table__tr dc-pairs-table__head">
-            <span class="dcg-table__ti dcg-table__th dcg-table__first dcg-caption">From - To</span>
-            <span class="dcg-table__ti dcg-table__th dcg-table__second dcg-caption">Price</span>
-            @*<span class="dcg-table__ti dcg-table__th dcg-table__three dcg-caption">Market Cap</span>
-            <span class="dcg-table__ti dcg-table__th dcg-table__four dcg-caption">24 Volume</span>*@
-            <span class="dcg-table__ti dcg-table__th dcg-table__three dcg-caption">24h change</span>
-            <span class="dcg-table__ti dcg-table__th dcg-table__four dcg-caption">Aviability</span>
+@if (Model != null)
+{
+    <div class="dc-pairs-table">
+        <div class="dcg-table">
+            <div class="dcg-table__tr dc-pairs-table__head">
+                <span class="dcg-table__ti dcg-table__th dcg-table__first dcg-caption">From - To</span>
+                <span class="dcg-table__ti dcg-table__th dcg-table__second dcg-caption">Price</span>
+                @*<span class="dcg-table__ti dcg-table__th dcg-table__three dcg-caption">Market Cap</span>
+                <span class="dcg-table__ti dcg-table__th dcg-table__four dcg-caption">24 Volume</span>*@
+                <span class="dcg-table__ti dcg-table__th dcg-table__three dcg-caption">24h change</span>
+                <span class="dcg-table__ti dcg-table__th dcg-table__four dcg-caption">Aviability</span>
+            </div>
+
+            @foreach (var pair in Model)
+            {
+                <a asp-controller="CoinPairs" asp-action="Pair" asp-route-coin1="@pair.coin1.slug.ToLower()" asp-route-coin2="@pair.coin2.slug.ToLower()" class="dcg-table__tr dc-pairs-table__item dcj-btn">
+                    <span class="dcg-table__ti dcg-table__td dcg-table__first"> 
+                        <span class="dc-pairs-table__coin-logo">
+                            @await Html.PartialAsync("_CoinPair", pair.coin1)
+                            @await Html.PartialAsync("_CoinPair", pair.coin2)
+                        </span>
+                    </span>
+
+                    <span class="dcg-table__ti dcg-table__td dcg-table__second">
+                        @if (pair.data.price_1 != null)
+                        {
+                            <span class="dc-pairs-table__text-box dcg-caption">@BlocksHelper.ToCurr(pair.data.price_1 ?? 0).Replace("$", "") @pair.coin2.name.ToLower()</span>
+                        }
+                    </span>
+                    @*<span class="dcg-table__ti dcg-table__td dcg-table__three"><span class="dc-pairs-table__text-box dcg-caption">@BlocksHelper.ToCurr(pair.coin1.market_cap ?? 0)</span></span>
+                    <span class="dcg-table__ti dcg-table__td dcg-table__four"><span class="dc-pairs-table__text-box dcg-caption">@BlocksHelper.ToCurr(pair.coin1.volume_24h ?? 0) @pair.coin1.name</span></span>*@
+                    <span class="dcg-table__ti dcg-table__td dcg-table__three"><span class="dc-pairs-table__text-box dcg-caption"><change>@pair.data.day_percent_change</change></span></span>
+                    <span class="dcg-table__ti dcg-table__td dcg-table__four">
+                        <span class="dc-pairs-table__device">
+                            <img src="@BlocksHelper.GetUrl()images/apps-icon.svg" alt="icon-mobile" />
+                            <span class="dcg-caption">@pair.availability</span>
+                        </span>
+                    </span>
+                </a>
+            }      
         </div>
-
-        @foreach (var pair in Model)
-        {
-            <a asp-controller="CoinPairs" asp-action="Pair" asp-route-coin1="@pair.coin1.name.ToLower()" asp-route-coin2="@pair.coin2.name.ToLower()" class="dcg-table__tr dc-pairs-table__item dcj-btn">
-                <span class="dcg-table__ti dcg-table__td dcg-table__first"> 
-                    <span class="dc-pairs-table__coin-logo">
-                        @await Html.PartialAsync("_CoinPair", pair.coin1)
-                        @await Html.PartialAsync("_CoinPair", pair.coin2)
-                    </span>
-                </span>
-
-                <span class="dcg-table__ti dcg-table__td dcg-table__second">
-                    @if (pair.data.price_1 != null)
-                    {
-                        <span class="dc-pairs-table__text-box dcg-caption">@BlocksHelper.ToCurr(pair.data.price_1 ?? 0).Replace("$", "") @pair.coin2.name.ToLower()</span>
-                    }
-                </span>
-                @*<span class="dcg-table__ti dcg-table__td dcg-table__three"><span class="dc-pairs-table__text-box dcg-caption">@BlocksHelper.ToCurr(pair.coin1.market_cap ?? 0)</span></span>
-                <span class="dcg-table__ti dcg-table__td dcg-table__four"><span class="dc-pairs-table__text-box dcg-caption">@BlocksHelper.ToCurr(pair.coin1.volume_24h ?? 0) @pair.coin1.name</span></span>*@
-                <span class="dcg-table__ti dcg-table__td dcg-table__three"><span class="dc-pairs-table__text-box dcg-caption"><change>@pair.data.day_percent_change</change></span></span>
-                <span class="dcg-table__ti dcg-table__td dcg-table__four">
-                    <span class="dc-pairs-table__device">
-                        <img src="@BlocksHelper.GetUrl()images/apps-icon.svg" alt="icon-mobile" />
-                        <span class="dcg-caption">@pair.availability</span>
-                    </span>
-                </span>
-            </a>
-        }      
-    </div>
-</div>
+    </div>    
+}

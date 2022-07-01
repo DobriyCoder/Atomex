@@ -237,7 +237,7 @@ public class CCoinsM : CBaseDbM
                 $" join coinsext as e on c.id = e.coins_id" +
                 $" where c.last_updated = e.last_updated and c.[enable] = 1" +
                 //$" order by {order} {order_type}" +
-                $" order by e.total_volume desc" +
+                $" order by e.market_cap desc" +
                 $" offset {(page - 1) * count} rows" +
                 $" fetch next {count} rows ONLY"
         ;
@@ -349,5 +349,41 @@ public class CCoinsM : CBaseDbM
     public void Clear ()
     {
         db.Coins.RemoveRange(db.Coins);
+    }
+
+    public Dictionary<int, CCoinDataVM> GetCoinsByIds (IEnumerable<int> ids)
+    {
+        var result = new Dictionary<int, CCoinDataVM>();
+        string where = "";
+
+        foreach (var id in ids)
+        {
+            where += $"id = {id} or ";
+        }
+
+        where = where.TrimEnd(" or ".ToCharArray());
+
+        string query =
+            $"select * from coins" +
+                $" where {where}"
+        ;
+        
+        var coins = db.Coins.FromSqlRaw(query)
+            .Select(c => new CCoinDataVM()
+            {
+                data = c,
+                commonModel = commonModel
+            })
+            .ToList();
+        ;
+
+        coins = JoinExtToCoins(coins);
+
+        foreach (var coin in coins)
+        {
+            result.Add((int)coin.data.id, coin);
+        }
+
+        return result;
     }
 }

@@ -165,7 +165,37 @@ public class CCoinPairsM : CBaseDbM
             commonModel = commonModel,
         };
     }
+    public IEnumerable<CCoinPairDataVM> GetPairsByIds(IEnumerable<uint[]> pairs_ids)
+    {
+        var coins_ids = new List<int>();
 
+        foreach (var pair in pairs_ids)
+        {
+            coins_ids.Add((int)pair[0]);
+            coins_ids.Add((int)pair[1]);
+        }
+
+        var coins = coinsModel.GetCoinsByIds(coins_ids);
+        var result = new List<CCoinPairDataVM>();
+
+        foreach (var pair in pairs_ids)
+        {
+            if (!coins.ContainsKey((int)pair[0]) || !coins.ContainsKey((int)pair[1])) continue;
+
+            var coin1 = coins[(int)pair[0]];
+            var coin2 = coins[(int)pair[1]];
+
+            result.Add(new CCoinPairDataVM()
+            {
+                data = new CCoinPairDataM(coin1.data, coin2.data, GetMeta(coin1.data.id, coin2.data.id)),
+                coin1 = coin1.data,
+                coin2 = coin2.data,
+                commonModel = commonModel,
+            });
+        }
+
+        return result;
+    }
     /// <summary>
     ///     Возвращает число максимально возможной страницы для пагинации.
     /// </summary>

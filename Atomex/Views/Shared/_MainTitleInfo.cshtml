@@ -1,9 +1,9 @@
 ﻿@model CTextBlockVM
 
 <div class="dc-main-title-info">
-    <p class="dcg-link-text dc-main-title-info__caption">@Model.text</p>
+    <p class="dcg-link-text dc-main-title-info__caption">@Html.Raw(Model.text)</p>
     <h1 class="dcg-h1">
-        @Model.title
+        @Html.Raw(Model.title)
     </h1>
     <div class="dc-main-title-info__download">
         @await Html.PartialAsync("_DownloadBtn")

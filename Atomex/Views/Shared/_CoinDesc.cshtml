@@ -1,8 +1,8 @@
 ﻿@model CTextBlockVM
 
 <div class="dc-coin-desc">
-    <h2 class="dcg-h2">@Model.title</h2>
+    <h2 class="dcg-h2">@Html.Raw(Model.title)</h2>
     <p class="dc-coin-desc__text">
-        @Model.text
+        @Html.Raw(Model.text)
     </p>
 </div> 

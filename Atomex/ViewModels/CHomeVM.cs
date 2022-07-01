@@ -8,10 +8,11 @@ public class CHomeVM
 {
     private IConfiguration conf;
     private CCommonM commonModel;
+    private CBlocksHelperVM helper;
 
-    /// <summary>
-    ///     Возвращает заголовок страницы из БД.
-    /// </summary>
+    public IEnumerable<CCoinPairDataVM> LinkedPairs =>
+        helper.GetLinkedPairs(commonModel["home pairs", "ids"]?.value ?? "");
+    
     public CTextBlockVM SeoInfo
     {
         get => new CTextBlockBuilder()
@@ -74,9 +75,10 @@ public class CHomeVM
     /// <summary>
     ///     Конструктор. заполняет  необходимые поля при создании модели.
     /// </summary>
-    public CHomeVM(IConfiguration conf, CCommonM common_model)
+    public CHomeVM(IConfiguration conf, CCommonM common_model, CBlocksHelperVM helper)
     {
         this.conf = conf;
         this.commonModel = common_model;
+        this.helper = helper;
     }
 }
