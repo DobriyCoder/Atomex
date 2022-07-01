@@ -5796,7 +5796,6 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 }
 .dc-benefit__title {
   margin-bottom: 16px;
-  padding-right: 100px;
 }
 .dc-benefit__ad {
   font-family: "Inter";
@@ -5868,7 +5867,6 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 }
 .dc-benefit__title {
   margin-bottom: 16px;
-  padding-right: 100px;
 }
 .dc-benefit__ad {
   font-family: "Inter";
@@ -5934,7 +5932,6 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 }
 .dc-benefit__title {
   margin-bottom: 16px;
-  padding-right: 100px;
 }
 .dc-benefit__ad {
   font-family: "Inter";
@@ -6848,9 +6845,6 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 }
 .dc-main-btn-menu a:last-child {
   /*display: none;*/
-}
-.dc-main-btn-menu .dcg-btn_dark {
-  display: none;
 }
 @media (max-width: 1529.98px) {
   .dc-main-btn-menu {
