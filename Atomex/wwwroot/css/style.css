@@ -7199,7 +7199,7 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   margin-right: 43px;
 }
 .dc-pairs-table__coin-logo .dc-coin:first-child {
-  margin-right: 46px;
+  min-width: 158px;
 }
 @media (max-width: 1239.98px) {
   .dc-pairs-table__coin-logo {
