@@ -6,6 +6,11 @@
     gap: 15px;
     justify-content: end;
 
+    a {
+        display: inline-flex;
+        align-items: center;
+    }
+
     a:last-child {
         /*display: none;*/
     }
@@ -16,11 +21,6 @@
     }
 
     @include media-breakpoint-down (xl) {
-        .dcg-btn {
-            &::after {
-                display: none;
-            }
-        }
 
         & {
             justify-content: center;

@@ -42,7 +42,6 @@ public class CHomeVM
     /// </summary>
     public IEnumerable<CTextBlockVM> Faq => GetTextBlock("home faq");
     public IEnumerable<string[]> Benefits => GetTextImgBlock("home benefits");
-
     /// <summary>
     ///     Используя метод GetTextBlock генерирует перечисление моделей текстовых блоков "Faq" и возвращает их.
     /// </summary>
