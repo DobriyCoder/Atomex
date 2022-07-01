@@ -17,7 +17,7 @@ public class CCoinPairVM
     {
         get
         {
-            string? ids = pair.data["pairs", "ids"]?.value ?? commonModel["pairs pairs", "ids"]?.value ?? "";
+            string? ids = pair.data["pair", "ids"]?.value ?? commonModel["pair pairs", "ids"]?.value ?? "";
             return helper.GetLinkedPairs(ids);
         }
     }
