@@ -5796,6 +5796,7 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 }
 .dc-benefit__title {
   margin-bottom: 16px;
+  padding-right: 0 !important;
 }
 .dc-benefit__ad {
   font-family: "Inter";
