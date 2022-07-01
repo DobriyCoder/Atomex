@@ -1199,10 +1199,6 @@
         letter-spacing: 0.01em;
     }
 
-    &__heading::first-letter {
-        text-transform: uppercase;
-    }
-
     &__arrow {
         float: right;
         transition: all 300ms;
@@ -1415,6 +1411,11 @@
 
     li {
         line-height: 30px;
+    }
+
+    li::first-letter {
+        display: block;
+        text-transform: uppercase !important;
     }
 
     a {
