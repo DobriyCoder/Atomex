@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\Reports.cs" />
+    <Compile Remove="ViewModels\CTextReportVM.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Views\Shared\_Benefit.cshtml" />
     <Content Remove="Views\Shared\_FooterAdditional.cshtml" />
   </ItemGroup>

@@ -419,6 +419,13 @@ jQuery('.dc-reports').dcTpl(function ($, Export) {
 // /reports
 //--------------------------------------------
 
+// report-two
+jQuery('.dc-report-two').dcTpl(function ($, Export) {
+   var $self = $(this);
+});
+// /report-two
+//--------------------------------------------
+
 // seo-texts
 jQuery('.dc-seo-texts').dcTpl(function ($, Export) {
     var $self = $(this);

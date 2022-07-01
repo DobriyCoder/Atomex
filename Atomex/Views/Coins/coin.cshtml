@@ -9,7 +9,7 @@
 }
 
 <div class="dc-pairs-page-content">
-    <div class="dcg-section dcg-section_mini dcg-section_border-bottom dcg-section_light-left dcg-section_padding-heading">
+    <div class="dcg-section dcg-section_border-bottom dcg-section_light-left dcg-section_padding-heading">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -34,14 +34,9 @@
     </div>
     <div class="dcg-section dcg-section_padding-small">
         <div class="container">
-            <div class="margin-decorative">
+            <div class="">
                 @await Html.PartialAsync("_CoinInfo", Model.coin.data)
             </div>
-        </div>
-    </div>
-    <div class="dcg-section dcg-section_padding-small">
-        <div class="container">
-            @await Html.PartialAsync("_CoinDesc", Model.Description)
         </div>
     </div>
     <div class="dcg-section dcg-section_padding-small">
@@ -51,6 +46,7 @@
     </div>
     <div class="dcg-section dcg-section_padding-big">
         <div class="container">
+            @await Html.PartialAsync("_CoinDesc", Model.Description)
             @await Html.PartialAsync("_SeoTexts", Model.TextBlocks)
         </div>
     </div>

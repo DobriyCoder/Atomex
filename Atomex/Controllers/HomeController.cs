@@ -1,4 +1,5 @@
-﻿using CryptoApi.Models;
+﻿using Atomex.Models;
+using CryptoApi.Models;
 using CryptoApi.Models.DB;
 using CryptoApi.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -33,7 +34,20 @@ public class HomeController : Controller
     [Route("/custom")]
     public IActionResult Index([FromServices] CHomeVM model)
     {
-        
+        /*Reports title = new Reports();
+        for(int i = 0; i < 2; i++)
+        {
+            if(i == 0)
+            {
+                title.title[i] = "Atomic swap smart-contracts";
+                //return View(title.title);
+            }
+            if (i == 1)
+            {
+                title.title[i] = "Wallet and core library";
+                //return View(title.title);
+            }
+        }*/
         return View(model);
     }
 

@@ -97,7 +97,7 @@
     .dc-benefit:nth-child(odd) {
 
         .dc-benefit__text {
-            padding: 38px 40px 0px 44px;
+            padding: 38px 0px 0px 44px;
         }
 
         .dc-benefit__img {
@@ -441,6 +441,7 @@
 // /*.....................................*/
 // /* TEMPLATE: coin-desc */
 .dc-coin-desc {
+    margin-bottom: 55px;
 
     h2 {
         color: rgba(221, 234, 250, 0.92);
@@ -1200,6 +1201,10 @@
         letter-spacing: 0.01em;
     }
 
+    &__heading::first-letter {
+        text-transform: uppercase;
+    }
+
     &__arrow {
         float: right;
         transition: all 300ms;
@@ -1572,6 +1577,7 @@
     height: 30px;
     width: 148px;
 
+
     img {
         height: 30px;
         width: 148px;
@@ -1591,6 +1597,11 @@
     gap: 15px;
     justify-content: end;
 
+    a {
+        display: inline-flex;
+        align-items: center;
+    }
+
     a:last-child {
         /*display: none;*/
     }
@@ -1601,11 +1612,6 @@
     }
 
     @include media-breakpoint-down (xl) {
-        .dcg-btn {
-            &::after {
-                display: none;
-            }
-        }
 
         & {
             justify-content: center;
@@ -2267,6 +2273,76 @@
     }
 }
 // /* /TEMPLATE: reports */
+// /*.....................................*/
+
+// /*.....................................*/
+// /* TEMPLATE: report */
+.dc-report {
+    padding: 0px 6px;
+
+    &__block {
+        background: rgba(196, 222, 255, 0.1);
+        border-radius: 12px;
+        padding: 28px 0px 32px 32px;
+    }
+
+    &__img-wrapper {
+        display: inline-block;
+        //margin-right: 13px;
+        img {
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+    }
+
+    &__content {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    &__more {
+        margin-right: 8px;
+    }
+
+    @include media-breakpoint-down (lg) {
+        &__block {
+            display: flex;
+            padding: 28px 40px 32px 25px;
+            align-items: center;
+        }
+
+        &__img-wrapper {
+            width: 58px;
+
+            img {
+                width: 58px;
+                height: 40px;
+            }
+        }
+
+        &__content {
+            margin-left: 16px;
+            width: 69%;
+        }
+    }
+
+    @include media-breakpoint-down (md) {
+        & {
+            margin-bottom: 16px;
+        }
+
+        &__content {
+            margin-left: 16px;
+        }
+    }
+
+    @include media-breakpoint-down (sm) {
+        &__block {
+            padding: 20px 15px 20px 15px;
+        }
+    }
+}
+// /* /TEMPLATE: report */
 // /*.....................................*/
 
 // /*.....................................*/
