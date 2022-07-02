@@ -108,7 +108,7 @@
             string path = root + mainFileName;
             string content = "";
 
-            using (var sw = new StreamWriter(path, false, System.Text.Encoding.UTF8))
+            //using (var sw = new StreamWriter(path, false, System.Text.Encoding.UTF8))
             {
                 content += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
                 content += "<sitemapindex xmlns=\"https://www.sitemaps.org/schemas/sitemap/0.9\">\n";

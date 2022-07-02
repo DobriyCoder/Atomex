@@ -6601,9 +6601,6 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
   color: rgba(221, 234, 250, 0.92);
   letter-spacing: 0.01em;
 }
-.dc-faq__heading::first-letter {
-  text-transform: uppercase;
-}
 .dc-faq__arrow {
   float: right;
   transition: all 300ms;
@@ -6736,6 +6733,10 @@ button.dcg-btn_transparent, [type=button].dcg-btn_transparent, [type=submit].dcg
 }
 .dc-footer-menu li {
   line-height: 30px;
+}
+.dc-footer-menu li::first-letter {
+  display: block;
+  text-transform: uppercase !important;
 }
 .dc-footer-menu a {
   font-weight: 400;
