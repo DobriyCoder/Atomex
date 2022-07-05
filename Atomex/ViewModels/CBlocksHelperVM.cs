@@ -35,6 +35,19 @@ public class CBlocksHelperVM
         instance = this;
     }
 
+    public List<CCoinPairDataVM> GetPairsByCoin(CCoinDataM coin, int limit)
+    {
+        return pairsModel.GetPairsByCoin(coin, limit);
+    }
+
+    public IEnumerable<CCoinPairDataVM> GetPairsByPair(CCoinPairDataVM pair, int limit)
+    {
+        int half = limit / 2;
+        var result = GetPairsByCoin(pair.coin1, half);
+        result.AddRange(GetPairsByCoin(pair.coin2, half));
+
+        return result;
+    }
     public IEnumerable<CCoinPairDataVM> GetLinkedPairs(string ids_line)
     {
         if (ids_line == "") return null;
@@ -114,7 +127,7 @@ public class CBlocksHelperVM
 
         foreach (var coin in coins)
         {
-            var data = new Dictionary<string, string>() { { "coin", coin.data.name } };
+            var data = new Dictionary<string, string>() { { "coin", coin.data.slug.ToLower() } };
             links.Add(new CLinkVM(coin.data.name_full, "Coins", "Coin", data));
         }
 
@@ -136,11 +149,11 @@ public class CBlocksHelperVM
         {
             var data = new Dictionary<string, string>() 
             {
-                { "coin1", pair.data.name_1 },
-                { "coin2", pair.data.name_2 }
+                { "coin1", pair.data.coin_1.slug.ToLower() },
+                { "coin2", pair.data.coin_2.slug.ToLower() }
             };
 
-            string title = $"{pair.data.name_1.ToLower()} to {pair.data.name_2.ToLower()}";
+            string title = $"{pair.data.name_1.ToUpper()} to {pair.data.name_2.ToUpper()}";
 
             links.Add(new CLinkVM(title, "CoinPairs", "Pair", data));
         }

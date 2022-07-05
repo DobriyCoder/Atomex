@@ -18,8 +18,9 @@ public class CCoinVM
     {
         get
         {
-            string? ids = coin.data["pairs", "ids"]?.value ?? commonModel["coin pairs", "ids"]?.value ?? "";
-            return helper.GetLinkedPairs(ids);
+            //string? ids = coin.data["pairs", "ids"]?.value ?? commonModel["coin pairs", "ids"]?.value ?? "";
+            //return helper.GetLinkedPairs(ids);
+            return helper.GetPairsByCoin(coin.data, 20);
         }
     }
     public CTextBlockVM SeoInfo
@@ -96,13 +97,21 @@ public class CCoinVM
     /// </summary>
     public IEnumerable<CTextBlockVM> GetTextBlocks(string group, string coin_group)
     {
-        for (var i = 0; i < commonModel[group].Count() / 2; i++)
-        {
-            string coin_title = coin.data[coin_group, $"title{i + 1}"]?.value ?? "";
-            string coin_text = coin.data[coin_group, $"text{i + 1}"]?.value ?? "";
+        bool common = true;
+        int count = commonModel[group].Count();
 
-            string title = coin_title != "" ? coin_title : commonModel[group, $"title{i + 1}"]?.value ?? "";
-            string text = coin_text != "" ? coin_text : commonModel[group, $"text{i + 1}"]?.value ?? "";
+        if (coin.data[coin_group].Count() > 1)
+        {
+            common = false;
+            count = coin.data[coin_group].Count();
+        }
+
+        count = count / 2;
+
+        for (var i = 0; i < count; i++)
+        {
+            string title = common ? commonModel[group, $"title{i + 1}"]?.value ?? "" : coin.data[coin_group, $"title{i + 1}"]?.value ?? "";
+            string text = common ? commonModel[group, $"text{i + 1}"]?.value ?? "" : coin.data[coin_group, $"text{i + 1}"]?.value ?? "";
 
             yield return new CTextBlockBuilder()
                 .SetTitle(title)

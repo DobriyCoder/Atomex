@@ -142,8 +142,8 @@ public class CCoinsM : CBaseDbM
             low = coin.Low,
             high = coin.High,
             last_updated = now,
-            circulating_supply = "",//coin.CirculatingSupply,
-            total_supply = "",//coin.TotalSupply?.ToString() ?? "",
+            circulating_supply = coin.CirculatingSupply,
+            total_supply = coin.TotalSupply?.ToString() ?? "",
             market_cap_rank = coin.MarketCapRank,
             total_volume = coin.TotalVolume
         };
@@ -351,6 +351,40 @@ public class CCoinsM : CBaseDbM
         db.Coins.RemoveRange(db.Coins);
     }
 
+    public IEnumerable<CCoinDataVM> GetNextCoins (uint id, int limit)
+    {
+        var result = db.Coins
+            .Where(c => c.id > id && (c.enable ?? false))
+            .Take(limit)
+            .Select(c => new CCoinDataVM()
+            {
+                data = c,
+                commonModel = commonModel
+            })
+            .ToList()
+        ;
+
+        if (result.Count < limit)
+        {
+            int need = limit - result.Count;
+            var needed = db.Coins
+                .Where(c => c.enable ?? false)
+                .Take(need)
+                .Select(c => new CCoinDataVM()
+                {
+                    data = c,
+                    commonModel = commonModel
+                })
+                .ToList()
+            ;
+
+            result.AddRange(needed);
+        }
+
+        result = JoinExtToCoins(result);
+
+        return result;
+    }
     public Dictionary<int, CCoinDataVM> GetCoinsByIds (IEnumerable<int> ids)
     {
         var result = new Dictionary<int, CCoinDataVM>();

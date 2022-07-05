@@ -6,7 +6,7 @@
     <ul>
         @foreach (var item in Model.Links)
         {
-            <li><a class="dc-footer-menu__item" asp-controller="@item.controller" asp-action="@item.action" asp-all-route-data="@item.data"><span>@item.title.ToLower()</span></a></li>
+            <li><a class="dc-footer-menu__item" asp-controller="@item.controller" asp-action="@item.action" asp-all-route-data="@item.data"><span>@item.title</span></a></li>
         }
     </ul>
      

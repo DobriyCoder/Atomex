@@ -12,6 +12,7 @@
         string lastmod = DateTime.Now.ToString("yyyy-MM-dd");
         IEnumerable<CPageInfo> pages { get; set; }
         uint count { get; set; }
+        string domain = "https://atomex.me/custom";
 
         public CWriter (IEnumerable<CPageInfo> pages, uint count)
         {
@@ -114,7 +115,7 @@
                 content += "<sitemapindex xmlns=\"https://www.sitemaps.org/schemas/sitemap/0.9\">\n";
 
                 for (int i = 1; i < count + 1; i++)
-                    content += $"\t<sitemap>\r\t\t<loc>/custom/sitemap-{i}.xml</loc>\r\t</sitemap>\n";
+                    content += $"\t<sitemap>\r\t\t<loc>{this.domain}/sitemap-{i}.xml</loc>\r\t</sitemap>\n";
 
                 content += "</sitemapindex>";
             }
@@ -187,7 +188,7 @@
             result += "\t<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\r";
 
             foreach (var page in curr_pages)
-                result += sample.Replace("{url}", $"/custom{page.url}").Replace("{lastmod}", lastmod) + "\r";
+                result += sample.Replace("{url}", $"{this.domain}{page.url.ToLower()}").Replace("{lastmod}", lastmod) + "\r";
 
             result += "\t</urlset>\r";
             result += "</sitemapindex>";

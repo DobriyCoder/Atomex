@@ -14,6 +14,10 @@ public class CCoinPairsVM
     public int page = 1;
     public CBlocksHelperVM blocks;
     private CCommonM commonModel;
+    private CBlocksHelperVM helper;
+
+    public IEnumerable<CCoinPairDataVM> LinkedPairs =>
+        helper.GetLinkedPairs(commonModel["home pairs", "ids"]?.value ?? "");
 
     public CTextBlockVM SeoInfo
     {
@@ -35,12 +39,13 @@ public class CCoinPairsVM
     /// <summary>
     ///     Конструктор. заполняет  необходимые поля при создании модели.
     /// </summary>
-    public CCoinPairsVM(CCoinPairsM model, IConfiguration conf, CBlocksHelperVM blocks, CCommonM common_model)
+    public CCoinPairsVM(CCoinPairsM model, IConfiguration conf, CBlocksHelperVM blocks, CCommonM common_model, CBlocksHelperVM helper)
     {
         this.model = model;
         this.conf = conf;
         this.blocks = blocks;
         this.commonModel = common_model;
+        this.helper = helper;
     }
     /// <summary>
     ///     Ручная инициализация (заполнение нужных полей).

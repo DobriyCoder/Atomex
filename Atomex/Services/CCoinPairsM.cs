@@ -24,6 +24,7 @@ public class CCoinPairsM : CBaseDbM
         commonModel = common;
     }
 
+    
     public IEnumerable<CCoinPairDataM> GetPairsData (string? filter = null)
     {
         var coins = coinsModel.GetTrueCoins(filter).ToArray();
@@ -164,6 +165,20 @@ public class CCoinPairsM : CBaseDbM
             coin2 = coin2.data,
             commonModel = commonModel,
         };
+    }
+    public List<CCoinPairDataVM> GetPairsByCoin(CCoinDataM coin, int limit)
+    {
+        var coins = coinsModel.GetNextCoins(coin.id, limit);
+        
+        var pairs = coins.Select(c => new CCoinPairDataVM
+        {
+            data = new CCoinPairDataM(coin, c.data, GetMeta(coin.id, c.data.id)),
+            coin1 = coin,
+            coin2 = c.data,
+            commonModel = commonModel,
+        });
+
+        return pairs.ToList();
     }
     public IEnumerable<CCoinPairDataVM> GetPairsByIds(IEnumerable<uint[]> pairs_ids)
     {

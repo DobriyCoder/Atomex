@@ -16,7 +16,14 @@
     </div>
     <div class="dcg-section dcg-section_padding-small">
         <div class="container">
-            @await Html.PartialAsync("_PairsTable", Model.pairs)
+            @if (Model.page > 1)
+            {
+                @await Html.PartialAsync("_PairsTable", Model.pairs)
+            }
+            else
+            {
+                @await Html.PartialAsync("_PairsTable", Model.LinkedPairs)
+            }
             <div class="row">
                 @*<div class="col">@await Html.PartialAsync("_ItemsCountMenu")</div>*@
                 <div class="col">@await Html.PartialAsync("_Pagination", BlocksHelper.GetPagination(Model.maxPage, Model.page))</div>
