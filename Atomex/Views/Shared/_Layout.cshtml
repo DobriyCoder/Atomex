@@ -22,6 +22,8 @@
     @await Html.PartialAsync("_Footer")
     @*@RenderSection("PageHead")*@
 
+    @await Html.PartialAsync("_Ga")
+
     <script src="@BlocksHelper.GetUrl()js/lib.min.js"></script>
     <script src="@BlocksHelper.GetUrl()js/main.js"></script>
 </body>
