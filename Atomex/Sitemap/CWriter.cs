@@ -70,14 +70,14 @@
             using (var sw = new StreamWriter(path, false, System.Text.Encoding.UTF8))
             {
                 sw.WriteLine("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-                sw.WriteLine("<sitemapindex xmlns=\"https://www.sitemaps.org/schemas/sitemap/0.9\">");
+                //sw.WriteLine("<sitemapindex xmlns=\"https://www.sitemaps.org/schemas/sitemap/0.9\">");
                 sw.WriteLine("\t<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">");
 
                 foreach (var page in pages)
                     sw.WriteLine(sample.Replace("/custom{url}", page.url).Replace("{lastmod}", lastmod));
 
                 sw.WriteLine("\t</urlset>");
-                sw.WriteLine("</sitemapindex>");
+                //sw.WriteLine("</sitemapindex>");
             }
         }
 
@@ -112,7 +112,7 @@
             //using (var sw = new StreamWriter(path, false, System.Text.Encoding.UTF8))
             {
                 content += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
-                content += "<sitemapindex xmlns=\"https://www.sitemaps.org/schemas/sitemap/0.9\">\n";
+                content += "<sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n";
 
                 for (int i = 1; i < count + 1; i++)
                     content += $"\t<sitemap>\r\t\t<loc>{this.domain}/sitemap-{i}.xml</loc>\r\t</sitemap>\n";
@@ -184,14 +184,14 @@
 
             string result = "";
             result += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r";
-            result += "<sitemapindex xmlns=\"https://www.sitemaps.org/schemas/sitemap/0.9\">\r";
+            //result += "<sitemapindex xmlns=\"https://www.sitemaps.org/schemas/sitemap/0.9\">\r";
             result += "\t<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\r";
 
             foreach (var page in curr_pages)
                 result += sample.Replace("{url}", $"{this.domain}{page.url.ToLower()}").Replace("{lastmod}", lastmod) + "\r";
 
             result += "\t</urlset>\r";
-            result += "</sitemapindex>";
+            //result += "</sitemapindex>";
 
             return result;
         }

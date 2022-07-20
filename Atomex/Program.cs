@@ -34,6 +34,9 @@ builder.Services.AddTransient<IRunnerM, CRunnerM>();
 builder.Services.AddTransient<ISitemap, CSitemap>();
 builder.Services.AddTransient<ILogger, CLogger>();
 
+builder.Services.AddControllers()
+    .AddXmlSerializerFormatters();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
