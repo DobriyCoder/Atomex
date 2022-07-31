@@ -1,3 +1,4 @@
+using CryptoApi.Middleware;
 using CryptoApi.Api;
 using CryptoApi.Models.DB;
 using CryptoApi.Services;
@@ -33,6 +34,7 @@ builder.Services.AddTransient<CApiManager>();
 builder.Services.AddTransient<IRunnerM, CRunnerM>();
 builder.Services.AddTransient<ISitemap, CSitemap>();
 builder.Services.AddTransient<ILogger, CLogger>();
+builder.Services.AddTransient<RedirectData>();
 
 builder.Services.AddControllers()
     .AddXmlSerializerFormatters();
@@ -55,6 +57,7 @@ app.UseStaticFiles();
     await context.Response.WriteAsync(path);
 });*/
 
+app.UseMiddleware<RedirectMiddleware>("path");
 app.UseRouting();
 
 app.UseAuthorization();
